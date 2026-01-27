@@ -29,7 +29,7 @@ A modern, responsive portfolio website built with Next.js 14, TypeScript, and Ta
 1. Clone the repository:
 
 ```bash
-git clone https://github.com/karam-matar/portfolio.git
+git clone https://github.com/KarmaSora/portfolio.git
 cd portfolio
 ```
 
@@ -221,8 +221,8 @@ This project is open source and available under the [MIT License](LICENSE).
 
 **Karam Matar**
 
-- GitHub: [@karam-matar](https://github.com/karam-matar)
-- LinkedIn: [Karam Matar](https://linkedin.com/in/karam-matar)
+- GitHub: [@KarmaSora](https://github.com/KarmaSora)
+- LinkedIn: [Karam Matar](https://linkedin.com/in/karammatar)
 
 ---
 
