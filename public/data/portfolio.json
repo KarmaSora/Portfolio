@@ -9,7 +9,49 @@
     "github": "https://github.com/KarmaSora",
     "profileImage": "/images/profile.png",
     "available": true,
-    "availableText": "Available for opportunities"
+    "availableText": "Available for opportunities",
+    "initials": "KM",
+    "githubUsername": "@KarmaSora",
+    "linkedinName": "Karam Matar"
+  },
+  "aboutContent": {
+    "sectionTitle": "About Me",
+    "sectionSubtitle": "Who Am I?",
+    "paragraphs": [
+      "Hello! I'm Karam Matar, a passionate software engineer and game developer based in Sweden. I specialize in creating robust, scalable applications and immersive gaming experiences.",
+      "My journey in tech began with a fascination for how games were built, which evolved into a deep appreciation for software engineering as a whole. Today, I work across the full stack, from crafting intuitive frontends to designing efficient backend systems.",
+      "When I'm not coding, you'll find me exploring new technologies, contributing to open-source projects, or working on my latest game development venture. I believe in writing clean, maintainable code and building software that makes a difference."
+    ],
+    "stats": [
+      { "label": "Years Experience", "value": "3+", "icon": "briefcase" },
+      { "label": "Projects Completed", "value": "20+", "icon": "code" },
+      { "label": "Technologies", "value": "15+", "icon": "graduation" }
+    ]
+  },
+  "contactContent": {
+    "sectionTitle": "Get In Touch",
+    "sectionSubtitle": "Let's Work Together",
+    "sectionDescription": "I'm always open to discussing new projects, creative ideas, or opportunities to be part of something amazing. Feel free to reach out!",
+    "ctaTitle": "Ready to Start a Project?",
+    "ctaDescription": "Whether you have a question or just want to say hi, I'll try my best to get back to you as soon as possible!",
+    "ctaButtonText": "Send Me an Email"
+  },
+  "skillsContent": {
+    "sectionTitle": "Expertise",
+    "sectionSubtitle": "Skills & Technologies",
+    "learningTitle": "Always learning and exploring new technologies. Currently interested in:",
+    "currentlyLearning": [
+      "Cobol",
+      "",
+      "Machine Learning",
+      "Cloud Architecture",
+      "Blockchain",
+      "AR/VR Development"
+    ]
+  },
+  "footerContent": {
+    "tagline": "Software Engineer & Game Developer passionate about creating innovative digital experiences.",
+    "builtWith": "Built with Next.js & Tailwind"
   },
   "experiences": [
     {

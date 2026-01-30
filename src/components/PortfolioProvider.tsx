@@ -78,10 +78,30 @@ export function usePortfolio() {
   return context;
 }
 
-// Hook for accessing specific parts of the portfolio data
+// Hooks for accessing specific parts of the portfolio data
 export function usePersonalInfo() {
   const { data } = usePortfolio();
   return data.personalInfo;
+}
+
+export function useAboutContent() {
+  const { data } = usePortfolio();
+  return data.aboutContent;
+}
+
+export function useContactContent() {
+  const { data } = usePortfolio();
+  return data.contactContent;
+}
+
+export function useSkillsContent() {
+  const { data } = usePortfolio();
+  return data.skillsContent;
+}
+
+export function useFooterContent() {
+  const { data } = usePortfolio();
+  return data.footerContent;
 }
 
 export function useExperiences() {

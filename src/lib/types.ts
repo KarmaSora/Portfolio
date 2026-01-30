@@ -11,6 +11,43 @@ export interface PersonalInfo {
   profileImage: string;
   available: boolean;
   availableText: string;
+  initials: string;
+  githubUsername: string;
+  linkedinName: string;
+}
+
+export interface AboutContent {
+  sectionTitle: string;
+  sectionSubtitle: string;
+  paragraphs: string[];
+  stats: Stat[];
+}
+
+export interface Stat {
+  label: string;
+  value: string;
+  icon: "briefcase" | "code" | "graduation";
+}
+
+export interface ContactContent {
+  sectionTitle: string;
+  sectionSubtitle: string;
+  sectionDescription: string;
+  ctaTitle: string;
+  ctaDescription: string;
+  ctaButtonText: string;
+}
+
+export interface SkillsContent {
+  sectionTitle: string;
+  sectionSubtitle: string;
+  learningTitle: string;
+  currentlyLearning: string[];
+}
+
+export interface FooterContent {
+  tagline: string;
+  builtWith: string;
 }
 
 export interface Experience {
@@ -58,6 +95,10 @@ export interface SEOData {
 
 export interface PortfolioData {
   personalInfo: PersonalInfo;
+  aboutContent: AboutContent;
+  contactContent: ContactContent;
+  skillsContent: SkillsContent;
+  footerContent: FooterContent;
   experiences: Experience[];
   projects: Project[];
   skillCategories: SkillCategory[];
@@ -78,6 +119,37 @@ export const defaultPortfolioData: PortfolioData = {
     profileImage: "/images/profile.png",
     available: true,
     availableText: "Available for opportunities",
+    initials: "YN",
+    githubUsername: "@username",
+    linkedinName: "Your Name",
+  },
+  aboutContent: {
+    sectionTitle: "About Me",
+    sectionSubtitle: "Who Am I?",
+    paragraphs: ["Tell your story here."],
+    stats: [
+      { label: "Years Experience", value: "0+", icon: "briefcase" },
+      { label: "Projects", value: "0+", icon: "code" },
+      { label: "Technologies", value: "0+", icon: "graduation" },
+    ],
+  },
+  contactContent: {
+    sectionTitle: "Get In Touch",
+    sectionSubtitle: "Let's Work Together",
+    sectionDescription: "I'm always open to new opportunities.",
+    ctaTitle: "Ready to Start a Project?",
+    ctaDescription: "Feel free to reach out!",
+    ctaButtonText: "Send Me an Email",
+  },
+  skillsContent: {
+    sectionTitle: "Expertise",
+    sectionSubtitle: "Skills & Technologies",
+    learningTitle: "Always learning and exploring new technologies. Currently interested in:",
+    currentlyLearning: [],
+  },
+  footerContent: {
+    tagline: "Developer passionate about creating digital experiences.",
+    builtWith: "Built with Next.js & Tailwind",
   },
   experiences: [],
   projects: [],

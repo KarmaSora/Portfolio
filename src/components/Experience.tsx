@@ -1,43 +1,10 @@
 "use client";
 
 import { useRef } from "react";
-import { motion, useInView } from "framer-motion";
+import { useInView } from "framer-motion";
 import { Building2, Calendar, MapPin } from "lucide-react";
 import { useExperiences } from "./PortfolioProvider";
 import { cn } from "@/lib/utils";
-
-const containerVariants = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.3,
-    },
-  },
-};
-
-const itemVariants = {
-  hidden: { opacity: 0, x: -50 },
-  visible: {
-    opacity: 1,
-    x: 0,
-    transition: {
-      duration: 0.6,
-      ease: [0.4, 0, 0.2, 1],
-    },
-  },
-};
-
-const lineVariants = {
-  hidden: { scaleY: 0, originY: 0 },
-  visible: {
-    scaleY: 1,
-    transition: {
-      duration: 1.5,
-      ease: [0.4, 0, 0.2, 1],
-    },
-  },
-};
 
 export function Experience() {
   const experiences = useExperiences();
@@ -63,11 +30,11 @@ export function Experience() {
 
       <div className="container mx-auto px-6 relative z-10">
         {/* Section Header */}
-        <motion.div
-          className="text-center mb-16"
-          initial={{ opacity: 0, y: 20 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6 }}
+        <div
+          className={cn(
+            "text-center mb-16 transition-all duration-500",
+            isInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"
+          )}
         >
           <p className="text-primary text-sm font-medium uppercase tracking-widest mb-4">
             Career Path
@@ -76,82 +43,60 @@ export function Experience() {
             Experience
           </h2>
           <div className="w-20 h-1 bg-gradient-to-r from-primary to-purple-400 mx-auto rounded-full" />
-        </motion.div>
+        </div>
 
         {/* Timeline */}
         <div className="max-w-4xl mx-auto">
           <div className="relative">
             {/* Vertical Line */}
-            <motion.div
-              className="absolute left-0 md:left-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-primary via-purple-400 to-border transform md:-translate-x-1/2"
-              variants={lineVariants}
-              initial="hidden"
-              animate={isInView ? "visible" : "hidden"}
+            <div
+              className={cn(
+                "absolute left-0 md:left-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-primary via-purple-400 to-border transform md:-translate-x-1/2 transition-all duration-1000",
+                isInView ? "scale-y-100" : "scale-y-0"
+              )}
+              style={{ transformOrigin: "top" }}
             />
 
             {/* Experience Items */}
-            <motion.div
-              variants={containerVariants}
-              initial="hidden"
-              animate={isInView ? "visible" : "hidden"}
-            >
+            <div>
               {experiences.map((exp, index) => (
-                <motion.div
+                <div
                   key={exp.id}
-                  variants={itemVariants}
                   className={cn(
-                    "relative mb-12 last:mb-0",
+                    "relative mb-12 last:mb-0 transition-all duration-500",
                     index % 2 === 0
                       ? "md:pr-[50%] md:text-right"
                       : "md:pl-[50%] md:ml-auto",
+                    isInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
                   )}
+                  style={{ transitionDelay: `${index * 150}ms` }}
                 >
                   {/* Timeline Dot */}
-                  <motion.div
+                  <div
                     className={cn(
                       "absolute top-6 w-4 h-4 rounded-full bg-primary border-4 border-background shadow-lg shadow-primary/30",
                       "left-0 md:left-1/2 transform -translate-x-1/2",
                       "z-10",
                     )}
-                    initial={{ scale: 0 }}
-                    animate={isInView ? { scale: 1 } : { scale: 0 }}
-                    transition={{
-                      delay: 0.3 + index * 0.3,
-                      duration: 0.4,
-                      type: "spring",
-                    }}
-                  >
-                    <motion.div
-                      className="absolute inset-0 rounded-full bg-primary"
-                      animate={{ scale: [1, 1.5, 1], opacity: [0.5, 0, 0.5] }}
-                      transition={{
-                        duration: 2,
-                        repeat: Infinity,
-                        repeatDelay: 1,
-                      }}
-                    />
-                  </motion.div>
+                  />
 
                   {/* Content Card */}
-                  <motion.div
+                  <div
                     className={cn(
-                      "ml-8 md:ml-0 glass-card rounded-2xl p-6 md:p-8 glow-border transition-all duration-300",
+                      "ml-8 md:ml-0 glass-card rounded-2xl p-6 md:p-8 glow-border hover:scale-[1.02] transition-transform duration-300",
                       index % 2 === 0 ? "md:mr-8" : "md:ml-8",
                     )}
-                    whileHover={{ scale: 1.02, y: -5 }}
-                    transition={{ type: "spring", stiffness: 300 }}
                   >
                     {/* Period Badge */}
-                    <motion.div
+                    <div
                       className={cn(
                         "inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-xs text-primary mb-4",
                         index % 2 === 0 ? "md:float-right md:ml-4" : "",
                       )}
-                      whileHover={{ scale: 1.05 }}
                     >
                       <Calendar className="w-3 h-3" />
                       {exp.period}
-                    </motion.div>
+                    </div>
 
                     <h3 className="text-xl md:text-2xl font-bold font-outfit text-foreground mb-2 clear-both">
                       {exp.role}
@@ -180,22 +125,13 @@ export function Experience() {
                       )}
                     >
                       {exp.description.map((item, i) => (
-                        <motion.li
+                        <li
                           key={i}
                           className="text-muted-foreground text-sm leading-relaxed"
-                          initial={{
-                            opacity: 0,
-                            x: index % 2 === 0 ? 20 : -20,
-                          }}
-                          animate={isInView ? { opacity: 1, x: 0 } : {}}
-                          transition={{
-                            delay: 0.5 + index * 0.3 + i * 0.1,
-                            duration: 0.4,
-                          }}
                         >
                           <span className="text-primary mr-2">•</span>
                           {item}
-                        </motion.li>
+                        </li>
                       ))}
                     </ul>
 
@@ -206,26 +142,19 @@ export function Experience() {
                         index % 2 === 0 ? "md:justify-end" : "",
                       )}
                     >
-                      {exp.technologies.map((tech, i) => (
-                        <motion.span
+                      {exp.technologies.map((tech) => (
+                        <span
                           key={tech}
                           className="px-3 py-1 text-xs font-medium rounded-full bg-secondary/50 text-muted-foreground hover:text-primary hover:bg-primary/10 transition-colors"
-                          initial={{ opacity: 0, scale: 0.8 }}
-                          animate={isInView ? { opacity: 1, scale: 1 } : {}}
-                          transition={{
-                            delay: 0.7 + index * 0.3 + i * 0.05,
-                            duration: 0.3,
-                          }}
-                          whileHover={{ scale: 1.1 }}
                         >
                           {tech}
-                        </motion.span>
+                        </span>
                       ))}
                     </div>
-                  </motion.div>
-                </motion.div>
+                  </div>
+                </div>
               ))}
-            </motion.div>
+            </div>
           </div>
         </div>
       </div>
