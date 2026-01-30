@@ -6,7 +6,7 @@ import { useInView } from "framer-motion";
 import { MapPin, Briefcase, GraduationCap, Code } from "lucide-react";
 import { usePersonalInfo, useAboutContent } from "./PortfolioProvider";
 import { Stat } from "@/lib/types";
-import { cn } from "@/lib/utils";
+import { cn, withBasePath } from "@/lib/utils";
 
 const iconMap = {
   briefcase: Briefcase,
@@ -62,7 +62,7 @@ export function About() {
                 <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-transparent to-purple-400/20" />
                 {personalInfo.profileImage ? (
                   <Image
-                    src={personalInfo.profileImage}
+                    src={withBasePath(personalInfo.profileImage)}
                     alt={`${personalInfo.name} - Professional Photo`}
                     fill
                     className="object-cover"

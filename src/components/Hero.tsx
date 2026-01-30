@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { Github, Linkedin, ArrowDown, Mail, Download } from "lucide-react";
 import { usePersonalInfo, usePortfolio } from "./PortfolioProvider";
 import { HeroSkeleton } from "./Skeleton";
+import { withBasePath } from "@/lib/utils";
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -163,7 +164,7 @@ export function Hero() {
               <span className="text-sm font-medium">Contact</span>
             </motion.a>
             <motion.a
-              href={personalInfo.resumeUrl}
+              href={withBasePath(personalInfo.resumeUrl)}
               download
               className="group flex items-center gap-2 px-6 py-3 rounded-xl bg-card border border-border hover:border-primary/50 transition-all duration-300"
               whileHover={{ scale: 1.05, y: -2 }}

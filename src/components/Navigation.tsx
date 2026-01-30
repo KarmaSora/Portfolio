@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, Monitor } from "lucide-react";
-import { cn } from "@/lib/utils";
+import { cn, withBasePath } from "@/lib/utils";
 import { useNavItems, usePersonalInfo } from "./PortfolioProvider";
 import { ThemeToggle } from "./ThemeToggle";
 
@@ -133,7 +133,7 @@ export function Navigation({ kioskMode, onKioskToggle }: NavigationProps) {
             <Monitor className="w-4 h-4" aria-hidden="true" />
           </button>
           <a
-            href={personalInfo.resumeUrl}
+            href={withBasePath(personalInfo.resumeUrl)}
             download
             className="px-4 py-2 text-sm font-medium rounded-lg bg-primary text-primary-foreground hover:bg-primary/90 transition-all"
           >
@@ -189,7 +189,7 @@ export function Navigation({ kioskMode, onKioskToggle }: NavigationProps) {
                   <Monitor className="w-5 h-5" aria-hidden="true" />
                 </button>
                 <a
-                  href={personalInfo.resumeUrl}
+                  href={withBasePath(personalInfo.resumeUrl)}
                   download
                   className="flex-1 text-center px-4 py-2 text-sm font-medium rounded-lg bg-primary text-primary-foreground"
                 >

@@ -1,4 +1,6 @@
 /** @type {import('next').NextConfig} */
+const isProd = process.env.NODE_ENV === 'production';
+
 const nextConfig = {
   reactStrictMode: true,
 
@@ -7,6 +9,10 @@ const nextConfig = {
 
   // Required for GitHub Pages - adds trailing slashes to URLs
   trailingSlash: true,
+
+  // Base path for GitHub Pages deployment (repo name)
+  basePath: isProd ? '/Portfolio' : '',
+  assetPrefix: isProd ? '/Portfolio/' : '',
 
   // Disable image optimization for static export (GitHub Pages doesn't support it)
   images: {
@@ -19,10 +25,6 @@ const nextConfig = {
       },
     ],
   },
-
-  // Uncomment and set these if deploying to a subpath (e.g., username.github.io/repo-name)
-  // basePath: process.env.NEXT_PUBLIC_BASE_PATH || '',
-  // assetPrefix: process.env.NEXT_PUBLIC_BASE_PATH || '',
 };
 
 module.exports = nextConfig;
