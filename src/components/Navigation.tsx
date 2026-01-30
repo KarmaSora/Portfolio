@@ -74,7 +74,7 @@ export function Navigation({ kioskMode, onKioskToggle }: NavigationProps) {
         kioskMode && "kiosk-hidden",
       )}
     >
-      <nav className="container mx-auto px-6 flex items-center justify-between">
+      <nav className="container mx-auto px-4 sm:px-6 flex items-center justify-between">
         {/* Logo */}
         <a
           href="#home"
@@ -144,7 +144,7 @@ export function Navigation({ kioskMode, onKioskToggle }: NavigationProps) {
         {/* Mobile Menu Button */}
         <button
           onClick={() => setIsOpen(!isOpen)}
-          className="md:hidden p-2 rounded-lg hover:bg-secondary transition-colors"
+          className="md:hidden p-2 rounded-lg hover:bg-secondary transition-colors flex-shrink-0"
         >
           {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
         </button>
