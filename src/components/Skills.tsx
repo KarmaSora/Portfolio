@@ -2,21 +2,27 @@
 
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
-import { Code2, Layout, Server, Wrench } from "lucide-react";
+import { Code2, Layout, Server, Wrench, Languages, Gamepad2 } from "lucide-react";
 import { useSkillCategories } from "./PortfolioProvider";
 import { cn } from "@/lib/utils";
 
-const categoryIcons = {
+const categoryIcons: Record<string, typeof Code2> = {
+  "spoken-languages": Languages,
+  programming: Code2,
   languages: Code2,
   frontend: Layout,
   backend: Server,
+  "game-dev": Gamepad2,
   tools: Wrench,
 };
 
-const categoryColors = {
+const categoryColors: Record<string, string> = {
+  "spoken-languages": "from-pink-500 to-rose-500",
+  programming: "from-violet-500 to-purple-500",
   languages: "from-violet-500 to-purple-500",
   frontend: "from-blue-500 to-cyan-500",
   backend: "from-green-500 to-emerald-500",
+  "game-dev": "from-red-500 to-orange-500",
   tools: "from-orange-500 to-amber-500",
 };
 
@@ -90,16 +96,16 @@ export function Skills() {
 
         {/* Skills Grid */}
         <motion.div
-          className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto"
+          className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto"
           variants={containerVariants}
           initial="hidden"
           animate={isInView ? "visible" : "hidden"}
         >
           {skillCategories.map((category, categoryIndex) => {
             const IconComponent =
-              categoryIcons[category.id as keyof typeof categoryIcons];
+              categoryIcons[category.id] || Code2;
             const gradientColor =
-              categoryColors[category.id as keyof typeof categoryColors];
+              categoryColors[category.id] || "from-slate-500 to-gray-500";
 
             return (
               <motion.div

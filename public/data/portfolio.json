@@ -2,10 +2,10 @@
   "personalInfo": {
     "name": "Karam Matar",
     "title": "Software Engineer",
-    "email": "karam@example.com",
-    "location": "Sweden",
-    "bio": "I'm a passionate software engineer and game developer with expertise in building scalable applications and immersive gaming experiences. Currently exploring the intersection of technology and creativity.",
-    "linkedin": " linkedin.com/in/karammatar ",
+    "email": "karammtr@gmail.com",
+    "location": "Karlskrona, Sweden",
+    "bio": "Software engineering student with experience in full-stack development, DevOps automation, and game development. I build practical tools, modern web apps, and game projects with a focus on clean code and maintainability.",
+    "linkedin": "https://www.linkedin.com/in/karam-matar-b92639293",
     "github": "https://github.com/KarmaSora",
     "profileImage": "/images/profile.png",
     "available": true,
@@ -13,66 +13,104 @@
   },
   "experiences": [
     {
-      "id": "trafikverket",
+      "id": "trafikverket-intern",
       "role": "Software Developer Intern",
       "company": "Trafikverket",
-      "location": "Sweden",
-      "period": "2024 - Present",
+      "location": "Remote via Blekinge Institute of Technology, Sweden",
+      "period": "Jan 2025 - May 2025",
       "description": [
-        "Developed and maintained internal tools for infrastructure monitoring and management",
-        "Collaborated with cross-functional teams to implement new features and optimize existing systems",
-        "Utilized Azure DevOps for CI/CD pipelines and version control",
-        "Contributed to documentation and knowledge sharing within the development team"
+        "Developed an Azure DevOps pipeline task to detect third-party dependency vulnerabilities across repositories",
+        "Automated SBOM generation (JSON) to improve dependency transparency and compliance",
+        "Collaborated with stakeholders to align the solution with security and CI/CD requirements"
       ],
-      "technologies": ["C#", ".NET", "Azure DevOps", "SQL Server", "Git"]
+      "technologies": [
+        "PowerShell",
+        "JavaScript",
+        "Azure DevOps",
+        "CI/CD",
+        "Git"
+      ]
     },
     {
-      "id": "bth",
-      "role": "Teaching Assistant",
+      "id": "bth-ta-cpp",
+      "role": "Teaching Assistant (C++ Course)",
       "company": "Blekinge Institute of Technology",
       "location": "Karlskrona, Sweden",
-      "period": "2023 - 2024",
+      "period": "Sep 2024 - Jan 2025",
       "description": [
-        "Assisted professors in delivering coursework for software engineering and game development courses",
-        "Provided one-on-one tutoring and guidance to students on programming assignments",
-        "Graded assignments and provided constructive feedback to improve student learning outcomes",
-        "Helped organize and facilitate lab sessions for practical programming exercises"
+        "Assisted students with debugging and optimization in C++, strengthening OOP understanding",
+        "Provided one-on-one mentorship on logic issues and memory management bugs"
       ],
-      "technologies": ["C++", "Java", "Python", "Teaching", "Mentoring"]
+      "technologies": ["C++", "OOP", "Debugging", "Mentoring"]
+    },
+    {
+      "id": "picasso-staff",
+      "role": "Staff Member (Summer Job)",
+      "company": "Picasso",
+      "location": "Båstad, Sweden",
+      "period": "Jun 2021 - Aug 2023",
+      "description": [
+        "Supported daily operations and customer experience in a high-volume environment",
+        "Improved multitasking, time management, and communication under pressure"
+      ],
+      "technologies": ["Customer Service", "Teamwork", "Communication"]
+    }
+  ],
+  "education": [
+    {
+      "id": "bth-bsc",
+      "degree": "B.Sc. Software Engineering",
+      "school": "Blekinge Institute of Technology",
+      "location": "Karlskrona, Sweden",
+      "period": "Aug 2023 - Jun 2026 (expected)",
+      "details": [
+        "Relevant coursework: Compiler Design, Operating Systems, Algorithms & Data Structures, Linear Algebra"
+      ]
+    },
+    {
+      "id": "ncl-exchange",
+      "degree": "Exchange Semester in Computer Science (Fall 2025)",
+      "school": "Newcastle University",
+      "location": "Newcastle upon Tyne, United Kingdom",
+      "period": "Sep 2025 - Jan 2026 (completed)",
+      "details": [
+        "Relevant coursework: Computer Vision & AI, Algorithm Design and Analysis, Security Programming, Game Design"
+      ]
     }
   ],
   "projects": [
     {
       "id": "vulnerability-checker",
-      "title": "Vulnerability Checker 2.0",
-      "description": "An advanced security tool for detecting vulnerabilities in codebases and dependencies",
-      "longDescription": "A comprehensive security analysis tool that scans codebases for known vulnerabilities, outdated dependencies, and potential security risks. Features real-time monitoring, detailed reporting, and integration with popular CI/CD pipelines. Built with performance and scalability in mind to handle large enterprise codebases.",
-      "technologies": [
-        "TypeScript",
-        "Node.js",
-        "React",
-        "PostgreSQL",
-        "Docker"
-      ],
-      "github": "https://github.com/karam-matar/vulnerability-checker",
+      "title": "VulnerabilityChecker 2.0",
+      "description": "Azure DevOps task that scans repositories for vulnerabilities in third-party packages",
+      "longDescription": "An Azure DevOps pipeline task that detects third-party dependency vulnerabilities across repositories and generates an SBOM (JSON) for improved dependency transparency and compliance.",
+      "technologies": ["PowerShell", "JavaScript", "Azure DevOps"],
+      "github": "https://github.com/KarmaSora/Trafikverket",
       "demo": null,
       "image": "/images/vulnerability-checker.png",
       "featured": true,
       "category": "tool"
     },
     {
+      "id": "gyagame",
+      "title": "GyaGame",
+      "description": "2D semi-open-world shooter game built in Java using a provided graphics library",
+      "longDescription": "A Java game project featuring core gameplay systems such as movement, shooting, and game logic, built using a provided graphics library.",
+      "technologies": ["Java"],
+      "github": "https://github.com/KarmaSora/GyaGame",
+      "demo": null,
+      "image": "/images/gyagame.png",
+      "featured": true,
+      "category": "game"
+    },
+    {
       "id": "showcase-serl",
       "title": "ShowcaseSERL",
-      "description": "A dynamic showcase platform for the Software Engineering Research Lab",
-      "longDescription": "An interactive web platform designed to showcase research projects, publications, and achievements from the Software Engineering Research Lab. Features a modern UI with kiosk mode support for public displays, dynamic content management, and responsive design. Implemented with accessibility and user experience as core priorities.",
-      "technologies": [
-        "Next.js",
-        "TypeScript",
-        "Tailwind CSS",
-        "Framer Motion"
-      ],
-      "github": "https://github.com/karam-matar/showcase-serl",
-      "demo": "https://showcase-serl.vercel.app",
+      "description": "Next.js web app for showcasing projects with dynamic listings, detailed views, and kiosk mode",
+      "longDescription": "A Next.js web app for showcasing projects with dynamic listings, detailed views, and kiosk mode support, built with a modern UI and responsive design.",
+      "technologies": ["Next.js", "React", "TypeScript", "Tailwind CSS"],
+      "github": "https://github.com/KarmaSora/showcaseSERL",
+      "demo": null,
       "image": "/images/showcase-serl.png",
       "featured": true,
       "category": "web"
@@ -80,10 +118,10 @@
     {
       "id": "space-invaders",
       "title": "Space Invaders",
-      "description": "A modern remake of the classic arcade game with enhanced graphics and gameplay",
-      "longDescription": "A faithful yet enhanced recreation of the iconic Space Invaders arcade game. Features include modernized pixel art graphics, progressive difficulty scaling, power-ups, boss battles, and a global leaderboard system. Built using C++ with a custom game engine for optimal performance and smooth animations.",
-      "technologies": ["C++", "SDL2", "OpenGL", "Custom Engine"],
-      "github": "https://github.com/karam-matar/space-invaders",
+      "description": "Space Invaders clone built in C++ using SFML",
+      "longDescription": "A Space Invaders clone built in C++ using SFML, focusing on core game loop, input handling, collision logic, and classic arcade gameplay.",
+      "technologies": ["C++", "SFML"],
+      "github": "https://github.com/KarmaSora/spaceInvadersBTH",
       "demo": null,
       "image": "/images/space-invaders.png",
       "featured": true,
@@ -92,10 +130,10 @@
     {
       "id": "death-marching-souls",
       "title": "Death Marching Souls",
-      "description": "A challenging action RPG inspired by the souls-like genre",
-      "longDescription": "An intense action RPG featuring punishing combat, intricate level design, and deep character customization. Players explore a dark fantasy world filled with formidable enemies and hidden secrets. Implements complex AI behavior, stamina-based combat mechanics, and a narrative delivered through environmental storytelling.",
-      "technologies": ["C#", "Unity", "Blender", "FMOD"],
-      "github": "https://github.com/karam-matar/death-marching-souls",
+      "description": "3D Unity game featuring traversal, progression, and boss combat",
+      "longDescription": "A 3D Unity game featuring traversal, progression, and boss combat, built to practice gameplay systems and game design implementation in Unity.",
+      "technologies": ["C#", "Unity"],
+      "github": "https://github.com/KarmaSora/GameDesign",
       "demo": null,
       "image": "/images/death-marching-souls.png",
       "featured": true,
@@ -104,37 +142,67 @@
   ],
   "skillCategories": [
     {
-      "id": "languages",
+      "id": "spoken-languages",
       "name": "Languages",
-      "skills": ["C++", "Java", "C#", "TypeScript", "Python", "JavaScript"]
+      "skills": ["Arabic (Native)", "Swedish (Fluent)", "English (Fluent)"]
+    },
+    {
+      "id": "programming",
+      "name": "Programming",
+      "skills": [
+        "Java",
+        "Python",
+        "C++",
+        "C",
+        "C#",
+        "PHP",
+        "JavaScript",
+        "TypeScript"
+      ]
     },
     {
       "id": "frontend",
       "name": "Frontend",
       "skills": [
+        "HTML",
+        "CSS/SCSS",
+        "Tailwind CSS",
         "React",
         "Next.js",
-        "Tailwind CSS",
-        "HTML/CSS",
-        "Framer Motion"
+        "Svelte",
+        "SvelteKit"
       ]
     },
     {
       "id": "backend",
       "name": "Backend",
-      "skills": ["Node.js", "Flask", "PostgreSQL", "MongoDB", "REST APIs"]
+      "skills": [
+        "Node.js",
+        "Express.js",
+        "Flask",
+        "MySQL",
+        "MariaDB",
+        "PostgreSQL"
+      ]
+    },
+    {
+      "id": "game-dev",
+      "name": "Game Dev & Graphics",
+      "skills": ["Unity", "SFML"]
     },
     {
       "id": "tools",
-      "name": "Tools & Platforms",
-      "skills": [
-        "Azure DevOps",
-        "Git",
-        "Docker",
-        "Unity",
-        "Unreal Engine",
-        "VS Code"
-      ]
+      "name": "Tools",
+      "skills": ["Git", "GitHub", "Azure DevOps", "CI/CD pipelines"]
+    }
+  ],
+  "achievements": [
+    {
+      "id": "hollytech-hackathon",
+      "type": "Hackathon",
+      "title": "Hollytech",
+      "result": "First place winner",
+      "link": "https://www.linkedin.com/feed/update/urn:li:activity:7323004340258922497/"
     }
   ],
   "navItems": [
@@ -147,20 +215,22 @@
   ],
   "seo": {
     "title": "Karam Matar | Software Engineer & Game Developer",
-    "description": "Karam Matar is a Software Engineer and Game Developer specializing in C++, TypeScript, React, and Next.js. Explore my portfolio featuring projects like Vulnerability Checker 2.0, ShowcaseSERL, and more.",
+    "description": "Karam Matar is a software engineering student and developer focused on full-stack development, DevOps automation, and game development. Explore projects like VulnerabilityChecker 2.0, ShowcaseSERL, Space Invaders, and more.",
     "keywords": [
       "Karam Matar",
       "Software Engineer",
+      "Software Engineering Student",
       "Game Developer",
       "C++",
+      "C#",
       "TypeScript",
       "React",
       "Next.js",
+      "Azure DevOps",
       "Portfolio",
-      "Full Stack Developer",
       "Sweden"
     ],
-    "url": "https://karammatar.com",
+    "url": "https://github.com/KarmaSora",
     "locale": "en_US"
   }
 }
