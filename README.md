@@ -145,36 +145,48 @@ The portfolio uses CSS custom properties for theming. Customize colors in `globa
 
 ## 🚀 Deployment
 
-### GitHub Pages
+### GitHub Pages (Automated with GitHub Actions)
 
-1. Update `next.config.js` if deploying to a subdirectory:
+This project includes a GitHub Actions workflow for automatic deployment:
+
+1. Push to the `main` branch triggers automatic deployment
+2. Go to **Settings → Pages** and set **Source** to "GitHub Actions"
+3. Your site will be live at `https://username.github.io/repo-name/`
+
+The workflow file is located at `.github/workflows/deploy.yml`.
+
+**Note:** The `next.config.js` is pre-configured for GitHub Pages subpath deployment:
 
 ```javascript
+const isProd = process.env.NODE_ENV === 'production';
+
 const nextConfig = {
   output: "export",
-  basePath: "/your-repo-name",
-  assetPrefix: "/your-repo-name/",
+  basePath: isProd ? '/Portfolio' : '',
+  assetPrefix: isProd ? '/Portfolio/' : '',
   // ...
 };
 ```
 
-2. Build the project:
+Update `basePath` and `assetPrefix` to match your repository name.
+
+### Manual Build
+
+To build locally:
 
 ```bash
 npm run build
 ```
 
-3. The `out/` directory contains your static site. Deploy it to GitHub Pages.
+The `out/` directory contains your static site.
 
-4. Alternatively, use GitHub Actions for automatic deployment.
+### Vercel (Recommended for Custom Domains)
 
-### Vercel (Recommended)
-
-Simply connect your GitHub repository to Vercel for automatic deployments.
+Simply connect your GitHub repository to Vercel for automatic deployments with zero configuration.
 
 ### Other Platforms
 
-The `npm run build` command generates a static site in the `out/` folder that can be deployed to any static hosting service (Netlify, Cloudflare Pages, etc.).
+The static site in the `out/` folder can be deployed to any static hosting service (Netlify, Cloudflare Pages, etc.).
 
 ## 🛠️ Tech Stack
 
@@ -222,7 +234,7 @@ This project is open source and available under the [MIT License](LICENSE).
 **Karam Matar**
 
 - GitHub: [@KarmaSora](https://github.com/KarmaSora)
-- LinkedIn: [Karam Matar](https://linkedin.com/in/karammatar)
+- LinkedIn: [Karam Matar](https://www.linkedin.com/in/karam-matar-b92639293)
 
 ---
 

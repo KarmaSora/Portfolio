@@ -56,7 +56,7 @@ Read files in this order to build understanding progressively:
      - `path` - Path utilities
    - **How it connects**: Takes JSON → converts to TypeScript types → returns to layout
 
-4. **[src/lib/PortfolioProvider.tsx](../src/lib/PortfolioProvider.tsx)**
+4. **[src/components/PortfolioProvider.tsx](../src/components/PortfolioProvider.tsx)**
    - **Purpose**: Makes data available to all components
    - **What it does**:
      - Creates React Context
