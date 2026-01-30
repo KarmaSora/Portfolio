@@ -35,6 +35,9 @@ jobs:
         env:
           NEXT_PUBLIC_BASE_PATH: /Portfolio
 
+      - name: Add .nojekyll file
+        run: touch ./out/.nojekyll
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
