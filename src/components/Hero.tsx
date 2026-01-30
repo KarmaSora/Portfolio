@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Github, Linkedin, ArrowDown, Mail } from "lucide-react";
+import { Github, Linkedin, ArrowDown, Mail, Download } from "lucide-react";
 import { usePersonalInfo, usePortfolio } from "./PortfolioProvider";
 import { HeroSkeleton } from "./Skeleton";
 
@@ -161,6 +161,16 @@ export function Hero() {
             >
               <Mail className="w-5 h-5" />
               <span className="text-sm font-medium">Contact</span>
+            </motion.a>
+            <motion.a
+              href={personalInfo.resumeUrl}
+              download
+              className="group flex items-center gap-2 px-6 py-3 rounded-xl bg-card border border-border hover:border-primary/50 transition-all duration-300"
+              whileHover={{ scale: 1.05, y: -2 }}
+              whileTap={{ scale: 0.98 }}
+            >
+              <Download className="w-5 h-5 text-muted-foreground group-hover:text-primary transition-colors" />
+              <span className="text-sm font-medium">Download CV</span>
             </motion.a>
           </motion.div>
 

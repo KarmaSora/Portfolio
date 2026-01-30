@@ -133,7 +133,8 @@ export function Navigation({ kioskMode, onKioskToggle }: NavigationProps) {
             <Monitor className="w-4 h-4" aria-hidden="true" />
           </button>
           <a
-            href="/resume.pdf"
+            href={personalInfo.resumeUrl}
+            download
             className="px-4 py-2 text-sm font-medium rounded-lg bg-primary text-primary-foreground hover:bg-primary/90 transition-all"
           >
             Resume
@@ -188,7 +189,8 @@ export function Navigation({ kioskMode, onKioskToggle }: NavigationProps) {
                   <Monitor className="w-5 h-5" aria-hidden="true" />
                 </button>
                 <a
-                  href="/resume.pdf"
+                  href={personalInfo.resumeUrl}
+                  download
                   className="flex-1 text-center px-4 py-2 text-sm font-medium rounded-lg bg-primary text-primary-foreground"
                 >
                   Resume

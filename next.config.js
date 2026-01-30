@@ -11,6 +11,13 @@ const nextConfig = {
   // Disable image optimization for static export (GitHub Pages doesn't support it)
   images: {
     unoptimized: true,
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "raw.githubusercontent.com",
+        pathname: "/**",
+      },
+    ],
   },
 
   // Uncomment and set these if deploying to a subpath (e.g., username.github.io/repo-name)

@@ -12,7 +12,8 @@
     "availableText": "Available for opportunities",
     "initials": "KM",
     "githubUsername": "@KarmaSora",
-    "linkedinName": "Karam Matar"
+    "linkedinName": "Karam Matar",
+    "resumeUrl": "/resume.pdf"
   },
   "aboutContent": {
     "sectionTitle": "About Me",
@@ -129,7 +130,7 @@
       "technologies": ["PowerShell", "JavaScript", "Azure DevOps"],
       "github": "https://github.com/KarmaSora/Trafikverket",
       "demo": null,
-      "image": "/images/vulnerability-checker.png",
+      "image": null,
       "featured": true,
       "category": "tool"
     },
@@ -141,7 +142,7 @@
       "technologies": ["Java"],
       "github": "https://github.com/KarmaSora/GyaGame",
       "demo": null,
-      "image": "/images/gyagame.png",
+      "image": null,
       "featured": true,
       "category": "game"
     },
@@ -153,7 +154,7 @@
       "technologies": ["Next.js", "React", "TypeScript", "Tailwind CSS"],
       "github": "https://github.com/KarmaSora/showcaseSERL",
       "demo": null,
-      "image": "/images/showcase-serl.png",
+      "image": "https://raw.githubusercontent.com/KarmaSora/showcaseSERL/main/image.png",
       "featured": true,
       "category": "web"
     },
@@ -165,7 +166,7 @@
       "technologies": ["C++", "SFML"],
       "github": "https://github.com/KarmaSora/spaceInvadersBTH",
       "demo": null,
-      "image": "/images/space-invaders.png",
+      "image": null,
       "featured": true,
       "category": "game"
     },
@@ -177,7 +178,7 @@
       "technologies": ["C#", "Unity"],
       "github": "https://github.com/KarmaSora/GameDesign",
       "demo": null,
-      "image": "/images/death-marching-souls.png",
+      "image": null,
       "featured": true,
       "category": "game"
     }

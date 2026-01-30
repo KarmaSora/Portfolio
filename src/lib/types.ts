@@ -14,6 +14,7 @@ export interface PersonalInfo {
   initials: string;
   githubUsername: string;
   linkedinName: string;
+  resumeUrl: string;
 }
 
 export interface AboutContent {
@@ -122,6 +123,7 @@ export const defaultPortfolioData: PortfolioData = {
     initials: "YN",
     githubUsername: "@username",
     linkedinName: "Your Name",
+    resumeUrl: "/resume.pdf",
   },
   aboutContent: {
     sectionTitle: "About Me",
