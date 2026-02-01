@@ -175,7 +175,7 @@
       "technologies": ["C#", "Unity"],
       "github": "https://github.com/KarmaSora/GameDesign",
       "demo": null,
-      "image": null,
+      "image": "https://github.com/KarmaSora/GameDesign/raw/main/images/Thumbnail.png",
       "featured": true,
       "category": "game"
     }
