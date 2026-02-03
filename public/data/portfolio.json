@@ -139,7 +139,7 @@
       "technologies": ["Java"],
       "github": "https://github.com/KarmaSora/GyaGame",
       "demo": null,
-      "image": null,
+      "image": "https://github.com/KarmaSora/GyaGame/raw/main/GameThumbnail.png",
       "featured": true,
       "category": "game"
     },
@@ -163,7 +163,7 @@
       "technologies": ["C++", "SFML"],
       "github": "https://github.com/KarmaSora/spaceInvadersBTH",
       "demo": null,
-      "image": null,
+      "image": "https://github.com/KarmaSora/spaceInvadersBTH/raw/master/CodePC/Images/GameThumbnail.png",
       "featured": true,
       "category": "game"
     },
