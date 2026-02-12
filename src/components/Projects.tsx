@@ -3,21 +3,23 @@
 import { useState } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
-import { Github, ExternalLink, Gamepad2, Code, Wrench } from "lucide-react";
+import { Github, ExternalLink, Gamepad2, Code, Wrench, Cpu } from "lucide-react";
 import { useProjects } from "./PortfolioProvider";
 import { Project } from "@/lib/types";
 import { cn } from "@/lib/utils";
 
-const categoryIcons = {
+const categoryIcons: Record<string, React.ComponentType<{ className?: string }>> = {
   web: Code,
   game: Gamepad2,
   tool: Wrench,
+  systems: Cpu,
 };
 
-const categoryLabels = {
+const categoryLabels: Record<string, string> = {
   web: "Web Application",
   game: "Game Development",
   tool: "Developer Tool",
+  systems: "Systems Programming",
 };
 
 const containerVariants = {
@@ -62,6 +64,7 @@ export function Projects() {
     { id: "web", label: "Web" },
     { id: "game", label: "Games" },
     { id: "tool", label: "Tools" },
+    { id: "systems", label: "Systems" },
   ];
 
   return (

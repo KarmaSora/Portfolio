@@ -71,7 +71,7 @@ export interface Project {
   demo?: string | null;
   image?: string | null;
   featured: boolean;
-  category: "web" | "game" | "tool";
+  category: "web" | "game" | "tool" | "systems";
 }
 
 export interface SkillCategory {

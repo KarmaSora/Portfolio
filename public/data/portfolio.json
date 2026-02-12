@@ -48,10 +48,31 @@
     ]
   },
   "footerContent": {
-    "tagline": "Software Engineer & Game Developer passionate about creating innovative digital experiences.",
+    "tagline": "Software Engineer focused on systems, compilers, and full-stack development",
     "builtWith": "Built with Next.js & Tailwind"
   },
   "experiences": [
+    
+    {
+      "id": "softhouse-intern",
+      "role": "Software Developer Intern",
+      "company": "Softhouse",
+      "location": "Karlskrona, Sweden",
+      "period": "Jan 2026 - Present",
+      "description": [
+        "Acting as communication responsible within a cross-functional development team of 10–11 full-stack developers",
+        "Serving as the primary interface between the development team, the customer, and the Head of Department",
+        "Contributing in a task-based, full-stack workflow with shared ownership and rotating roles across sprints",
+        "Participating in requirements clarification, implementation, and code reviews within an agile development process"
+      ],
+      "technologies": [
+        "Full-stack Development",
+        "Agile",
+        "Communication",
+        "Code Reviews",
+        "Team Collaboration"
+      ]
+    },
     {
       "id": "trafikverket-intern",
       "role": "Software Developer Intern",
@@ -82,18 +103,6 @@
         "Provided one-on-one mentorship on logic issues and memory management bugs"
       ],
       "technologies": ["C++", "OOP", "Debugging", "Mentoring"]
-    },
-    {
-      "id": "picasso-staff",
-      "role": "Staff Member (Summer Job)",
-      "company": "Picasso",
-      "location": "Båstad, Sweden",
-      "period": "Jun 2021 - Aug 2023",
-      "description": [
-        "Supported daily operations and customer experience in a high-volume environment",
-        "Improved multitasking, time management, and communication under pressure"
-      ],
-      "technologies": ["Customer Service", "Teamwork", "Communication"]
     }
   ],
   "education": [
@@ -119,6 +128,18 @@
     }
   ],
   "projects": [
+    {
+      "id": "compiler-from-scratch",
+      "title": "Compiler from Scratch",
+      "description": "End-to-end compiler including lexer, parser, semantic analysis, CFG-based IR, TAC generation, and a custom virtual machine",
+      "longDescription": "Built an end-to-end compiler in C++ implementing lexical analysis, parsing, semantic analysis, control-flow graph based intermediate representation, three-address code generation, and a custom virtual machine for execution.",
+      "technologies": ["C++"],
+      "github": "https://github.com/KarmaSora/Compiler",
+      "demo": null,
+      "image": null,
+      "featured": true,
+      "category": "systems"
+    },
     {
       "id": "vulnerability-checker",
       "title": "VulnerabilityChecker 2.0",
@@ -150,7 +171,7 @@
       "longDescription": "A Next.js web app for showcasing projects with dynamic listings, detailed views, and kiosk mode support, built with a modern UI and responsive design.",
       "technologies": ["Next.js", "React", "TypeScript", "Tailwind CSS"],
       "github": "https://github.com/KarmaSora/showcaseSERL",
-      "demo": null,
+      "demo": "https://karmasora.github.io/showcaseSERL/",
       "image": "https://raw.githubusercontent.com/KarmaSora/showcaseSERL/main/image.png",
       "featured": true,
       "category": "web"
