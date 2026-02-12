@@ -4,7 +4,7 @@
     "title": "Software Engineer",
     "email": "karammtr@gmail.com",
     "location": "Karlskrona, Sweden",
-    "bio": "Software engineering student with experience in full-stack development, DevOps automation, and game development. I build practical tools, modern web apps, and game projects with a focus on clean code and maintainability.",
+    "bio": "Software engineering student with experience in full-stack development, systems programming, and game development. I build compilers, practical tools, modern web apps, and game projects with a focus on clean code and maintainability.",
     "linkedin": "https://www.linkedin.com/in/karam-matar-b92639293",
     "github": "https://github.com/KarmaSora",
     "profileImage": "/images/Karam1.jpg",
@@ -19,9 +19,9 @@
     "sectionTitle": "About Me",
     "sectionSubtitle": "Who Am I?",
     "paragraphs": [
-      "Hello! I'm Karam Matar, a passionate software engineer and game developer based in Sweden. I specialize in creating robust, scalable applications and immersive gaming experiences.",
-      "My journey in tech began with a fascination for how games were built, which evolved into a deep appreciation for software engineering as a whole. Today, I work across the full stack, from crafting intuitive frontends to designing efficient backend systems.",
-      "When I'm not coding, you'll find me exploring new technologies, contributing to open-source projects, or working on my latest game development venture. I believe in writing clean, maintainable code and building software that makes a difference."
+      "Hello! I'm Karam Matar, a software engineer and game developer based in Sweden. I'm currently completing my B.Sc. in Software Engineering at Blekinge Institute of Technology, with an exchange semester at Newcastle University under my belt.",
+      "My journey in tech began with a fascination for how games were built, which evolved into a deep appreciation for software engineering as a whole. Today, I work across the full stack — from building compilers and systems-level tools to crafting modern web apps and game projects.",
+      "I'm currently interning at Softhouse as a software developer, where I serve as communication responsible in a cross-functional team. I believe in writing clean, maintainable code and building software that makes a real impact."
     ],
     "stats": [
       { "label": "Years Experience", "value": "2+", "icon": "briefcase" },
@@ -52,7 +52,6 @@
     "builtWith": "Built with Next.js & Tailwind"
   },
   "experiences": [
-    
     {
       "id": "softhouse-intern",
       "role": "Software Developer Intern",
@@ -270,6 +269,7 @@
     { "id": "home", "label": "Home", "href": "#home" },
     { "id": "about", "label": "About", "href": "#about" },
     { "id": "experience", "label": "Experience", "href": "#experience" },
+    { "id": "education", "label": "Education", "href": "#education" },
     { "id": "projects", "label": "Projects", "href": "#projects" },
     { "id": "skills", "label": "Skills", "href": "#skills" },
     { "id": "contact", "label": "Contact", "href": "#contact" }
@@ -282,14 +282,21 @@
       "Software Engineer",
       "Software Engineering Student",
       "Game Developer",
+      "Compiler",
+      "Systems Programming",
       "C++",
       "C#",
       "TypeScript",
       "React",
       "Next.js",
+      "Unity",
+      "SFML",
       "Azure DevOps",
+      "Full-stack Developer",
       "Portfolio",
-      "Sweden"
+      "Sweden",
+      "Blekinge Institute of Technology",
+      "Newcastle University"
     ],
     "url": "https://github.com/KarmaSora",
     "locale": "en_US"

@@ -61,6 +61,15 @@ export interface Experience {
   technologies: string[];
 }
 
+export interface Education {
+  id: string;
+  degree: string;
+  school: string;
+  location: string;
+  period: string;
+  details: string[];
+}
+
 export interface Project {
   id: string;
   title: string;
@@ -101,6 +110,7 @@ export interface PortfolioData {
   skillsContent: SkillsContent;
   footerContent: FooterContent;
   experiences: Experience[];
+  education: Education[];
   projects: Project[];
   skillCategories: SkillCategory[];
   navItems: NavItem[];
@@ -154,6 +164,7 @@ export const defaultPortfolioData: PortfolioData = {
     builtWith: "Built with Next.js & Tailwind",
   },
   experiences: [],
+  education: [],
   projects: [],
   skillCategories: [],
   navItems: [

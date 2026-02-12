@@ -109,6 +109,11 @@ export function useExperiences() {
   return data.experiences;
 }
 
+export function useEducation() {
+  const { data } = usePortfolio();
+  return data.education;
+}
+
 export function useProjects() {
   const { data } = usePortfolio();
   return data.projects;
