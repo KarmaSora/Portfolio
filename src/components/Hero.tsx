@@ -47,7 +47,7 @@ export function Hero() {
   return (
     <section
       id="home"
-      className="relative min-h-screen flex items-center justify-center overflow-hidden"
+      className="relative min-h-screen flex items-start md:items-center justify-center overflow-x-hidden py-24 sm:py-28 md:py-0"
     >
       {/* Background Effects */}
       <div className="absolute inset-0 pointer-events-none">
@@ -130,13 +130,13 @@ export function Hero() {
           {/* Social Links */}
           <motion.div
             variants={itemVariants}
-            className="flex items-center justify-center gap-4 mb-16"
+            className="flex flex-col sm:flex-row sm:flex-wrap items-stretch sm:items-center justify-center gap-3 sm:gap-4 mb-12 sm:mb-16 w-full max-w-xl mx-auto"
           >
             <motion.a
               href={personalInfo.github}
               target="_blank"
               rel="noopener noreferrer"
-              className="group flex items-center gap-2 px-6 py-3 rounded-xl bg-card border border-border hover:border-primary/50 transition-all duration-300"
+              className="group flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-card border border-border hover:border-primary/50 transition-all duration-300 w-full sm:w-auto"
               whileHover={{ scale: 1.05, y: -2 }}
               whileTap={{ scale: 0.98 }}
             >
@@ -147,7 +147,7 @@ export function Hero() {
               href={personalInfo.linkedin}
               target="_blank"
               rel="noopener noreferrer"
-              className="group flex items-center gap-2 px-6 py-3 rounded-xl bg-card border border-border hover:border-primary/50 transition-all duration-300"
+              className="group flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-card border border-border hover:border-primary/50 transition-all duration-300 w-full sm:w-auto"
               whileHover={{ scale: 1.05, y: -2 }}
               whileTap={{ scale: 0.98 }}
             >
@@ -156,7 +156,7 @@ export function Hero() {
             </motion.a>
             <motion.a
               href={`mailto:${personalInfo.email}`}
-              className="group flex items-center gap-2 px-6 py-3 rounded-xl bg-primary text-primary-foreground transition-all duration-300"
+              className="group flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-primary text-primary-foreground transition-all duration-300 w-full sm:w-auto"
               whileHover={{ scale: 1.05, y: -2 }}
               whileTap={{ scale: 0.98 }}
             >
@@ -166,7 +166,7 @@ export function Hero() {
             <motion.a
               href={withBasePath(personalInfo.resumeUrl)}
               download
-              className="group flex items-center gap-2 px-6 py-3 rounded-xl bg-card border border-border hover:border-primary/50 transition-all duration-300"
+              className="group flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-card border border-border hover:border-primary/50 transition-all duration-300 w-full sm:w-auto"
               whileHover={{ scale: 1.05, y: -2 }}
               whileTap={{ scale: 0.98 }}
             >

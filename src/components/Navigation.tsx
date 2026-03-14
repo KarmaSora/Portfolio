@@ -74,7 +74,7 @@ export function Navigation({ kioskMode, onKioskToggle }: NavigationProps) {
         kioskMode && "kiosk-hidden",
       )}
     >
-      <nav className="container mx-auto px-4 sm:px-6 flex items-center justify-between">
+      <nav className="container mx-auto px-4 sm:px-6 flex items-center justify-between gap-3">
         {/* Logo */}
         <a
           href="#home"
@@ -82,13 +82,13 @@ export function Navigation({ kioskMode, onKioskToggle }: NavigationProps) {
             e.preventDefault();
             handleNavClick("#home");
           }}
-          className="text-xl font-bold font-outfit tracking-tight group"
+          className="text-lg sm:text-xl font-bold font-outfit tracking-tight group min-w-0"
         >
           <span className="text-foreground group-hover:text-primary transition-colors">
             {firstName.charAt(0)}
           </span>
           <span className="text-primary">.</span>
-          <span className="text-muted-foreground group-hover:text-foreground transition-colors">
+          <span className="text-muted-foreground group-hover:text-foreground transition-colors truncate inline-block max-w-[9rem] sm:max-w-none align-bottom">
             {lastName}
           </span>
         </a>
@@ -154,13 +154,13 @@ export function Navigation({ kioskMode, onKioskToggle }: NavigationProps) {
       <AnimatePresence>
         {isOpen && (
           <motion.div
-            className="md:hidden absolute top-full left-0 right-0 bg-background/95 backdrop-blur-xl border-b border-border overflow-hidden"
+            className="md:hidden absolute top-full left-0 right-0 bg-background/95 backdrop-blur-xl border-b border-border max-h-[calc(100dvh-4rem)] overflow-y-auto overflow-x-hidden"
             initial={{ height: 0, opacity: 0 }}
             animate={{ height: "auto", opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
             transition={{ duration: 0.2 }}
           >
-            <div className="container mx-auto px-6 py-4 flex flex-col gap-4">
+            <div className="container mx-auto px-4 sm:px-6 py-4 pb-6 flex flex-col gap-4">
               {navItems.map((item) => (
                 <a
                   key={item.id}

@@ -107,7 +107,7 @@ export function About() {
             </div>
 
             {/* Stats Grid */}
-            <div className="grid grid-cols-3 gap-4 pt-8">
+            <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 pt-8">
               {aboutContent.stats.map((stat: Stat, index: number) => {
                 const IconComponent = iconMap[stat.icon] || Code;
                 return (

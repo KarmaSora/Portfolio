@@ -95,7 +95,7 @@ export function Footer() {
             © {currentYear} {personalInfo.name}. All rights reserved.
           </p>
           <p className="text-sm text-muted-foreground flex items-center gap-1">
-            Built with <Heart className="w-4 h-4 text-red-500" /> using Next.js & Tailwind
+            Built with Next.js & Tailwind
           </p>
           <button
             onClick={scrollToTop}

@@ -93,30 +93,32 @@ export function Projects() {
           <div className="w-20 h-1 bg-gradient-to-r from-primary to-purple-400 mx-auto rounded-full mb-8" />
 
           {/* Filter Tabs */}
-          <div className="inline-flex items-center gap-2 p-1 glass-card rounded-full">
-            {filters.map((filterOption) => (
-              <motion.button
-                key={filterOption.id}
-                onClick={() => setFilter(filterOption.id)}
-                className={cn(
-                  "px-4 py-2 text-sm font-medium rounded-full transition-all duration-300 relative",
-                  filter === filterOption.id
-                    ? "text-primary-foreground"
-                    : "text-muted-foreground hover:text-foreground",
-                )}
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
-              >
-                {filter === filterOption.id && (
-                  <motion.div
-                    layoutId="activeFilter"
-                    className="absolute inset-0 bg-primary rounded-full shadow-lg shadow-primary/30"
-                    transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
-                  />
-                )}
-                <span className="relative z-10">{filterOption.label}</span>
-              </motion.button>
-            ))}
+          <div className="max-w-full overflow-x-auto pb-1">
+            <div className="inline-flex items-center gap-2 p-1 glass-card rounded-full min-w-max">
+              {filters.map((filterOption) => (
+                <motion.button
+                  key={filterOption.id}
+                  onClick={() => setFilter(filterOption.id)}
+                  className={cn(
+                    "px-4 py-2 text-sm font-medium rounded-full transition-all duration-300 relative whitespace-nowrap",
+                    filter === filterOption.id
+                      ? "text-primary-foreground"
+                      : "text-muted-foreground hover:text-foreground",
+                  )}
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
+                >
+                  {filter === filterOption.id && (
+                    <motion.div
+                      layoutId="activeFilter"
+                      className="absolute inset-0 bg-primary rounded-full shadow-lg shadow-primary/30"
+                      transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
+                    />
+                  )}
+                  <span className="relative z-10">{filterOption.label}</span>
+                </motion.button>
+              ))}
+            </div>
           </div>
         </motion.div>
 
