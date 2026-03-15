@@ -4,7 +4,7 @@
     "title": "Software Engineer",
     "email": "karammtr@gmail.com",
     "location": "Karlskrona, Sweden",
-    "bio": "Software engineering student with experience in full-stack development, systems programming, and game development. I build compilers, practical tools, modern web apps, and game projects with a focus on clean code and maintainability.",
+    "bio": "Software Engineering student at Blekinge Institute of Technology with a focus on low-level software, compilers, and full-stack systems. Currently interning as a Software Developer and communication lead at Softhouse.",
     "linkedin": "https://www.linkedin.com/in/karam-matar-b92639293",
     "github": "https://github.com/KarmaSora",
     "profileImage": "/images/Karam1.jpg",
@@ -19,14 +19,13 @@
     "sectionTitle": "About Me",
     "sectionSubtitle": "Who Am I?",
     "paragraphs": [
-      "Hello! I'm Karam Matar, a software engineer and game developer based in Sweden. I'm currently completing my B.Sc. in Software Engineering at Blekinge Institute of Technology, with an exchange semester at Newcastle University under my belt.",
-      "My journey in tech began with a fascination for how games were built, which evolved into a deep appreciation for software engineering as a whole. Today, I work across the full stack — from building compilers and systems-level tools to crafting modern web apps and game projects.",
-      "I'm currently interning at Softhouse as a software developer, where I serve as communication responsible in a cross-functional team. I believe in writing clean, maintainable code and building software that makes a real impact."
+      "Hello! I'm Karam Matar, a software engineer based in Sweden. I am currently completing my B.Sc. in Software Engineering at Blekinge Institute of Technology, following a recent exchange semester at Newcastle University focused on security and AI.",
+      "Currently, I am a Software Developer Intern at Softhouse, where I serve as the main point of contact between developers and customers. I am also working on my thesis with Iquest, developing an autonomous AI feedback loop for automated bug fixing and pull request generation."
     ],
     "stats": [
-      { "label": "Years Experience", "value": "2+", "icon": "briefcase" },
+      { "label": "Years Experience", "value": "1+", "icon": "briefcase" },
       { "label": "Projects Completed", "value": "6+", "icon": "code" },
-      { "label": "Technologies", "value": "25+", "icon": "graduation" }
+      { "label": "Technologies", "value": "20+", "icon": "graduation" }
     ]
   },
   "contactContent": {
@@ -59,10 +58,9 @@
       "location": "Karlskrona, Sweden",
       "period": "Jan 2026 - Present",
       "description": [
-        "Acting as communication responsible within a cross-functional development team of 10–11 full-stack developers",
-        "Serving as the primary interface between the development team, the customer, and the Head of Department",
-        "Contributing in a task-based, full-stack workflow with shared ownership and rotating roles across sprints",
-        "Participating in requirements clarification, implementation, and code reviews within an agile development process"
+        "Serving as the main point of contact between a team of 11 full-stack developers, the customer, and the Head of Department to coordinate requirements and project updates.",
+        "Working in a full-stack environment with rotating roles to develop features, handle technical documentation, and ensure clear communication within the team.",
+        "Contributing to requirements analysis, coding, and code reviews as part of an agile development process."
       ],
       "technologies": [
         "Full-stack Development",
@@ -79,9 +77,9 @@
       "location": "Remote via Blekinge Institute of Technology, Sweden",
       "period": "Jan 2025 - May 2025",
       "description": [
-        "Developed an Azure DevOps pipeline task to detect third-party dependency vulnerabilities across repositories",
-        "Automated SBOM generation (JSON) to improve dependency transparency and compliance",
-        "Collaborated with stakeholders to align the solution with security and CI/CD requirements"
+        "Collaborated with a team of six to build a tool for Trafikverket that automatically checks for vulnerabilities in third-party packages.",
+        "Refactored legacy PowerShell script into JavaScript to create an Azure DevOps pipeline task that generates SBOM files in JSON format.",
+        "Took initiative in team communication by keeping absent team members informed and actively following up to help resolve blockers during development."
       ],
       "technologies": [
         "PowerShell",
@@ -98,8 +96,9 @@
       "location": "Karlskrona, Sweden",
       "period": "Sep 2024 - Jan 2025",
       "description": [
-        "Assisted students with debugging and optimization in C++, strengthening OOP understanding",
-        "Provided one-on-one mentorship on logic issues and memory management bugs"
+        "Mentored first year students in C++ through lab supervision and one on one tutoring, focusing on core programming logic and best practices.",
+        "Assisted students in debugging and mastering low-level concepts, including pointers, memory management, and object-oriented design.",
+        "Guided students in analyzing program behavior and performance to ensure code correctness and efficiency."
       ],
       "technologies": ["C++", "OOP", "Debugging", "Mentoring"]
     }
@@ -112,7 +111,8 @@
       "location": "Karlskrona, Sweden",
       "period": "Aug 2023 - Jun 2026 (expected)",
       "details": [
-        "Relevant coursework: Compiler Design, Operating Systems, Algorithms & Data Structures, Linear Algebra"
+        "Focus: systems programming, memory management, data structures, and building efficient software.",
+        "Relevant Coursework: Compiler Design, Operating Systems, Algorithms & Data Structures, Linear Algebra."
       ]
     },
     {
@@ -122,7 +122,9 @@
       "location": "Newcastle upon Tyne, United Kingdom",
       "period": "Sep 2025 - Jan 2026 (completed)",
       "details": [
-        "Relevant coursework: Computer Vision & AI, Algorithm Design and Analysis, Security Programming, Game Design"
+        "Focus: data analysis and cleaning datasets, basic machine learning algorithms, secure software development, and threat analysis.",
+        "Systems design for games, focusing on prototyping mechanics and visual communication.",
+        "Relevant Coursework: Computer Vision & AI, Algorithm Design and Analysis, Security Programming, Game Design."
       ]
     }
   ],
@@ -130,7 +132,7 @@
     {
       "id": "compiler-from-scratch",
       "title": "Compiler from Scratch",
-      "description": "End-to-end compiler including lexer, parser, semantic analysis, CFG-based IR, TAC generation, and a custom virtual machine",
+      "description": "End-to-end compiler including lexer, parser, semantic analysis, CFG-based IR, TAC generation, and a custom virtual machine.",
       "longDescription": "Built an end-to-end compiler in C++ implementing lexical analysis, parsing, semantic analysis, control-flow graph based intermediate representation, three-address code generation, and a custom virtual machine for execution.",
       "technologies": ["C++"],
       "github": "https://github.com/KarmaSora/Compiler",
@@ -142,8 +144,8 @@
     {
       "id": "vulnerability-checker",
       "title": "VulnerabilityChecker 2.0",
-      "description": "Azure DevOps task that scans repositories for vulnerabilities in third-party packages",
-      "longDescription": "An Azure DevOps pipeline task that detects third-party dependency vulnerabilities across repositories and generates an SBOM (JSON) for improved dependency transparency and compliance.",
+      "description": "Refactored legacy PowerShell script into JavaScript to create an Azure DevOps pipeline task that scans third-party packages for vulnerabilities and generates SBOM files.",
+      "longDescription": "Designed and implemented an Azure DevOps pipeline task for detecting vulnerabilities in third-party dependencies across multiple repositories, parsing dependency manifests, querying vulnerability data, and generating Software Bill of Materials (SBOM) files in JSON format for CI/CD workflows.",
       "technologies": ["PowerShell", "JavaScript", "Azure DevOps"],
       "github": "https://github.com/KarmaSora/Trafikverket",
       "demo": null,
@@ -154,7 +156,7 @@
     {
       "id": "gyagame",
       "title": "GyaGame",
-      "description": "2D semi-open-world shooter game built in Java using a provided graphics library",
+      "description": "Developed a 2D semi-open-world shooter game in Java using a provided graphics library, focusing on game logic, entity management, and player interaction.",
       "longDescription": "A Java game project featuring core gameplay systems such as movement, shooting, and game logic, built using a provided graphics library.",
       "technologies": ["Java"],
       "github": "https://github.com/KarmaSora/GyaGame",
@@ -166,8 +168,8 @@
     {
       "id": "showcase-serl",
       "title": "ShowcaseSERL",
-      "description": "Next.js web app for showcasing projects with dynamic listings, detailed views, and kiosk mode",
-      "longDescription": "A Next.js web app for showcasing projects with dynamic listings, detailed views, and kiosk mode support, built with a modern UI and responsive design.",
+      "description": "Built a full-stack web application to showcase student and researcher projects. Features include dynamic listings, detailed project views, and a kiosk mode, with a focus on component-based architecture and clean data handling.",
+      "longDescription": "A Next.js web app for showcasing projects with dynamic listings, detailed views, and kiosk mode support, built with a focus on component-based architecture and clean data handling.",
       "technologies": ["Next.js", "React", "TypeScript", "Tailwind CSS"],
       "github": "https://github.com/KarmaSora/showcaseSERL",
       "demo": "https://karmasora.github.io/showcaseSERL/",
@@ -178,7 +180,7 @@
     {
       "id": "space-invaders",
       "title": "Space Invaders",
-      "description": "Space Invaders clone built in C++ using SFML",
+      "description": "Created a Space Invaders game in C++ using the SFML graphics library, implementing core game loops, collision detection, and rendering.",
       "longDescription": "A Space Invaders clone built in C++ using SFML, focusing on core game loop, input handling, collision logic, and classic arcade gameplay.",
       "technologies": ["C++", "SFML"],
       "github": "https://github.com/KarmaSora/spaceInvadersBTH",
@@ -190,8 +192,8 @@
     {
       "id": "death-marching-souls",
       "title": "Death Marching Souls",
-      "description": "3D Unity game featuring traversal, progression, and boss combat",
-      "longDescription": "A 3D Unity game featuring traversal, progression, and boss combat, built to practice gameplay systems and game design implementation in Unity.",
+      "description": "Developed a 3D action-platformer featuring player progression, enemy AI, boss encounters, and UI systems, implementing health management, experience-based leveling, and modular enemy behavior.",
+      "longDescription": "A 3D Unity game featuring traversal, progression, and boss combat, built to practice gameplay systems including health management, experience-based leveling, and modular enemy behavior.",
       "technologies": ["C#", "Unity"],
       "github": "https://github.com/KarmaSora/GameDesign",
       "demo": null,
@@ -204,56 +206,32 @@
     {
       "id": "spoken-languages",
       "name": "Languages",
-      "skills": ["Arabic (Native)", "Swedish (Fluent)", "English (Fluent)"]
+      "skills": ["Swedish (Fluent)", "English (Fluent)", "Arabic (Native)"]
     },
     {
       "id": "programming",
       "name": "Programming",
-      "skills": [
-        "Java",
-        "Python",
-        "C++",
-        "C",
-        "C#",
-        "PHP",
-        "JavaScript",
-        "TypeScript"
-      ]
+      "skills": ["C++", "Java", "Python", "C#", "JavaScript", "TypeScript"]
     },
     {
-      "id": "frontend",
-      "name": "Frontend",
-      "skills": [
-        "HTML",
-        "CSS/SCSS",
-        "Tailwind CSS",
-        "React",
-        "Next.js",
-        "Svelte",
-        "SvelteKit"
-      ]
+      "id": "frameworks",
+      "name": "Frameworks",
+      "skills": ["React", "Next.js", "SvelteKit", "Express.js", "Node.js", "Prisma"]
     },
     {
-      "id": "backend",
-      "name": "Backend",
-      "skills": [
-        "Node.js",
-        "Express.js",
-        "Flask",
-        "MySQL",
-        "MariaDB",
-        "PostgreSQL"
-      ]
+      "id": "web-styling",
+      "name": "Web/Styling",
+      "skills": ["HTML5", "CSS3", "Tailwind CSS", "SCSS"]
+    },
+    {
+      "id": "devops-data",
+      "name": "DevOps/Data",
+      "skills": ["Azure DevOps", "CI/CD", "Git", "MySQL", "MongoDB"]
     },
     {
       "id": "game-dev",
-      "name": "Game Dev & Graphics",
+      "name": "Game Dev",
       "skills": ["Unity", "SFML"]
-    },
-    {
-      "id": "tools",
-      "name": "Tools",
-      "skills": ["Git", "GitHub", "Azure DevOps", "CI/CD pipelines"]
     }
   ],
   "achievements": [
