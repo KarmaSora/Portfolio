@@ -65,16 +65,13 @@ export function Projects() {
           </div>
         </div>
 
-        {/* Projects — first featured project gets full width */}
+        {/* Project grid */}
         <AnimatePresence mode="popLayout">
           <motion.div
             className="grid md:grid-cols-2 gap-6"
             layout
           >
             {filteredProjects.map((project, index) => {
-              // First project in the list spans full width for asymmetry
-              const isWide = index === 0 && filteredProjects.length > 2;
-
               return (
                 <motion.div
                   key={project.id}
@@ -83,33 +80,21 @@ export function Projects() {
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0 }}
                   transition={{ duration: 0.3, delay: index * 0.05 }}
-                  className={cn(
-                    "project-card glass-card rounded-xl overflow-hidden group",
-                    isWide && "md:col-span-2"
-                  )}
+                  className="project-card card rounded-xl overflow-hidden group"
                 >
-                  <div className={cn(
-                    isWide ? "md:grid md:grid-cols-2" : "flex flex-col"
-                  )}>
-                    {/* Thumbnail */}
-                    <div className={cn(
-                      "relative bg-secondary overflow-hidden",
-                      isWide ? "aspect-video md:aspect-auto" : "aspect-video"
-                    )}>
-                      {project.image ? (
+                  <div className="flex flex-col">
+                    {/* Thumbnail — only shown if project has an image */}
+                    {project.image && (
+                      <div className="relative bg-secondary overflow-hidden aspect-video">
                         <Image
                           src={project.image}
                           alt={project.title}
                           fill
                           className="object-cover transition-transform duration-500 group-hover:scale-[1.03]"
-                          sizes={isWide ? "100vw" : "(max-width: 768px) 100vw, 50vw"}
+                          sizes="(max-width: 768px) 100vw, 50vw"
                         />
-                      ) : (
-                        <div className="absolute inset-0 flex items-center justify-center text-muted-foreground/40">
-                          <span className="text-sm">No preview</span>
-                        </div>
-                      )}
-                    </div>
+                      </div>
+                    )}
 
                     {/* Content */}
                     <div className="p-6">
@@ -145,7 +130,7 @@ export function Projects() {
                       </div>
 
                       <p className="text-muted-foreground text-sm mb-4 leading-relaxed">
-                        {isWide ? project.longDescription : project.description}
+                        {project.description}
                       </p>
 
                       {/* Tech tags */}

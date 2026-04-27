@@ -128,11 +128,11 @@
 }
 
 /* ──────────────────────────────────────────────
-   Cards — clean, paper-like. No glassmorphism.
+   Cards — clean, paper-like.
    ────────────────────────────────────────────── */
 
 @layer utilities {
-  .glass-card {
+  .card {
     background: hsl(var(--card));
     border: 1px solid hsl(var(--border));
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);

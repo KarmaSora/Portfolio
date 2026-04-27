@@ -31,7 +31,7 @@ export function Education() {
             <div
               key={edu.id}
               className={cn(
-                "glass-card rounded-xl p-6 md:p-8 transition-all duration-500",
+                "card rounded-xl p-6 md:p-8 transition-all duration-500",
                 isInView ? "opacity-100" : "opacity-0"
               )}
               style={{ transitionDelay: `${index * 150}ms` }}

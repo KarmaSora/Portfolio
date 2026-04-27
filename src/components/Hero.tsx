@@ -32,22 +32,12 @@ export function Hero() {
     >
       <div className="container mx-auto px-6">
         <motion.div
-          className="max-w-3xl"
+          className="max-w-3xl mx-auto text-center"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.6 }}
         >
-          {/* Greeting — left-aligned, casual */}
-          <motion.p
-            className="text-muted-foreground text-lg mb-6"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.1 }}
-          >
-            Hey, I&apos;m
-          </motion.p>
-
-          {/* Name — large, left-aligned, confident */}
+          {/* Name */}
           <motion.h1
             className="text-5xl md:text-7xl lg:text-8xl font-bold font-outfit mb-4 leading-[0.95]"
             initial={{ opacity: 0, y: 10 }}
@@ -70,7 +60,7 @@ export function Hero() {
 
           {/* Bio — left-aligned prose, reads like a human wrote it */}
           <motion.p
-            className="text-base md:text-lg text-muted-foreground/80 max-w-xl mb-10 leading-relaxed"
+            className="text-base md:text-lg text-muted-foreground/80 max-w-xl mx-auto mb-10 leading-relaxed"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.4 }}
@@ -80,7 +70,7 @@ export function Hero() {
 
           {/* Links — inline, casual row */}
           <motion.div
-            className="flex flex-wrap items-center gap-3 mb-16"
+            className="flex flex-wrap items-center justify-center gap-3 mb-16"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.5 }}

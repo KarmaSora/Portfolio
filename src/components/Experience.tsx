@@ -35,7 +35,7 @@ export function Experience() {
             <div
               key={exp.id}
               className={cn(
-                "glass-card rounded-xl p-6 md:p-8 transition-all duration-500 hover:shadow-md",
+                "card rounded-xl p-6 md:p-8 transition-all duration-500 hover:shadow-md",
                 isInView ? "opacity-100" : "opacity-0"
               )}
               style={{ transitionDelay: `${index * 100}ms` }}

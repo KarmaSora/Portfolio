@@ -25,7 +25,7 @@ export function About() {
             )}
           >
             <div className="relative aspect-[4/5] max-w-sm mx-auto lg:mx-0">
-              <div className="relative glass-card rounded-2xl overflow-hidden h-full">
+              <div className="relative card rounded-2xl overflow-hidden h-full">
                 {personalInfo.profileImage ? (
                   <Image
                     src={withBasePath(personalInfo.profileImage)}
@@ -45,7 +45,7 @@ export function About() {
               </div>
 
               {/* Location — small, tucked into corner */}
-              <div className="absolute -bottom-3 -right-3 px-3 py-1.5 glass-card rounded-lg text-xs flex items-center gap-1.5 text-muted-foreground">
+              <div className="absolute -bottom-3 -right-3 px-3 py-1.5 card rounded-lg text-xs flex items-center gap-1.5 text-muted-foreground">
                 <MapPin className="w-3 h-3" />
                 {personalInfo.location}
               </div>

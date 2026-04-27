@@ -23,15 +23,27 @@
       "Currently, I am a Software Developer Intern at Softhouse, where I serve as the main point of contact between developers and customers. I am also working on my thesis with Iquest, developing an autonomous AI feedback loop for automated bug fixing and pull request generation."
     ],
     "stats": [
-      { "label": "Years Experience", "value": "1+", "icon": "briefcase" },
-      { "label": "Projects Completed", "value": "6+", "icon": "code" },
-      { "label": "Technologies", "value": "20+", "icon": "graduation" }
+      {
+        "label": "Years Experience",
+        "value": "1+",
+        "icon": "briefcase"
+      },
+      {
+        "label": "Projects Completed",
+        "value": "6+",
+        "icon": "code"
+      },
+      {
+        "label": "Technologies",
+        "value": "20+",
+        "icon": "graduation"
+      }
     ]
   },
   "contactContent": {
     "sectionTitle": "Get In Touch",
     "sectionSubtitle": "Let's Work Together",
-    "sectionDescription": "I'm always open to discussing new projects, creative ideas, or opportunities to be part of something amazing. Feel free to reach out!",
+    "sectionDescription": "Feel free to reach out! best way to reach me is through email. ",
     "ctaTitle": "Ready to Start a Project?",
     "ctaDescription": "Whether you have a question or just want to say hi, I'll try my best to get back to you as soon as possible!",
     "ctaButtonText": "Send Me an Email"
@@ -100,7 +112,12 @@
         "Assisted students in debugging and mastering low-level concepts, including pointers, memory management, and object-oriented design.",
         "Guided students in analyzing program behavior and performance to ensure code correctness and efficiency."
       ],
-      "technologies": ["C++", "OOP", "Debugging", "Mentoring"]
+      "technologies": [
+        "C++",
+        "OOP",
+        "Debugging",
+        "Mentoring"
+      ]
     }
   ],
   "education": [
@@ -134,7 +151,9 @@
       "title": "Compiler from Scratch",
       "description": "End-to-end compiler including lexer, parser, semantic analysis, CFG-based IR, TAC generation, and a custom virtual machine.",
       "longDescription": "Built an end-to-end compiler in C++ implementing lexical analysis, parsing, semantic analysis, control-flow graph based intermediate representation, three-address code generation, and a custom virtual machine for execution.",
-      "technologies": ["C++"],
+      "technologies": [
+        "C++"
+      ],
       "github": "https://github.com/KarmaSora/Compiler",
       "demo": null,
       "image": null,
@@ -146,7 +165,11 @@
       "title": "VulnerabilityChecker 2.0",
       "description": "Refactored legacy PowerShell script into JavaScript to create an Azure DevOps pipeline task that scans third-party packages for vulnerabilities and generates SBOM files.",
       "longDescription": "Designed and implemented an Azure DevOps pipeline task for detecting vulnerabilities in third-party dependencies across multiple repositories, parsing dependency manifests, querying vulnerability data, and generating Software Bill of Materials (SBOM) files in JSON format for CI/CD workflows.",
-      "technologies": ["PowerShell", "JavaScript", "Azure DevOps"],
+      "technologies": [
+        "PowerShell",
+        "JavaScript",
+        "Azure DevOps"
+      ],
       "github": "https://github.com/KarmaSora/Trafikverket",
       "demo": null,
       "image": null,
@@ -158,7 +181,9 @@
       "title": "GyaGame",
       "description": "Developed a 2D semi-open-world shooter game in Java using a provided graphics library, focusing on game logic, entity management, and player interaction.",
       "longDescription": "A Java game project featuring core gameplay systems such as movement, shooting, and game logic, built using a provided graphics library.",
-      "technologies": ["Java"],
+      "technologies": [
+        "Java"
+      ],
       "github": "https://github.com/KarmaSora/GyaGame",
       "demo": null,
       "image": "https://github.com/KarmaSora/GyaGame/raw/main/GameThumbnail.png",
@@ -170,7 +195,12 @@
       "title": "ShowcaseSERL",
       "description": "Built a full-stack web application to showcase student and researcher projects. Features include dynamic listings, detailed project views, and a kiosk mode, with a focus on component-based architecture and clean data handling.",
       "longDescription": "A Next.js web app for showcasing projects with dynamic listings, detailed views, and kiosk mode support, built with a focus on component-based architecture and clean data handling.",
-      "technologies": ["Next.js", "React", "TypeScript", "Tailwind CSS"],
+      "technologies": [
+        "Next.js",
+        "React",
+        "TypeScript",
+        "Tailwind CSS"
+      ],
       "github": "https://github.com/KarmaSora/showcaseSERL",
       "demo": "https://karmasora.github.io/showcaseSERL/",
       "image": "https://raw.githubusercontent.com/KarmaSora/showcaseSERL/main/image.png",
@@ -182,7 +212,10 @@
       "title": "Space Invaders",
       "description": "Created a Space Invaders game in C++ using the SFML graphics library, implementing core game loops, collision detection, and rendering.",
       "longDescription": "A Space Invaders clone built in C++ using SFML, focusing on core game loop, input handling, collision logic, and classic arcade gameplay.",
-      "technologies": ["C++", "SFML"],
+      "technologies": [
+        "C++",
+        "SFML"
+      ],
       "github": "https://github.com/KarmaSora/spaceInvadersBTH",
       "demo": null,
       "image": "https://github.com/KarmaSora/spaceInvadersBTH/raw/master/CodePC/Images/GameThumbnail.png",
@@ -194,7 +227,10 @@
       "title": "Death Marching Souls",
       "description": "Developed a 3D action-platformer featuring player progression, enemy AI, boss encounters, and UI systems, implementing health management, experience-based leveling, and modular enemy behavior.",
       "longDescription": "A 3D Unity game featuring traversal, progression, and boss combat, built to practice gameplay systems including health management, experience-based leveling, and modular enemy behavior.",
-      "technologies": ["C#", "Unity"],
+      "technologies": [
+        "C#",
+        "Unity"
+      ],
       "github": "https://github.com/KarmaSora/GameDesign",
       "demo": null,
       "image": "https://github.com/KarmaSora/GameDesign/raw/main/images/Thumbnail.png",
@@ -206,32 +242,64 @@
     {
       "id": "spoken-languages",
       "name": "Languages",
-      "skills": ["Swedish (Fluent)", "English (Fluent)", "Arabic (Native)"]
+      "skills": [
+        "Swedish (Fluent)",
+        "English (Fluent)",
+        "Arabic (Native)"
+      ]
     },
     {
       "id": "programming",
       "name": "Programming",
-      "skills": ["C++", "Java", "Python", "C#", "JavaScript", "TypeScript"]
+      "skills": [
+        "C++",
+        "Java",
+        "Python",
+        "C#",
+        "JavaScript",
+        "TypeScript"
+      ]
     },
     {
       "id": "frameworks",
       "name": "Frameworks",
-      "skills": ["React", "Next.js", "SvelteKit", "Express.js", "Node.js", "Prisma"]
+      "skills": [
+        "React",
+        "Next.js",
+        "SvelteKit",
+        "Express.js",
+        "Node.js",
+        "Prisma"
+      ]
     },
     {
       "id": "web-styling",
       "name": "Web/Styling",
-      "skills": ["HTML5", "CSS3", "Tailwind CSS", "SCSS"]
+      "skills": [
+        "HTML5",
+        "CSS3",
+        "Tailwind CSS",
+        "SCSS"
+      ]
     },
     {
       "id": "devops-data",
       "name": "DevOps/Data",
-      "skills": ["Azure DevOps", "CI/CD", "Git", "MySQL", "MongoDB"]
+      "skills": [
+        "Azure DevOps",
+        "CI/CD",
+        "Git",
+        "MySQL",
+        "MongoDB"
+      ]
     },
     {
       "id": "game-dev",
       "name": "Game Dev",
-      "skills": ["Unity", "SFML"]
+      "skills": [
+        "Unity",
+        "SFML"
+      ]
     }
   ],
   "achievements": [
@@ -244,13 +312,41 @@
     }
   ],
   "navItems": [
-    { "id": "home", "label": "Home", "href": "#home" },
-    { "id": "about", "label": "About", "href": "#about" },
-    { "id": "experience", "label": "Experience", "href": "#experience" },
-    { "id": "education", "label": "Education", "href": "#education" },
-    { "id": "projects", "label": "Projects", "href": "#projects" },
-    { "id": "skills", "label": "Skills", "href": "#skills" },
-    { "id": "contact", "label": "Contact", "href": "#contact" }
+    {
+      "id": "home",
+      "label": "Home",
+      "href": "#home"
+    },
+    {
+      "id": "about",
+      "label": "About",
+      "href": "#about"
+    },
+    {
+      "id": "experience",
+      "label": "Experience",
+      "href": "#experience"
+    },
+    {
+      "id": "education",
+      "label": "Education",
+      "href": "#education"
+    },
+    {
+      "id": "projects",
+      "label": "Projects",
+      "href": "#projects"
+    },
+    {
+      "id": "skills",
+      "label": "Skills",
+      "href": "#skills"
+    },
+    {
+      "id": "contact",
+      "label": "Contact",
+      "href": "#contact"
+    }
   ],
   "seo": {
     "title": "Karam Matar | Software Engineer & Game Developer",
