@@ -22,6 +22,7 @@ export function Projects() {
 
   const filterLabels: Record<string, string> = {
     all: "All",
+    ai: "AI",
     web: "Web",
     game: "Games",
     tool: "Tools",

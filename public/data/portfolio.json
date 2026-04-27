@@ -4,7 +4,7 @@
     "title": "Software Engineer",
     "email": "karammtr@gmail.com",
     "location": "Karlskrona, Sweden",
-    "bio": "Software Engineering student at Blekinge Institute of Technology with a focus on low-level software, compilers, and full-stack systems. Currently interning as a Software Developer and communication lead at Softhouse.",
+    "bio": "Software developer with experience in agile development and full-stack systems. Proficient in C++, Java, and SQL, with a background in low-level software and security-focused DevOps tooling. Currently interning at Softhouse and writing my bachelor thesis on an AI-driven feedback loop in CI/CD pipelines.",
     "linkedin": "https://www.linkedin.com/in/karam-matar-b92639293",
     "github": "https://github.com/KarmaSora",
     "profileImage": "/images/Karam1.jpg",
@@ -13,14 +13,14 @@
     "initials": "KM",
     "githubUsername": "@KarmaSora",
     "linkedinName": "Karam Matar",
-    "resumeUrl": "/resume.pdf"
+    "resumeUrl": "/Karam_CV-8.pdf"
   },
   "aboutContent": {
     "sectionTitle": "About Me",
     "sectionSubtitle": "Who Am I?",
     "paragraphs": [
       "Hello! I'm Karam Matar, a software engineer based in Sweden. I am currently completing my B.Sc. in Software Engineering at Blekinge Institute of Technology, following a recent exchange semester at Newcastle University focused on security and AI.",
-      "Currently, I am a Software Developer Intern at Softhouse, where I serve as the main point of contact between developers and customers. I am also working on my thesis with Iquest, developing an autonomous AI feedback loop for automated bug fixing and pull request generation."
+      "Currently, I am a Software Developer Intern at Softhouse, where I serve as the main point of contact between developers and customers. I am also finishing my bachelor thesis in collaboration with a company, designing and evaluating an AI-driven task-to-code feedback loop that integrates into CI/CD pipelines — using LLM API calls, the Model Context Protocol (MCP), and autonomous agent orchestration to automate bug fixing and pull request generation."
     ],
     "stats": [
       {
@@ -129,6 +129,7 @@
       "period": "Aug 2023 - Jun 2026 (expected)",
       "details": [
         "Focus: systems programming, memory management, data structures, and building efficient software.",
+        "Bachelor Thesis: Design and evaluation of an AI-driven task-to-code feedback loop in CI/CD pipelines, developed in collaboration with a company.",
         "Relevant Coursework: Compiler Design, Operating Systems, Algorithms & Data Structures, Linear Algebra."
       ]
     },
@@ -146,6 +147,26 @@
     }
   ],
   "projects": [
+    {
+      "id": "acid-bot-thesis",
+      "title": "ACID Bot — Bachelor Thesis",
+      "description": "Multi-agent AI system that fetches tasks from ClickUp via MCP, autonomously generates code fixes using Claude Code inside Docker, and opens pull requests via gh cli — with scheduled runs and a GitHub Actions pipeline option.",
+      "longDescription": "Designed and evaluated an autonomous AI feedback loop for CI/CD pipelines as a bachelor thesis, developed in collaboration with a company. The system uses an orchestrator script coordinating multiple agents: it connects to ClickUp via the Model Context Protocol (MCP) to fetch task descriptions, generates code changes using Claude (initially via API calls, later migrated to Claude Code running directly in a Docker container), and manages repositories and pull requests through gh cli. The pipeline supports both scheduled automated runs via Docker and on-demand execution through a GitHub Actions workflow.",
+      "technologies": [
+        "JavaScript",
+        "MCP",
+        "Claude Code",
+        "Docker",
+        "gh cli",
+        "GitHub Actions",
+        "ClickUp API"
+      ],
+      "github": null,
+      "demo": null,
+      "image": null,
+      "featured": true,
+      "category": "ai"
+    },
     {
       "id": "compiler-from-scratch",
       "title": "Compiler from Scratch",
@@ -277,9 +298,20 @@
       "name": "Web/Styling",
       "skills": [
         "HTML5",
-        "CSS3",
+        "CSS",
         "Tailwind CSS",
         "SCSS"
+      ]
+    },
+    {
+      "id": "ai-tooling",
+      "name": "AI & Tooling",
+      "skills": [
+        "Claude Code",
+        "Model Context Protocol (MCP)",
+        "Multi-Agent Systems",
+        "Docker",
+        "gh cli"
       ]
     },
     {
@@ -338,18 +370,27 @@
       "href": "#about"
     },
     {
+      "id": "skills",
+      "label": "Skills",
+      "href": "#skills"
+    },
+    {
       "id": "contact",
       "label": "Contact",
       "href": "#contact"
     }
   ],
   "seo": {
-    "title": "Karam Matar | Software Engineer & Game Developer",
-    "description": "Karam Matar is a software engineering student and developer focused on full-stack development, DevOps automation, and game development. Explore projects like VulnerabilityChecker 2.0, ShowcaseSERL, Space Invaders, and more.",
+    "title": "Karam Matar | Software Engineer",
+    "description": "Karam Matar is a software engineer focused on full-stack development, AI-driven automation, DevOps tooling, and game development. Currently researching AI feedback loops in CI/CD pipelines using MCP and LLM APIs.",
     "keywords": [
       "Karam Matar",
       "Software Engineer",
-      "Software Engineering Student",
+      "AI",
+      "MCP",
+      "Model Context Protocol",
+      "LLM",
+      "CI/CD",
       "Game Developer",
       "Compiler",
       "Systems Programming",
