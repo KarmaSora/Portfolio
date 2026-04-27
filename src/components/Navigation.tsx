@@ -74,7 +74,7 @@ export function Navigation({ kioskMode, onKioskToggle }: NavigationProps) {
         kioskMode && "kiosk-hidden",
       )}
     >
-      <nav className="container mx-auto px-4 sm:px-6 flex items-center justify-between gap-3">
+      <nav className="container mx-auto px-4 sm:px-6 flex items-center justify-between gap-3" aria-label="Main navigation">
         {/* Logo */}
         <a
           href="#home"
@@ -145,8 +145,11 @@ export function Navigation({ kioskMode, onKioskToggle }: NavigationProps) {
         <button
           onClick={() => setIsOpen(!isOpen)}
           className="md:hidden p-2 rounded-lg hover:bg-secondary transition-colors flex-shrink-0"
+          aria-label={isOpen ? "Close navigation menu" : "Open navigation menu"}
+          aria-expanded={isOpen}
+          aria-controls="mobile-navigation"
         >
-          {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+          {isOpen ? <X className="w-6 h-6" aria-hidden="true" /> : <Menu className="w-6 h-6" aria-hidden="true" />}
         </button>
       </nav>
 
@@ -154,6 +157,9 @@ export function Navigation({ kioskMode, onKioskToggle }: NavigationProps) {
       <AnimatePresence>
         {isOpen && (
           <motion.div
+            id="mobile-navigation"
+            role="navigation"
+            aria-label="Mobile navigation"
             className="md:hidden absolute top-full left-0 right-0 bg-background/95 backdrop-blur-xl border-b border-border max-h-[calc(100dvh-4rem)] overflow-y-auto overflow-x-hidden"
             initial={{ height: 0, opacity: 0 }}
             animate={{ height: "auto", opacity: 1 }}

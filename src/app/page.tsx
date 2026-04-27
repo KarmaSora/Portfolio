@@ -100,7 +100,7 @@ export default function Home() {
       />
 
       {/* Main Content */}
-      <main>
+      <main id="main-content">
         <Hero />
         <About />
         <Experience />
