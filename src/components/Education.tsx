@@ -13,20 +13,18 @@ export function Education() {
   const isInView = useInView(sectionRef, { once: true, margin: "-100px" });
 
   return (
-    <section id="education" ref={sectionRef} className="py-20 md:py-28">
+    <section id="education" ref={sectionRef} className="py-20 md:py-28 bg-card/30">
       <div className="container mx-auto px-6">
-        {/* Different header style — right-aligned on desktop for variety */}
         <h2
           className={cn(
-            "text-2xl md:text-3xl font-bold font-outfit mb-12 md:text-right transition-all duration-500",
+            "text-2xl md:text-3xl font-bold mb-12 transition-all duration-500",
             isInView ? "opacity-100" : "opacity-0"
           )}
         >
           Education
         </h2>
 
-        {/* Offset cards — pushed to the right on desktop */}
-        <div className="max-w-3xl ml-auto space-y-6">
+        <div className="space-y-6">
           {education.map((edu: EducationType, index: number) => (
             <div
               key={edu.id}
@@ -36,10 +34,10 @@ export function Education() {
               )}
               style={{ transitionDelay: `${index * 150}ms` }}
             >
-              <h3 className="text-lg md:text-xl font-bold font-outfit text-foreground mb-1">
+              <h3 className="text-lg md:text-xl font-bold text-foreground mb-1">
                 {edu.degree}
               </h3>
-              <p className="text-primary font-medium mb-3">
+              <p className="text-foreground/70 font-medium mb-3">
                 {edu.school}
               </p>
 
@@ -59,7 +57,7 @@ export function Education() {
                   {edu.details.map((detail: string, i: number) => (
                     <li
                       key={i}
-                      className="text-muted-foreground text-sm leading-relaxed pl-4 relative before:content-['–'] before:absolute before:left-0 before:text-primary/60"
+                      className="text-muted-foreground text-sm leading-relaxed pl-4 relative before:content-['–'] before:absolute before:left-0 before:text-muted-foreground/60"
                     >
                       {detail}
                     </li>

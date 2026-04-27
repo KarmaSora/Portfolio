@@ -9,7 +9,6 @@ import {
   Experience,
   Education,
   Projects,
-  Skills,
   Contact,
   Footer,
 } from "@/components";
@@ -102,11 +101,10 @@ export default function Home() {
       {/* Main Content */}
       <main id="main-content">
         <Hero />
-        <About />
+        <Projects />
         <Experience />
         <Education />
-        <Projects />
-        <Skills />
+        <About />
         <Contact />
       </main>
 

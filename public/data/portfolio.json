@@ -43,7 +43,7 @@
   "contactContent": {
     "sectionTitle": "Get In Touch",
     "sectionSubtitle": "Let's Work Together",
-    "sectionDescription": "Feel free to reach out! best way to reach me is through email. ",
+    "sectionDescription": "Feel free to reach out! Best way to reach me is through email.",
     "ctaTitle": "Ready to Start a Project?",
     "ctaDescription": "Whether you have a question or just want to say hi, I'll try my best to get back to you as soon as possible!",
     "ctaButtonText": "Send Me an Email"
@@ -318,9 +318,9 @@
       "href": "#home"
     },
     {
-      "id": "about",
-      "label": "About",
-      "href": "#about"
+      "id": "projects",
+      "label": "Projects",
+      "href": "#projects"
     },
     {
       "id": "experience",
@@ -333,14 +333,9 @@
       "href": "#education"
     },
     {
-      "id": "projects",
-      "label": "Projects",
-      "href": "#projects"
-    },
-    {
-      "id": "skills",
-      "label": "Skills",
-      "href": "#skills"
+      "id": "about",
+      "label": "About",
+      "href": "#about"
     },
     {
       "id": "contact",

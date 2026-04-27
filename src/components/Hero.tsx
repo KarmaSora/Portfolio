@@ -39,7 +39,7 @@ export function Hero() {
         >
           {/* Name */}
           <motion.h1
-            className="text-5xl md:text-7xl lg:text-8xl font-bold font-outfit mb-4 leading-[0.95]"
+            className="text-5xl md:text-7xl lg:text-8xl font-bold mb-4 leading-[0.95]"
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.15, duration: 0.5 }}

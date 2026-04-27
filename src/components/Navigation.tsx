@@ -82,7 +82,7 @@ export function Navigation({ kioskMode, onKioskToggle }: NavigationProps) {
             e.preventDefault();
             handleNavClick("#home");
           }}
-          className="text-lg sm:text-xl font-bold font-outfit tracking-tight group min-w-0"
+          className="text-lg sm:text-xl font-bold tracking-tight group min-w-0"
         >
           <span className="text-foreground group-hover:text-primary transition-colors">
             {firstName.charAt(0)}

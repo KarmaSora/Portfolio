@@ -3,13 +3,14 @@
 import { useRef } from "react";
 import Image from "next/image";
 import { useInView } from "framer-motion";
-import { MapPin } from "lucide-react";
-import { usePersonalInfo, useAboutContent } from "./PortfolioProvider";
+import { MapPin, Trophy } from "lucide-react";
+import { usePersonalInfo, useAboutContent, useAchievements } from "./PortfolioProvider";
 import { cn, withBasePath } from "@/lib/utils";
 
 export function About() {
   const personalInfo = usePersonalInfo();
   const aboutContent = useAboutContent();
+  const achievements = useAchievements();
   const sectionRef = useRef<HTMLElement>(null);
   const isInView = useInView(sectionRef, { once: true, margin: "-100px" });
 
@@ -37,7 +38,7 @@ export function About() {
                   />
                 ) : (
                   <div className="flex items-center justify-center h-full">
-                    <div className="w-24 h-24 rounded-full bg-primary flex items-center justify-center text-4xl font-bold text-primary-foreground font-outfit">
+                    <div className="w-24 h-24 rounded-full bg-primary flex items-center justify-center text-4xl font-bold text-primary-foreground">
                       {personalInfo.initials}
                     </div>
                   </div>
@@ -52,16 +53,15 @@ export function About() {
             </div>
           </div>
 
-          {/* Content — takes 3 columns, no header template */}
+          {/* Content — takes 3 columns */}
           <div
             className={cn(
               "lg:col-span-3 transition-all duration-700 delay-200",
               isInView ? "opacity-100" : "opacity-0"
             )}
           >
-            {/* No uniform section header — just a natural lead-in */}
-            <h2 className="text-2xl md:text-3xl font-bold font-outfit mb-8">
-              A bit about me
+            <h2 className="text-2xl md:text-3xl font-bold mb-8">
+              About
             </h2>
 
             <div className="space-y-5">
@@ -74,6 +74,33 @@ export function About() {
                 </p>
               ))}
             </div>
+
+            {/* Achievements — only shown if they exist */}
+            {achievements.length > 0 && (
+              <div className="mt-8 pt-6 border-t border-border">
+                {achievements.map((achievement) => (
+                  <div key={achievement.id} className="flex items-start gap-3">
+                    <Trophy className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
+                    <p className="text-sm text-muted-foreground">
+                      <span className="text-foreground font-medium">{achievement.result}</span>
+                      {" — "}
+                      {achievement.link ? (
+                        <a
+                          href={achievement.link}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-primary hover:underline"
+                        >
+                          {achievement.title} {achievement.type}
+                        </a>
+                      ) : (
+                        <span>{achievement.title} {achievement.type}</span>
+                      )}
+                    </p>
+                  </div>
+                ))}
+              </div>
+            )}
           </div>
         </div>
       </div>

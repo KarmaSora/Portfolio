@@ -133,3 +133,8 @@ export function useSEO() {
   const { data } = usePortfolio();
   return data.seo;
 }
+
+export function useAchievements() {
+  const { data } = usePortfolio();
+  return data.achievements;
+}

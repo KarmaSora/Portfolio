@@ -16,21 +16,21 @@ export function Experience() {
       id="experience"
       ref={sectionRef}
       aria-label="Work experience"
-      className="py-20 md:py-28 bg-card/30"
+      className="py-20 md:py-28"
     >
       <div className="container mx-auto px-6">
         {/* Varied header — left-aligned, no subtitle */}
         <h2
           className={cn(
-            "text-2xl md:text-3xl font-bold font-outfit mb-12 transition-all duration-500",
+            "text-2xl md:text-3xl font-bold mb-12 transition-all duration-500",
             isInView ? "opacity-100" : "opacity-0"
           )}
         >
-          Where I&apos;ve worked
+          Experience
         </h2>
 
         {/* Simple stacked cards — no alternating timeline */}
-        <div className="max-w-3xl space-y-6">
+        <div className="space-y-6">
           {experiences.map((exp, index) => (
             <div
               key={exp.id}
@@ -42,10 +42,10 @@ export function Experience() {
             >
               {/* Role + Company on same line */}
               <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1 mb-3">
-                <h3 className="text-lg md:text-xl font-bold font-outfit text-foreground">
+                <h3 className="text-lg md:text-xl font-bold text-foreground">
                   {exp.role}
                 </h3>
-                <span className="text-primary font-medium">
+                <span className="text-foreground/70 font-medium">
                   @ {exp.company}
                 </span>
               </div>
@@ -65,7 +65,7 @@ export function Experience() {
               {/* Description */}
               <ul className="space-y-1.5 mb-5">
                 {exp.description.map((item, i) => (
-                  <li key={i} className="text-muted-foreground text-sm leading-relaxed pl-4 relative before:content-['–'] before:absolute before:left-0 before:text-primary/60">
+                  <li key={i} className="text-muted-foreground text-sm leading-relaxed pl-4 relative before:content-['–'] before:absolute before:left-0 before:text-muted-foreground/60">
                     {item}
                   </li>
                 ))}

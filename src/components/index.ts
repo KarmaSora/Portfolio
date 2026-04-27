@@ -23,6 +23,7 @@ export {
   useSkillCategories,
   useNavItems,
   useSEO,
+  useAchievements,
 } from "./PortfolioProvider";
 export {
   Skeleton,

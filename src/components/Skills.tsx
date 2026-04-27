@@ -17,7 +17,7 @@ export function Skills() {
         <div className="max-w-4xl">
           <h2
             className={cn(
-              "text-2xl md:text-3xl font-bold font-outfit mb-12 transition-all duration-500",
+              "text-2xl md:text-3xl font-bold mb-12 transition-all duration-500",
               isInView ? "opacity-100" : "opacity-0"
             )}
           >

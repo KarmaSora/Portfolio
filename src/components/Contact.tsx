@@ -33,8 +33,8 @@ export function Contact() {
           )}
         >
           {/* Simple, direct */}
-          <h2 className="text-2xl md:text-3xl font-bold font-outfit mb-4">
-            Let&apos;s talk
+          <h2 className="text-2xl md:text-3xl font-bold mb-4">
+            Contact
           </h2>
           <p className="text-muted-foreground mb-8 max-w-md mx-auto">
             {contactContent.sectionDescription}

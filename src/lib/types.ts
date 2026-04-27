@@ -95,6 +95,14 @@ export interface NavItem {
   href: string;
 }
 
+export interface Achievement {
+  id: string;
+  type: string;
+  title: string;
+  result: string;
+  link?: string;
+}
+
 export interface SEOData {
   title: string;
   description: string;
@@ -113,6 +121,7 @@ export interface PortfolioData {
   education: Education[];
   projects: Project[];
   skillCategories: SkillCategory[];
+  achievements: Achievement[];
   navItems: NavItem[];
   seo: SEOData;
 }
@@ -167,6 +176,7 @@ export const defaultPortfolioData: PortfolioData = {
   education: [],
   projects: [],
   skillCategories: [],
+  achievements: [],
   navItems: [
     { id: "home", label: "Home", href: "#home" },
     { id: "about", label: "About", href: "#about" },
