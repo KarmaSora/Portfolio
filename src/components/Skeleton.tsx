@@ -59,7 +59,7 @@ export function HeroSkeleton() {
 
 export function ProjectCardSkeleton() {
   return (
-    <div className="glass-card rounded-2xl overflow-hidden">
+    <div className="card rounded-2xl overflow-hidden">
       <Skeleton className="h-48 w-full" />
       <div className="p-6 space-y-4">
         <Skeleton className="h-6 w-3/4" />
@@ -97,7 +97,7 @@ export function ExperienceSkeleton() {
         <Skeleton className="h-10 w-48 mx-auto mb-12" />
         <div className="max-w-3xl mx-auto space-y-8">
           {[...Array(3)].map((_, i) => (
-            <div key={i} className="glass-card p-6 rounded-2xl space-y-4">
+            <div key={i} className="card p-6 rounded-2xl space-y-4">
               <div className="flex justify-between items-start">
                 <div className="space-y-2">
                   <Skeleton className="h-6 w-48" />
@@ -125,7 +125,7 @@ export function SkillsSkeleton() {
         <Skeleton className="h-10 w-32 mx-auto mb-12" />
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto">
           {[...Array(4)].map((_, i) => (
-            <div key={i} className="glass-card p-6 rounded-2xl space-y-4">
+            <div key={i} className="card p-6 rounded-2xl space-y-4">
               <Skeleton className="h-6 w-24" />
               <div className="flex gap-2 flex-wrap">
                 <Skeleton className="h-8 w-16 rounded-full" />

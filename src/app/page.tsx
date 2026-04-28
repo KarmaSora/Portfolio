@@ -88,7 +88,7 @@ export default function Home() {
     >
       {/* Kiosk Mode Indicator */}
       {kioskMode && (
-        <div className="fixed bottom-4 right-4 z-50 px-4 py-2 glass-card rounded-full text-xs text-muted-foreground animate-fade-in">
+        <div className="fixed bottom-4 right-4 z-50 px-4 py-2 card rounded-full text-xs text-muted-foreground animate-fade-in">
           Kiosk Mode Active • Press ESC to exit
         </div>
       )}
@@ -100,12 +100,12 @@ export default function Home() {
       />
 
       {/* Main Content */}
-      <main>
+      <main id="main-content">
         <Hero />
-        <About />
+        <Projects />
         <Experience />
         <Education />
-        <Projects />
+        <About />
         <Skills />
         <Contact />
       </main>

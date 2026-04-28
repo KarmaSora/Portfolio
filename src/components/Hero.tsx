@@ -6,29 +6,6 @@ import { usePersonalInfo, usePortfolio } from "./PortfolioProvider";
 import { HeroSkeleton } from "./Skeleton";
 import { withBasePath } from "@/lib/utils";
 
-const containerVariants = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.15,
-      delayChildren: 0.2,
-    },
-  },
-};
-
-const itemVariants = {
-  hidden: { opacity: 0, y: 20 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      duration: 0.6,
-      ease: [0.4, 0, 0.2, 1],
-    },
-  },
-};
-
 export function Hero() {
   const personalInfo = usePersonalInfo();
   const { isLoading } = usePortfolio();
@@ -44,153 +21,107 @@ export function Hero() {
     return <HeroSkeleton />;
   }
 
+  const firstName = personalInfo.name.split(" ")[0];
+  const lastName = personalInfo.name.split(" ")[1];
+
   return (
     <section
       id="home"
-      className="relative min-h-screen flex items-start md:items-center justify-center overflow-x-hidden py-24 sm:py-28 md:py-0"
+      aria-label="Introduction"
+      className="relative min-h-[85vh] flex items-center justify-center py-24 sm:py-28 md:py-0"
     >
-      {/* Background Effects */}
-      <div className="absolute inset-0 pointer-events-none">
-        <div className="hero-glow absolute top-1/4 left-1/4 -translate-x-1/2 -translate-y-1/2" />
-        <div
-          className="hero-glow absolute bottom-1/4 right-1/4 translate-x-1/2 translate-y-1/2"
-          style={{ animationDelay: "-4s" }}
-        />
-        <div className="hero-glow-secondary absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2" />
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-background" />
-      </div>
-
-      {/* Noise Overlay for premium texture */}
-      <div className="noise-overlay" />
-
-      {/* Grid Pattern Overlay */}
-      <div
-        className="absolute inset-0 opacity-[0.03] pointer-events-none"
-        style={{
-          backgroundImage: `linear-gradient(to right, hsl(var(--foreground)) 1px, transparent 1px),
-                           linear-gradient(to bottom, hsl(var(--foreground)) 1px, transparent 1px)`,
-          backgroundSize: "60px 60px",
-        }}
-      />
-
-      {/* Content */}
-      <div className="container mx-auto px-6 relative z-10">
+      <div className="container mx-auto px-6">
         <motion.div
-          className="max-w-4xl mx-auto text-center"
-          variants={containerVariants}
-          initial="hidden"
-          animate="visible"
+          className="max-w-3xl mx-auto text-center"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.6 }}
         >
-          {/* Status Badge */}
-          {personalInfo.available && (
-            <motion.div
-              variants={itemVariants}
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 mb-8"
-            >
-              <span className="relative flex h-2 w-2">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
-                <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
-              </span>
-              <span className="text-sm text-muted-foreground">
-                {personalInfo.availableText}
-              </span>
-            </motion.div>
-          )}
-
           {/* Name */}
           <motion.h1
-            variants={itemVariants}
-            className="text-5xl md:text-7xl lg:text-8xl font-bold font-outfit mb-6"
+            className="text-5xl md:text-7xl lg:text-8xl font-bold mb-4 leading-[0.95]"
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.15, duration: 0.5 }}
           >
-            <span className="text-foreground">
-              {personalInfo.name.split(" ")[0]}
-            </span>
-            <br />
-            <span className="text-gradient">
-              {personalInfo.name.split(" ")[1]}
-            </span>
+            {firstName}{" "}
+            <span className="text-primary">{lastName}</span>
           </motion.h1>
 
-          {/* Title */}
+          {/* Title — understated */}
           <motion.p
-            variants={itemVariants}
-            className="text-xl md:text-2xl lg:text-3xl text-muted-foreground font-light mb-8"
+            className="text-xl md:text-2xl text-muted-foreground mb-8"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.3 }}
           >
             {personalInfo.title}
           </motion.p>
 
-          {/* Bio */}
+          {/* Bio — left-aligned prose, reads like a human wrote it */}
           <motion.p
-            variants={itemVariants}
-            className="text-base md:text-lg text-muted-foreground/80 max-w-2xl mx-auto mb-12 leading-relaxed"
+            className="text-base md:text-lg text-muted-foreground/80 max-w-xl mx-auto mb-10 leading-relaxed"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.4 }}
           >
             {personalInfo.bio}
           </motion.p>
 
-          {/* Social Links */}
+          {/* Links — inline, casual row */}
           <motion.div
-            variants={itemVariants}
-            className="flex flex-col sm:flex-row sm:flex-wrap items-stretch sm:items-center justify-center gap-3 sm:gap-4 mb-12 sm:mb-16 w-full max-w-xl mx-auto"
+            className="flex flex-wrap items-center justify-center gap-3 mb-16"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.5 }}
           >
-            <motion.a
+            <a
+              href={`mailto:${personalInfo.email}`}
+              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-primary text-primary-foreground text-sm font-medium hover:opacity-90 transition-opacity"
+            >
+              <Mail className="w-4 h-4" />
+              Get in touch
+            </a>
+            <a
               href={personalInfo.github}
               target="_blank"
               rel="noopener noreferrer"
-              className="group flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-card border border-border hover:border-primary/50 transition-all duration-300 w-full sm:w-auto"
-              whileHover={{ scale: 1.05, y: -2 }}
-              whileTap={{ scale: 0.98 }}
+              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg border border-border text-sm font-medium text-muted-foreground hover:text-foreground hover:border-foreground/30 transition-colors"
             >
-              <Github className="w-5 h-5 text-muted-foreground group-hover:text-primary transition-colors" />
-              <span className="text-sm font-medium">GitHub</span>
-            </motion.a>
-            <motion.a
+              <Github className="w-4 h-4" />
+              GitHub
+            </a>
+            <a
               href={personalInfo.linkedin}
               target="_blank"
               rel="noopener noreferrer"
-              className="group flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-card border border-border hover:border-primary/50 transition-all duration-300 w-full sm:w-auto"
-              whileHover={{ scale: 1.05, y: -2 }}
-              whileTap={{ scale: 0.98 }}
+              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg border border-border text-sm font-medium text-muted-foreground hover:text-foreground hover:border-foreground/30 transition-colors"
             >
-              <Linkedin className="w-5 h-5 text-muted-foreground group-hover:text-primary transition-colors" />
-              <span className="text-sm font-medium">LinkedIn</span>
-            </motion.a>
-            <motion.a
-              href={`mailto:${personalInfo.email}`}
-              className="group flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-primary text-primary-foreground transition-all duration-300 w-full sm:w-auto"
-              whileHover={{ scale: 1.05, y: -2 }}
-              whileTap={{ scale: 0.98 }}
-            >
-              <Mail className="w-5 h-5" />
-              <span className="text-sm font-medium">Contact</span>
-            </motion.a>
-            <motion.a
+              <Linkedin className="w-4 h-4" />
+              LinkedIn
+            </a>
+            <a
               href={withBasePath(personalInfo.resumeUrl)}
               download
-              className="group flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-card border border-border hover:border-primary/50 transition-all duration-300 w-full sm:w-auto"
-              whileHover={{ scale: 1.05, y: -2 }}
-              whileTap={{ scale: 0.98 }}
+              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg border border-border text-sm font-medium text-muted-foreground hover:text-foreground hover:border-foreground/30 transition-colors"
             >
-              <Download className="w-5 h-5 text-muted-foreground group-hover:text-primary transition-colors" />
-              <span className="text-sm font-medium">Download CV</span>
-            </motion.a>
+              <Download className="w-4 h-4" />
+              CV
+            </a>
           </motion.div>
 
-          {/* Scroll Indicator */}
+          {/* Scroll hint — just an arrow, no label */}
           <motion.button
-            variants={itemVariants}
             onClick={scrollToAbout}
-            className="group inline-flex flex-col items-center gap-2 text-muted-foreground hover:text-primary transition-colors"
+            className="text-muted-foreground/50 hover:text-muted-foreground transition-colors"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.7 }}
+            aria-label="Scroll to content"
           >
-            <span className="text-xs uppercase tracking-widest">
-              Scroll Down
-            </span>
             <motion.div
-              animate={{ y: [0, 8, 0] }}
-              transition={{
-                duration: 1.5,
-                repeat: Infinity,
-                ease: "easeInOut",
-              }}
+              animate={{ y: [0, 6, 0] }}
+              transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
             >
               <ArrowDown className="w-5 h-5" />
             </motion.div>

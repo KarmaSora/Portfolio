@@ -3,128 +3,104 @@
 import { useRef } from "react";
 import Image from "next/image";
 import { useInView } from "framer-motion";
-import { MapPin, Briefcase, GraduationCap, Code } from "lucide-react";
-import { usePersonalInfo, useAboutContent } from "./PortfolioProvider";
-import { Stat } from "@/lib/types";
+import { MapPin, Trophy } from "lucide-react";
+import { usePersonalInfo, useAboutContent, useAchievements } from "./PortfolioProvider";
 import { cn, withBasePath } from "@/lib/utils";
-
-const iconMap = {
-  briefcase: Briefcase,
-  code: Code,
-  graduation: GraduationCap,
-};
 
 export function About() {
   const personalInfo = usePersonalInfo();
   const aboutContent = useAboutContent();
+  const achievements = useAchievements();
   const sectionRef = useRef<HTMLElement>(null);
   const isInView = useInView(sectionRef, { once: true, margin: "-100px" });
 
   return (
-    <section id="about" ref={sectionRef} className="py-24 relative">
-      {/* Background accent */}
-      <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-1/2 left-0 w-[600px] h-[600px] bg-primary/5 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2" />
-      </div>
-
-      <div className="container mx-auto px-6 relative z-10">
-        {/* Section Header */}
-        <div
-          className={cn(
-            "text-center mb-16 transition-all duration-500",
-            isInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"
-          )}
-        >
-          <p className="text-primary text-sm font-medium uppercase tracking-widest mb-4">
-            {aboutContent.sectionTitle}
-          </p>
-          <h2 className="text-3xl md:text-5xl font-bold font-outfit mb-6">
-            {aboutContent.sectionSubtitle}
-          </h2>
-          <div className="w-20 h-1 bg-gradient-to-r from-primary to-purple-400 mx-auto rounded-full" />
-        </div>
-
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
-          {/* Image Section */}
+    <section id="about" ref={sectionRef} className="py-20 md:py-28">
+      <div className="container mx-auto px-6">
+        <div className="grid lg:grid-cols-5 gap-12 lg:gap-16 items-start">
+          {/* Image — takes 2 columns */}
           <div
             className={cn(
-              "relative transition-all duration-700",
-              isInView ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-10"
+              "lg:col-span-2 transition-all duration-700",
+              isInView ? "opacity-100" : "opacity-0"
             )}
           >
-            <div className="relative aspect-square max-w-md mx-auto">
-              {/* Decorative Frame */}
-              <div className="absolute inset-4 border-2 border-primary/20 rounded-2xl rotate-3" />
-              <div className="absolute inset-4 border-2 border-purple-400/20 rounded-2xl -rotate-3" />
-
-              {/* Image Container */}
-              <div className="relative glass-card rounded-2xl overflow-hidden h-full flex items-center justify-center glow-border hover:scale-[1.02] transition-transform duration-300">
-                <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-transparent to-purple-400/20" />
+            <div className="relative aspect-[4/5] max-w-sm mx-auto lg:mx-0">
+              <div className="relative card rounded-2xl overflow-hidden h-full">
                 {personalInfo.profileImage ? (
                   <Image
                     src={withBasePath(personalInfo.profileImage)}
-                    alt={`${personalInfo.name} - Professional Photo`}
+                    alt={`${personalInfo.name}`}
                     fill
                     className="object-cover"
-                    sizes="(max-width: 768px) 100vw, 50vw"
+                    sizes="(max-width: 768px) 100vw, 40vw"
                     priority
                   />
                 ) : (
-                  <div className="text-center p-8">
-                    <div className="w-32 h-32 mx-auto mb-6 rounded-full bg-gradient-to-br from-primary to-purple-400 flex items-center justify-center text-5xl font-bold text-white font-outfit">
+                  <div className="flex items-center justify-center h-full">
+                    <div className="w-24 h-24 rounded-full bg-primary flex items-center justify-center text-4xl font-bold text-primary-foreground">
                       {personalInfo.initials}
                     </div>
                   </div>
                 )}
               </div>
 
-              {/* Floating Location Badge */}
-              <div className="absolute -top-4 -right-4 px-4 py-2 glass-card rounded-lg">
-                <div className="flex items-center gap-2 text-sm">
-                  <MapPin className="w-4 h-4 text-primary" />
-                  <span>{personalInfo.location}</span>
-                </div>
+              {/* Location — small, tucked into corner */}
+              <div className="absolute -bottom-3 -right-3 px-3 py-1.5 card rounded-lg text-xs flex items-center gap-1.5 text-muted-foreground">
+                <MapPin className="w-3 h-3" />
+                {personalInfo.location}
               </div>
             </div>
           </div>
 
-          {/* Content Section */}
+          {/* Content — takes 3 columns */}
           <div
             className={cn(
-              "space-y-8 transition-all duration-700 delay-200",
-              isInView ? "opacity-100 translate-x-0" : "opacity-0 translate-x-10"
+              "lg:col-span-3 transition-all duration-700 delay-200",
+              isInView ? "opacity-100" : "opacity-0"
             )}
           >
-            <div className="space-y-6">
+            <h2 className="text-2xl md:text-3xl font-bold mb-8">
+              About
+            </h2>
+
+            <div className="space-y-5">
               {aboutContent.paragraphs.map((paragraph, index) => (
                 <p
                   key={index}
-                  className="text-lg text-muted-foreground leading-relaxed"
+                  className="text-base md:text-lg text-muted-foreground leading-relaxed"
                 >
                   {paragraph}
                 </p>
               ))}
             </div>
 
-            {/* Stats Grid */}
-            <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 pt-8">
-              {aboutContent.stats.map((stat: Stat, index: number) => {
-                const IconComponent = iconMap[stat.icon] || Code;
-                return (
-                  <div
-                    key={stat.label}
-                    className="glass-card rounded-xl p-4 text-center group hover:scale-105 transition-transform duration-300"
-                    style={{ transitionDelay: `${index * 100}ms` }}
-                  >
-                    <IconComponent className="w-6 h-6 mx-auto mb-2 text-primary group-hover:scale-110 transition-transform" />
-                    <p className="text-2xl md:text-3xl font-bold text-gradient mb-1">
-                      {stat.value}
+            {/* Achievements — only shown if they exist */}
+            {achievements.length > 0 && (
+              <div className="mt-8 pt-6 border-t border-border">
+                {achievements.map((achievement) => (
+                  <div key={achievement.id} className="flex items-start gap-3">
+                    <Trophy className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
+                    <p className="text-sm text-muted-foreground">
+                      <span className="text-foreground font-medium">{achievement.result}</span>
+                      {" — "}
+                      {achievement.link ? (
+                        <a
+                          href={achievement.link}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-primary hover:underline"
+                        >
+                          {achievement.title} {achievement.type}
+                        </a>
+                      ) : (
+                        <span>{achievement.title} {achievement.type}</span>
+                      )}
                     </p>
-                    <p className="text-xs text-muted-foreground">{stat.label}</p>
                   </div>
-                );
-              })}
-            </div>
+                ))}
+              </div>
+            )}
           </div>
         </div>
       </div>

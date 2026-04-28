@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter, Outfit } from "next/font/google";
+import { Inter } from "next/font/google";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import { PortfolioProvider } from "@/components/PortfolioProvider";
 import "./globals.css";
@@ -11,11 +11,7 @@ const inter = Inter({
   display: "swap",
 });
 
-const outfit = Outfit({
-  subsets: ["latin"],
-  variable: "--font-outfit",
-  display: "swap",
-});
+
 
 export const metadata: Metadata = {
   title: "Karam Matar | Software Engineer & Game Developer",
@@ -71,7 +67,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`dark ${inter.variable} ${outfit.variable}`}
+      className={`dark ${inter.variable}`}
       suppressHydrationWarning
     >
       <head>
@@ -93,6 +89,10 @@ export default function RootLayout({
         />
       </head>
       <body className="min-h-screen bg-background antialiased font-sans">
+        {/* Skip to content link for accessibility - keyboard users */}
+        <a href="#main-content" className="skip-to-content">
+          Skip to main content
+        </a>
         <ThemeProvider defaultTheme="dark">
           <PortfolioProvider>{children}</PortfolioProvider>
         </ThemeProvider>

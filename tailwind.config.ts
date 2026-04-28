@@ -54,7 +54,6 @@ const config: Config = {
       },
       fontFamily: {
         sans: ['var(--font-inter)', 'Inter', 'system-ui', 'sans-serif'],
-        outfit: ['var(--font-outfit)', 'Outfit', 'system-ui', 'sans-serif'],
       },
       borderRadius: {
         lg: "var(--radius)",
@@ -70,20 +69,10 @@ const config: Config = {
           "0%": { opacity: "0", transform: "translateX(-20px)" },
           "100%": { opacity: "1", transform: "translateX(0)" },
         },
-        "glow": {
-          "0%, 100%": { boxShadow: "0 0 20px rgba(139, 92, 246, 0.3)" },
-          "50%": { boxShadow: "0 0 40px rgba(139, 92, 246, 0.6)" },
-        },
-        "float": {
-          "0%, 100%": { transform: "translateY(0px)" },
-          "50%": { transform: "translateY(-10px)" },
-        },
       },
       animation: {
         "fade-in": "fade-in 0.6s ease-out forwards",
         "slide-in": "slide-in 0.5s ease-out forwards",
-        "glow": "glow 3s ease-in-out infinite",
-        "float": "float 6s ease-in-out infinite",
       },
     },
   },

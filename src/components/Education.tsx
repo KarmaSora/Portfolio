@@ -2,7 +2,7 @@
 
 import { useRef } from "react";
 import { useInView } from "framer-motion";
-import { GraduationCap, Calendar, MapPin, BookOpen } from "lucide-react";
+import { Calendar, MapPin } from "lucide-react";
 import { useEducation } from "./PortfolioProvider";
 import { Education as EducationType } from "@/lib/types";
 import { cn } from "@/lib/utils";
@@ -13,85 +13,56 @@ export function Education() {
   const isInView = useInView(sectionRef, { once: true, margin: "-100px" });
 
   return (
-    <section
-      id="education"
-      ref={sectionRef}
-      className="py-24 relative"
-    >
-      {/* Background Effect */}
-      <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-1/3 right-0 w-[500px] h-[500px] bg-primary/5 rounded-full blur-3xl translate-x-1/3" />
-        <div className="absolute bottom-1/3 left-0 w-[400px] h-[400px] bg-purple-400/5 rounded-full blur-3xl -translate-x-1/3" />
-      </div>
-
-      <div className="container mx-auto px-6 relative z-10">
-        {/* Section Header */}
-        <div
+    <section id="education" ref={sectionRef} className="py-20 md:py-28 bg-card/30">
+      <div className="container mx-auto px-6">
+        <h2
           className={cn(
-            "text-center mb-16 transition-all duration-500",
-            isInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"
+            "text-2xl md:text-3xl font-bold mb-12 transition-all duration-500",
+            isInView ? "opacity-100" : "opacity-0"
           )}
         >
-          <p className="text-primary text-sm font-medium uppercase tracking-widest mb-4">
-            Academic Background
-          </p>
-          <h2 className="text-3xl md:text-5xl font-bold font-outfit mb-6">
-            Education
-          </h2>
-          <div className="w-20 h-1 bg-gradient-to-r from-primary to-purple-400 mx-auto rounded-full" />
-        </div>
+          Education
+        </h2>
 
-        {/* Education Cards */}
-        <div className="max-w-4xl mx-auto grid md:grid-cols-2 gap-8">
+        <div className="space-y-6">
           {education.map((edu: EducationType, index: number) => (
             <div
               key={edu.id}
               className={cn(
-                "glass-card rounded-2xl p-6 md:p-8 glow-border hover:scale-[1.02] transition-all duration-500 group",
-                isInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+                "card rounded-xl p-6 md:p-8 transition-all duration-500",
+                isInView ? "opacity-100" : "opacity-0"
               )}
-              style={{ transitionDelay: `${index * 200}ms` }}
+              style={{ transitionDelay: `${index * 150}ms` }}
             >
-              {/* Icon Header */}
-              <div className="flex items-start gap-4 mb-6">
-                <div className="w-12 h-12 rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-center flex-shrink-0 group-hover:bg-primary/20 group-hover:scale-110 transition-all duration-300">
-                  <GraduationCap className="w-6 h-6 text-primary" />
-                </div>
-                <div className="min-w-0">
-                  <h3 className="text-lg md:text-xl font-bold font-outfit text-foreground group-hover:text-primary transition-colors">
-                    {edu.degree}
-                  </h3>
-                  <p className="text-primary text-sm font-medium mt-1">
-                    {edu.school}
-                  </p>
-                </div>
+              <h3 className="text-lg md:text-xl font-bold text-foreground mb-1">
+                {edu.degree}
+              </h3>
+              <p className="text-foreground/70 font-medium mb-3">
+                {edu.school}
+              </p>
+
+              <div className="flex flex-wrap items-center gap-x-4 gap-y-1 mb-4 text-sm text-muted-foreground">
+                <span className="flex items-center gap-1">
+                  <Calendar className="w-3.5 h-3.5" />
+                  {edu.period}
+                </span>
+                <span className="flex items-center gap-1">
+                  <MapPin className="w-3.5 h-3.5" />
+                  {edu.location}
+                </span>
               </div>
 
-              {/* Meta Info */}
-              <div className="flex flex-wrap gap-4 mb-6 text-muted-foreground text-sm">
-                <div className="flex items-center gap-1.5">
-                  <Calendar className="w-3.5 h-3.5 text-primary/70" />
-                  <span>{edu.period}</span>
-                </div>
-                <div className="flex items-center gap-1.5">
-                  <MapPin className="w-3.5 h-3.5 text-primary/70" />
-                  <span>{edu.location}</span>
-                </div>
-              </div>
-
-              {/* Details */}
               {edu.details && edu.details.length > 0 && (
-                <div className="space-y-2">
+                <ul className="space-y-1.5">
                   {edu.details.map((detail: string, i: number) => (
-                    <div
+                    <li
                       key={i}
-                      className="flex items-start gap-2 text-muted-foreground text-sm leading-relaxed"
+                      className="text-muted-foreground text-sm leading-relaxed pl-4 relative before:content-['–'] before:absolute before:left-0 before:text-muted-foreground/60"
                     >
-                      <BookOpen className="w-3.5 h-3.5 text-primary/70 mt-1 flex-shrink-0" />
-                      <span>{detail}</span>
-                    </div>
+                      {detail}
+                    </li>
                   ))}
-                </div>
+                </ul>
               )}
             </div>
           ))}
