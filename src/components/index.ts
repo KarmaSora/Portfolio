@@ -6,6 +6,7 @@ export { Education } from "./Education";
 export { Projects } from "./Projects";
 export { Skills } from "./Skills";
 export { Contact } from "./Contact";
+export { Documents } from "./Documents";
 export { Footer } from "./Footer";
 export { ThemeProvider, useTheme } from "./ThemeProvider";
 export { ThemeToggle } from "./ThemeToggle";
@@ -24,6 +25,8 @@ export {
   useNavItems,
   useSEO,
   useAchievements,
+  useCertificates,
+  useDocuments,
 } from "./PortfolioProvider";
 export {
   Skeleton,

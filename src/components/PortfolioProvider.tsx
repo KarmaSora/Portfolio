@@ -138,3 +138,13 @@ export function useAchievements() {
   const { data } = usePortfolio();
   return data.achievements;
 }
+
+export function useCertificates() {
+  const { data } = usePortfolio();
+  return data.certificates;
+}
+
+export function useDocuments() {
+  const { data } = usePortfolio();
+  return data.documents;
+}

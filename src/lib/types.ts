@@ -80,7 +80,7 @@ export interface Project {
   demo?: string | null;
   image?: string | null;
   featured: boolean;
-  category: "web" | "game" | "tool" | "systems";
+  category: "web" | "game" | "tool" | "systems" | "ai";
 }
 
 export interface SkillCategory {
@@ -103,6 +103,24 @@ export interface Achievement {
   link?: string;
 }
 
+export interface Certificate {
+  id: string;
+  title: string;
+  issuer: string;
+  description: string;
+  date: string;
+  image: string;
+}
+
+export interface Document {
+  id: string;
+  title: string;
+  subtitle: string;
+  issuer: string;
+  type: "degree" | "recommendation";
+  file: string;
+}
+
 export interface SEOData {
   title: string;
   description: string;
@@ -122,6 +140,8 @@ export interface PortfolioData {
   projects: Project[];
   skillCategories: SkillCategory[];
   achievements: Achievement[];
+  certificates: Certificate[];
+  documents: Document[];
   navItems: NavItem[];
   seo: SEOData;
 }
@@ -177,6 +197,8 @@ export const defaultPortfolioData: PortfolioData = {
   projects: [],
   skillCategories: [],
   achievements: [],
+  certificates: [],
+  documents: [],
   navItems: [
     { id: "home", label: "Home", href: "#home" },
     { id: "about", label: "About", href: "#about" },

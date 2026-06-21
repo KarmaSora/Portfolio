@@ -8,6 +8,7 @@ import {
   About,
   Experience,
   Education,
+  Documents,
   Projects,
   Skills,
   Contact,
@@ -105,6 +106,7 @@ export default function Home() {
         <Projects />
         <Experience />
         <Education />
+        <Documents />
         <About />
         <Skills />
         <Contact />

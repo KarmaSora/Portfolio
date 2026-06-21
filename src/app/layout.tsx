@@ -16,7 +16,7 @@ const inter = Inter({
 export const metadata: Metadata = {
   title: "Karam Matar | Software Engineer & Game Developer",
   description:
-    "Karam Matar is a Software Engineer and Game Developer specializing in C++, TypeScript, React, and Next.js. Explore my portfolio featuring projects like Vulnerability Checker 2.0, ShowcaseSERL, and more.",
+    "Karam Matar is a Software Engineer with a B.Sc. in Software Engineering from BTH, specializing in C++, TypeScript, React, and Next.js. Explore my portfolio featuring projects like ACID Bot, Compiler from Scratch, and more.",
   keywords: [
     "Karam Matar",
     "Software Engineer",
@@ -28,6 +28,9 @@ export const metadata: Metadata = {
     "Portfolio",
     "Full Stack Developer",
     "Sweden",
+    "BTH",
+    "AI",
+    "MCP",
   ],
   authors: [{ name: "Karam Matar" }],
   creator: "Karam Matar",
@@ -35,16 +38,16 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_US",
     url: "https://karammatar.com",
-    title: "Karam Matar | Software Engineer & Game Developer",
+    title: "Karam Matar | Software Engineer",
     description:
-      "Explore my portfolio featuring innovative software projects, game development, and full-stack applications.",
+      "Explore my portfolio featuring innovative software projects, AI-driven automation, game development, and full-stack applications.",
     siteName: "Karam Matar Portfolio",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Karam Matar | Software Engineer & Game Developer",
+    title: "Karam Matar | Software Engineer",
     description:
-      "Explore my portfolio featuring innovative software projects, game development, and full-stack applications.",
+      "Explore my portfolio featuring innovative software projects, AI-driven automation, game development, and full-stack applications.",
   },
   robots: {
     index: true,

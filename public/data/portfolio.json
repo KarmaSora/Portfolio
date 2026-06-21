@@ -4,7 +4,7 @@
     "title": "Software Engineer",
     "email": "karammtr@gmail.com",
     "location": "Karlskrona, Sweden",
-    "bio": "Software developer with experience in agile development and full-stack systems. Proficient in C++, Java, and SQL, with a background in low-level software and security-focused DevOps tooling. Currently interning at Softhouse and writing my bachelor thesis on an AI-driven feedback loop in CI/CD pipelines.",
+    "bio": "Software engineer with a B.Sc. from BTH. Built a compiler from scratch in C++ and designed an AI-driven CI/CD automation system as a bachelor thesis. Two internships spanning full-stack development, backend security, and DevOps tooling. Proficient in C++, TypeScript, and JavaScript.",
     "linkedin": "https://www.linkedin.com/in/karam-matar-b92639293",
     "github": "https://github.com/KarmaSora",
     "profileImage": "/images/Karam1.jpg",
@@ -13,19 +13,20 @@
     "initials": "KM",
     "githubUsername": "@KarmaSora",
     "linkedinName": "Karam Matar",
-    "resumeUrl": "/Karam_CV-8.pdf"
+    "resumeUrl": "/shorterMainCV.pdf"
   },
   "aboutContent": {
     "sectionTitle": "About Me",
     "sectionSubtitle": "Who Am I?",
     "paragraphs": [
-      "Hello! I'm Karam Matar, a software engineer based in Sweden. I am currently completing my B.Sc. in Software Engineering at Blekinge Institute of Technology, following a recent exchange semester at Newcastle University focused on security and AI.",
-      "Currently, I am a Software Developer Intern at Softhouse, where I serve as the main point of contact between developers and customers. I am also finishing my bachelor thesis in collaboration with a company, designing and evaluating an AI-driven task-to-code feedback loop that integrates into CI/CD pipelines — using LLM API calls, the Model Context Protocol (MCP), and autonomous agent orchestration to automate bug fixing and pull request generation."
+      "I'm driven by building software that people actually use — taking an idea from nothing to a working product is the part of engineering I find most rewarding. Whether it's a compiler that executes code I wrote the rules for, or a survey platform that replaced a company's existing workflow, I care most when the result matters to someone.",
+      "My background spans low-level systems and full-stack web development. I've written a compiler from scratch in C++, designed an AI-driven CI/CD pipeline as my bachelor thesis, identified and fixed security vulnerabilities in production code, and served as the communication link between developers and customers at Softhouse.",
+      "I'm currently sharpening my algorithmic problem-solving through competitive programming courses and looking for roles where I can build software that ships to real users."
     ],
     "stats": [
       {
-        "label": "Years Experience",
-        "value": "1+",
+        "label": "Internships",
+        "value": "2",
         "icon": "briefcase"
       },
       {
@@ -51,14 +52,14 @@
   "skillsContent": {
     "sectionTitle": "Expertise",
     "sectionSubtitle": "Skills & Technologies",
-    "learningTitle": "Always learning and exploring new technologies. Currently interested in:",
+    "learningTitle": "Always learning and exploring new technologies. Currently working on:",
     "currentlyLearning": [
-      "Game Development",
-      "Artificial Intelligence"
+      "Competitive Programming (Search, Dynamic Programming, Graphs & Flows)",
+      "Hardware & PC Building"
     ]
   },
   "footerContent": {
-    "tagline": "Software Engineer focused on systems, compilers, and full-stack development",
+    "tagline": "Software Engineer focused on systems programming, full-stack development, and AI-driven automation",
     "builtWith": "Built with Next.js & Tailwind"
   },
   "experiences": [
@@ -67,18 +68,21 @@
       "role": "Software Developer Intern",
       "company": "Softhouse",
       "location": "Karlskrona, Sweden",
-      "period": "Jan 2026 - Present",
+      "period": "Jan 2026 - Jun 2026",
       "description": [
-        "Serving as the main point of contact between a team of 11 full-stack developers, the customer, and the Head of Department to coordinate requirements and project updates.",
-        "Working in a full-stack environment with rotating roles to develop features, handle technical documentation, and ensure clear communication within the team.",
-        "Contributing to requirements analysis, coding, and code reviews as part of an agile development process."
+        "Acted as communication responsible for a team of 11, coordinating requirements, demos, and sprint updates between developers, the customer, and the Head of Department — the project was formally accepted as exceeding customer expectations.",
+        "Filed a security vulnerability report identifying missing server-side validation and cross-survey injection risks, then implemented backend fixes using Zod schemas to resolve critical issues before delivery.",
+        "Wrote Cypress E2E tests for core survey flows, built the configurable scale questions feature, and contributed to backend validation, PR reviews, and merge conflict resolution across approximately 185 logged hours."
       ],
       "technologies": [
-        "Full-stack Development",
-        "Agile",
-        "Communication",
-        "Code Reviews",
-        "Team Collaboration"
+        "React",
+        "TypeScript",
+        "Bun/Express",
+        "Prisma",
+        "MongoDB",
+        "Cypress",
+        "Zod",
+        "Bitbucket Pipelines"
       ]
     },
     {
@@ -88,9 +92,9 @@
       "location": "Remote via Blekinge Institute of Technology, Sweden",
       "period": "Jan 2025 - May 2025",
       "description": [
-        "Collaborated with a team of six to build a tool for Trafikverket that automatically checks for vulnerabilities in third-party packages.",
-        "Refactored legacy PowerShell script into JavaScript to create an Azure DevOps pipeline task that generates SBOM files in JSON format.",
-        "Took initiative in team communication by keeping absent team members informed and actively following up to help resolve blockers during development."
+        "Collaborated with a team of six to build an Azure DevOps pipeline task that automatically scans third-party packages for known vulnerabilities across multiple repositories.",
+        "Refactored a legacy PowerShell script into a maintainable JavaScript codebase, enabling automated SBOM generation in JSON format within CI/CD workflows.",
+        "Proactively kept absent team members informed and followed up on blockers, helping maintain development velocity throughout the project."
       ],
       "technologies": [
         "PowerShell",
@@ -125,7 +129,7 @@
       "degree": "B.Sc. Software Engineering",
       "school": "Blekinge Institute of Technology",
       "location": "Karlskrona, Sweden",
-      "period": "Aug 2023 - Jun 2026 (expected)",
+      "period": "Aug 2023 - Jun 2026",
       "details": [
         "Focus: systems programming, memory management, data structures, and building efficient software.",
         "Bachelor Thesis: Design and evaluation of an AI-driven task-to-code feedback loop in CI/CD pipelines, developed in collaboration with a company.",
@@ -137,10 +141,9 @@
       "degree": "Exchange Semester in Computer Science (Fall 2025)",
       "school": "Newcastle University",
       "location": "Newcastle upon Tyne, United Kingdom",
-      "period": "Sep 2025 - Jan 2026 (completed)",
+      "period": "Sep 2025 - Jan 2026",
       "details": [
-        "Focus: data analysis and cleaning datasets, basic machine learning algorithms, secure software development, and threat analysis.",
-        "Systems design for games, focusing on prototyping mechanics and visual communication.",
+        "Focus: data analysis and cleaning datasets, machine learning algorithms, secure software development, threat analysis, and systems design for games.",
         "Relevant Coursework: Computer Vision & AI, Algorithm Design and Analysis, Security Programming, Game Design."
       ]
     }
@@ -169,8 +172,8 @@
     {
       "id": "compiler-from-scratch",
       "title": "Compiler from Scratch",
-      "description": "End-to-end compiler including lexer, parser, semantic analysis, CFG-based IR, TAC generation, and a custom virtual machine.",
-      "longDescription": "Built an end-to-end compiler in C++ implementing lexical analysis, parsing, semantic analysis, control-flow graph based intermediate representation, three-address code generation, and a custom virtual machine for execution.",
+      "description": "End-to-end compiler built from scratch in C++ — lexer, parser, semantic analysis, CFG-based IR, TAC generation, and a custom virtual machine — all without external parser generators.",
+      "longDescription": "Built an end-to-end compiler in C++ from scratch, implementing lexical analysis, recursive-descent parsing, semantic analysis, control-flow graph based intermediate representation, three-address code generation, and a custom virtual machine for execution — all without external parser generators or compiler toolkits.",
       "technologies": [
         "C++"
       ],
@@ -183,8 +186,8 @@
     {
       "id": "vulnerability-checker",
       "title": "VulnerabilityChecker 2.0",
-      "description": "Refactored legacy PowerShell script into JavaScript to create an Azure DevOps pipeline task that scans third-party packages for vulnerabilities and generates SBOM files.",
-      "longDescription": "Designed and implemented an Azure DevOps pipeline task for detecting vulnerabilities in third-party dependencies across multiple repositories, parsing dependency manifests, querying vulnerability data, and generating Software Bill of Materials (SBOM) files in JSON format for CI/CD workflows.",
+      "description": "Azure DevOps pipeline task that scans third-party packages for known vulnerabilities and generates SBOM files — refactored from a legacy PowerShell script into a maintainable JavaScript codebase for Trafikverket.",
+      "longDescription": "Designed and implemented an Azure DevOps pipeline task for Trafikverket that detects vulnerabilities in third-party dependencies across multiple repositories. Refactored from a legacy PowerShell script into JavaScript, the tool parses dependency manifests, queries vulnerability data, and generates Software Bill of Materials (SBOM) files in JSON format for CI/CD workflows.",
       "technologies": [
         "PowerShell",
         "JavaScript",
@@ -342,6 +345,50 @@
       "link": "https://www.linkedin.com/feed/update/urn:li:activity:7323004340258922497/"
     }
   ],
+  "certificates": [
+    {
+      "id": "bth-ta-certificate",
+      "title": "Teaching Assistant Certificate",
+      "issuer": "Blekinge Institute of Technology",
+      "description": "Recognition of valuable commitment as a supervisor in the Department of Software Engineering, supporting C++ students with great responsibility and pedagogical ability.",
+      "date": "2025-10-01 — 2026-01-16",
+      "image": "/certificates/BTH-Certificate.png"
+    },
+    {
+      "id": "elements-of-ai",
+      "title": "Elements of AI",
+      "issuer": "MinnaLearn / University of Helsinki",
+      "description": "Completed the Elements of AI course with commendable results, equivalent to 2 ECTS credits.",
+      "date": "Jul 2025",
+      "image": "/certificates/certificate-elements-of-ai-se.png"
+    }
+  ],
+  "documents": [
+    {
+      "id": "bachelor-degree",
+      "title": "Teknologie kandidatexamen",
+      "subtitle": "B.Sc. in Software Engineering",
+      "issuer": "Blekinge Institute of Technology",
+      "type": "degree",
+      "file": "/Karam_Matar_BSc_Degree.pdf"
+    },
+    {
+      "id": "recommendation-supervisor",
+      "title": "Recommendation Letter",
+      "subtitle": "From thesis supervisor",
+      "issuer": "Academic Supervisor",
+      "type": "recommendation",
+      "file": "/Recommendation_Thesis_Supervisor.pdf"
+    },
+    {
+      "id": "recommendation-company",
+      "title": "Recommendation Letter",
+      "subtitle": "From thesis industry partner",
+      "issuer": "Company Partner",
+      "type": "recommendation",
+      "file": "/Recommendation_Industry_Partner.pdf"
+    }
+  ],
   "navItems": [
     {
       "id": "home",
@@ -364,6 +411,11 @@
       "href": "#education"
     },
     {
+      "id": "documents",
+      "label": "Documents",
+      "href": "#documents"
+    },
+    {
       "id": "about",
       "label": "About",
       "href": "#about"
@@ -381,7 +433,7 @@
   ],
   "seo": {
     "title": "Karam Matar | Software Engineer",
-    "description": "Karam Matar is a software engineer focused on full-stack development, AI-driven automation, DevOps tooling, and game development. Currently researching AI feedback loops in CI/CD pipelines using MCP and LLM APIs.",
+    "description": "Karam Matar is a software engineer with a B.Sc. in Software Engineering from BTH, focused on full-stack development, AI-driven automation, DevOps tooling, and game development.",
     "keywords": [
       "Karam Matar",
       "Software Engineer",
