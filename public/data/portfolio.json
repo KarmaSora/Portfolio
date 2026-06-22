@@ -20,7 +20,7 @@
     "sectionSubtitle": "Who Am I?",
     "paragraphs": [
       "I'm driven by building software that people actually use — taking an idea from nothing to a working product is the part of engineering I find most rewarding. Whether it's a compiler that executes code I defined the rules for, or a survey platform that replaced a company's existing workflow, I care most when the result matters to someone.",
-      "My background spans low-level systems and full-stack web development. I've written a compiler from scratch in C++, designed an AI-driven CI/CD pipeline as my bachelor thesis, identified and fixed security vulnerabilities in production code, and served as the communication link between developers and customers at Softhouse.",
+      "My background spans low-level systems and full-stack web development. I've written a compiler from scratch in C++, designed an AI-driven CI/CD pipeline as my bachelor thesis, identified and fixed security vulnerabilities in production code, and served as the communication link between developers and customers at Softhouse. I also spent a semester at Newcastle University studying computer vision, security programming, and algorithm design.",
       "I'm currently sharpening my algorithms through competitive programming courses and looking for full-time engineering roles."
     ],
     "stats": [
@@ -185,7 +185,19 @@
       ],
       "github": null,
       "demo": null,
-      "image": "/images/team-temp-app.png",
+      "image": "/images/SofthouseTeamTempApp/dashboard-dark.png",
+      "screenshots": [
+        "/images/SofthouseTeamTempApp/dashboard-dark.png",
+        "/images/SofthouseTeamTempApp/create-survey.png",
+        "/images/SofthouseTeamTempApp/templates.png",
+        "/images/SofthouseTeamTempApp/branches.png",
+        "/images/SofthouseTeamTempApp/users.png",
+        "/images/SofthouseTeamTempApp/survey-types.png",
+        "/images/SofthouseTeamTempApp/survey-detail.png",
+        "/images/SofthouseTeamTempApp/leaderboard-dark.png",
+        "/images/SofthouseTeamTempApp/leaderboard-light.png",
+        "/images/SofthouseTeamTempApp/login.png"
+      ],
       "featured": true,
       "category": "web"
     },
@@ -398,7 +410,7 @@
       "id": "recommendation-supervisor",
       "title": "Recommendation Letter",
       "subtitle": "From thesis supervisor",
-      "issuer": "Academic Supervisor",
+      "issuer": "Emil Alegroth, BTH",
       "type": "recommendation",
       "file": "/Recommendation_Thesis_Supervisor.pdf"
     },
@@ -406,7 +418,7 @@
       "id": "recommendation-company",
       "title": "Recommendation Letter",
       "subtitle": "From thesis industry partner",
-      "issuer": "Company Partner",
+      "issuer": "Iquest AB",
       "type": "recommendation",
       "file": "/Recommendation_Industry_Partner.pdf"
     }
@@ -481,7 +493,7 @@
       "Blekinge Institute of Technology",
       "Newcastle University"
     ],
-    "url": "https://github.com/KarmaSora",
+    "url": "https://karmasora.github.io/Portfolio/",
     "locale": "en_US"
   }
 }

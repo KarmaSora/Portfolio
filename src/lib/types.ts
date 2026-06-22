@@ -79,6 +79,7 @@ export interface Project {
   github?: string | null;
   demo?: string | null;
   image?: string | null;
+  screenshots?: string[];
   featured: boolean;
   category: "web" | "game" | "tool" | "systems" | "ai";
 }
