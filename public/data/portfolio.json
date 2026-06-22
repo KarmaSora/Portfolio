@@ -4,12 +4,12 @@
     "title": "Software Engineer",
     "email": "karammtr@gmail.com",
     "location": "Karlskrona, Sweden",
-    "bio": "Software engineer with a B.Sc. from BTH. Built a compiler from scratch in C++ and designed an AI-driven CI/CD automation system as a bachelor thesis. Two internships spanning full-stack development, backend security, and DevOps tooling. Proficient in C++, TypeScript, and JavaScript.",
+    "bio": "Software engineer with a B.Sc. from BTH. Built a compiler from scratch in C++ and an AI-driven CI/CD automation system as a bachelor thesis. Internships at Softhouse (full-stack, security) and Trafikverket (DevOps tooling). Proficient in Python, C++ and TypeScript.",
     "linkedin": "https://www.linkedin.com/in/karam-matar-b92639293",
     "github": "https://github.com/KarmaSora",
     "profileImage": "/images/Karam1.jpg",
     "available": true,
-    "availableText": "Available for opportunities",
+    "availableText": "Open to full-time roles — preferably Sweden, open to relocate",
     "initials": "KM",
     "githubUsername": "@KarmaSora",
     "linkedinName": "Karam Matar",
@@ -19,9 +19,9 @@
     "sectionTitle": "About Me",
     "sectionSubtitle": "Who Am I?",
     "paragraphs": [
-      "I'm driven by building software that people actually use — taking an idea from nothing to a working product is the part of engineering I find most rewarding. Whether it's a compiler that executes code I wrote the rules for, or a survey platform that replaced a company's existing workflow, I care most when the result matters to someone.",
+      "I'm driven by building software that people actually use — taking an idea from nothing to a working product is the part of engineering I find most rewarding. Whether it's a compiler that executes code I defined the rules for, or a survey platform that replaced a company's existing workflow, I care most when the result matters to someone.",
       "My background spans low-level systems and full-stack web development. I've written a compiler from scratch in C++, designed an AI-driven CI/CD pipeline as my bachelor thesis, identified and fixed security vulnerabilities in production code, and served as the communication link between developers and customers at Softhouse.",
-      "I'm currently sharpening my algorithmic problem-solving through competitive programming courses and looking for roles where I can build software that ships to real users."
+      "I'm currently sharpening my algorithms through competitive programming courses and looking for full-time engineering roles."
     ],
     "stats": [
       {
@@ -70,9 +70,9 @@
       "location": "Karlskrona, Sweden",
       "period": "Jan 2026 - Jun 2026",
       "description": [
-        "Acted as communication responsible for a team of 11, coordinating requirements, demos, and sprint updates between developers, the customer, and the Head of Department — the project was formally accepted as exceeding customer expectations.",
+        "Acted as communication lead throughout the project for a team of 11, and also served as rotating Scrum Master during one sprint — coordinating requirements, demos, and sprint updates between developers, the customer, and the Head of Department. The project was formally accepted as exceeding customer expectations.",
         "Filed a security vulnerability report identifying missing server-side validation and cross-survey injection risks, then implemented backend fixes using Zod schemas to resolve critical issues before delivery.",
-        "Wrote Cypress E2E tests for core survey flows, built the configurable scale questions feature, and contributed to backend validation, PR reviews, and merge conflict resolution across approximately 185 logged hours."
+        "Wrote Cypress E2E tests for core survey flows, built the configurable scale questions feature, and contributed to backend validation, PR reviews, and merge conflict resolution."
       ],
       "technologies": [
         "React",
@@ -202,7 +202,7 @@
     {
       "id": "gyagame",
       "title": "GyaGame",
-      "description": "Developed a 2D semi-open-world shooter game in Java using a provided graphics library, focusing on game logic, entity management, and player interaction.",
+      "description": "2D semi-open-world shooter game in Java using a provided graphics library, featuring game logic, entity management, collision systems, and player interaction.",
       "longDescription": "A Java game project featuring core gameplay systems such as movement, shooting, and game logic, built using a provided graphics library.",
       "technologies": [
         "Java"
@@ -216,8 +216,8 @@
     {
       "id": "showcase-serl",
       "title": "ShowcaseSERL",
-      "description": "Built a full-stack web application to showcase student and researcher projects. Features include dynamic listings, detailed project views, and a kiosk mode, with a focus on component-based architecture and clean data handling.",
-      "longDescription": "A Next.js web app for showcasing projects with dynamic listings, detailed views, and kiosk mode support, built with a focus on component-based architecture and clean data handling.",
+      "description": "Full-stack web application for BTH's Software Engineering Research Lab to showcase student and researcher projects, featuring dynamic filtering, detailed project views, and an auto-scrolling kiosk mode for lobby displays.",
+      "longDescription": "A Next.js web application built for BTH's Software Engineering Research Lab (SERL). Features dynamic project listings with category filtering, individual project detail pages, and a kiosk mode with auto-scrolling designed for lobby display screens. Built with server-side rendering for fast initial loads and responsive design for both desktop kiosks and mobile browsing.",
       "technologies": [
         "Next.js",
         "React",
@@ -313,6 +313,7 @@
         "Model Context Protocol (MCP)",
         "Multi-Agent Systems",
         "Docker",
+        "GitHub Actions",
         "gh cli"
       ]
     },
