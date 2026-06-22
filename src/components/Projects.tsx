@@ -5,7 +5,7 @@ import Image from "next/image";
 import { Github, ExternalLink, Loader2, X, ChevronLeft, ChevronRight } from "lucide-react";
 import { usePortfolio } from "./PortfolioProvider";
 import { Project } from "@/lib/types";
-import { cn } from "@/lib/utils";
+import { cn, withBasePath } from "@/lib/utils";
 
 const DEFAULT_PROJECT_IMAGE = "/images/default-project.png";
 
@@ -119,7 +119,7 @@ export function Projects() {
                   {/* Thumbnail — always shown, uses default if no image */}
                   <div className="relative bg-secondary overflow-hidden aspect-video">
                     <Image
-                      src={project.image || DEFAULT_PROJECT_IMAGE}
+                      src={withBasePath(project.image || DEFAULT_PROJECT_IMAGE)}
                       alt={project.title}
                       fill
                       className="object-cover transition-transform duration-500 group-hover:scale-[1.03]"
@@ -224,7 +224,7 @@ export function Projects() {
             {/* Main image */}
             <div className="relative aspect-video rounded-lg overflow-hidden bg-secondary">
               <Image
-                src={galleryProject.screenshots[galleryIndex]}
+                src={withBasePath(galleryProject.screenshots[galleryIndex])}
                 alt={`${galleryProject.title} screenshot ${galleryIndex + 1}`}
                 fill
                 className="object-contain"
@@ -263,7 +263,7 @@ export function Projects() {
                   )}
                 >
                   <Image
-                    src={src}
+                    src={withBasePath(src)}
                     alt={`Thumbnail ${i + 1}`}
                     fill
                     className="object-cover"
