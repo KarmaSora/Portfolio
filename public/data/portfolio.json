@@ -132,7 +132,7 @@
       "period": "Aug 2023 - Jun 2026",
       "details": [
         "Focus: systems programming, memory management, data structures, and building efficient software.",
-        "Bachelor Thesis: Design and evaluation of an AI-driven task-to-code feedback loop in CI/CD pipelines, developed in collaboration with a company.",
+        "Bachelor Thesis: Design and evaluation of an AI-driven task-to-code feedback loop in CI/CD pipelines, developed in collaboration with Iquest AB.",
         "Relevant Coursework: Compiler Design, Operating Systems, Algorithms & Data Structures, Linear Algebra."
       ]
     },
@@ -153,7 +153,7 @@
       "id": "acid-bot-thesis",
       "title": "ACID Bot — Bachelor Thesis",
       "description": "Multi-agent AI system that fetches tasks from ClickUp via MCP, autonomously generates code fixes using Claude Code inside Docker, and opens pull requests via gh cli — with scheduled runs and a GitHub Actions pipeline option.",
-      "longDescription": "Designed and evaluated an autonomous AI feedback loop for CI/CD pipelines as a bachelor thesis, developed in collaboration with a company. The system uses an orchestrator script coordinating multiple agents: it connects to ClickUp via the Model Context Protocol (MCP) to fetch task descriptions, generates code changes using Claude (initially via API calls, later migrated to Claude Code running directly in a Docker container), and manages repositories and pull requests through gh cli. The pipeline supports both scheduled automated runs via Docker and on-demand execution through a GitHub Actions workflow.",
+      "longDescription": "Designed and evaluated an autonomous AI feedback loop for CI/CD pipelines as a bachelor thesis, developed in collaboration with Iquest AB. The system uses an orchestrator script coordinating multiple agents: it connects to ClickUp via the Model Context Protocol (MCP) to fetch task descriptions, generates code changes using Claude (initially via API calls, later migrated to Claude Code running directly in a Docker container), and manages repositories and pull requests through gh cli. The pipeline supports both scheduled automated runs via Docker and on-demand execution through a GitHub Actions workflow.",
       "technologies": [
         "JavaScript",
         "MCP",
@@ -164,10 +164,30 @@
         "ClickUp API"
       ],
       "github": null,
-      "demo": null,
+      "demo": "https://www.diva-portal.org/smash/get/diva2:2068030/FULLTEXT01.pdf",
       "image": null,
       "featured": true,
       "category": "ai"
+    },
+    {
+      "id": "team-temp-app",
+      "title": "Team Temp App — Softhouse",
+      "description": "Full-stack survey platform built for Softhouse with an admin portal for managing surveys, templates, branches, and users, and a respondent portal with gamification, leaderboards, and streak tracking.",
+      "longDescription": "A full-stack survey administration platform developed during a five-month internship at Softhouse. Features an admin portal for creating and managing surveys, templates, branches, and users, and a respondent portal with gamification elements including leaderboards and streak tracking. Supports dark and light themes, Swedish and English localization, and configurable question types including scale questions. Built with React and TypeScript on the frontend, Bun/Express and Prisma on the backend, and MongoDB as the database.",
+      "technologies": [
+        "React",
+        "TypeScript",
+        "Bun/Express",
+        "Prisma",
+        "MongoDB",
+        "Cypress",
+        "Zod"
+      ],
+      "github": null,
+      "demo": null,
+      "image": "/images/team-temp-app.png",
+      "featured": true,
+      "category": "web"
     },
     {
       "id": "compiler-from-scratch",
@@ -193,7 +213,7 @@
         "JavaScript",
         "Azure DevOps"
       ],
-      "github": "https://github.com/KarmaSora/Trafikverket",
+      "github": null,
       "demo": null,
       "image": null,
       "featured": true,
@@ -322,6 +342,7 @@
       "name": "DevOps/Data",
       "skills": [
         "Azure DevOps",
+        "Bitbucket Pipelines",
         "CI/CD",
         "Git",
         "MySQL",
@@ -342,7 +363,7 @@
       "id": "hollytech-hackathon",
       "type": "Hackathon",
       "title": "Hollytech",
-      "result": "First place winner",
+      "result": "First place winner — built a winning prototype in a competitive, time-constrained team event",
       "link": "https://www.linkedin.com/feed/update/urn:li:activity:7323004340258922497/"
     }
   ],
