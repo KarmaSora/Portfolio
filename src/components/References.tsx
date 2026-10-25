@@ -17,10 +17,10 @@ export function References() {
   const requestUrl = `mailto:${data.personalInfo.email}?subject=${encodeURIComponent("Professional references request")}`;
 
   return (
-    <section id="references" aria-label="Professional references and recommendations" className="py-20 md:py-28 bg-card/30">
+    <section id="references" aria-label="Professional references and recommendations" className="section-space bg-card/30">
       <div className="container mx-auto px-6">
         <div className="max-w-3xl mb-10">
-          <h2 className="text-2xl md:text-3xl font-bold mb-4">{content.sectionTitle}</h2>
+          <h2 className="section-title mb-4">{content.sectionTitle}</h2>
           <p className="text-base leading-relaxed text-muted-foreground">{content.sectionDescription}</p>
         </div>
 
@@ -54,10 +54,10 @@ export function References() {
 
         {letters.length > 0 && (
           <div className="mb-8">
-            <h3 className="text-sm font-medium uppercase tracking-wider text-muted-foreground mb-4">Written recommendations</h3>
+            <h3 className="text-sm font-medium  text-muted-foreground mb-4">Written recommendations</h3>
             <div className="grid gap-4 sm:grid-cols-2">
               {letters.map((letter) => (
-                <a key={letter.id} href={withBasePath(letter.file)} target="_blank" rel="noopener noreferrer" className="card rounded-xl p-5 flex items-start gap-4 transition-shadow hover:shadow-md group">
+                <a key={letter.id} href={withBasePath(letter.file)} target="_blank" rel="noopener noreferrer" className="card rounded-xl p-5 flex items-start gap-4 transition-shadow hover:border-primary/40 group">
                   <div className="rounded-lg bg-primary/10 p-2.5 text-primary shrink-0"><FileText className="h-5 w-5" aria-hidden="true" /></div>
                   <div className="min-w-0 flex-1">
                     <h4 className="font-semibold group-hover:text-primary">{letter.title}</h4>
@@ -73,7 +73,7 @@ export function References() {
 
         <div className="card rounded-xl p-6 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
           <p className="max-w-xl text-base leading-relaxed text-muted-foreground">{content.requestDescription}</p>
-          <a href={requestUrl} className="inline-flex min-h-11 items-center justify-center gap-2 rounded-lg bg-primary px-5 py-2.5 text-sm font-medium text-primary-foreground hover:bg-primary/90 shrink-0">
+          <a href={requestUrl} className="inline-flex min-h-11 items-center justify-center gap-2 rounded-lg bg-accent px-5 py-2.5 text-sm font-medium text-accent-foreground hover:bg-accent/90 shrink-0">
             <Mail className="h-4 w-4" aria-hidden="true" />{content.requestLabel}
           </a>
         </div>

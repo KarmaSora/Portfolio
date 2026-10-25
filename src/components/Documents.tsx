@@ -1,8 +1,7 @@
 "use client";
 
-import { useRef, useState } from "react";
+import { useState } from "react";
 import Image from "next/image";
-import { useInView } from "framer-motion";
 import { Award, Download, GraduationCap } from "lucide-react";
 import { Dialog } from "./Dialog";
 import { useCertificates, useDocuments } from "./PortfolioProvider";
@@ -12,8 +11,6 @@ import { cn, withBasePath } from "@/lib/utils";
 export function Documents() {
   const certificates = useCertificates();
   const documents = useDocuments();
-  const sectionRef = useRef<HTMLElement>(null);
-  const isInView = useInView(sectionRef, { once: true, margin: "-100px" });
   const [previewCertificate, setPreviewCertificate] = useState<Certificate | null>(null);
 
   const degree = documents.filter((d: DocumentType) => d.type === "degree");
@@ -22,15 +19,13 @@ export function Documents() {
     <>
       <section
         id="documents"
-        ref={sectionRef}
         aria-label="Documents & Certificates"
-        className="py-20 md:py-28"
+        className="section-space"
       >
         <div className="container mx-auto px-6">
           <h2
             className={cn(
-              "text-2xl md:text-3xl font-bold mb-12 transition-all duration-500",
-              isInView ? "opacity-100" : "opacity-0"
+              "section-title mb-12 "
             )}
           >
             Documents & Certificates
@@ -40,25 +35,23 @@ export function Documents() {
           {degree.length > 0 && (
             <div
               className={cn(
-                "mb-10 transition-all duration-500",
-                isInView ? "opacity-100" : "opacity-0"
+                "mb-10 "
               )}
             >
-              <h3 className="text-sm font-medium text-muted-foreground uppercase tracking-wider mb-4 flex items-center gap-2">
+              <h3 className="text-sm font-medium text-muted-foreground  mb-4 flex items-center gap-2">
                 <GraduationCap className="w-4 h-4" />
                 Degree
               </h3>
               <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-                {degree.map((doc: DocumentType, index: number) => (
+                {degree.map((doc: DocumentType) => (
                   <a
                     key={doc.id}
                     href={withBasePath(doc.file)}
                     target="_blank"
                     rel="noopener noreferrer"
                     className={cn(
-                      "card rounded-xl p-5 group hover:shadow-md transition-all duration-300 flex items-start gap-4"
+                      "card rounded-xl p-5 group hover:border-primary/40 transition-colors flex items-start gap-4"
                     )}
-                    style={{ transitionDelay: `${index * 100}ms` }}
                   >
                     <div className="p-2.5 rounded-lg bg-primary/10 text-primary flex-shrink-0">
                       <GraduationCap className="w-5 h-5" />
@@ -70,11 +63,11 @@ export function Documents() {
                       <p className="text-xs text-muted-foreground mt-0.5">
                         {doc.subtitle}
                       </p>
-                      <p className="text-xs text-muted-foreground/70 mt-1">
+                      <p className="text-xs text-muted-foreground mt-1">
                         {doc.issuer}
                       </p>
                     </div>
-                    <Download className="w-4 h-4 text-muted-foreground/40 group-hover:text-primary transition-colors flex-shrink-0 mt-1" />
+                    <Download className="w-4 h-4 text-muted-foreground group-hover:text-primary transition-colors flex-shrink-0 mt-1" />
                   </a>
                 ))}
               </div>
@@ -85,23 +78,21 @@ export function Documents() {
           {certificates.length > 0 && (
             <div
               className={cn(
-                "mb-10 transition-all duration-500 delay-100",
-                isInView ? "opacity-100" : "opacity-0"
+                "mb-10  "
               )}
             >
-              <h3 className="text-sm font-medium text-muted-foreground uppercase tracking-wider mb-4 flex items-center gap-2">
+              <h3 className="text-sm font-medium text-muted-foreground  mb-4 flex items-center gap-2">
                 <Award className="w-4 h-4" />
                 Certificates
               </h3>
               <div className="grid sm:grid-cols-2 gap-4">
-                {certificates.map((cert: Certificate, index: number) => (
+                {certificates.map((cert: Certificate) => (
                   <button
                     key={cert.id}
                     onClick={() => setPreviewCertificate(cert)}
                     className={cn(
-                      "card rounded-xl overflow-hidden group hover:shadow-md transition-all duration-300 text-left w-full"
+                      "card rounded-xl overflow-hidden group hover:border-primary/40 transition-colors text-left w-full"
                     )}
-                    style={{ transitionDelay: `${index * 100}ms` }}
                   >
                     {/* Certificate thumbnail */}
                     <div className="relative aspect-[16/10] bg-secondary overflow-hidden">
@@ -127,7 +118,7 @@ export function Documents() {
                       <p className="text-xs text-muted-foreground mt-1">
                         {cert.issuer}
                       </p>
-                      <p className="text-xs text-muted-foreground/70 mt-0.5">
+                      <p className="text-xs text-muted-foreground mt-0.5">
                         {cert.date}
                       </p>
                       <p className="text-sm text-muted-foreground mt-2 leading-relaxed">

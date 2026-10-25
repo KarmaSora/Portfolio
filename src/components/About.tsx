@@ -1,8 +1,6 @@
 "use client";
 
-import { useRef } from "react";
 import Image from "next/image";
-import { useInView } from "framer-motion";
 import { MapPin, Trophy } from "lucide-react";
 import { usePersonalInfo, useAboutContent, useAchievements } from "./PortfolioProvider";
 import { cn, withBasePath } from "@/lib/utils";
@@ -11,18 +9,15 @@ export function About() {
   const personalInfo = usePersonalInfo();
   const aboutContent = useAboutContent();
   const achievements = useAchievements();
-  const sectionRef = useRef<HTMLElement>(null);
-  const isInView = useInView(sectionRef, { once: true, margin: "-100px" });
 
   return (
-    <section id="about" ref={sectionRef} className="py-20 md:py-28">
+    <section id="about" className="section-space">
       <div className="container mx-auto px-6">
         <div className="grid lg:grid-cols-5 gap-12 lg:gap-16 items-start">
           {/* Image — takes 2 columns */}
           <div
             className={cn(
-              "lg:col-span-2 transition-all duration-700",
-              isInView ? "opacity-100" : "opacity-0"
+              "lg:col-span-2 "
             )}
           >
             <div className="relative aspect-[4/5] max-w-sm mx-auto lg:mx-0">
@@ -34,7 +29,6 @@ export function About() {
                     fill
                     className="object-cover"
                     sizes="(max-width: 768px) 100vw, 40vw"
-                    priority
                   />
                 ) : (
                   <div className="flex items-center justify-center h-full">
@@ -56,11 +50,10 @@ export function About() {
           {/* Content — takes 3 columns */}
           <div
             className={cn(
-              "lg:col-span-3 transition-all duration-700 delay-200",
-              isInView ? "opacity-100" : "opacity-0"
+              "lg:col-span-3  "
             )}
           >
-            <h2 className="text-2xl md:text-3xl font-bold mb-8">
+            <h2 className="section-title mb-8">
               About
             </h2>
 

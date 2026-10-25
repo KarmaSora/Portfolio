@@ -66,11 +66,11 @@ export function Projects() {
   };
 
   return (
-    <section id="projects" aria-label="Projects" className="py-20 md:py-28 bg-card/30">
+    <section id="projects" aria-label="Projects" className="section-space bg-card/30">
       <div className="container mx-auto px-6">
         {/* Header with inline filter — not a separate block */}
         <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-12">
-          <h2 className="text-2xl md:text-3xl font-bold">
+          <h2 className="section-title">
             Projects
           </h2>
 
@@ -81,7 +81,7 @@ export function Projects() {
                 onClick={() => setFilter("all")}
                 aria-pressed={filter === "all"}
                 className={cn(
-                  "transition-colors",
+                  "min-h-11 px-1 transition-colors",
                   filter === "all"
                     ? "text-foreground font-medium"
                     : "text-muted-foreground hover:text-foreground"
@@ -95,7 +95,7 @@ export function Projects() {
                   onClick={() => setFilter(cat)}
                   aria-pressed={filter === cat}
                   className={cn(
-                    "transition-colors",
+                    "min-h-11 px-1 transition-colors",
                     filter === cat
                       ? "text-foreground font-medium"
                       : "text-muted-foreground hover:text-foreground"
@@ -148,60 +148,27 @@ export function Projects() {
                     )}
                   </div>
 
-                  {/* Content */}
-                  <div className="p-6 flex flex-col flex-1">
-                    <div className="flex items-start justify-between gap-4 mb-3">
-                      <h3 className="text-lg font-bold text-foreground group-hover:text-primary transition-colors">
-                        {project.title}
-                      </h3>
-                      {/* Links right-aligned */}
-                      <div className="flex items-center gap-2 flex-shrink-0" onClick={(e) => e.stopPropagation()}>
+                  <div className="flex flex-1 flex-col p-6">
+                    <h3 className="mb-3 text-xl font-semibold tracking-tight">{project.title}</h3>
+                    <p className="mb-5 text-base leading-7 text-muted-foreground">{project.description}</p>
+                    <div className="flex flex-wrap gap-x-3 gap-y-1">
+                      {project.technologies.map((technology) => <span key={technology} className="technology-label">{technology}</span>)}
+                    </div>
+                    <div className="mt-auto flex flex-wrap items-center justify-between gap-x-4 gap-y-2 pt-6">
+                      <button type="button" onClick={() => setDetailProject(project)} aria-label={`Read details about ${project.title}`} className="inline-flex min-h-11 items-center text-sm font-semibold text-primary underline-offset-4 hover:underline">Project details</button>
+                      <div className="flex flex-wrap items-center gap-4">
                         {project.github && (
-                          <a
-                            href={project.github}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="p-1.5 rounded-md text-muted-foreground hover:text-foreground transition-colors"
-                            aria-label={`View ${project.title} source code`}
-                            title="Source code"
-                          >
-                            <Github className="w-4 h-4" />
+                          <a href={project.github} target="_blank" rel="noopener noreferrer" className="inline-flex min-h-11 items-center gap-2 text-sm text-muted-foreground hover:text-primary" aria-label={`View ${project.title} source code`}>
+                            <Github className="h-4 w-4" aria-hidden="true" /> Source
                           </a>
                         )}
                         {project.demo && (
-                          <a
-                            href={project.demo}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="flex items-center gap-1.5 p-1.5 rounded-md text-xs text-muted-foreground hover:text-foreground transition-colors"
-                            aria-label={`${project.demoLabel || "Live demo"}: ${project.title}`}
-                            title={project.demoLabel || "Live demo"}
-                          >
-                            <ExternalLink className="w-4 h-4" />
-                            <span>{project.demoLabel || "Demo"}</span>
+                          <a href={project.demo} target="_blank" rel="noopener noreferrer" className="inline-flex min-h-11 items-center gap-2 text-sm text-muted-foreground hover:text-primary" aria-label={`${project.demoLabel || "Live demo"}: ${project.title}`}>
+                            <ExternalLink className="h-4 w-4" aria-hidden="true" /> {project.demoLabel || "Live demo"}
                           </a>
                         )}
                       </div>
                     </div>
-
-                    <p className="text-muted-foreground text-base mb-4 leading-7">
-                      {project.description}
-                    </p>
-
-                    {/* Tech tags */}
-                    <div className="flex flex-wrap gap-1.5">
-                      {project.technologies.map((tech) => (
-                        <span
-                          key={tech}
-                          className="px-2 py-0.5 text-xs rounded bg-secondary/60 text-muted-foreground"
-                        >
-                          {tech}
-                        </span>
-                      ))}
-                    </div>
-                    <button type="button" onClick={() => setDetailProject(project)} aria-label={`Read details about ${project.title}`} className="mt-5 inline-flex min-h-11 items-center gap-1 self-start text-sm font-medium text-primary hover:underline">
-                      Project details <ChevronRight className="h-4 w-4" aria-hidden="true" />
-                    </button>
                   </div>
                 </div>
               </article>

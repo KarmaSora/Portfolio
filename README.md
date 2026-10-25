@@ -196,7 +196,6 @@ The static site in the `out/` folder can be deployed to any static hosting servi
 | -------------------------- | ---------------------------- |
 | `next`                     | React framework with SSR/SSG |
 | `react` / `react-dom`      | UI library                   |
-| `framer-motion`            | Animation library            |
 | `lucide-react`             | Icon library                 |
 | `class-variance-authority` | Component variant management |
 | `clsx`                     | Conditional class names      |
@@ -211,6 +210,7 @@ The static site in the `out/` folder can be deployed to any static hosting servi
 | `postcss`      | CSS processing    |
 | `autoprefixer` | Vendor prefixes   |
 | `eslint`       | Code linting      |
+| `lighthouse` / `chrome-launcher` | Production UI inspection |
 
 ## 📝 Scripts
 
@@ -220,6 +220,10 @@ The static site in the `out/` folder can be deployed to any static hosting servi
 | `npm run build` | Build for production     |
 | `npm run start` | Start production server  |
 | `npm run lint`  | Run ESLint               |
+| `npm run preview` | Preview the static production export |
+| `npm run lighthouse` | Inspect mobile and desktop with Lighthouse |
+
+See [Lighthouse inspection](docs/LIGHTHOUSE.md) for browser requirements, report locations and audit commands. The [design direction](docs/DESIGN.md) records the portfolio's visual system and content constraints.
 
 ## 🤝 Contributing
 

@@ -1,8 +1,7 @@
 "use client";
 
-import { useState, useEffect, useRef } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X, Monitor, Download } from "lucide-react";
+import { useEffect, useRef, useState } from "react";
+import { ChevronDown, Download, Menu, Monitor, X } from "lucide-react";
 import { cn, withBasePath } from "@/lib/utils";
 import { useNavItems, usePersonalInfo } from "./PortfolioProvider";
 import { ThemeToggle } from "./ThemeToggle";
@@ -12,232 +11,121 @@ interface NavigationProps {
   onKioskToggle: () => void;
 }
 
+const PRIMARY_SECTIONS = new Set(["experience", "projects", "references", "about", "contact"]);
+const SECONDARY_SECTIONS = new Set(["education", "documents", "skills"]);
+
 export function Navigation({ kioskMode, onKioskToggle }: NavigationProps) {
   const navItems = useNavItems();
   const personalInfo = usePersonalInfo();
   const [isOpen, setIsOpen] = useState(false);
+  const [isMoreOpen, setIsMoreOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [activeSection, setActiveSection] = useState("home");
   const menuButtonRef = useRef<HTMLButtonElement>(null);
+  const moreButtonRef = useRef<HTMLButtonElement>(null);
+  const headerRef = useRef<HTMLElement>(null);
+
+  const closeNavigation = () => {
+    setIsOpen(false);
+    setIsMoreOpen(false);
+  };
 
   useEffect(() => {
-    if (!isOpen) return;
+    const onScroll = () => {
+      setScrolled(window.scrollY > 20);
+      const current = [...navItems].reverse().find((item) => {
+        const section = document.getElementById(item.id);
+        return section && section.getBoundingClientRect().top <= 150;
+      });
+      setActiveSection(current?.id ?? "home");
+    };
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, [navItems]);
 
-    const closeOnEscape = (event: KeyboardEvent) => {
+  useEffect(() => {
+    if (!isOpen && !isMoreOpen) return;
+    const onEscape = (event: KeyboardEvent) => {
       if (event.key === "Escape") {
         setIsOpen(false);
-        menuButtonRef.current?.focus();
+        setIsMoreOpen(false);
+        (isMoreOpen ? moreButtonRef : menuButtonRef).current?.focus();
+      }
+    };
+    const onOutsidePress = (event: PointerEvent) => {
+      if (event.target instanceof Node && !headerRef.current?.contains(event.target)) {
+        setIsOpen(false);
+        setIsMoreOpen(false);
       }
     };
     const desktop = window.matchMedia("(min-width: 1280px)");
-    const closeOnDesktop = () => {
-      if (desktop.matches) setIsOpen(false);
+    const onResize = () => {
+      setIsOpen(false);
+      setIsMoreOpen(false);
     };
-    window.addEventListener("keydown", closeOnEscape);
-    desktop.addEventListener("change", closeOnDesktop);
-    closeOnDesktop();
+    window.addEventListener("keydown", onEscape);
+    window.addEventListener("pointerdown", onOutsidePress);
+    desktop.addEventListener("change", onResize);
     return () => {
-      window.removeEventListener("keydown", closeOnEscape);
-      desktop.removeEventListener("change", closeOnDesktop);
+      window.removeEventListener("keydown", onEscape);
+      window.removeEventListener("pointerdown", onOutsidePress);
+      desktop.removeEventListener("change", onResize);
     };
-  }, [isOpen]);
-
-  // Get name parts for logo
-  const nameParts = personalInfo.name.split(" ");
-  const firstName = nameParts[0] || "";
-  const lastName = nameParts.slice(1).join(" ") || "";
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 50);
-
-      // Update active section based on scroll position
-      const sections = navItems.map((item) => item.id);
-      let found = false;
-      
-      for (let i = sections.length - 1; i >= 0; i--) {
-        const section = sections[i];
-        const element = document.getElementById(section);
-        if (element) {
-          const rect = element.getBoundingClientRect();
-          if (rect.top <= 150) {
-            setActiveSection(section);
-            found = true;
-            break;
-          }
-        }
-      }
-      
-      // If no section found (at very top), default to home
-      if (!found) {
-        setActiveSection("home");
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    handleScroll(); // Call once on mount
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, [navItems]);
-
-  const handleNavClick = (href: string) => {
-    setIsOpen(false);
-    const element = document.querySelector(href);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-    }
-  };
+  }, [isOpen, isMoreOpen]);
 
   return (
-    <header
-      className={cn(
-        "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
-        scrolled
-          ? "bg-background/80 backdrop-blur-xl border-b border-border/50 py-3"
-          : "bg-transparent py-6",
-        kioskMode && "kiosk-hidden",
-      )}
-    >
-      <nav className="container mx-auto px-4 sm:px-6 flex items-center justify-between gap-3" aria-label="Main navigation">
-        {/* Logo */}
-        <a
-          href="#home"
-          onClick={(e) => {
-            e.preventDefault();
-            handleNavClick("#home");
-          }}
-          className="text-lg sm:text-xl font-bold tracking-tight group shrink-0 whitespace-nowrap"
-        >
-          <span className="text-foreground group-hover:text-primary transition-colors">
-            {firstName.charAt(0)}
-          </span>
-          <span className="text-primary">.</span>
-          <span className="text-muted-foreground group-hover:text-foreground transition-colors truncate inline-block max-w-[9rem] sm:max-w-none align-bottom">
-            {lastName}
-          </span>
-        </a>
-
-        {/* Desktop Navigation */}
-        <div className="hidden xl:flex items-center gap-5 2xl:gap-7">
-          {navItems.map((item) => (
-            <a
-              key={item.id}
-              href={item.href}
-              aria-current={activeSection === item.id ? "location" : undefined}
-              onClick={(e) => {
-                e.preventDefault();
-                handleNavClick(item.href);
-              }}
-              className={cn(
-                "text-sm font-medium transition-colors hover:text-primary relative py-1",
-                activeSection === item.id
-                  ? "text-primary"
-                  : "text-muted-foreground",
-              )}
-            >
-              {item.label}
-              {activeSection === item.id && (
-                <span className="absolute -bottom-1 left-0 right-0 h-0.5 bg-primary rounded-full" />
-              )}
-            </a>
+    <header ref={headerRef} className={cn("site-header fixed inset-x-0 top-0 z-50", scrolled || isOpen ? "border-border bg-background/95 shadow-sm backdrop-blur-xl" : "border-transparent bg-background/90", kioskMode && "kiosk-hidden")}>
+      <nav className="container mx-auto flex h-20 items-center justify-between gap-4 px-5 sm:px-6" aria-label="Main navigation">
+        <a href="#home" onClick={closeNavigation} className="wordmark shrink-0" aria-label={`${personalInfo.name}, home`}>{personalInfo.name}</a>
+        <div className="hidden items-center gap-7 xl:flex">
+          {navItems.filter((item) => PRIMARY_SECTIONS.has(item.id)).map((item) => (
+            <a key={item.id} href={item.href} onClick={closeNavigation} aria-current={activeSection === item.id ? "location" : undefined} className={cn("nav-item", activeSection === item.id && "is-active")}>{item.label}</a>
           ))}
-        </div>
-
-        {/* Actions */}
-        <div className="hidden xl:flex items-center gap-3 shrink-0">
-          <ThemeToggle />
-          <button
-            onClick={onKioskToggle}
-            className={cn(
-              "p-2 rounded-lg transition-all hover:bg-secondary",
-              kioskMode && "bg-primary text-primary-foreground",
+          <div className="relative">
+            <button type="button" ref={moreButtonRef} onClick={() => setIsMoreOpen((open) => !open)} aria-label="More sections" aria-expanded={isMoreOpen} aria-controls="additional-navigation" className={cn("nav-item gap-1.5", SECONDARY_SECTIONS.has(activeSection) && "is-active")}>
+              More <ChevronDown className={cn("h-4 w-4 transition-transform", isMoreOpen && "rotate-180")} aria-hidden="true" />
+            </button>
+            {isMoreOpen && (
+              <div id="additional-navigation" className="absolute right-0 top-full mt-3 w-56 rounded-xl border border-border bg-background p-2 shadow-sm">
+                {navItems.filter((item) => SECONDARY_SECTIONS.has(item.id)).map((item) => (
+                  <a key={item.id} href={item.href} onClick={closeNavigation} aria-current={activeSection === item.id ? "location" : undefined} className={cn("flex min-h-11 items-center rounded-lg px-3 py-2 text-sm font-medium hover:bg-secondary", activeSection === item.id ? "text-accent" : "text-muted-foreground")}>{item.label}</a>
+                ))}
+              </div>
             )}
-            title={kioskMode ? "Exit Kiosk Mode" : "Enter Kiosk Mode (Ctrl+K)"}
-            aria-label={kioskMode ? "Exit Kiosk Mode" : "Enter Kiosk Mode"}
-          >
-            <Monitor className="w-4 h-4" aria-hidden="true" />
-          </button>
-          <a
-            href={withBasePath(personalInfo.resumeUrl)}
-            download
-            className="px-4 py-2 text-sm font-medium rounded-lg bg-primary text-primary-foreground hover:bg-primary/90 transition-all"
-          >
-            Download CV
-          </a>
+          </div>
         </div>
-
+        <div className="hidden items-center gap-2 xl:flex">
+          <ThemeToggle />
+          <button type="button" onClick={onKioskToggle} className="icon-link" title="Presentation mode (Ctrl+K)" aria-label={kioskMode ? "Exit Kiosk Mode" : "Enter Kiosk Mode"}>
+            <Monitor className="h-[18px] w-[18px]" aria-hidden="true" />
+          </button>
+          <a href={withBasePath(personalInfo.resumeUrl)} download className="button-secondary ml-2">Download CV</a>
+        </div>
         <div className="flex items-center gap-2 xl:hidden">
-          <a href={withBasePath(personalInfo.resumeUrl)} download className="inline-flex min-h-11 items-center gap-2 rounded-lg bg-primary px-3 py-2 text-sm font-medium text-primary-foreground hover:bg-primary/90">
-            <Download className="h-4 w-4" aria-hidden="true" />
-            Download CV
+          <a href={withBasePath(personalInfo.resumeUrl)} download className="button-secondary px-3 text-sm" aria-label="Download CV">
+            <Download className="h-4 w-4" aria-hidden="true" /><span><span className="hidden min-[400px]:inline">Download </span>CV</span>
           </a>
-        {/* Compact navigation */}
-        <button
-          ref={menuButtonRef}
-          onClick={() => setIsOpen(!isOpen)}
-          className="flex h-11 w-11 items-center justify-center rounded-lg hover:bg-secondary transition-colors shrink-0"
-          aria-label={isOpen ? "Close navigation menu" : "Open navigation menu"}
-          aria-expanded={isOpen}
-          aria-controls="mobile-navigation"
-        >
-          {isOpen ? <X className="w-6 h-6" aria-hidden="true" /> : <Menu className="w-6 h-6" aria-hidden="true" />}
-        </button>
+          <button type="button" ref={menuButtonRef} onClick={() => setIsOpen((open) => !open)} className="icon-link shrink-0" aria-label={isOpen ? "Close navigation menu" : "Open navigation menu"} aria-expanded={isOpen} aria-controls="mobile-navigation">
+            {isOpen ? <X className="h-5 w-5" aria-hidden="true" /> : <Menu className="h-5 w-5" aria-hidden="true" />}
+          </button>
         </div>
       </nav>
-
-      {/* Mobile Navigation */}
-      <AnimatePresence>
-        {isOpen && (
-          <motion.div
-            id="mobile-navigation"
-            role="navigation"
-            aria-label="Mobile navigation"
-            className="xl:hidden absolute top-full left-0 right-0 bg-background/95 backdrop-blur-xl border-b border-border max-h-[calc(100dvh-6rem)] overflow-y-auto overflow-x-hidden"
-            initial={{ height: 0, opacity: 0 }}
-            animate={{ height: "auto", opacity: 1 }}
-            exit={{ height: 0, opacity: 0 }}
-            transition={{ duration: 0.2 }}
-          >
-            <div className="container mx-auto px-4 sm:px-6 py-4 pb-6 flex flex-col gap-4">
-              {navItems.map((item) => (
-                <a
-                  key={item.id}
-                  href={item.href}
-                  aria-current={activeSection === item.id ? "location" : undefined}
-                  onClick={(e) => {
-                    e.preventDefault();
-                    handleNavClick(item.href);
-                  }}
-                  className={cn(
-                    "text-base font-medium py-2 transition-colors hover:text-primary",
-                    activeSection === item.id
-                      ? "text-primary"
-                      : "text-muted-foreground",
-                  )}
-                >
-                  {item.label}
-                </a>
-              ))}
-              <div className="flex items-center gap-4 pt-4 border-t border-border">
-                <ThemeToggle />
-                <button
-                  onClick={onKioskToggle}
-                  className="p-2 rounded-lg hover:bg-secondary transition-colors"
-                  aria-label={kioskMode ? "Exit Kiosk Mode" : "Enter Kiosk Mode"}
-                >
-                  <Monitor className="w-5 h-5" aria-hidden="true" />
-                </button>
-                <a
-                  href={withBasePath(personalInfo.resumeUrl)}
-                  download
-                  className="flex-1 text-center px-4 py-2 text-sm font-medium rounded-lg bg-primary text-primary-foreground"
-                >
-                  Download CV
-                </a>
-              </div>
+      {isOpen && (
+        <div id="mobile-navigation" role="navigation" aria-label="Mobile navigation" className="max-h-[calc(100dvh-5rem)] overflow-y-auto border-t border-border bg-background px-6 py-5 xl:hidden">
+          <div className="container mx-auto grid gap-x-8 gap-y-1 px-0 sm:grid-cols-2">
+            {navItems.map((item) => (
+              <a key={item.id} href={item.href} onClick={() => setIsOpen(false)} aria-current={activeSection === item.id ? "location" : undefined} className={cn("min-h-11 rounded-lg px-3 py-3 font-medium hover:bg-secondary", activeSection === item.id ? "text-accent" : "text-muted-foreground")}>{item.label}</a>
+            ))}
+            <div className="col-span-full mt-4 flex items-center gap-3 border-t border-border pt-4">
+              <ThemeToggle />
+              <button type="button" onClick={() => { setIsOpen(false); onKioskToggle(); }} className="inline-flex min-h-11 items-center gap-2 px-3 text-sm text-muted-foreground hover:text-primary" aria-label={kioskMode ? "Exit Kiosk Mode" : "Enter Kiosk Mode"}>
+                <Monitor className="h-4 w-4" aria-hidden="true" /> Presentation mode
+              </button>
             </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+          </div>
+        </div>
+      )}
     </header>
   );
 }

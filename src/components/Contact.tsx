@@ -1,92 +1,44 @@
 "use client";
 
-import { useState, useRef } from "react";
-import { useInView } from "framer-motion";
-import { Mail, Copy, Check, Github, Linkedin, ExternalLink } from "lucide-react";
-import { usePersonalInfo, useContactContent } from "./PortfolioProvider";
-import { cn } from "@/lib/utils";
+import { useState } from "react";
+import { Check, Copy, Github, Linkedin, MapPin } from "lucide-react";
+import { useContactContent, usePersonalInfo } from "./PortfolioProvider";
 
 export function Contact() {
-  const personalInfo = usePersonalInfo();
-  const contactContent = useContactContent();
-  const [copied, setCopied] = useState(false);
-  const sectionRef = useRef<HTMLElement>(null);
-  const isInView = useInView(sectionRef, { once: true, margin: "-100px" });
+  const info = usePersonalInfo();
+  const content = useContactContent();
+  const [copyStatus, setCopyStatus] = useState<"idle" | "copied" | "failed">("idle");
 
   const copyEmail = async () => {
     try {
-      await navigator.clipboard.writeText(personalInfo.email);
-      setCopied(true);
-      setTimeout(() => setCopied(false), 2000);
-    } catch (err) {
-      console.error("Failed to copy email:", err);
+      await navigator.clipboard.writeText(info.email);
+      setCopyStatus("copied");
+    } catch {
+      setCopyStatus("failed");
     }
   };
 
   return (
-    <section id="contact" ref={sectionRef} aria-label="Contact" className="py-20 md:py-28 bg-card/30">
-      <div className="container mx-auto px-6">
-        <div
-          className={cn(
-            "max-w-2xl mx-auto text-center transition-all duration-500",
-            isInView ? "opacity-100" : "opacity-0"
-          )}
-        >
-          {/* Simple, direct */}
-          <h2 className="text-2xl md:text-3xl font-bold mb-4">
-            Contact
-          </h2>
-          <p className="text-muted-foreground mb-8 max-w-md mx-auto">
-            {contactContent.sectionDescription}
-          </p>
-
-          {/* Email — prominent, with copy */}
-          <div className="card rounded-xl p-6 mb-8 inline-block">
-            <div className="flex items-center gap-3">
-              <Mail className="w-5 h-5 text-primary" />
-              <a
-                href={`mailto:${personalInfo.email}`}
-                className="text-lg font-medium text-foreground hover:text-primary transition-colors"
-              >
-                {personalInfo.email}
-              </a>
-              <button
-                onClick={copyEmail}
-                className="p-1.5 rounded-md hover:bg-secondary transition-colors"
-                title="Copy email"
-                aria-label="Copy email to clipboard"
-              >
-                {copied ? (
-                  <Check className="w-4 h-4 text-green-500" />
-                ) : (
-                  <Copy className="w-4 h-4 text-muted-foreground" />
-                )}
-              </button>
-            </div>
+    <section id="contact" aria-label="Contact" className="section-space bg-secondary/60">
+      <div className="container mx-auto grid gap-8 px-6 md:grid-cols-[1fr_1.2fr] md:gap-16">
+        <div>
+          <h2 className="section-title mb-5">Contact</h2>
+          <p className="max-w-md text-base leading-7 text-muted-foreground">{content.sectionDescription}</p>
+        </div>
+        <div className="min-w-0 md:pt-1">
+          <div className="flex min-w-0 items-center justify-between gap-3 border-b border-border pb-5">
+            <a href={`mailto:${info.email}`} className="min-w-0 break-all text-lg font-semibold tracking-tight text-primary underline-offset-4 hover:underline sm:text-2xl">{info.email}</a>
+            <button type="button" onClick={copyEmail} className="icon-link" aria-label="Copy email to clipboard" title="Copy email">
+              {copyStatus === "copied" ? <Check className="h-5 w-5" aria-hidden="true" /> : <Copy className="h-5 w-5" aria-hidden="true" />}
+            </button>
           </div>
-
-          {/* Social — simple links, no cards */}
-          <div className="flex items-center justify-center gap-6 text-sm text-muted-foreground">
-            <a
-              href={personalInfo.github}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-2 hover:text-foreground transition-colors"
-            >
-              <Github className="w-4 h-4" />
-              GitHub
-            </a>
-            <a
-              href={personalInfo.linkedin}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-2 hover:text-foreground transition-colors"
-            >
-              <Linkedin className="w-4 h-4" />
-              LinkedIn
-            </a>
-            <span className="text-border">·</span>
-            <span>{personalInfo.location}</span>
+          <p role="status" aria-live="polite" className="mt-2 min-h-6 text-sm text-muted-foreground">
+            {copyStatus === "copied" ? "Email copied to clipboard." : copyStatus === "failed" ? "Copy failed. Select the address or use the email link." : ""}
+          </p>
+          <div className="mt-4 flex flex-wrap items-center gap-x-6 gap-y-3 text-sm text-muted-foreground">
+            <a href={info.github} target="_blank" rel="noopener noreferrer" className="inline-flex min-h-11 items-center gap-2 hover:text-primary"><Github className="h-4 w-4" aria-hidden="true" />GitHub</a>
+            <a href={info.linkedin} target="_blank" rel="noopener noreferrer" className="inline-flex min-h-11 items-center gap-2 hover:text-primary"><Linkedin className="h-4 w-4" aria-hidden="true" />LinkedIn</a>
+            <span className="inline-flex items-center gap-2"><MapPin className="h-4 w-4" aria-hidden="true" />{info.location}</span>
           </div>
         </div>
       </div>

@@ -1,7 +1,5 @@
 "use client";
 
-import { useRef } from "react";
-import { useInView } from "framer-motion";
 import { Calendar, MapPin } from "lucide-react";
 import { useEducation } from "./PortfolioProvider";
 import { Education as EducationType } from "@/lib/types";
@@ -9,30 +7,25 @@ import { cn } from "@/lib/utils";
 
 export function Education() {
   const education = useEducation();
-  const sectionRef = useRef<HTMLElement>(null);
-  const isInView = useInView(sectionRef, { once: true, margin: "-100px" });
 
   return (
-    <section id="education" ref={sectionRef} className="py-20 md:py-28 bg-card/30">
+    <section id="education" className="section-space bg-card/30">
       <div className="container mx-auto px-6">
         <h2
           className={cn(
-            "text-2xl md:text-3xl font-bold mb-12 transition-all duration-500",
-            isInView ? "opacity-100" : "opacity-0"
+            "section-title mb-12 "
           )}
         >
           Education
         </h2>
 
         <div className="space-y-6">
-          {education.map((edu: EducationType, index: number) => (
+          {education.map((edu: EducationType) => (
             <div
               key={edu.id}
               className={cn(
-                "card rounded-xl p-6 md:p-8 transition-all duration-500",
-                isInView ? "opacity-100" : "opacity-0"
+                "card rounded-xl p-6 md:p-8 "
               )}
-              style={{ transitionDelay: `${index * 150}ms` }}
             >
               <h3 className="text-lg md:text-xl font-bold text-foreground mb-1">
                 {edu.degree}

@@ -1,88 +1,37 @@
 "use client";
 
-import { useRef } from "react";
-import { useInView } from "framer-motion";
-import { Calendar, MapPin } from "lucide-react";
+import { MapPin } from "lucide-react";
 import { useExperiences } from "./PortfolioProvider";
-import { cn } from "@/lib/utils";
 
 export function Experience() {
   const experiences = useExperiences();
-  const sectionRef = useRef<HTMLElement>(null);
-  const isInView = useInView(sectionRef, { once: true, margin: "-100px" });
 
   return (
-    <section
-      id="experience"
-      ref={sectionRef}
-      aria-label="Work experience"
-      className="py-20 md:py-28"
-    >
+    <section id="experience" aria-label="Work experience" className="section-space">
       <div className="container mx-auto px-6">
-        {/* Varied header — left-aligned, no subtitle */}
-        <h2
-          className={cn(
-            "text-2xl md:text-3xl font-bold mb-12 transition-all duration-500",
-            isInView ? "opacity-100" : "opacity-0"
-          )}
-        >
-          Experience
-        </h2>
-
-        {/* Simple stacked cards — no alternating timeline */}
-        <div className="max-w-5xl space-y-6">
-          {experiences.map((exp, index) => (
-            <div
-              key={exp.id}
-              className={cn(
-                "card rounded-xl p-6 md:p-8 transition-all duration-500 hover:shadow-md",
-                isInView ? "opacity-100" : "opacity-0"
-              )}
-              style={{ transitionDelay: `${index * 100}ms` }}
-            >
-              {/* Role + Company on same line */}
-              <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1 mb-3">
-                <h3 className="text-lg md:text-xl font-bold text-foreground">
-                  {exp.role}
-                </h3>
-                <span className="text-foreground/70 font-medium">
-                  @ {exp.company}
-                </span>
+        <h2 className="section-title mb-10 md:mb-14">Experience</h2>
+        <div className="border-t border-border">
+          {experiences.map((experience) => (
+            <article key={experience.id} id={experience.id} className="experience-entry grid gap-6 border-b border-border py-8 md:grid-cols-[14rem_minmax(0,1fr)] md:gap-12 md:py-10" aria-label={`${experience.role} at ${experience.company}`}>
+              <div>
+                <p className="text-sm leading-6 text-muted-foreground">{experience.period}</p>
+                <h3 className="mt-2 text-xl font-semibold tracking-tight">{experience.company}</h3>
+                <p className="mt-3 flex items-start gap-1.5 text-sm leading-6 text-muted-foreground">
+                  <MapPin className="mt-1 h-3.5 w-3.5 shrink-0" aria-hidden="true" />{experience.location}
+                </p>
               </div>
-
-              {/* Meta — inline */}
-              <div className="flex flex-wrap items-center gap-x-4 gap-y-1 mb-4 text-sm text-muted-foreground">
-                <span className="flex items-center gap-1">
-                  <Calendar className="w-3.5 h-3.5" />
-                  {exp.period}
-                </span>
-                <span className="flex items-center gap-1">
-                  <MapPin className="w-3.5 h-3.5" />
-                  {exp.location}
-                </span>
+              <div className="min-w-0">
+                <h4 className="mb-4 text-lg font-semibold">{experience.role}</h4>
+                <ul className="experience-bullets space-y-3">
+                  {experience.description.map((item, index) => (
+                    <li key={index} className="relative max-w-[75ch] pl-5 text-base leading-7 text-muted-foreground before:absolute before:left-0 before:top-3 before:h-1 before:w-1 before:rounded-full before:bg-primary">{item}</li>
+                  ))}
+                </ul>
+                <div className="mt-5 flex flex-wrap gap-x-3 gap-y-2">
+                  {experience.technologies.map((technology) => <span key={technology} className="technology-label">{technology}</span>)}
+                </div>
               </div>
-
-              {/* Description */}
-              <ul className="space-y-3 mb-6">
-                {exp.description.map((item, i) => (
-                  <li key={i} className="max-w-[85ch] text-muted-foreground text-base leading-7 pl-5 relative before:content-['–'] before:absolute before:left-0 before:text-primary">
-                    {item}
-                  </li>
-                ))}
-              </ul>
-
-              {/* Tech tags */}
-              <div className="flex flex-wrap gap-1.5">
-                {exp.technologies.map((tech) => (
-                  <span
-                    key={tech}
-                    className="px-2 py-0.5 text-xs rounded bg-secondary/60 text-muted-foreground"
-                  >
-                    {tech}
-                  </span>
-                ))}
-              </div>
-            </div>
+            </article>
           ))}
         </div>
       </div>

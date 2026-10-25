@@ -1,144 +1,72 @@
 "use client";
 
-import { motion } from "framer-motion";
-import { Github, Linkedin, ArrowDown, Mail, Download } from "lucide-react";
+import { ArrowDown, ArrowUpRight, Download, Github, Linkedin, Mail } from "lucide-react";
 import { usePersonalInfo, usePortfolio } from "./PortfolioProvider";
 import { HeroSkeleton } from "./Skeleton";
 import { withBasePath } from "@/lib/utils";
 
 export function Hero() {
   const personalInfo = usePersonalInfo();
-  const { isLoading } = usePortfolio();
+  const { data, isLoading } = usePortfolio();
 
-  const scrollToExperience = () => {
-    const element = document.getElementById("experience");
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-    }
-  };
+  if (isLoading) return <HeroSkeleton />;
 
-  if (isLoading) {
-    return <HeroSkeleton />;
-  }
-
-  const firstName = personalInfo.name.split(" ")[0];
-  const lastName = personalInfo.name.split(" ")[1];
+  const recentExperience = data.experiences.slice(0, 3);
 
   return (
-    <section
-      id="home"
-      aria-label="Introduction"
-      className="relative min-h-[85vh] flex items-center justify-center py-24 sm:py-28 md:py-0"
-    >
+    <section id="home" aria-label="Introduction" className="hero-section">
       <div className="container mx-auto px-6">
-        <motion.div
-          className="max-w-3xl mx-auto text-center"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.6 }}
-        >
-          {/* Name */}
-          <motion.h1
-            className="text-5xl md:text-7xl lg:text-8xl font-bold mb-4 leading-[0.95]"
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.15, duration: 0.5 }}
-          >
-            {firstName}{" "}
-            <span className="text-primary">{lastName}</span>
-          </motion.h1>
+        <div className="grid items-center gap-12 lg:grid-cols-[minmax(0,1.55fr)_minmax(17rem,1fr)] lg:gap-20">
+          <div className="min-w-0">
+            <p className="mb-3 text-base font-medium text-primary sm:mb-5 sm:text-lg">{personalInfo.title}</p>
+            <h1 className="hero-name">{personalInfo.name}</h1>
+            <p className="mt-5 max-w-[38rem] text-base leading-7 text-muted-foreground sm:mt-7 sm:text-lg">
+              {personalInfo.bio}
+            </p>
+            <div className="mt-6 flex flex-wrap items-center gap-3 sm:mt-8">
+              <a href={`mailto:${personalInfo.email}`} className="button-primary">
+                <Mail className="h-4 w-4" aria-hidden="true" /> Get in touch
+              </a>
+              <a href={withBasePath(personalInfo.resumeUrl)} download aria-label={`Download ${personalInfo.name}'s CV (PDF)`} className="button-secondary">
+                <Download className="h-4 w-4" aria-hidden="true" /> Download CV
+              </a>
+              <a href={personalInfo.github} target="_blank" rel="noopener noreferrer" className="icon-link" aria-label="GitHub profile" title="GitHub profile">
+                <Github className="h-5 w-5" aria-hidden="true" />
+              </a>
+              <a href={personalInfo.linkedin} target="_blank" rel="noopener noreferrer" className="icon-link" aria-label="LinkedIn profile" title="LinkedIn profile">
+                <Linkedin className="h-5 w-5" aria-hidden="true" />
+              </a>
+            </div>
+            {personalInfo.available && (
+              <div className="mt-5 flex max-w-xl items-start gap-3 text-sm leading-6 text-muted-foreground sm:mt-8">
+                <span className="mt-2 h-2 w-2 shrink-0 rounded-full bg-primary" aria-hidden="true" />
+                <p>{personalInfo.availableText}</p>
+              </div>
+            )}
+          </div>
 
-          {/* Title — understated */}
-          <motion.p
-            className="text-xl md:text-2xl text-muted-foreground mb-8"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.3 }}
-          >
-            {personalInfo.title}
-          </motion.p>
-
-          {/* Bio — left-aligned prose, reads like a human wrote it */}
-          <motion.p
-            className="text-base md:text-lg text-muted-foreground max-w-xl mx-auto mb-10 leading-relaxed"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.4 }}
-          >
-            {personalInfo.bio}
-          </motion.p>
-
-          {personalInfo.available && (
-            <motion.p
-              className="text-sm text-primary mb-6"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.45 }}
-            >
-              {personalInfo.availableText}
-            </motion.p>
-          )}
-
-          {/* Links — inline, casual row */}
-          <motion.div
-            className="flex flex-wrap items-center justify-center gap-3 mb-16"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.5 }}
-          >
-            <a
-              href={`mailto:${personalInfo.email}`}
-              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-primary text-primary-foreground text-sm font-medium hover:opacity-90 transition-opacity"
-            >
-              <Mail className="w-4 h-4" />
-              Get in touch
-            </a>
-            <a
-              href={personalInfo.github}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg border border-border text-sm font-medium text-muted-foreground hover:text-foreground hover:border-foreground/30 transition-colors"
-            >
-              <Github className="w-4 h-4" />
-              GitHub
-            </a>
-            <a
-              href={personalInfo.linkedin}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg border border-border text-sm font-medium text-muted-foreground hover:text-foreground hover:border-foreground/30 transition-colors"
-            >
-              <Linkedin className="w-4 h-4" />
-              LinkedIn
-            </a>
-            <a
-              href={withBasePath(personalInfo.resumeUrl)}
-              download
-              aria-label={`Download ${personalInfo.name}'s CV (PDF)`}
-              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg border border-border text-sm font-medium text-muted-foreground hover:text-foreground hover:border-foreground/30 transition-colors"
-            >
-              <Download className="w-4 h-4" />
-              Download CV
-            </a>
-          </motion.div>
-
-          {/* Scroll hint — just an arrow, no label */}
-          <motion.button
-            onClick={scrollToExperience}
-            className="text-muted-foreground/50 hover:text-muted-foreground transition-colors"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.7 }}
-            aria-label="Scroll to experience"
-          >
-            <motion.div
-              animate={{ y: [0, 6, 0] }}
-              transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-            >
-              <ArrowDown className="w-5 h-5" />
-            </motion.div>
-          </motion.button>
-        </motion.div>
+          <aside className="recent-work hidden lg:block" aria-label="Recent experience">
+            <div className="mb-2 flex items-center justify-between gap-4">
+              <h2 className="text-base font-semibold">Recent experience</h2>
+              <span className="h-2 w-2 rounded-full border border-primary" aria-hidden="true" />
+            </div>
+            <div className="divide-y divide-border">
+              {recentExperience.map((experience) => (
+                <a key={experience.id} href={`#${experience.id}`} className="group flex min-h-28 items-center justify-between gap-4 py-5">
+                  <div className="min-w-0">
+                    <p className="text-xs leading-6 text-muted-foreground">{experience.period}</p>
+                    <p className="mt-1 text-lg font-semibold tracking-tight group-hover:text-primary">{experience.company}</p>
+                    <p className="mt-1 text-sm leading-6 text-muted-foreground">{experience.role}</p>
+                  </div>
+                  <ArrowUpRight className="h-5 w-5 shrink-0 text-primary transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" aria-hidden="true" />
+                </a>
+              ))}
+            </div>
+          </aside>
+        </div>
+        <a href="#experience" className="mt-6 inline-flex min-h-11 items-center gap-3 text-sm font-medium text-muted-foreground hover:text-primary sm:mt-12 lg:mt-16">
+          <ArrowDown className="h-4 w-4" aria-hidden="true" /> Explore my experience
+        </a>
       </div>
     </section>
   );
