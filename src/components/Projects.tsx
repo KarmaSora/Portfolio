@@ -1,8 +1,9 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
-import { Github, ExternalLink, Loader2, X, ChevronLeft, ChevronRight } from "lucide-react";
+import { Github, ExternalLink, Loader2, ChevronLeft, ChevronRight } from "lucide-react";
+import { Dialog } from "./Dialog";
 import { usePortfolio } from "./PortfolioProvider";
 import { Project } from "@/lib/types";
 import { cn, withBasePath } from "@/lib/utils";
@@ -15,6 +16,12 @@ export function Projects() {
   const [filter, setFilter] = useState<"all" | Project["category"]>("all");
   const [galleryProject, setGalleryProject] = useState<Project | null>(null);
   const [galleryIndex, setGalleryIndex] = useState(0);
+  const [detailProject, setDetailProject] = useState<Project | null>(null);
+  const activeThumbnailRef = useRef<HTMLButtonElement>(null);
+
+  useEffect(() => {
+    activeThumbnailRef.current?.scrollIntoView({ block: "nearest", inline: "nearest" });
+  }, [galleryIndex, galleryProject]);
 
   const filteredProjects =
     filter === "all" ? projects : projects.filter((p) => p.category === filter);
@@ -33,6 +40,7 @@ export function Projects() {
 
   const openGallery = (project: Project) => {
     if (project.screenshots && project.screenshots.length > 0) {
+      setDetailProject(null);
       setGalleryProject(project);
       setGalleryIndex(0);
     }
@@ -68,9 +76,10 @@ export function Projects() {
 
           {/* Filter — simple text links, not pills */}
           {!isLoading && (
-            <div className="flex items-center gap-4 text-sm">
+            <div className="flex flex-wrap items-center gap-x-4 gap-y-2 text-sm" role="group" aria-label="Filter projects">
               <button
                 onClick={() => setFilter("all")}
+                aria-pressed={filter === "all"}
                 className={cn(
                   "transition-colors",
                   filter === "all"
@@ -84,6 +93,7 @@ export function Projects() {
                 <button
                   key={cat}
                   onClick={() => setFilter(cat)}
+                  aria-pressed={filter === cat}
                   className={cn(
                     "transition-colors",
                     filter === cat
@@ -107,15 +117,13 @@ export function Projects() {
           /* Project grid — no staggered animations, just instant render */
           <div className="grid md:grid-cols-2 gap-6">
             {filteredProjects.map((project) => (
-              <div
+              <article
                 key={project.id}
                 className={cn(
-                  "project-card card rounded-xl overflow-hidden group",
-                  project.screenshots && project.screenshots.length > 0 && "cursor-pointer"
+                  "project-card card rounded-xl overflow-hidden group flex flex-col"
                 )}
-                onClick={() => openGallery(project)}
               >
-                <div className="flex flex-col">
+                <div className="flex flex-col flex-1">
                   {/* Thumbnail — always shown, uses default if no image */}
                   <div className="relative bg-secondary overflow-hidden aspect-video">
                     <Image
@@ -127,19 +135,21 @@ export function Projects() {
                     />
                     {/* Gallery indicator badge */}
                     {project.screenshots && project.screenshots.length > 0 && (
-                      <div className="absolute bottom-3 right-3 bg-black/70 backdrop-blur-sm text-white text-xs px-2.5 py-1 rounded-full flex items-center gap-1.5">
+                      <button type="button" onClick={() => openGallery(project)} aria-label={`View ${project.title} screenshots`} className="absolute inset-0 w-full text-white focus-visible:ring-inset">
+                      <span className="absolute bottom-3 right-3 bg-black/70 backdrop-blur-sm text-xs px-2.5 py-1 rounded-full flex items-center gap-1.5">
                         <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                           <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
                           <circle cx="8.5" cy="8.5" r="1.5"/>
                           <polyline points="21,15 16,10 5,21"/>
                         </svg>
                         {project.screenshots.length} screenshots
-                      </div>
+                      </span>
+                      </button>
                     )}
                   </div>
 
                   {/* Content */}
-                  <div className="p-6">
+                  <div className="p-6 flex flex-col flex-1">
                     <div className="flex items-start justify-between gap-4 mb-3">
                       <h3 className="text-lg font-bold text-foreground group-hover:text-primary transition-colors">
                         {project.title}
@@ -153,6 +163,7 @@ export function Projects() {
                             rel="noopener noreferrer"
                             className="p-1.5 rounded-md text-muted-foreground hover:text-foreground transition-colors"
                             aria-label={`View ${project.title} source code`}
+                            title="Source code"
                           >
                             <Github className="w-4 h-4" />
                           </a>
@@ -162,16 +173,18 @@ export function Projects() {
                             href={project.demo}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="p-1.5 rounded-md text-muted-foreground hover:text-foreground transition-colors"
-                            aria-label={`View ${project.title} live demo`}
+                            className="flex items-center gap-1.5 p-1.5 rounded-md text-xs text-muted-foreground hover:text-foreground transition-colors"
+                            aria-label={`${project.demoLabel || "Live demo"}: ${project.title}`}
+                            title={project.demoLabel || "Live demo"}
                           >
                             <ExternalLink className="w-4 h-4" />
+                            <span>{project.demoLabel || "Demo"}</span>
                           </a>
                         )}
                       </div>
                     </div>
 
-                    <p className="text-muted-foreground text-sm mb-4 leading-relaxed">
+                    <p className="text-muted-foreground text-base mb-4 leading-7">
                       {project.description}
                     </p>
 
@@ -186,94 +199,68 @@ export function Projects() {
                         </span>
                       ))}
                     </div>
+                    <button type="button" onClick={() => setDetailProject(project)} aria-label={`Read details about ${project.title}`} className="mt-5 inline-flex min-h-11 items-center gap-1 self-start text-sm font-medium text-primary hover:underline">
+                      Project details <ChevronRight className="h-4 w-4" aria-hidden="true" />
+                    </button>
                   </div>
                 </div>
-              </div>
+              </article>
             ))}
           </div>
         )}
       </div>
 
-      {/* Screenshot gallery modal */}
+      {detailProject && (
+        <Dialog title={detailProject.title} description="Project details" closeLabel="Close project details" onClose={() => setDetailProject(null)}>
+          <p className="max-w-prose text-base leading-7 text-muted-foreground">{detailProject.longDescription}</p>
+          <div className="mt-5 flex flex-wrap gap-2">
+            {detailProject.technologies.map((technology) => <span key={technology} className="rounded bg-secondary px-2.5 py-1 text-sm text-muted-foreground">{technology}</span>)}
+          </div>
+          <div className="mt-6 flex flex-wrap items-center gap-5 text-sm font-medium text-primary">
+            {detailProject.github && <a href={detailProject.github} target="_blank" rel="noopener noreferrer" className="inline-flex min-h-11 items-center gap-2 hover:underline"><Github className="h-4 w-4" aria-hidden="true" />Source code</a>}
+            {detailProject.demo && <a href={detailProject.demo} target="_blank" rel="noopener noreferrer" className="inline-flex min-h-11 items-center gap-2 hover:underline"><ExternalLink className="h-4 w-4" aria-hidden="true" />{detailProject.demoLabel || "Live demo"}</a>}
+            {!!detailProject.screenshots?.length && <button type="button" onClick={() => openGallery(detailProject)} className="min-h-11 hover:underline">View screenshots</button>}
+          </div>
+        </Dialog>
+      )}
+
       {galleryProject && galleryProject.screenshots && (
-        <div
-          className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm"
-          onClick={closeGallery}
+        <Dialog
+          title={galleryProject.title}
+          description="Browse screenshots with the arrows, thumbnails or left and right arrow keys."
+          closeLabel="Close gallery"
+          onClose={closeGallery}
+          onKeyDown={(event) => {
+            if (event.key === "ArrowLeft") { event.preventDefault(); prevImage(); }
+            if (event.key === "ArrowRight") { event.preventDefault(); nextImage(); }
+          }}
         >
-          <div
-            className="relative w-full max-w-5xl mx-4"
-            onClick={(e) => e.stopPropagation()}
-          >
-            {/* Close button */}
-            <button
-              onClick={closeGallery}
-              className="absolute -top-12 right-0 text-white/70 hover:text-white transition-colors"
-              aria-label="Close gallery"
-            >
-              <X className="w-6 h-6" />
-            </button>
-
-            {/* Project title */}
-            <h3 className="absolute -top-12 left-0 text-white/90 font-medium text-sm">
-              {galleryProject.title}
-              <span className="text-white/50 ml-2">
-                {galleryIndex + 1} / {galleryProject.screenshots.length}
-              </span>
-            </h3>
-
-            {/* Main image */}
-            <div className="relative aspect-video rounded-lg overflow-hidden bg-secondary">
-              <Image
-                src={withBasePath(galleryProject.screenshots[galleryIndex])}
-                alt={`${galleryProject.title} screenshot ${galleryIndex + 1}`}
-                fill
-                className="object-contain"
-                sizes="(max-width: 1280px) 100vw, 1280px"
-                priority
-              />
-            </div>
-
-            {/* Navigation arrows */}
-            <button
-              onClick={prevImage}
-              className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-12 md:-translate-x-14 text-white/60 hover:text-white transition-colors p-2"
-              aria-label="Previous screenshot"
-            >
-              <ChevronLeft className="w-8 h-8" />
-            </button>
-            <button
-              onClick={nextImage}
-              className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-12 md:translate-x-14 text-white/60 hover:text-white transition-colors p-2"
-              aria-label="Next screenshot"
-            >
-              <ChevronRight className="w-8 h-8" />
-            </button>
-
-            {/* Thumbnail strip */}
-            <div className="flex gap-2 mt-4 overflow-x-auto pb-2 justify-center">
-              {galleryProject.screenshots.map((src, i) => (
+          <div className="relative aspect-video rounded-lg overflow-hidden bg-secondary">
+            <Image src={withBasePath(galleryProject.screenshots[galleryIndex])} alt={`${galleryProject.title} screenshot ${galleryIndex + 1}`} fill className="object-contain" sizes="(max-width: 1024px) 100vw, 1024px" priority />
+          </div>
+          <div className="mt-4 flex items-center justify-between gap-3">
+            <button type="button" onClick={prevImage} className="inline-flex min-h-11 min-w-11 items-center justify-center gap-1 rounded-lg border border-border px-3 text-sm hover:bg-secondary" aria-label="Previous screenshot"><ChevronLeft className="h-5 w-5" aria-hidden="true" /><span className="hidden sm:inline">Previous</span></button>
+            <p role="status" aria-live="polite" aria-atomic="true" className="text-sm text-muted-foreground">{galleryIndex + 1} / {galleryProject.screenshots.length}</p>
+            <button type="button" onClick={nextImage} className="inline-flex min-h-11 min-w-11 items-center justify-center gap-1 rounded-lg border border-border px-3 text-sm hover:bg-secondary" aria-label="Next screenshot"><span className="hidden sm:inline">Next</span><ChevronRight className="h-5 w-5" aria-hidden="true" /></button>
+          </div>
+          <div className="mt-4 overflow-x-auto pb-2" role="group" aria-label="Screenshot thumbnails">
+            <div className="flex w-max gap-2">
+              {galleryProject.screenshots.map((src, index) => (
                 <button
-                  key={i}
-                  onClick={() => setGalleryIndex(i)}
-                  className={cn(
-                    "relative w-20 h-12 rounded overflow-hidden flex-shrink-0 border-2 transition-all",
-                    i === galleryIndex
-                      ? "border-primary opacity-100"
-                      : "border-transparent opacity-50 hover:opacity-80"
-                  )}
+                  key={index}
+                  ref={index === galleryIndex ? activeThumbnailRef : undefined}
+                  type="button"
+                  onClick={() => setGalleryIndex(index)}
+                  aria-label={`Show screenshot ${index + 1} for ${galleryProject.title}`}
+                  aria-pressed={index === galleryIndex}
+                  className={cn("relative h-12 w-20 shrink-0 overflow-hidden rounded border-2 transition-opacity", index === galleryIndex ? "border-primary opacity-100" : "border-transparent opacity-60 hover:opacity-100")}
                 >
-                  <Image
-                    src={withBasePath(src)}
-                    alt={`Thumbnail ${i + 1}`}
-                    fill
-                    className="object-cover"
-                    sizes="80px"
-                  />
+                  <Image src={withBasePath(src)} alt="" fill className="object-cover" sizes="80px" />
                 </button>
               ))}
             </div>
           </div>
-        </div>
+        </Dialog>
       )}
     </section>
   );

@@ -10,8 +10,8 @@ export function Hero() {
   const personalInfo = usePersonalInfo();
   const { isLoading } = usePortfolio();
 
-  const scrollToAbout = () => {
-    const element = document.getElementById("about");
+  const scrollToExperience = () => {
+    const element = document.getElementById("experience");
     if (element) {
       element.scrollIntoView({ behavior: "smooth" });
     }
@@ -60,13 +60,24 @@ export function Hero() {
 
           {/* Bio — left-aligned prose, reads like a human wrote it */}
           <motion.p
-            className="text-base md:text-lg text-muted-foreground/80 max-w-xl mx-auto mb-10 leading-relaxed"
+            className="text-base md:text-lg text-muted-foreground max-w-xl mx-auto mb-10 leading-relaxed"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.4 }}
           >
             {personalInfo.bio}
           </motion.p>
+
+          {personalInfo.available && (
+            <motion.p
+              className="text-sm text-primary mb-6"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.45 }}
+            >
+              {personalInfo.availableText}
+            </motion.p>
+          )}
 
           {/* Links — inline, casual row */}
           <motion.div
@@ -103,21 +114,22 @@ export function Hero() {
             <a
               href={withBasePath(personalInfo.resumeUrl)}
               download
+              aria-label={`Download ${personalInfo.name}'s CV (PDF)`}
               className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg border border-border text-sm font-medium text-muted-foreground hover:text-foreground hover:border-foreground/30 transition-colors"
             >
               <Download className="w-4 h-4" />
-              CV
+              Download CV
             </a>
           </motion.div>
 
           {/* Scroll hint — just an arrow, no label */}
           <motion.button
-            onClick={scrollToAbout}
+            onClick={scrollToExperience}
             className="text-muted-foreground/50 hover:text-muted-foreground transition-colors"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.7 }}
-            aria-label="Scroll to content"
+            aria-label="Scroll to experience"
           >
             <motion.div
               animate={{ y: [0, 6, 0] }}

@@ -2,7 +2,7 @@
 
 import { useRef } from "react";
 import { useInView } from "framer-motion";
-import { Building2, Calendar, MapPin } from "lucide-react";
+import { Calendar, MapPin } from "lucide-react";
 import { useExperiences } from "./PortfolioProvider";
 import { cn } from "@/lib/utils";
 
@@ -30,7 +30,7 @@ export function Experience() {
         </h2>
 
         {/* Simple stacked cards — no alternating timeline */}
-        <div className="space-y-6">
+        <div className="max-w-5xl space-y-6">
           {experiences.map((exp, index) => (
             <div
               key={exp.id}
@@ -63,9 +63,9 @@ export function Experience() {
               </div>
 
               {/* Description */}
-              <ul className="space-y-1.5 mb-5">
+              <ul className="space-y-3 mb-6">
                 {exp.description.map((item, i) => (
-                  <li key={i} className="text-muted-foreground text-sm leading-relaxed pl-4 relative before:content-['–'] before:absolute before:left-0 before:text-muted-foreground/60">
+                  <li key={i} className="max-w-[85ch] text-muted-foreground text-base leading-7 pl-5 relative before:content-['–'] before:absolute before:left-0 before:text-primary">
                     {item}
                   </li>
                 ))}

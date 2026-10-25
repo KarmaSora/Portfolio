@@ -39,3 +39,7 @@ next-env.d.ts
 # IDE
 .vscode/
 .idea/
+
+# Private career drafting notes
+/Karam_Matar_Master_Career_Project_Inventory*.md
+/referncesList.md

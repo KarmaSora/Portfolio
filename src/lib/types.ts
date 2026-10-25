@@ -78,6 +78,7 @@ export interface Project {
   technologies: string[];
   github?: string | null;
   demo?: string | null;
+  demoLabel?: string;
   image?: string | null;
   screenshots?: string[];
   featured: boolean;
@@ -111,6 +112,27 @@ export interface Certificate {
   description: string;
   date: string;
   image: string;
+  note?: string;
+}
+
+export interface ReferencesContent {
+  sectionTitle: string;
+  sectionDescription: string;
+  requestLabel: string;
+  requestDescription: string;
+}
+
+export interface ProfessionalReference {
+  id: string;
+  name: string;
+  role: string;
+  organization: string;
+  relationship: string;
+  canDiscuss?: string[];
+  quote?: string;
+  email?: string;
+  phone?: string;
+  linkedin?: string;
 }
 
 export interface Document {
@@ -143,6 +165,8 @@ export interface PortfolioData {
   achievements: Achievement[];
   certificates: Certificate[];
   documents: Document[];
+  referencesContent?: ReferencesContent;
+  professionalReferences?: ProfessionalReference[];
   navItems: NavItem[];
   seo: SEOData;
 }

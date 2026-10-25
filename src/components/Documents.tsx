@@ -3,7 +3,8 @@
 import { useRef, useState } from "react";
 import Image from "next/image";
 import { useInView } from "framer-motion";
-import { Award, FileText, Download, GraduationCap, X } from "lucide-react";
+import { Award, Download, GraduationCap } from "lucide-react";
+import { Dialog } from "./Dialog";
 import { useCertificates, useDocuments } from "./PortfolioProvider";
 import { Certificate, Document as DocumentType } from "@/lib/types";
 import { cn, withBasePath } from "@/lib/utils";
@@ -13,12 +14,9 @@ export function Documents() {
   const documents = useDocuments();
   const sectionRef = useRef<HTMLElement>(null);
   const isInView = useInView(sectionRef, { once: true, margin: "-100px" });
-  const [lightboxImage, setLightboxImage] = useState<string | null>(null);
+  const [previewCertificate, setPreviewCertificate] = useState<Certificate | null>(null);
 
   const degree = documents.filter((d: DocumentType) => d.type === "degree");
-  const recommendations = documents.filter(
-    (d: DocumentType) => d.type === "recommendation"
-  );
 
   return (
     <>
@@ -99,7 +97,7 @@ export function Documents() {
                 {certificates.map((cert: Certificate, index: number) => (
                   <button
                     key={cert.id}
-                    onClick={() => setLightboxImage(cert.image)}
+                    onClick={() => setPreviewCertificate(cert)}
                     className={cn(
                       "card rounded-xl overflow-hidden group hover:shadow-md transition-all duration-300 text-left w-full"
                     )}
@@ -132,9 +130,10 @@ export function Documents() {
                       <p className="text-xs text-muted-foreground/70 mt-0.5">
                         {cert.date}
                       </p>
-                      <p className="text-xs text-muted-foreground mt-2 leading-relaxed line-clamp-2">
+                      <p className="text-sm text-muted-foreground mt-2 leading-relaxed">
                         {cert.description}
                       </p>
+                      {cert.note && <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{cert.note}</p>}
                     </div>
                   </button>
                 ))}
@@ -142,82 +141,20 @@ export function Documents() {
             </div>
           )}
 
-          {/* Recommendation Letters */}
-          {recommendations.length > 0 && (
-            <div
-              className={cn(
-                "transition-all duration-500 delay-200",
-                isInView ? "opacity-100" : "opacity-0"
-              )}
-            >
-              <h3 className="text-sm font-medium text-muted-foreground uppercase tracking-wider mb-4 flex items-center gap-2">
-                <FileText className="w-4 h-4" />
-                Recommendation Letters
-              </h3>
-              <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-                {recommendations.map((doc: DocumentType, index: number) => (
-                  <a
-                    key={doc.id}
-                    href={withBasePath(doc.file)}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className={cn(
-                      "card rounded-xl p-5 group hover:shadow-md transition-all duration-300 flex items-start gap-4"
-                    )}
-                    style={{ transitionDelay: `${index * 100}ms` }}
-                  >
-                    <div className="p-2.5 rounded-lg bg-primary/10 text-primary flex-shrink-0">
-                      <FileText className="w-5 h-5" />
-                    </div>
-                    <div className="min-w-0 flex-1">
-                      <h4 className="font-semibold text-foreground group-hover:text-primary transition-colors text-sm">
-                        {doc.title}
-                      </h4>
-                      <p className="text-xs text-muted-foreground mt-0.5">
-                        {doc.subtitle}
-                      </p>
-                      <p className="text-xs text-muted-foreground/70 mt-1">
-                        {doc.issuer}
-                      </p>
-                    </div>
-                    <Download className="w-4 h-4 text-muted-foreground/40 group-hover:text-primary transition-colors flex-shrink-0 mt-1" />
-                  </a>
-                ))}
-              </div>
-            </div>
-          )}
         </div>
       </section>
 
-      {/* Lightbox for certificate images */}
-      {lightboxImage && (
-        <div
-          className="fixed inset-0 z-[100] bg-black/80 backdrop-blur-sm flex items-center justify-center p-4 cursor-pointer"
-          onClick={() => setLightboxImage(null)}
-          role="dialog"
-          aria-label="Certificate preview"
+      {previewCertificate && (
+        <Dialog
+          title={previewCertificate.title}
+          description={`${previewCertificate.issuer} · ${previewCertificate.date}`}
+          closeLabel="Close certificate preview"
+          onClose={() => setPreviewCertificate(null)}
+          className="max-w-4xl"
         >
-          <button
-            onClick={() => setLightboxImage(null)}
-            className="absolute top-4 right-4 p-2 rounded-full bg-white/10 text-white hover:bg-white/20 transition-colors z-10"
-            aria-label="Close preview"
-          >
-            <X className="w-6 h-6" />
-          </button>
-          <div
-            className="relative max-w-4xl max-h-[85vh] w-full"
-            onClick={(e) => e.stopPropagation()}
-          >
-            <Image
-              src={withBasePath(lightboxImage)}
-              alt="Certificate"
-              width={1200}
-              height={800}
-              className="rounded-xl object-contain w-full h-auto max-h-[85vh]"
-              priority
-            />
-          </div>
-        </div>
+          <Image src={withBasePath(previewCertificate.image)} alt={previewCertificate.title} width={1200} height={1600} className="max-h-[65dvh] w-full h-auto rounded-lg object-contain" priority />
+          {previewCertificate.note && <p className="mt-4 rounded-lg bg-secondary p-4 text-sm leading-relaxed text-muted-foreground">{previewCertificate.note}</p>}
+        </Dialog>
       )}
     </>
   );

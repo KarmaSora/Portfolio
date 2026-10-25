@@ -10,6 +10,7 @@ import {
   Education,
   Documents,
   Projects,
+  References,
   Skills,
   Contact,
   Footer,
@@ -103,8 +104,9 @@ export default function Home() {
       {/* Main Content */}
       <main id="main-content">
         <Hero />
-        <Projects />
         <Experience />
+        <Projects />
+        <References />
         <Education />
         <Documents />
         <About />

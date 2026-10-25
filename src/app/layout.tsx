@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import { PortfolioProvider } from "@/components/PortfolioProvider";
+import type { PortfolioData } from "@/lib/types";
+import portfolioData from "../../public/data/portfolio.json";
 import "./globals.css";
 
 // Load fonts using next/font for better performance
@@ -13,41 +15,30 @@ const inter = Inter({
 
 
 
+// Include local content in the exported HTML while retaining remote data sources.
+const useLocalData =
+  !process.env.NEXT_PUBLIC_DATA_SOURCE ||
+  process.env.NEXT_PUBLIC_DATA_SOURCE === "local";
+
 export const metadata: Metadata = {
-  title: "Karam Matar | Software Engineer & Game Developer",
-  description:
-    "Karam Matar is a Software Engineer with a B.Sc. in Software Engineering from BTH, specializing in C++, TypeScript, React, and Next.js. Explore my portfolio featuring projects like ACID Bot, Compiler from Scratch, and more.",
-  keywords: [
-    "Karam Matar",
-    "Software Engineer",
-    "Game Developer",
-    "C++",
-    "TypeScript",
-    "React",
-    "Next.js",
-    "Portfolio",
-    "Full Stack Developer",
-    "Sweden",
-    "BTH",
-    "AI",
-    "MCP",
-  ],
+  metadataBase: new URL(portfolioData.seo.url),
+  title: portfolioData.seo.title,
+  description: portfolioData.seo.description,
+  keywords: portfolioData.seo.keywords,
   authors: [{ name: "Karam Matar" }],
   creator: "Karam Matar",
   openGraph: {
     type: "website",
-    locale: "en_US",
-    url: "https://karammatar.com",
-    title: "Karam Matar | Software Engineer",
-    description:
-      "Explore my portfolio featuring innovative software projects, AI-driven automation, game development, and full-stack applications.",
+    locale: portfolioData.seo.locale,
+    url: portfolioData.seo.url,
+    title: portfolioData.seo.title,
+    description: portfolioData.seo.description,
     siteName: "Karam Matar Portfolio",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Karam Matar | Software Engineer",
-    description:
-      "Explore my portfolio featuring innovative software projects, AI-driven automation, game development, and full-stack applications.",
+    title: portfolioData.seo.title,
+    description: portfolioData.seo.description,
   },
   robots: {
     index: true,
@@ -97,7 +88,11 @@ export default function RootLayout({
           Skip to main content
         </a>
         <ThemeProvider defaultTheme="dark">
-          <PortfolioProvider>{children}</PortfolioProvider>
+          <PortfolioProvider
+            initialData={useLocalData ? (portfolioData as PortfolioData) : undefined}
+          >
+            {children}
+          </PortfolioProvider>
         </ThemeProvider>
       </body>
     </html>
