@@ -1,5 +1,7 @@
 # Portfolio UI/UX comparison
 
+For the later comparison with Abduvohid Ilhomov, Abdallah Alhamad and Mouaz Naji, see [Peer portfolio review and next steps](./PEER_PORTFOLIO_REVIEW.md). That review records the UI/content findings and the prioritised continuation backlog.
+
 Reviewed on 25 October 2026 against the current local portfolio. This is a visual and navigation review, not user testing or a ranking of engineering ability. The first three reference sites were opened in Chromium at desktop (1440px) and phone (390px) widths. No comparative performance or full accessibility audit was performed on the reference sites.
 
 ## References and comparison

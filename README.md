@@ -225,6 +225,8 @@ The static site in the `out/` folder can be deployed to any static hosting servi
 
 See [Lighthouse inspection](docs/LIGHTHOUSE.md) for browser requirements, report locations and audit commands. The [design direction](docs/DESIGN.md) records the portfolio's visual system and content constraints.
 
+See [Peer portfolio review and next steps](docs/PEER_PORTFOLIO_REVIEW.md) for the UI/content comparison, supporting observations and prioritised improvements to revisit later.
+
 ## 🤝 Contributing
 
 Contributions are welcome! Please feel free to submit a Pull Request.

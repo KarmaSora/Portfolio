@@ -26,3 +26,5 @@ This pass applies [Anthropic's Frontend Design skill](https://github.com/anthrop
 Use a production export for performance measurements. The development server includes tooling overhead and is not a representative Lighthouse target. See [LIGHTHOUSE.md](./LIGHTHOUSE.md) for commands and reports.
 
 The [portfolio UI/UX comparison](./PORTFOLIO_UI_REVIEW.md) records the external references reviewed for the warm-accent pass and the differences in their audiences and navigation.
+
+The [peer portfolio review and next steps](./PEER_PORTFOLIO_REVIEW.md) records the later UI/content comparison with the author's friends, concrete findings and the backlog for future improvements.
