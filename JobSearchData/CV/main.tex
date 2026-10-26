@@ -1,0 +1,154 @@
+% Must come before \documentclass so it intercepts moderncv's \RequirePackage{microtype}
+\PassOptionsToPackage{expansion=false}{microtype}
+\documentclass[11pt,a4paper,sans]{moderncv}
+
+% ModernCV themes
+\moderncvstyle{banking}
+\moderncvcolor{blue}
+
+% Character encoding
+\usepackage[utf8]{inputenc}
+
+% Adjust margins -- tighter for one-page fit
+\usepackage[scale=0.93, top=1.2cm, bottom=1.0cm]{geometry}
+
+% URL support
+\usepackage[hidelinks]{hyperref}
+
+% Tighter itemize spacing
+\usepackage{enumitem}
+\setlist[itemize]{nosep, leftmargin=1.5em}
+
+% Reduce vertical spacing
+\setlength{\hintscolumnwidth}{2.6cm}
+
+% Personal information
+\firstname{Karam}
+\familyname{Matar}
+
+\address{Örkelljunga}{Sweden}
+\mobile{(+46)~760~183~374}
+\email{karammtr@gmail.com}
+\social[linkedin]{karam-matar-b92639293}
+\social[github]{KarmaSora}
+\homepage{karmasora.github.io/Portfolio/}
+
+\begin{document}
+\makecvtitle
+\vspace{-1.5em}
+
+%------------------------------------------------------------------------------
+% Summary
+\cvitem{}{
+Software Engineer (B.Sc.) with hands-on experience in full-stack development, software security, CI/CD, deployment, and systems programming. Comfortable working across the software lifecycle, from feature development and testing to debugging, integration, deployment, and technical collaboration.
+}
+
+\vspace{-0.6em}
+%------------------------------------------------------------------------------
+\section{Professional Experience}
+
+\cventry{Aug 2026 -- Present}
+{Full-Stack Developer Intern}
+{Kravi Analytics AB}
+{Lund, Sweden}
+{}
+{
+\begin{itemize}
+\item Independently designed and built a containerized application from scratch for reviewing and classifying satellite vessel detections using Python, FastAPI/Uvicorn, SQLAlchemy, Alembic, PostgreSQL/PostGIS, Jinja2, and Docker.
+\item Designed and implemented a dynamic batch workflow where users create review batches by geographic zone and date range. Active batches continuously receive newly available detections, then progress through a quality-review gate once the date range has ended and all detections have been classified, with confirmed labels stored for downstream machine-learning use.
+\item Built the data-ingestion and synchronization workflow, integrating API clients and S3-based TIFF imagery, implementing scheduled cron jobs to fetch new detections and update affected batches, and creating a backfill command for importing historical detection data across arbitrary date ranges.
+\item Built the project's deployment infrastructure, configuring dedicated SSH-based GitHub authentication, Linux server deployment, Nginx reverse proxying, and UFW firewall rules to make the application accessible over the internet.
+\end{itemize}
+}
+
+
+\cventry{Jan 2026 -- May 2026}
+{Software Developer Intern}
+{Softhouse}
+{Karlskrona, Sweden}
+{}
+{
+\begin{itemize}
+\item Shipped features end-to-end across React, Express, Prisma, and MongoDB for TeamTemp, an employee survey platform, and contributed to team decisions on the technology stack and technical approach in an 11-person agile team.
+\item Identified and patched security vulnerabilities (server-side validation, input sanitisation); wrote Cypress E2E tests and integrated them into the Bitbucket CI/CD pipeline.
+\item Led customer demos and an internal office presentation; served as the primary point of contact between developers, customer, and management.
+\end{itemize}
+}
+
+\cventry{Jan 2025 -- May 2025}
+{Software Developer Intern}
+{Trafikverket}
+{Remote via BTH}
+{}
+{
+\begin{itemize}
+\item Refactored existing PowerShell-based dependency-security tooling into JavaScript as part of a six-person team, supporting reusable vulnerability scanning across repositories.
+\item Contributed to packaging the refactored tooling as a reusable Azure DevOps task that generates SBOM files in JSON format.
+\item Contributed to integrating automated security checks into Azure DevOps workflows to support vulnerability detection during builds.
+\end{itemize}
+}
+
+\cventry{Sep 2024 -- Jan 2025}
+{Teaching Assistant -- C++}
+{Blekinge Institute of Technology}
+{Karlskrona, Sweden}
+{}
+{
+\begin{itemize}
+\item Mentored first-year students through lab supervision and 1-on-1 tutoring in pointers, memory management, and OOP.
+\end{itemize}
+}
+
+\vspace{-0.6em}
+%------------------------------------------------------------------------------
+\section{Education}
+
+\cventry{Aug 2023 -- Jun 2026}
+{B.Sc. Software Engineering}
+{Blekinge Institute of Technology}
+{Karlskrona, Sweden}
+{}
+{Thesis with Iquest AB: ACID Bot -- autonomous multi-agent AI workflow for bug-fix verification and PR creation. Key courses: Compiler Design, Operating Systems, Algorithms \& Data Structures.}
+
+\cventry{Sep 2025 -- Jan 2026}
+{Exchange Semester -- Computer Science}
+{Newcastle University}
+{Newcastle upon Tyne, UK}
+{}
+{Courses: Computer Vision \& AI, Algorithm Design, Security Programming.}
+
+\vspace{-0.6em}
+%------------------------------------------------------------------------------
+\section{Projects}
+
+
+\cvitem{\textbf{ACID Bot} \small{(JavaScript, Git, CI/CD, Multi-Agent Systems)}}{
+Autonomous workflow that fetches bug tasks from ClickUp, fixes issues in external repos via controlled Git access, verifies correctness, and opens pull requests -- with bounded retries per agent for cost and safety control.}
+
+\cvitem{\textbf{Compiler from Scratch} \small{(C++)}}{
+End-to-end compiler: lexer, parser, semantic analysis, CFG-based IR, three-address code generation, and a custom virtual machine.}
+
+\cvitem{\textbf{ShowcaseSERL} \small{(Next.js, React, TypeScript, Tailwind CSS)}}{
+Full-stack web app for showcasing student and researcher projects with dynamic listings, detail views, and a kiosk display mode.}
+
+\vspace{-0.6em}
+%------------------------------------------------------------------------------
+\section{Skills}
+
+\cvitem{Programming}{C++, Java, Python, C\#, JavaScript, TypeScript, SQL}
+\cvitem{Web \& Frameworks}{FastAPI, SQLAlchemy, React, React Native/Expo, Next.js, SvelteKit, Express.js, Node.js, Prisma}
+\cvitem{DevOps \& Data}{Git, Docker, Docker Compose, Linux, Nginx, Alembic, Azure DevOps, Bitbucket Pipelines, CI/CD, PostgreSQL, MySQL, MongoDB}
+\cvitem{Testing}{Cypress (E2E), Jest, Bun Test}
+\cvitem{Spoken Languages}{Swedish (Fluent), English (Fluent), Arabic (Native)}
+\cvitem{Driver License}{AM/B}
+
+\vspace{-0.6em}
+%------------------------------------------------------------------------------
+\section{Awards}
+
+\cvitem{1\textsuperscript{st} Place}{
+\href{https://www.linkedin.com/feed/update/urn:li:activity:7323004340258922497/}
+{Hollytech Hackathon} -- won a capture-the-flag competition.
+}
+
+\end{document}
