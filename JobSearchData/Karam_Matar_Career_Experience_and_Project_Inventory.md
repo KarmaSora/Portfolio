@@ -751,7 +751,7 @@ The portfolio identifies a Teaching Assistant Certificate from BTH. The certific
 ### Additional development environments and study
 
 - Windows, Linux, Visual Studio, VS Code, Git and GitHub are documented tools or environments. Familiarity does not imply advanced systems administration.
-- Competitive programming topics in the public portfolio: searching, dynamic programming, graphs and flows. Additional self-study includes hardware/PC building. Currently learning Blender (**USER-CONFIRMED**, 10 November 2026), reflected in the portfolio's About and current-learning content.
+- Competitive programming topics in the public portfolio: searching, dynamic programming, graphs and flows. Additional self-study includes hardware/PC building. Currently learning Blender (**USER-CONFIRMED**, 10 November 2026), reflected in the portfolio's About and current-learning content. Also exploring cloud computing (**USER-CONFIRMED**, 10 November 2026), listed under Currently exploring in the portfolio.
 - CS50x Speller (problem set 5) was reported as successfully submitted. It is evidence of course practice, **not** completion of the full course.
 
 **Skill-list policy:** Tailor to the vacancy and keep claims tied to projects or work you can confidently explain. Avoid upgrading tool familiarity into deep expertise.
