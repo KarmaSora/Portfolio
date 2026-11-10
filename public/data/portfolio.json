@@ -13,15 +13,15 @@
     "initials": "KM",
     "githubUsername": "@KarmaSora",
     "linkedinName": "Karam Matar",
-    "resumeUrl": "/CV_Karam-2.pdf"
+    "resumeUrl": "/CV_Karam-3-1.pdf"
   },
   "aboutContent": {
     "sectionTitle": "About Me",
     "sectionSubtitle": "Who Am I?",
     "paragraphs": [
-      "I enjoy taking a practical problem through to working software. At Kravi Analytics, I built the initial version of a Python platform for reviewing satellite imagery, integrating TIFF files from S3. It is now used across the company, and I maintain and extend it with a growing focus on backend development. At Softhouse, I contributed full-stack features, security fixes and automated testing in an 11-person team while coordinating customer communication and demonstrations.",
+      "I enjoy taking a practical problem through to working software. At Kravi Analytics, I built the initial version of a Python platform for reviewing satellite imagery, integrating TIFF files from S3. The platform is used across the company. During the internship, I maintained and extended it with a growing focus on backend development. At Softhouse, I contributed full-stack features, security fixes and automated testing in an 11-person team while coordinating customer communication and demonstrations.",
       "I hold a B.Sc. in Software Engineering from BTH and spent an exchange semester at Newcastle University. My systems background includes building a compiler and virtual machine in C++ and mentoring first-year C++ students. For my bachelor's thesis with Iquest AB, I co-developed an autonomous multi-agent bug-fix workflow that creates pull requests for mandatory human review.",
-      "I'm based in Örkelljunga and looking for backend or full-stack engineering roles, preferably in Skåne, especially Malmö, and open to international relocation. Outside web development, I enjoy building games in Unity/C# and C++/SFML and studying algorithms through competitive programming."
+      "I'm based in Örkelljunga and looking for backend or full-stack engineering roles, preferably in Skåne, especially Malmö, and open to international relocation. Outside web development, I enjoy building games in Unity/C# and C++/SFML and studying algorithms through competitive programming. I'm currently learning Blender."
     ],
     "stats": [
       {
@@ -54,6 +54,7 @@
     "sectionSubtitle": "Skills & Technologies",
     "learningTitle": "Always learning and exploring new technologies. Currently working on:",
     "currentlyLearning": [
+      "Blender",
       "Competitive Programming (Search, Dynamic Programming, Graphs & Flows)",
       "Hardware & PC Building"
     ]
@@ -68,7 +69,7 @@
       "role": "Full-Stack Developer Intern",
       "company": "Kravi Analytics AB",
       "location": "Lund, Sweden",
-      "period": "Aug 2026 - Present",
+      "period": "Aug 2026 - 31 Oct 2026",
       "description": [
         "Independently built the initial Python/FastAPI platform for reviewing satellite vessel detections, now used company-wide; maintained and extended it as requirements evolved.",
         "Integrated S3-hosted TIFF imagery, geospatial review batches and MaskNet’s existing annotation workflow, with mask annotations stored in PostgreSQL.",
