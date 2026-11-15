@@ -1,5 +1,7 @@
 # Local portfolio update — 15 November 2026
 
+**Published release — PF-P1:** Implementation `fa9a5f3` is live at [GitHub Pages](https://karmasora.github.io/Portfolio/). The [build/regression/deploy workflow](https://github.com/KarmaSora/Portfolio/actions/runs/43757298104) succeeded, and live routes/assets plus FAT/MARVIN/CPUlator/Showcase interactions passed focused checks. Eshop still needs a separate public backend. The inventory is version 13; [hosting limits and deployment evidence](./GITHUB_PAGES_DEMOS.md) are current. The local-only statements below describe implementation history.
+
 **Current release authorization — PF-P1:** Karam explicitly requested pushing the new code and documenting GitHub Pages boundaries. Earlier no-push instructions and local-only statements below describe prior stages and are superseded for this release. The inventory is version 13. See [hosting/configuration and deployment status](./GITHUB_PAGES_DEMOS.md).
 
 **Latest terminal repairs — PF-I4:** FAT now formats each fresh 8 MiB disk with its original formatter before accepting input, so mkdir/cd operates on separate root/child blocks. MARVIN option 15 accepts case/whitespace variants and returns to its menu for invalid countries. Two Python corrections are stored separately from original snapshots; no original repository is modified. Content-versioned requests keep refreshed demo assets together. See [diagnosis/version evidence and verification](./TERMINAL_DEMO_FIXES_2026-11-15.md).

@@ -77,6 +77,20 @@ browser combinations are not implied by those checks.
 
 ## Release status
 
-Implementation and documentation are prepared for the authorized push. The local
-production export and focused terminal/browser regressions passed. The public
-deployment result will be recorded after the Pages workflow finishes.
+Published on 15 November 2026:
+
+- Implementation commit: [`fa9a5f3`](https://github.com/KarmaSora/Portfolio/commit/fa9a5f38663868abb4aa2e6c7edc94cbe45471ad).
+- [Pages workflow](https://github.com/KarmaSora/Portfolio/actions/runs/43757298104): build, country-input regressions and deploy all succeeded. Deployment completed at 20:19:19 UTC.
+- [Live portfolio](https://karmasora.github.io/Portfolio/): homepage and all seven demo routes return 200 over HTTPS.
+- Live catalogue/data, source-image manifest, original Showcase dataset, MARVIN payload, FAT WASM, terminal provenance and ARM ELF match the verified release files.
+- Live FAT tests pass the reported fresh-session directory sequence, separate parent/child contents, file operations, nested/absolute navigation and restart.
+- Live MARVIN tests pass country casing/whitespace variants, recoverable invalid input and existing utility behaviour.
+- Live CPUlator tests pass original program preloading, UART directions/wraparound, native KEY0/KEY1 press-release, hexadecimal A/B output and the matching ELF download.
+- Live ShowcaseSERL checks pass original nine-record UI/styling, search/filter/sort, card/QR/repository navigation, timed kiosk advance/stop, deep-link reload and phone layout.
+- Live Compiler checks load all three recordings through all six stages, including generated graphs and matching interpreter results.
+- The public Eshop card has screenshots/source and no default live-backend action or localhost request.
+- The checked browser sessions reported no JavaScript errors or failed local asset responses. Desktop and 390 px checks retained usable layouts.
+
+Terminal runtime revision: `8dc899fd4db20436`. Focused tests are not a claim of complete original-project test-suite or all-browser certification. Eshop remains the separately hosted backend item described above; no public database/server was provisioned by this Pages deployment.
+
+A follow-up documentation commit records these observed results; it does not change executable demo code. Temporary release logs and check outputs are retained in `/tmp/portfolio-pages-release/`.
