@@ -16,6 +16,6 @@ npm run build:project-demos
 
 `npm ci` installs the pinned browser runtimes. `predev`/`prebuild` generate the ignored `public/project-apps/terminal/`. Python loads only when a terminal opens. Standalone entry: `index.html?project=marvin` (also `typing`, `analyser`, `fat`). Next hosts: `/demos/marvin/`, `/demos/typing/`, `/demos/analyser/`, `/demos/fat/`. The analyser is independently runnable related work under Typing Trainer.
 
-Third-party runtimes retain their package/lockfile and upstream licensing provenance. Bundled Python source is inspectable in the delivered browser payload, independently of source-repository visibility. The submodule migration remains local until the new Actions secret is configured and the changes are published.
+Third-party runtimes retain their package/lockfile and upstream licensing provenance. Bundled Python source is inspectable in the delivered browser payload, independently of source-repository visibility. GitHub Actions checks out the private source submodules using the documented repository secret; the published migration is verified in [the source setup guide](../../docs/PROJECT_SUBMODULES.md). Source-repository visibility is unchanged.
 
 The generated content revision is used by the iframe, terminal bundle, worker and program/FAT payload requests to keep updated assets consistent after refresh. See [reported-issue repair and source/version evidence](../../docs/TERMINAL_DEMO_FIXES_2026-11-15.md).

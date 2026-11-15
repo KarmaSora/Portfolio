@@ -3,7 +3,10 @@
 **Current source integration:** Original project source is now read from four
 pinned submodules; copied source trees have been removed. GitHub builds require
 the `PORTFOLIO_FINE_GRAINED_PERSONAL_ACCESS_TOKEN` repository secret. See [the setup guide](./PROJECT_SUBMODULES.md).
-The release evidence below describes the previously published snapshot build.
+The [submodule deployment](https://github.com/KarmaSora/Portfolio/actions/runs/43767842134) passed source checkout,
+build, country-input regressions and deployment. Live routes/assets and focused
+Showcase/FAT/MARVIN interactions passed. The older release evidence below
+describes the earlier snapshot build; application bytes remain unchanged.
 
 Release authorized by Karam on 15 November 2026. This supersedes the earlier
 instruction to leave the portfolio changes unpushed. The release contains 15

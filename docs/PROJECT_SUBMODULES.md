@@ -73,12 +73,11 @@ using it, and disables persisted Git credentials. Later build steps use the
 checked-out files. The secret is never passed to Next's public environment or
 included in `out/`; only `out/` is uploaded to GitHub Pages.
 
-## 3. Publish the migration after the secret is ready
+## 3. Build and deployment
 
-The migration is prepared locally first. Adding the secret alone does not
-publish these changes. Once the changes are pushed to `main`, the existing
-**Deploy to GitHub Pages** workflow checks out the submodules and rebuilds the
-site. For a retry after updating a secret, use **Actions → Deploy to GitHub
+The migration is published in `b666cca`. Future pushes to `main` trigger the
+existing **Deploy to GitHub Pages** workflow, which checks out the pinned
+submodules and rebuilds the site. For a retry after updating a secret, use **Actions → Deploy to GitHub
 Pages → select the run → Re-run failed jobs**, or **Run workflow** on `main`
 after the migration is present there.
 
@@ -90,8 +89,8 @@ Deploy jobs succeed. Then open:
 Check ShowcaseSERL plus the terminal demos. For FAT, enter `mkdir test`,
 `cd test`, then `pwd`. For MARVIN, choose `15`, then enter `sweden`.
 
-Until the migration is published, the live site remains the previous snapshot
-deployment. Changing a token does not change which project commit is selected.
+Changing a token does not change which project commit is selected. The
+submodule pointers in the portfolio commit determine the source versions.
 
 ## Working locally
 
@@ -197,6 +196,22 @@ Local verification passed:
   the ARM executable match the earlier working export byte-for-byte. Local
   `out/` was refreshed from the verified build; the running dev cache was preserved.
 
+Published on 15 November 2026 in [`b666cca`](https://github.com/KarmaSora/Portfolio/commit/b666ccafb1d531c226eaaef46470e3fc81bf2fcb). The
+[GitHub Pages workflow](https://github.com/KarmaSora/Portfolio/actions/runs/43767842134) passed
+credential validation, all four private submodule checkouts, dependency install,
+production build, five MARVIN regressions and deployment using
+`PORTFOLIO_FINE_GRAINED_PERSONAL_ACCESS_TOKEN`. The token value was not read or
+stored locally.
+
+Live HTTPS checks passed the homepage and all seven demo routes. Deployed
+source manifests and selected data/Python/WASM/ELF assets match the verified
+release, including the new submodule metadata. ShowcaseSERL search/filter/sort,
+card/QR navigation, kiosk timing, deep links and phone layout passed. FAT
+directory/file separation, nested navigation and restart, plus MARVIN country
+case/whitespace/invalid-input handling passed without observed browser errors
+or failed local asset responses.
+
 Temporary evidence is in `/tmp/portfolio-submodule-migration/`. These are focused
-migration checks. The actual Actions checkout with `PORTFOLIO_FINE_GRAINED_PERSONAL_ACCESS_TOKEN` can
-only be verified after you add that secret and the migration is published.
+migration checks. Later documentation-only updates do not change the verified
+application files. Optional custom-domain preparation remains local; this
+release uses the existing GitHub Pages site.

@@ -3,15 +3,17 @@
 **Project source migration:** Four pinned submodules now supply ShowcaseSERL,
 Python coursework, FAT and optional local Eshop source. The 87 copied originals
 and two full-file MARVIN overrides have been replaced by submodule references
-and a small patch. Source repositories remain unchanged. The migration is local;
-GitHub Actions needs the `PORTFOLIO_FINE_GRAINED_PERSONAL_ACCESS_TOKEN` repository secret before this
-version can be deployed. See [setup and update instructions](./PROJECT_SUBMODULES.md).
+and a small patch. Source repositories remain unchanged. Migration `b666cca`
+is published; the [Pages workflow](https://github.com/KarmaSora/Portfolio/actions/runs/43767842134) passed using
+the configured `PORTFOLIO_FINE_GRAINED_PERSONAL_ACCESS_TOKEN` repository secret.
+See [setup, update instructions and deployment evidence](./PROJECT_SUBMODULES.md).
 
 The inventory is now version 14. Fresh submodule checkout, production
 build/lint/types, five Python regressions, original Showcase/FAT/MARVIN browser
 checks and optional local Eshop CRUD passed. The source checkouts are clean;
-runtime revision remains `8dc899fd4db20436`. The configured secret was confirmed present; the published site remains the
-previous release until this migration is pushed and deployment is verified.
+runtime revision remains `8dc899fd4db20436`. Live HTTPS checks passed the
+homepage/seven routes, matching submodule manifests and selected assets,
+Showcase interactions and FAT/MARVIN input cases with no observed browser errors.
 
 **Published release — PF-P1:** Implementation `fa9a5f3` is live at [GitHub Pages](https://karmasora.github.io/Portfolio/). The [build/regression/deploy workflow](https://github.com/KarmaSora/Portfolio/actions/runs/43757298104) succeeded, and live routes/assets plus FAT/MARVIN/CPUlator/Showcase interactions passed focused checks. Eshop still needs a separate public backend. The inventory is version 13; [hosting limits and deployment evidence](./GITHUB_PAGES_DEMOS.md) are current. The local-only statements below describe implementation history.
 
