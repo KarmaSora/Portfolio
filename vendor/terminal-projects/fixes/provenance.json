@@ -1,0 +1,21 @@
+{
+  "projects": {
+    "marvin": {
+      "basedOnCommit": "56a2d08c21b90a9ee0a4e50849e82b3c30df7621",
+      "reason": "Recoverable country input for options 14/15: accept case/whitespace variants of complete names and report empty or unknown names without terminating the menu. Menus, dataset and country calculations remain the original program.",
+      "sourceRepositoryModified": false,
+      "files": [
+        {
+          "path": "main.py",
+          "originalSha256": "72bfb05d045a5880b3c0d106e63394fa053354090cf5df82ab3add5d3a080b61",
+          "sha256": "7661fe823bebd672b4e42f2ee6d9a49ca7f633d02fa39d52bbac3bf3e8cba5b3"
+        },
+        {
+          "path": "emission_functions.py",
+          "originalSha256": "4b229aaa9683c1d3795f02a164310ce7d6f78e7ea9b039c179178c2aadc1ea39",
+          "sha256": "55a42f77720ec6247d2e4383ebbb57f6f388f4374eaf0735cf60c110769c3036"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,306 @@
+{
+  "capturedOn": "2026-11-15",
+  "projects": [
+    {
+      "projectId": "eshop",
+      "sourceRepository": "KarmaSora/database",
+      "readme": "database/kmom06/eshop2/README.md",
+      "image": "/images/extra-projects/eshop/capture-2026-11-15-product-catalogue.png",
+      "screenshots": [
+        {
+          "image": "/images/extra-projects/eshop/capture-2026-11-15-product-catalogue.png",
+          "caption": "The actual Eshop product catalogue backed by a disposable MariaDB database and the supplied product fixtures.",
+          "sha256": "d68576173e4b5d23c4cbbc053660cd42aac5adcc0339ed9c295adfa96f6da42b",
+          "width": 2160,
+          "height": 1425,
+          "sourceImage": "screenshots/capture-2026-11-15-product-catalogue.png",
+          "captureKind": "Running original Eshop web application with disposable local database"
+        },
+        {
+          "image": "/images/extra-projects/eshop/capture-2026-11-15-product-categories.png",
+          "caption": "Eshop’s category listing with the original browser interface and SQL-backed data.",
+          "sha256": "8f6efa9fb61b4bddfe0ef39ce38e8938b63197659374a51277136d23cfd4f5fc",
+          "width": 2160,
+          "height": 1425,
+          "sourceImage": "screenshots/capture-2026-11-15-product-categories.png",
+          "captureKind": "Running original Eshop web application with disposable local database"
+        },
+        {
+          "image": "/images/extra-projects/eshop/capture-2026-11-15-product-form.png",
+          "caption": "The running Eshop product-creation form.",
+          "sha256": "8cb1d2d45c094403608584358738d68f152a4960d0efb9874a8ea931f6fc9d6b",
+          "width": 2160,
+          "height": 1425,
+          "sourceImage": "screenshots/capture-2026-11-15-product-form.png",
+          "captureKind": "Running original Eshop web application with disposable local database"
+        }
+      ]
+    },
+    {
+      "projectId": "fat-file-system",
+      "sourceRepository": "KarmaSora/OperatingSystem",
+      "readme": "OperatingSystem/Lab2/lab2_code/README.md",
+      "image": "/images/extra-projects/fat-file-system/capture-2026-11-15-file-operations.png",
+      "screenshots": [
+        {
+          "image": "/images/extra-projects/fat-file-system/capture-2026-11-15-file-operations.png",
+          "caption": "Creating, reading and listing a file in the running Lab2 FAT simulator.",
+          "sha256": "b85240f6dd9fbaaba5b783601d6cdcdf1dd770bfd795b0cc2d98d3e9fa64d41f",
+          "width": 1980,
+          "height": 1260,
+          "sourceImage": "screenshots/capture-2026-11-15-file-operations.png",
+          "captureKind": "Live PTY session rendered by xterm.js"
+        },
+        {
+          "image": "/images/extra-projects/fat-file-system/capture-2026-11-15-directory-operations.png",
+          "caption": "Directory creation and a copied file in the simulator’s root listing.",
+          "sha256": "ff62ecf010f7d7e64693ebbc230c2ff9f7f7bffe9c95205c3c3daf023f395ab3",
+          "width": 1980,
+          "height": 1260,
+          "sourceImage": "screenshots/capture-2026-11-15-directory-operations.png",
+          "captureKind": "Live PTY session rendered by xterm.js"
+        }
+      ]
+    },
+    {
+      "projectId": "flask-security-app",
+      "sourceRepository": "KarmaSora/securityPrograming",
+      "readme": "securityPrograming/COMPUTER_PROGRAM/README.md",
+      "image": "/images/extra-projects/flask-security-app/capture-2026-11-15-registration.png",
+      "screenshots": [
+        {
+          "image": "/images/extra-projects/flask-security-app/capture-2026-11-15-registration.png",
+          "caption": "The running Flask application’s CSRF-protected registration form.",
+          "sha256": "2843c46b7d5ef93be29e435f2c8741855cb400b9367df3d6e76dd84fefc29f06",
+          "width": 2049,
+          "height": 1350,
+          "sourceImage": "screenshots/capture-2026-11-15-registration.png",
+          "captureKind": "Running original web application with disposable local demo data"
+        },
+        {
+          "image": "/images/extra-projects/flask-security-app/capture-2026-11-15-login.png",
+          "caption": "Login using a disposable local demonstration account.",
+          "sha256": "49ae444813c3531aae54d08bf8255ed8890453261f62dfe9b91c06077d4f4de0",
+          "width": 2049,
+          "height": 1350,
+          "sourceImage": "screenshots/capture-2026-11-15-login.png",
+          "captureKind": "Running original web application with disposable local demo data"
+        },
+        {
+          "image": "/images/extra-projects/flask-security-app/capture-2026-11-15-dashboard.png",
+          "caption": "Protected dashboard after registration and login with the local demo account.",
+          "sha256": "1629d031564c3f09ad8ad7c5c23c5c25bde80e4d39318fe638d95973b2ab7380",
+          "width": 2049,
+          "height": 1350,
+          "sourceImage": "screenshots/capture-2026-11-15-dashboard.png",
+          "captureKind": "Running original web application with disposable local demo data"
+        }
+      ],
+      "portfolioProjectId": "flask-web-security-projects"
+    },
+    {
+      "projectId": "marvin-shadow",
+      "sourceRepository": "KarmaSora/python-course",
+      "readme": "python-course/me/kmom05/marvin4/README.md",
+      "image": "/images/extra-projects/marvin-shadow/capture-2026-11-15-menu.png",
+      "screenshots": [
+        {
+          "image": "/images/extra-projects/marvin-shadow/capture-2026-11-15-menu.png",
+          "caption": "Shadow’s actual menu, including utilities, backpack commands and country-data queries.",
+          "sha256": "ee1fd37c4b9eb81a304f9a19f0e1ba65dc69df7af2518034671d543115e6c832",
+          "width": 1980,
+          "height": 1260,
+          "sourceImage": "screenshots/capture-2026-11-15-menu.png",
+          "captureKind": "Live PTY session rendered by xterm.js"
+        },
+        {
+          "image": "/images/extra-projects/marvin-shadow/capture-2026-11-15-backpack.png",
+          "caption": "The running Marvin 4 application showing an item in its backpack.",
+          "sha256": "98fc8b15d842bcf66fe9da6733c966371bb7653b6a44d85dc5a242fe65ec15fd",
+          "width": 1980,
+          "height": 1260,
+          "sourceImage": "screenshots/capture-2026-11-15-backpack.png",
+          "captureKind": "Live PTY session rendered by xterm.js"
+        }
+      ]
+    },
+    {
+      "projectId": "terminal-text-analyser",
+      "sourceRepository": "KarmaSora/python-course",
+      "readme": "python-course/me/kmom06/analyzer/README.md",
+      "image": "/images/extra-projects/terminal-text-analyser/capture-2026-11-15-word-frequencies.png",
+      "screenshots": [
+        {
+          "image": "/images/extra-projects/terminal-text-analyser/capture-2026-11-15-word-frequencies.png",
+          "caption": "Word-frequency output produced by the standalone analyser for its bundled text.",
+          "sha256": "84197457f0bee1b0b25e247a2e1af4d537997fae03fe4fe20408ddb42a0898f5",
+          "width": 1980,
+          "height": 1260,
+          "sourceImage": "screenshots/capture-2026-11-15-word-frequencies.png",
+          "captureKind": "Live PTY session rendered by xterm.js"
+        }
+      ],
+      "portfolioProjectId": "typing-trainer"
+    },
+    {
+      "projectId": "totp-authentication",
+      "sourceRepository": "KarmaSora/securityPrograming",
+      "readme": "securityPrograming/Task2/README.md",
+      "image": "/images/extra-projects/totp-authentication/capture-2026-11-15-login.png",
+      "screenshots": [
+        {
+          "image": "/images/extra-projects/totp-authentication/capture-2026-11-15-login.png",
+          "caption": "The password/TOTP login interface using a disposable demonstration account.",
+          "sha256": "35d9b39175ab0d29e4817a79c40bc58a6fbec7b65804be78a1ae112102cc2a09",
+          "width": 1650,
+          "height": 1140,
+          "sourceImage": "screenshots/capture-2026-11-15-login.png",
+          "captureKind": "Running original web application with disposable local demo data"
+        },
+        {
+          "image": "/images/extra-projects/totp-authentication/capture-2026-11-15-totp-enrollment.png",
+          "caption": "Actual QR-based TOTP enrollment for a disposable account; the local database and secret were discarded after capture.",
+          "sha256": "9f3b60e5716e74c53cacac3bc81c09a57ab683b9c0b08fe814d7caa921a567d4",
+          "width": 1650,
+          "height": 1140,
+          "sourceImage": "screenshots/capture-2026-11-15-totp-enrollment.png",
+          "captureKind": "Running original web application with disposable local demo data"
+        },
+        {
+          "image": "/images/extra-projects/totp-authentication/capture-2026-11-15-authenticated-dashboard.png",
+          "caption": "Protected dashboard reached after successful TOTP enrollment.",
+          "sha256": "172f25096b43c5aa5c12a83c0fb9df259820e231378901af3d6305e81072bfb7",
+          "width": 1650,
+          "height": 1140,
+          "sourceImage": "screenshots/capture-2026-11-15-authenticated-dashboard.png",
+          "captureKind": "Running original web application with disposable local demo data"
+        }
+      ],
+      "portfolioProjectId": "flask-web-security-projects"
+    },
+    {
+      "projectId": "typing-trainer",
+      "sourceRepository": "KarmaSora/python-course",
+      "readme": "python-course/me/kmom10/typing/README.md",
+      "image": "/images/extra-projects/typing-trainer/capture-2026-11-15-results.png",
+      "screenshots": [
+        {
+          "image": "/images/extra-projects/typing-trainer/capture-2026-11-15-menu.png",
+          "caption": "The typing trainer’s actual difficulty and practice menu.",
+          "sha256": "42e07da7ca099d9706769b867bc54e3cee272053a7cecd372c35161a961e4eb5",
+          "width": 1980,
+          "height": 1260,
+          "sourceImage": "screenshots/capture-2026-11-15-menu.png",
+          "captureKind": "Live PTY session rendered by xterm.js"
+        },
+        {
+          "image": "/images/extra-projects/typing-trainer/capture-2026-11-15-results.png",
+          "caption": "Results from an automated demo transcription of the bundled easy text in a disposable local session.",
+          "sha256": "23bc9ab44eb5b52a0f69b50ec83da7454c3b98170e19b512af75c48390d3b9ee",
+          "width": 1980,
+          "height": 1260,
+          "sourceImage": "screenshots/capture-2026-11-15-results.png",
+          "captureKind": "Live PTY session rendered by xterm.js"
+        }
+      ]
+    },
+    {
+      "projectId": "x86-64-io-library",
+      "sourceRepository": "KarmaSora/Assembly",
+      "readme": "Assembly/x86_64Assembly/Lab3/README.md",
+      "image": "/images/extra-projects/x86-64-io-library/capture-2026-11-15-numeric-io.png",
+      "screenshots": [
+        {
+          "image": "/images/extra-projects/x86-64-io-library/capture-2026-11-15-numeric-io.png",
+          "caption": "The assembly I/O library called by its supplied C driver, reading five integers and printing their sum.",
+          "sha256": "e757db4272be21eb3a7c9f0a3ea4da5bf71c2906a73ad932f1187b978de3b7d5",
+          "width": 1980,
+          "height": 1260,
+          "sourceImage": "screenshots/capture-2026-11-15-numeric-io.png",
+          "captureKind": "Live PTY session rendered by xterm.js"
+        }
+      ]
+    },
+    {
+      "projectId": "armv7-display-controller",
+      "sourceRepository": "KarmaSora/Assembly",
+      "readme": "Assembly/ARMv7/assignment/README.md",
+      "image": "/images/extra-projects/armv7-display-controller/capture-2026-11-15-controller-controls.png",
+      "screenshots": [
+        {
+          "image": "/images/extra-projects/armv7-display-controller/capture-2026-11-15-controller-controls.png",
+          "caption": "The actual CPUlator device panels: UART commands reached hexadecimal A, then a KEY1 press/release advanced the controller to B.",
+          "sha256": "e1fb60d1266b8887084701cd719c07c25c9a795cecd0a35cc4d1d6a89ad0e89c",
+          "width": 1050,
+          "height": 654,
+          "sourceImage": "screenshots/capture-2026-11-15-controller-controls.png",
+          "captureKind": "Actual CPUlator simulation of the project executable"
+        },
+        {
+          "image": "/images/extra-projects/armv7-display-controller/capture-2026-11-15-uart-counter.png",
+          "caption": "The original ARMv7 controller running in CPUlator after ten UART increment commands, displaying hexadecimal A.",
+          "sha256": "a30619936cb47e91b50e29076ff3f32006da6564e7e2dde4eb93bd99880277be",
+          "width": 3200,
+          "height": 2000,
+          "sourceImage": "screenshots/capture-2026-11-15-uart-counter.png",
+          "captureKind": "Actual CPUlator simulation of the project executable"
+        },
+        {
+          "image": "/images/extra-projects/armv7-display-controller/capture-2026-11-15-button-interrupt.png",
+          "caption": "CPUlator paused after the KEY1 press/release, with hexadecimal B on the display and the program’s registers and disassembly visible.",
+          "sha256": "238a731f8e971294eebe35242df3f8334d0e97fdbbf22cf4ca7e9ea374abb0cd",
+          "width": 3200,
+          "height": 2000,
+          "sourceImage": "screenshots/capture-2026-11-15-button-interrupt.png",
+          "captureKind": "Actual CPUlator simulation of the project executable"
+        }
+      ]
+    },
+    {
+      "projectId": "compiler-from-scratch",
+      "sourceRepository": "KarmaSora/Compiler",
+      "readme": "Compiler/README.md",
+      "image": "/images/extra-projects/compiler-from-scratch/capture-2026-11-15-control-flow.png",
+      "screenshots": [
+        {
+          "image": "/images/extra-projects/compiler-from-scratch/capture-2026-11-15-syntax-tree.png",
+          "caption": "Syntax tree freshly generated by the compiler for ArithmeticDemo.java, displaying the structure of (2 + 3) * 4.",
+          "sha256": "df81c24f6d2e60a26e430b438af24c4c3dc5a69b0b5793fae0bd001d77b60e1c",
+          "width": 2160,
+          "height": 1425,
+          "sourceImage": "screenshots/capture-2026-11-15-syntax-tree.png",
+          "captureKind": "Actual compiler artifacts rendered locally for inspection; not a separate compiler GUI"
+        },
+        {
+          "image": "/images/extra-projects/compiler-from-scratch/capture-2026-11-15-control-flow.png",
+          "caption": "Control-flow graph freshly generated for C1.java, showing basic blocks, true/false branches and the while-loop back-edge.",
+          "sha256": "d94d3e7d74614feae22c781bd82a0e330987c91a75eed028b6e4eb3c79269508",
+          "width": 2160,
+          "height": 1425,
+          "sourceImage": "screenshots/capture-2026-11-15-control-flow.png",
+          "captureKind": "Actual compiler artifacts rendered locally for inspection; not a separate compiler GUI"
+        },
+        {
+          "image": "/images/extra-projects/compiler-from-scratch/capture-2026-11-15-intermediate-code.png",
+          "caption": "Actual generated intermediate code and bytecode for ArithmeticDemo.java, alongside the source and interpreter result of 20.",
+          "sha256": "23e23e8d2b631e2e47b57a1727d0878d98458fad9af184b3e7195b9a70d2a284",
+          "width": 2160,
+          "height": 1425,
+          "sourceImage": "screenshots/capture-2026-11-15-intermediate-code.png",
+          "captureKind": "Actual compiler artifacts rendered locally for inspection; not a separate compiler GUI"
+        },
+        {
+          "image": "/images/extra-projects/compiler-from-scratch/capture-2026-11-15-factorial-execution.png",
+          "caption": "The freshly built compiler generates bytecode for Factorial.java, then its custom interpreter evaluates 10! and prints 3,628,800.",
+          "sha256": "cec97377fb5235dc95763b1201919007fb598f6690892e1254afacffd3670ece",
+          "width": 1980,
+          "height": 1260,
+          "sourceImage": "screenshots/capture-2026-11-15-factorial-execution.png",
+          "captureKind": "Live PTY session rendered by xterm.js"
+        }
+      ]
+    }
+  ],
+  "pendingProjectIds": [],
+  "captureData": "Disposable local demonstration data; demo accounts and databases discarded after capture. ARM executable loaded into CPUlator with author authorization. Compiler figures render fresh DOT/IR/bytecode outputs from a local source build."
+}

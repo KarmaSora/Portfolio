@@ -1,0 +1,13 @@
+digraph CFG {
+graph [splines=ortho];
+node [shape=box];
+Main [label="Main\n__t0 := NEW Fac\n @Param: 10\n__t1 := CALL ComputeFac: 1\nPRINT __t1\nEXIT\n"];
+Fac_ComputeFac -> block_1 [xlabel="true"];
+Fac_ComputeFac -> block_2 [xlabel="false"];
+Fac_ComputeFac [label="Fac_ComputeFac\n__t2 := num < 1\nif __t2 goto block_1 else goto block_2\n"];
+block_1 -> block_3;
+block_1 [label="block_1\nnum_aux := 1\ngoto block_3\n"];
+block_2 -> block_3;
+block_2 [label="block_2\n__t5 := num - 1\n @Param: __t5\n__t4 := CALL ComputeFac: 1\n__t3 := num * __t4\nnum_aux := __t3\ngoto block_3\n"];
+block_3 [label="block_3\nRETURN num_aux\n"];
+}

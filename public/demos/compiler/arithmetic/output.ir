@@ -1,0 +1,7 @@
+Main:
+    METHOD Main IN Main
+    __t1 := 2 + 3
+    __t0 := __t1 * 4
+    PRINT __t0
+    EXIT
+

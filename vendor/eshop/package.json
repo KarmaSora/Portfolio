@@ -1,0 +1,12 @@
+{
+  "name": "original-eshop-local-demo",
+  "private": true,
+  "version": "0.1.0",
+  "dependencies": {
+    "express": "4.22.3",
+    "ejs": "7.0.2",
+    "promise-mysql": "5.2.0",
+    "mysql": "2.18.1",
+    "readline-promise": "1.0.5"
+  }
+}

@@ -70,17 +70,32 @@ export interface Education {
   details: string[];
 }
 
+export interface ProjectDetailSection {
+  title: string;
+  description: string;
+  github?: string;
+  screenshotIndex?: number;
+  demo?: string;
+  demoLabel?: string;
+}
+
+export type InteractiveDemoKind = "compiler" | "arm" | "showcase";
+
 export interface Project {
   id: string;
   title: string;
   description: string;
   longDescription: string;
+  detailSections?: ProjectDetailSection[];
   technologies: string[];
   github?: string | null;
+  sourceAccess?: "public" | "private";
   demo?: string | null;
   demoLabel?: string;
+  interactiveDemo?: InteractiveDemoKind;
   image?: string | null;
   screenshots?: string[];
+  screenshotCaptions?: string[];
   featured: boolean;
   category: "web" | "game" | "tool" | "systems" | "ai";
 }

@@ -1,0 +1,22 @@
+{
+  "source": "https://github.com/KarmaSora/Assembly/blob/4c76ea4/ARMv7/assignment/currentCode.s",
+  "sourceSha256": "1c00348529bdef5ba3c545c26b66f324ec31f8fa3834215416f599a68eb6fa28",
+  "originalElfSha256": "95c1460263552c63042a0cf77a44a07ef3a51266ce38f4564a602bfecd8d354a",
+  "evidence": "Original ELF used for the actual CPUlator UART/key captures on 15 November 2026; associated source verified unchanged.",
+  "preloadPermission": "The author explicitly approved sending the compiled ARM program to CPUlator in its URL for automatic preloading.",
+  "executableSha256": "259843779036e3d1c8301221144c99d999b88fd52148156fd4d007658d380dd5",
+  "entry": 52,
+  "segments": [
+    {
+      "address": 0,
+      "bytes": 528,
+      "sha256": "ac011283dee737b905924abf4b4c4f52373c45a510214566e3f190df39e6217a"
+    },
+    {
+      "address": 66064,
+      "bytes": 72,
+      "sha256": "9bdfc5733ed9875a3e70e06aacfb265b377fe3bbd36ab4a85605db1983d25d17"
+    }
+  ],
+  "packaging": "Empty ELF file padding removed; loadable machine-code/data bytes and addresses unchanged."
+}

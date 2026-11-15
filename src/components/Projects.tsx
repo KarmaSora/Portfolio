@@ -2,10 +2,13 @@
 
 import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
-import { Github, ExternalLink, Loader2, ChevronLeft, ChevronRight } from "lucide-react";
+import { Github, ExternalLink, Loader2, ChevronDown, ChevronLeft, ChevronRight, Play } from "lucide-react";
 import { Dialog } from "./Dialog";
 import { usePortfolio } from "./PortfolioProvider";
-import { Project } from "@/lib/types";
+import { Project, type InteractiveDemoKind } from "@/lib/types";
+import { demoKinds, projectDemos } from "@/lib/project-demos";
+import { ProjectDemoDialog } from "./demos/ProjectDemo";
+import EshopDemoLink from "./demos/EshopDemoLink";
 import { cn, withBasePath } from "@/lib/utils";
 
 const DEFAULT_PROJECT_IMAGE = "/images/default-project.png";
@@ -16,7 +19,7 @@ export function Projects() {
   const [filter, setFilter] = useState<"all" | Project["category"]>("all");
   const [galleryProject, setGalleryProject] = useState<Project | null>(null);
   const [galleryIndex, setGalleryIndex] = useState(0);
-  const [detailProject, setDetailProject] = useState<Project | null>(null);
+  const [activeDemo, setActiveDemo] = useState<InteractiveDemoKind | null>(null);
   const activeThumbnailRef = useRef<HTMLButtonElement>(null);
 
   useEffect(() => {
@@ -38,11 +41,10 @@ export function Projects() {
     systems: "Systems",
   };
 
-  const openGallery = (project: Project) => {
+  const openGallery = (project: Project, startIndex = 0) => {
     if (project.screenshots && project.screenshots.length > 0) {
-      setDetailProject(null);
       setGalleryProject(project);
-      setGalleryIndex(0);
+      setGalleryIndex(startIndex);
     }
   };
 
@@ -108,6 +110,32 @@ export function Projects() {
           )}
         </div>
 
+        {!isLoading && (
+          <div id="project-demos" className="mb-9 flex scroll-mt-28 flex-col gap-3 border-y border-border py-5 sm:flex-row sm:items-center sm:justify-between">
+            <p className="text-sm font-medium">Try the projects</p>
+            <div className="flex flex-wrap gap-2" role="group" aria-label="Interactive project demos">
+              {demoKinds.map(kind => kind === "showcase" || kind === "arm" ? (
+                <a key={kind} href={withBasePath(`/demos/${kind}/`)} className="button-secondary text-xs" aria-label={`Open ${projectDemos[kind].label}`}>
+                  <Play className="h-3.5 w-3.5" aria-hidden="true" />{projectDemos[kind].label}
+                </a>
+              ) : (
+                <button key={kind} type="button" className="button-secondary text-xs" onClick={() => setActiveDemo(kind)} aria-label={`Open ${projectDemos[kind].label}`}>
+                  <Play className="h-3.5 w-3.5" aria-hidden="true" />{projectDemos[kind].label}
+                </button>
+              ))}
+              {[
+                { path: "marvin", label: "MARVIN / Shadow" },
+                { path: "typing", label: "Typing Trainer" },
+                { path: "fat", label: "FAT file system" },
+              ].map(demo => (
+                <a key={demo.path} href={withBasePath(`/demos/${demo.path}/`)} className="button-secondary text-xs" aria-label={`Open ${demo.label} demo`}>
+                  <Play className="h-3.5 w-3.5" aria-hidden="true" />{demo.label}
+                </a>
+              ))}
+            </div>
+          </div>
+        )}
+
         {/* Loading state */}
         {isLoading ? (
           <div className="flex items-center justify-center py-20">
@@ -119,6 +147,7 @@ export function Projects() {
             {filteredProjects.map((project) => (
               <article
                 key={project.id}
+                id={project.id}
                 className={cn(
                   "project-card card rounded-xl overflow-hidden group flex flex-col"
                 )}
@@ -142,7 +171,7 @@ export function Projects() {
                           <circle cx="8.5" cy="8.5" r="1.5"/>
                           <polyline points="21,15 16,10 5,21"/>
                         </svg>
-                        {project.screenshots.length} screenshots
+                        {project.screenshots.length} {project.screenshots.length === 1 ? "screenshot" : "screenshots"}
                       </span>
                       </button>
                     )}
@@ -154,16 +183,64 @@ export function Projects() {
                     <div className="flex flex-wrap gap-x-3 gap-y-1">
                       {project.technologies.map((technology) => <span key={technology} className="technology-label">{technology}</span>)}
                     </div>
-                    <div className="mt-auto flex flex-wrap items-center justify-between gap-x-4 gap-y-2 pt-6">
-                      <button type="button" onClick={() => setDetailProject(project)} aria-label={`Read details about ${project.title}`} className="inline-flex min-h-11 items-center text-sm font-semibold text-primary underline-offset-4 hover:underline">Project details</button>
-                      <div className="flex flex-wrap items-center gap-4">
+                    <div className="mt-auto pt-6">
+                      {project.id === "eshop" && <EshopDemoLink />}
+                      {project.interactiveDemo === "showcase" || project.interactiveDemo === "arm" ? (
+                        <a href={withBasePath(`/demos/${project.interactiveDemo}/`)} className="button-secondary mb-3 w-full justify-between" aria-label={`Open original application for ${project.title}`}>
+                          {project.interactiveDemo === "arm" ? "Run in CPUlator" : "Open ShowcaseSERL"}<ExternalLink className="h-4 w-4" aria-hidden="true" />
+                        </a>
+                      ) : project.interactiveDemo && (
+                        <button type="button" onClick={() => setActiveDemo(project.interactiveDemo!)} className="button-secondary mb-3 w-full justify-between" aria-label={`Open interactive demo for ${project.title}`}>
+                          {projectDemos[project.interactiveDemo].label}<Play className="h-4 w-4" aria-hidden="true" />
+                        </button>
+                      )}
+                      {!project.interactiveDemo && project.demo?.startsWith("/demos/") && (
+                        <a href={withBasePath(project.demo)} className="button-secondary mb-3 w-full justify-between" aria-label={`Run original program: ${project.title}`}>
+                          {project.demoLabel || "Run original program"}<Play className="h-4 w-4" aria-hidden="true" />
+                        </a>
+                      )}
+                      <details className="group/details">
+                        <summary aria-label={`Read details about ${project.title}`} className="flex min-h-11 cursor-pointer list-none items-center justify-between gap-3 text-sm font-semibold text-primary underline-offset-4 hover:underline [&::-webkit-details-marker]:hidden">
+                          Project details
+                          <ChevronDown className="h-4 w-4 shrink-0 transition-transform group-open/details:rotate-180" aria-hidden="true" />
+                        </summary>
+                        <div className="border-t border-border pb-3 pt-4">
+                          <p className="text-base leading-7 text-muted-foreground">{project.longDescription}</p>
+                          {project.detailSections?.map((section) => (
+                            <section key={section.title} className="mt-5 border-t border-border pt-4">
+                              <h4 className="text-base font-semibold">{section.title}</h4>
+                              <p className="mt-2 text-base leading-7 text-muted-foreground">{section.description}</p>
+                              <div className="mt-2 flex flex-wrap items-center gap-4 text-sm font-medium text-primary">
+                                {section.demo && (
+                                  <a href={withBasePath(section.demo)} className="inline-flex min-h-11 items-center gap-2 hover:underline">
+                                    <Play className="h-4 w-4" aria-hidden="true" />{section.demoLabel || "Run original program"}
+                                  </a>
+                                )}
+                                {section.github && (
+                                  <a href={section.github} target="_blank" rel="noopener noreferrer" aria-label={`${section.title} ${project.sourceAccess === "private" ? "private source" : "source code"}`} className="inline-flex min-h-11 items-center gap-2 hover:underline">
+                                    <Github className="h-4 w-4" aria-hidden="true" />
+                                    {project.sourceAccess === "private" ? "Private source" : "Source code"}
+                                  </a>
+                                )}
+                                {section.screenshotIndex !== undefined && project.screenshots?.[section.screenshotIndex] && (
+                                  <button type="button" onClick={() => openGallery(project, section.screenshotIndex)} className="min-h-11 hover:underline">View {section.title.toLowerCase()} screenshots</button>
+                                )}
+                              </div>
+                            </section>
+                          ))}
+                          {!!project.screenshots?.length && (
+                            <button type="button" onClick={() => openGallery(project)} className="mt-3 min-h-11 text-sm font-medium text-primary hover:underline">View screenshots</button>
+                          )}
+                        </div>
+                      </details>
+                      <div className="flex flex-wrap items-center justify-end gap-4">
                         {project.github && (
-                          <a href={project.github} target="_blank" rel="noopener noreferrer" className="inline-flex min-h-11 items-center gap-2 text-sm text-muted-foreground hover:text-primary" aria-label={`View ${project.title} source code`}>
-                            <Github className="h-4 w-4" aria-hidden="true" /> Source
+                          <a href={project.github} target="_blank" rel="noopener noreferrer" className="inline-flex min-h-11 items-center gap-2 text-sm text-muted-foreground hover:text-primary" aria-label={`View ${project.title} ${project.sourceAccess === "private" ? "private repository" : "source code"}`}>
+                            <Github className="h-4 w-4" aria-hidden="true" /> {project.sourceAccess === "private" ? "Private repository" : "Source"}
                           </a>
                         )}
-                        {project.demo && (
-                          <a href={project.demo} target="_blank" rel="noopener noreferrer" className="inline-flex min-h-11 items-center gap-2 text-sm text-muted-foreground hover:text-primary" aria-label={`${project.demoLabel || "Live demo"}: ${project.title}`}>
+                        {project.demo && !(project.demo.startsWith("/demos/") && !project.interactiveDemo) && (
+                          <a href={project.demo.startsWith("/") ? withBasePath(project.demo) : project.demo} target={project.demo.startsWith("/") ? undefined : "_blank"} rel={project.demo.startsWith("/") ? undefined : "noopener noreferrer"} className="inline-flex min-h-11 items-center gap-2 text-sm text-muted-foreground hover:text-primary" aria-label={`${project.demoLabel || "Live demo"}: ${project.title}`}>
                             <ExternalLink className="h-4 w-4" aria-hidden="true" /> {project.demoLabel || "Live demo"}
                           </a>
                         )}
@@ -177,19 +254,7 @@ export function Projects() {
         )}
       </div>
 
-      {detailProject && (
-        <Dialog title={detailProject.title} description="Project details" closeLabel="Close project details" onClose={() => setDetailProject(null)}>
-          <p className="max-w-prose text-base leading-7 text-muted-foreground">{detailProject.longDescription}</p>
-          <div className="mt-5 flex flex-wrap gap-2">
-            {detailProject.technologies.map((technology) => <span key={technology} className="rounded bg-secondary px-2.5 py-1 text-sm text-muted-foreground">{technology}</span>)}
-          </div>
-          <div className="mt-6 flex flex-wrap items-center gap-5 text-sm font-medium text-primary">
-            {detailProject.github && <a href={detailProject.github} target="_blank" rel="noopener noreferrer" className="inline-flex min-h-11 items-center gap-2 hover:underline"><Github className="h-4 w-4" aria-hidden="true" />Source code</a>}
-            {detailProject.demo && <a href={detailProject.demo} target="_blank" rel="noopener noreferrer" className="inline-flex min-h-11 items-center gap-2 hover:underline"><ExternalLink className="h-4 w-4" aria-hidden="true" />{detailProject.demoLabel || "Live demo"}</a>}
-            {!!detailProject.screenshots?.length && <button type="button" onClick={() => openGallery(detailProject)} className="min-h-11 hover:underline">View screenshots</button>}
-          </div>
-        </Dialog>
-      )}
+      {activeDemo && <ProjectDemoDialog kind={activeDemo} onClose={() => setActiveDemo(null)} />}
 
       {galleryProject && galleryProject.screenshots && (
         <Dialog
@@ -203,8 +268,11 @@ export function Projects() {
           }}
         >
           <div className="relative aspect-video rounded-lg overflow-hidden bg-secondary">
-            <Image src={withBasePath(galleryProject.screenshots[galleryIndex])} alt={`${galleryProject.title} screenshot ${galleryIndex + 1}`} fill className="object-contain" sizes="(max-width: 1024px) 100vw, 1024px" priority />
+            <Image src={withBasePath(galleryProject.screenshots[galleryIndex])} alt={galleryProject.screenshotCaptions?.[galleryIndex] || `${galleryProject.title} screenshot ${galleryIndex + 1}`} fill className="object-contain" sizes="(max-width: 1024px) 100vw, 1024px" priority />
           </div>
+          {galleryProject.screenshotCaptions?.[galleryIndex] && (
+            <p className="mt-3 text-sm leading-6 text-muted-foreground">{galleryProject.screenshotCaptions[galleryIndex]}</p>
+          )}
           <div className="mt-4 flex items-center justify-between gap-3">
             <button type="button" onClick={prevImage} className="inline-flex min-h-11 min-w-11 items-center justify-center gap-1 rounded-lg border border-border px-3 text-sm hover:bg-secondary" aria-label="Previous screenshot"><ChevronLeft className="h-5 w-5" aria-hidden="true" /><span className="hidden sm:inline">Previous</span></button>
             <p role="status" aria-live="polite" aria-atomic="true" className="text-sm text-muted-foreground">{galleryIndex + 1} / {galleryProject.screenshots.length}</p>

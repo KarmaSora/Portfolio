@@ -1,0 +1,160 @@
+{
+  "projects": {
+    "marvin": {
+      "repository": "https://github.com/KarmaSora/python-course",
+      "commit": "56a2d08c21b90a9ee0a4e50849e82b3c30df7621",
+      "path": "me/kmom05/marvin4",
+      "files": [
+        {
+          "path": "main.py",
+          "sha256": "72bfb05d045a5880b3c0d106e63394fa053354090cf5df82ab3add5d3a080b61"
+        },
+        {
+          "path": "marvin1.py",
+          "sha256": "8bd800dd6d418c7d9c5885a54346e5610e56b339ad5042ee3a7af3b0438198cf"
+        },
+        {
+          "path": "marvin2.py",
+          "sha256": "c3baf0ddfdf01928685fd1fd26943ffaa4c3b52133a41f0ed55b40ca7382d7f8"
+        },
+        {
+          "path": "inventory.py",
+          "sha256": "bc2160797a614c70fce59b21cb8d97448307678d0d427cc8d42162ac372cbf18"
+        },
+        {
+          "path": "emission_functions.py",
+          "sha256": "4b229aaa9683c1d3795f02a164310ce7d6f78e7ea9b039c179178c2aadc1ea39"
+        },
+        {
+          "path": "emission_data.py",
+          "sha256": "a0fa5aea633f6616adae9fb19f78c17284349f7f95a12c88c0747eefe42b4a12"
+        },
+        {
+          "path": "emission_data_small.py",
+          "sha256": "0efe9918bc9e496c28e3d8938b9fb88068c55ec9fb38735c1cc4a11813d74963"
+        }
+      ]
+    },
+    "typing": {
+      "repository": "https://github.com/KarmaSora/python-course",
+      "commit": "56a2d08c21b90a9ee0a4e50849e82b3c30df7621",
+      "path": "me/kmom10/typing",
+      "files": [
+        {
+          "path": "main.py",
+          "sha256": "9c888e2e10fd865ccb40e4b0ce66a7d180e1d37b3d4c7ccb3635aeddc1f4488e"
+        },
+        {
+          "path": "typing_analysis.py",
+          "sha256": "d2aa341bf86b1842f3cd10a28c65727e5ee79003826037c2617d3f7eac92a8d2"
+        },
+        {
+          "path": "extra_analysis_fun.py",
+          "sha256": "a6ed5c6dc0ad8502b2c866eef8ba6a7d397ec96effdde98079152ee94bb2a8cf"
+        },
+        {
+          "path": "easy.txt",
+          "sha256": "4f19add697a6ad47e48523b6fc078f9021beee40eb00fc429dc59f960566d242"
+        },
+        {
+          "path": "medium.txt",
+          "sha256": "9ba97013cf8952df924d97a442d37d3bb42c4ff4d268909fabd71cbf3e77fe28"
+        },
+        {
+          "path": "hard.txt",
+          "sha256": "541686dbf037c3ff19da93bcfbb41c6a29d2ad59d0181034b3054b3089e9666d"
+        },
+        {
+          "path": "sample.txt",
+          "sha256": "892ce475a5a0d2333374aaaebbde5d58381e82af6d5113671058a81c7f184532"
+        },
+        {
+          "path": "sample2.txt",
+          "sha256": "28c967af84bf6486f0f34b2055337441dc5a61ab1fb0d45b8f47d97c002ed45d"
+        },
+        {
+          "path": "test.txt",
+          "sha256": "892ce475a5a0d2333374aaaebbde5d58381e82af6d5113671058a81c7f184532"
+        },
+        {
+          "path": "test2.txt",
+          "sha256": "a40e6e98ef02187123c8f31936b066ccd206369b52902cb725d8825508ecf333"
+        },
+        {
+          "path": "score.txt",
+          "sha256": "dfc79c7a85b629444f9ba94c6e2588e09df07ec9fb3c07cd5a027dc07eb543a5"
+        },
+        {
+          "path": "compare.txt",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": "randomTest.txt",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      ]
+    },
+    "analyser": {
+      "repository": "https://github.com/KarmaSora/python-course",
+      "commit": "56a2d08c21b90a9ee0a4e50849e82b3c30df7621",
+      "path": "me/kmom06/analyzer",
+      "files": [
+        {
+          "path": "main.py",
+          "sha256": "03ac112e2dd728c4706cc3e11c7a1129be7b7f4af94aa14fe764c4b2a38b9a05"
+        },
+        {
+          "path": "analyzer.py",
+          "sha256": "dc37387215db979cab3fc5315683c950f63d951a48202638dbe40a8c86581b5a"
+        },
+        {
+          "path": "phil.txt",
+          "sha256": "f5dffd8371821a8eeea0f7378ad377e9de866ec714565843f5b5da6ee2c8fcc8"
+        },
+        {
+          "path": "lorum.txt",
+          "sha256": "2a8848dc2be01a97844041df927063d0b197f9379e693b046e1182a48ff7aa60"
+        }
+      ]
+    },
+    "fat": {
+      "repository": "https://github.com/KarmaSora/OperatingSystem",
+      "commit": "4e6d6d14fcd9329941de96ada97c7ad6e472a869",
+      "path": "Lab2/lab2_code",
+      "files": [
+        {
+          "path": "main.cpp",
+          "sha256": "d1ef2166cbeaa53d45b850eda126a0a2ffc30f5c1c8288623bf0dfbaace6279e"
+        },
+        {
+          "path": "shell.cpp",
+          "sha256": "95150b3e9df4a333f8c502e69f1c31220b13078fe80dd34c52eddfd0fdd67dac"
+        },
+        {
+          "path": "shell.h",
+          "sha256": "013d4d3afcd02bc5719c97711fa79119af161e559e76f5fbfe5b3f4b7832e538"
+        },
+        {
+          "path": "fs.cpp",
+          "sha256": "c605c6d3bc31e5506b6a09e6400226582f2cdcde012cbb388bc9d29b80576218"
+        },
+        {
+          "path": "fs.h",
+          "sha256": "80badea09d93c74825798bc2862d4050e825448865c169e8db369f185559538d"
+        },
+        {
+          "path": "disk.cpp",
+          "sha256": "c44244012436e756658a4c41439eb96133c1580b338f0d15109129b24074a64a"
+        },
+        {
+          "path": "disk.h",
+          "sha256": "c39f2dae1c9a6f5ac54d9cc9ffbfc281825daceb4d469d9092eb9c2402b6d58f"
+        },
+        {
+          "path": "direntry.h",
+          "sha256": "878ba1f0b70cce4a06c860c41779a107c597d0505725e82482c7d6f57e7f8ac3"
+        }
+      ]
+    }
+  }
+}

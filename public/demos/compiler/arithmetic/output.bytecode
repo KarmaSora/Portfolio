@@ -1,0 +1,13 @@
+label Main
+method Main Main
+iconst 2
+iconst 3
+iadd
+istore __t1
+iload __t1
+iconst 4
+imul
+istore __t0
+iload __t0
+print
+stop

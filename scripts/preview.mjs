@@ -12,6 +12,7 @@ const types = {
   '.svg': 'image/svg+xml', '.png': 'image/png', '.jpg': 'image/jpeg',
   '.jpeg': 'image/jpeg', '.webp': 'image/webp', '.avif': 'image/avif',
   '.ico': 'image/x-icon', '.woff2': 'font/woff2', '.woff': 'font/woff', '.pdf': 'application/pdf',
+  '.wasm': 'application/wasm', '.zip': 'application/zip',
 };
 
 export async function startPreview(directory = 'out', port = 0) {

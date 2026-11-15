@@ -1,0 +1,96 @@
+{
+  "repository": "https://github.com/KarmaSora/showcaseSERL",
+  "commit": "596e7430782f0cacd6b2043dcd2fdcd032a565c1",
+  "files": [
+    {
+      "path": "LICENSE",
+      "gitBlob": "73a677ab8bd6965676f0b4efbfa5aef97307b12f",
+      "sha256": "0e91ac6f6bb911ac72dcc526efb0307d7335b4de274c6920f6014008213665c4"
+    },
+    {
+      "path": "next.config.mjs",
+      "gitBlob": "ecf9747b3f7b3c09386df354c6bc235af57eeb94",
+      "sha256": "dd992b39d704e304c928f2480afc028758a79400b604203375cd1da030bbbc37"
+    },
+    {
+      "path": "public/research.json",
+      "gitBlob": "5ca3d7a062c6d7ecd289fc5b08e905b5b3c73bbd",
+      "sha256": "86359f29dbf4e3e081880385d071494b316440def61b59bcf26170f21fbcd13b"
+    },
+    {
+      "path": "src/app/components/Card.tsx",
+      "gitBlob": "61f108dcb77aa7c3511313625346ee85026ddc75",
+      "sha256": "93ade1deb7ed0897c2fc75ecebd63cfc57e89e22472a9e67c7c059f8970c2dd1"
+    },
+    {
+      "path": "src/app/components/CardDisplay.tsx",
+      "gitBlob": "e020ab4ce99d765759660a0a822ebd360d7c0f0e",
+      "sha256": "6716ce6214e100bb049282286cf820992a9bfe35b83955e81993c40e3b86721d"
+    },
+    {
+      "path": "src/app/components/Container.tsx",
+      "gitBlob": "1ab3e022c8cbe990b61e89c1953ac3cff8406a1c",
+      "sha256": "924d5b335c23d0051c5ed90685f97f64a01e1e9e941b9d8aee6fd9c3eee585b5"
+    },
+    {
+      "path": "src/app/components/Footer.tsx",
+      "gitBlob": "c7fbf1543199056b5624c1156dcffaa15bafa863",
+      "sha256": "3fe2e20575b49fc00f40e3665b6cb5797c696dfe79a89791acf028434e9e8962"
+    },
+    {
+      "path": "src/app/components/Header.tsx",
+      "gitBlob": "151a860f60f5a0b541bcc777d7895de12a309bfb",
+      "sha256": "aa658b55efe8f452bb96ec54feec03e2897177758a01a8d408998c8a324b5107"
+    },
+    {
+      "path": "src/app/components/KioskPage.tsx",
+      "gitBlob": "d50962a9b6cc23062972e46e40c0a931f066afb4",
+      "sha256": "6b3ae153fd13801882f3aa3fac14093a50c5e1072b39fa619ff8ed6ae6c3ed56"
+    },
+    {
+      "path": "src/app/components/KioskSingleProject.tsx",
+      "gitBlob": "982e58c36cc2e5c8471080178c8534a30ed1dda9",
+      "sha256": "15c3107c722d9c1f1eb136998210de472cc00711c47e63710d586220c522f2fb"
+    },
+    {
+      "path": "src/app/components/Navigtion.tsx",
+      "gitBlob": "9755b4a877d40528a6d810b548a3e8892adac66c",
+      "sha256": "117e21620652e6f7e7564ced7bf52c1d51448b78b30883945b1cfe7085cfa131"
+    },
+    {
+      "path": "src/app/components/QRCode.tsx",
+      "gitBlob": "74ae6535c4287823f224410234d07c4ec9400f09",
+      "sha256": "dabe720f0d4ddf04c25b3cba02485b9cf35a6ab333af57dfc08aaf1e42599391"
+    },
+    {
+      "path": "src/app/components/fullscreen.tsx",
+      "gitBlob": "7a6eabad2a925e64279c1b5b909a578e84d75aa3",
+      "sha256": "943d7c505f1ccd176419cab78e055dc201e3cb0b6d197c16f7145daa4dc8fa3f"
+    },
+    {
+      "path": "src/app/components/singleProject.tsx",
+      "gitBlob": "a5887fbcb6bc1c5731db14c275bec59d87e25fa8",
+      "sha256": "eee8ae55a267ec8ab37189be2fb539565613cd12d52781e10c4fdc3373e28f59"
+    },
+    {
+      "path": "src/app/globals.css",
+      "gitBlob": "6b80b5451f68d5ca79a9cc107c535493a6a5d3b7",
+      "sha256": "88d0c1e4165f59743a93e73b007880f4234d36d492a01bcc9b8201a467a15afa"
+    },
+    {
+      "path": "src/app/layout.tsx",
+      "gitBlob": "5719d0150fb2e01bef9d81a572eb3cb211faa937",
+      "sha256": "cdfc7aa8069d32677cd96d3d6c9e4b83b7e4fec0474438094e6c7d14bc6c2793"
+    },
+    {
+      "path": "src/app/page.tsx",
+      "gitBlob": "da27311d0eae5c42634f17460ed0034bccac7cca",
+      "sha256": "a874bd45c0b3f6f19a04e35d79c6c40b398221b1dc7c0a5fbde54699bf84979c"
+    },
+    {
+      "path": "tailwind.config.ts",
+      "gitBlob": "9baf2666aef081f9a6b41e62c22f0d4e947d5d66",
+      "sha256": "e7d75a29bc12e6c4f3f0db7f52549b72ec52b3d93635e2b077daa34a772fff1d"
+    }
+  ]
+}

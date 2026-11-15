@@ -64,9 +64,14 @@ export function Hero() {
             </div>
           </aside>
         </div>
-        <a href="#experience" className="mt-6 inline-flex min-h-11 items-center gap-3 text-sm font-medium text-muted-foreground hover:text-primary sm:mt-12 lg:mt-16">
-          <ArrowDown className="h-4 w-4" aria-hidden="true" /> Explore my experience
-        </a>
+        <div className="mt-6 flex flex-wrap items-center gap-x-7 gap-y-2 sm:mt-12 lg:mt-16">
+          <a href="#experience" className="inline-flex min-h-11 items-center gap-3 text-sm font-medium text-muted-foreground hover:text-primary">
+            <ArrowDown className="h-4 w-4" aria-hidden="true" /> Explore my experience
+          </a>
+          <a href="#project-demos" className="inline-flex min-h-11 items-center gap-2 text-sm font-medium text-primary">
+            Try the interactive projects <ArrowUpRight className="h-4 w-4" aria-hidden="true" />
+          </a>
+        </div>
       </div>
     </section>
   );

@@ -1,0 +1,23 @@
+{
+  "compiler": "emcc (Emscripten gcc/clang-like replacement + linker emulating GNU ld) 4.0.21 (d6f42310010ddec0753a69bab01a4b33aae255b7)",
+  "flags": [
+    "-O2",
+    "-std=c++17",
+    "-include",
+    "cstdint",
+    "-sMODULARIZE=1",
+    "-sEXPORT_NAME=createFAT",
+    "-sENVIRONMENT=worker",
+    "-sEXIT_RUNTIME=1",
+    "-sFORCE_FILESYSTEM=1",
+    "-sINVOKE_RUN=0",
+    "-sALLOW_MEMORY_GROWTH=1",
+    "-sEXPORTED_RUNTIME_METHODS=callMain,FS"
+  ],
+  "originalCommit": "4e6d6d14fcd9329941de96ada97c7ad6e472a869",
+  "files": {
+    "fat.js": "83ff9d29b88621e21aba36b3adbe9a3f6f7736bd94828e81484e744c61b28481",
+    "fat.wasm": "5ea5db279b65f0e0c189a5aaf49e1f2e16d26413e2842954a592471e9d3d4c2d"
+  },
+  "changes": "No source edits. Forced cstdint include supplies the fixed-width types expected by the original headers."
+}

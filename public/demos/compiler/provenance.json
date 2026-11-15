@@ -1,0 +1,80 @@
+{
+  "capturedOn": "2026-11-15",
+  "sourceRepository": "KarmaSora/Compiler",
+  "sourceCommit": "7b6aa5774c4c641415d60669b1c6f3a93e2fb4a9",
+  "kind": "Recorded outputs from a fresh local compiler build",
+  "artifacts": [
+    {
+      "file": "/demos/compiler/arithmetic/tree.svg",
+      "sha256": "3802bbd1d5b50d34951b0a76148de6eb512d0dec1292a726414ec4b23587aa19"
+    },
+    {
+      "file": "/demos/compiler/arithmetic/cfg.svg",
+      "sha256": "a816ee8c43b419eb41ced640158cc87ab86c4e34a956c1373a0011bf9f63763d"
+    },
+    {
+      "file": "/demos/compiler/arithmetic/tree.dot",
+      "sha256": "22aabf97ac77f3b38ceb97e875da73e6b7a8dd611fcd0a4d0b6ac686aa26f759"
+    },
+    {
+      "file": "/demos/compiler/arithmetic/cfg.dot",
+      "sha256": "9cee4fc924dc492ef7388bb1ab1f5c58ce93d0b9c978310ec8959b93e01e9b89"
+    },
+    {
+      "file": "/demos/compiler/arithmetic/output.ir",
+      "sha256": "6560eea2f245ee8c4f7d12e6d07ac7175237f13e89ceb15c42949a1be022eecc"
+    },
+    {
+      "file": "/demos/compiler/arithmetic/output.bytecode",
+      "sha256": "f7f53053e822fd09e38cd1a6ebf35bbc44bcf4c8e1f09fde80e292cb9da4e4e8"
+    },
+    {
+      "file": "/demos/compiler/while-if/tree.svg",
+      "sha256": "1f81249ace1c30f8ecc4fd8a17db078bc6e1f9eec4d468c0935cb948a8dcf359"
+    },
+    {
+      "file": "/demos/compiler/while-if/cfg.svg",
+      "sha256": "7c88e4bd10f72d7183ca07d2d37ed67babc5bdb6beed9e90c71fd71bb5f5a689"
+    },
+    {
+      "file": "/demos/compiler/while-if/tree.dot",
+      "sha256": "2bf0c5ed4779ebf44983e5f270b59878e62902b9fcad219d2d458566fcac4e55"
+    },
+    {
+      "file": "/demos/compiler/while-if/cfg.dot",
+      "sha256": "e2d0e4db3b0836caf15adcc57dc0e03226c875a43765412200638a0a1bc87b5a"
+    },
+    {
+      "file": "/demos/compiler/while-if/output.ir",
+      "sha256": "2f1d6c1caceccbd5ca527b22482404cbb12625ce8f4beca9a05fb463dbe83c61"
+    },
+    {
+      "file": "/demos/compiler/while-if/output.bytecode",
+      "sha256": "dd3203f6d9c15b68209109fde3b9c877b94fe9335daee98b7d82ae26d3f4add8"
+    },
+    {
+      "file": "/demos/compiler/factorial/tree.svg",
+      "sha256": "2b30d10afafb2d66a1f83b102a1789708ada436544e5744edb3dfbe41102143d"
+    },
+    {
+      "file": "/demos/compiler/factorial/cfg.svg",
+      "sha256": "2438078b0b3587c7a181bedc1c2aa2b116cc11c2a4ac1e09aed2396d371d061c"
+    },
+    {
+      "file": "/demos/compiler/factorial/tree.dot",
+      "sha256": "6a9f3c0b774595d2cc5471524bfee93ec144391cf6c4e984f002afad7b7bb131"
+    },
+    {
+      "file": "/demos/compiler/factorial/cfg.dot",
+      "sha256": "cc84f53e7c9998cd3e0d5bfc2ca38a51f7f7a981f7d8f58aaa3c9c4010ff4390"
+    },
+    {
+      "file": "/demos/compiler/factorial/output.ir",
+      "sha256": "1ceda74dd73661116624d24df0277cd25b342bbbdbf84a361510c9ae017c1948"
+    },
+    {
+      "file": "/demos/compiler/factorial/output.bytecode",
+      "sha256": "b7eb04e45034295dde5f17099ef1f0c05ba7438ffcb8f3da7b1418412ac42fcb"
+    }
+  ]
+}

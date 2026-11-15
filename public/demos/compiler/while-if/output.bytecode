@@ -1,0 +1,53 @@
+label Main
+method Main Main
+new Sum
+istore __t0
+iconst 100
+invokevirtual calcSum 1
+istore __t1
+iload __t1
+print
+stop
+label Sum_calcSum
+method Sum calcSum
+param num
+iconst 0
+istore sum
+goto whileCondition_1
+label whileCondition_1
+iconst 0
+iload num
+ilt
+istore __t2
+iload __t2
+iffalse_goto whileExit_3
+goto whileBody_2
+label whileBody_2
+iload sum
+iconst 100
+ilt
+istore __t3
+iload __t3
+iffalse_goto block_5
+goto block_4
+label whileExit_3
+iload sum
+ireturn
+label block_4
+iload sum
+iload num
+iadd
+istore __t4
+iload __t4
+istore sum
+goto block_6
+label block_5
+goto block_6
+label block_6
+iload num
+iconst 1
+isub
+istore __t5
+iload __t5
+istore num
+goto whileCondition_1

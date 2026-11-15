@@ -170,6 +170,17 @@ const nextConfig = {
 
 Update `basePath` and `assetPrefix` to match your repository name.
 
+### Project demos and hosting boundaries
+
+The Pages build includes the original ShowcaseSERL interface, Python browser
+terminals, the C++ FAT WebAssembly demo, the CPUlator integration and the recorded
+Compiler walkthrough. Eshop's Express/MySQL backend requires separate hosting;
+its screenshots and source link remain available without a live backend.
+
+See [GitHub Pages demo support and configuration](docs/GITHUB_PAGES_DEMOS.md) for
+the per-project behaviour, browser session storage, Eshop URL setting and release
+verification. Existing source repositories retain their visibility.
+
 ### Manual Build
 
 To build locally:
@@ -222,6 +233,12 @@ The static site in the `out/` folder can be deployed to any static hosting servi
 | `npm run lint`  | Run ESLint               |
 | `npm run preview` | Preview the static production export |
 | `npm run lighthouse` | Inspect mobile and desktop with Lighthouse |
+| `npm run build:project-demos` | Verify pinned sources and prepare browser demo assets |
+| `npm run build:fat-demo` | Recompile FAT deliberately with an installed Emscripten SDK |
+| `npm run demo:eshop` | Run the original Eshop with a disposable local MariaDB database |
+
+`python3 -B scripts/check-marvin-input.py` checks the documented country-input
+fixes after the demo payload has been built; the Pages workflow runs it too.
 
 See [Lighthouse inspection](docs/LIGHTHOUSE.md) for browser requirements, report locations and audit commands. The [design direction](docs/DESIGN.md) records the portfolio's visual system and content constraints.
 

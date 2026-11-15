@@ -1,0 +1,42 @@
+label Main
+method Main Main
+new Fac
+istore __t0
+iconst 10
+invokevirtual ComputeFac 1
+istore __t1
+iload __t1
+print
+stop
+label Fac_ComputeFac
+method Fac ComputeFac
+param num
+iload num
+iconst 1
+ilt
+istore __t2
+iload __t2
+iffalse_goto block_2
+goto block_1
+label block_1
+iconst 1
+istore num_aux
+goto block_3
+label block_2
+iload num
+iconst 1
+isub
+istore __t5
+iload __t5
+invokevirtual ComputeFac 1
+istore __t4
+iload num
+iload __t4
+imul
+istore __t3
+iload __t3
+istore num_aux
+goto block_3
+label block_3
+iload num_aux
+ireturn

@@ -1,0 +1,155 @@
+{
+  "repository": "https://github.com/KarmaSora/database",
+  "commit": "c3ef403ad491eab7b4c280df43435ee53215f640",
+  "path": "kmom06/eshop2",
+  "files": [
+    {
+      "path": "index.js",
+      "sha256": "16dd1302aa84bc52866839a3f633109fb9bc9399f7468fc5c9d328f65991d6fb"
+    },
+    {
+      "path": "cli.js",
+      "sha256": "184d7d0cc82366c582d89c65a2907ad29239bcfb80c4464435a2703ee4f46e9a"
+    },
+    {
+      "path": "route/eshop.js",
+      "sha256": "3523b5a20215ca99d4e0f2ede2a5e003672d0772f2fea7de8fdf17c711575e23"
+    },
+    {
+      "path": "src/helpers.js",
+      "sha256": "306c5851607dc3248da4d904432c4237fa860b8f596073fe4f1f0097ccb3733b"
+    },
+    {
+      "path": "views/eShop/pickList.ejs",
+      "sha256": "8aca2abdba477d5ef2eb7493d19d067c01be285d322c3496f0b1617264947a8a"
+    },
+    {
+      "path": "views/eShop/deleteProduct.ejs",
+      "sha256": "b1367b61b1307456cb1b047669a18b7e52a1861a4934ba860c751e37904fe28c"
+    },
+    {
+      "path": "views/eShop/product.ejs",
+      "sha256": "2942ad4fb877c1e2acfd858be751531f50d3926ad331b76459779c6e7c2cf95d"
+    },
+    {
+      "path": "views/eShop/customerOrder.ejs",
+      "sha256": "eba2e4e76bb62d040f066d92c416dc2b01dcf99f2948f26738d9ffbaf613839d"
+    },
+    {
+      "path": "views/eShop/index.ejs",
+      "sha256": "db7d529730d1754475896052863c101cdec6a4cc7d3ceb6fb30f6d4d85865345"
+    },
+    {
+      "path": "views/eShop/order.ejs",
+      "sha256": "6e790923eeda75a30177030223b5f9ac61c0b3ef2f4be985036a00db6ea7ba74"
+    },
+    {
+      "path": "views/eShop/category.ejs",
+      "sha256": "817d48603130c7ae4f90190871661dcd8d2abc0d1be0874bf9378bca8e21d47c"
+    },
+    {
+      "path": "views/eShop/updateProduct.ejs",
+      "sha256": "e55160e39592c7203d70932265199b3079f94579e63e340d96be8c162d2c274d"
+    },
+    {
+      "path": "views/eShop/createProduct.ejs",
+      "sha256": "1b60fd796fbdabe5a15668c583bad1aa9b69c5841f10906dbefc2177f21c724b"
+    },
+    {
+      "path": "views/eShop/customer.ejs",
+      "sha256": "887aaa2cbf8e72856dd21270c541f11e19759b8ea34306991075d08161fc1951"
+    },
+    {
+      "path": "views/eShop/stockshelves.ejs",
+      "sha256": "619fcb7e4e159a6e2c7ce8d90414ebf1ca2ab4cfa726cc80728e6875401f491a"
+    },
+    {
+      "path": "views/eShop/about.ejs",
+      "sha256": "4167f9183c42742419820f0e4a6df146a2b4b2ccfd045d19fc4f417f1621219f"
+    },
+    {
+      "path": "views/eShopPartials/footer.ejs",
+      "sha256": "b1e87b6835c4a43f9d40dded53f10d904f6f5b7bd64779ec79c2a300ca424fce"
+    },
+    {
+      "path": "views/eShopPartials/header.ejs",
+      "sha256": "74df6d483b35c64fd5ca0c6cc5491b203d9d3ae767e26facfdebff76f0c7a73e"
+    },
+    {
+      "path": "public/images/magicKaitoSignature.png",
+      "sha256": "eea796b7290f664df993a02bb0aa5f924ea2e8e5bd3ac088edd79827676d6cd0"
+    },
+    {
+      "path": "public/style/style.css",
+      "sha256": "2a8a9fc31a992e808459be8796be2518115d8035abfc78463811f787b1548d84"
+    },
+    {
+      "path": "middleware/index.js",
+      "sha256": "893a2d37040d8f794cebffb8eff312ee1f742df1c6c3939f690c9a9d46461364"
+    },
+    {
+      "path": "sql/eshop/setup.sql",
+      "sha256": "a6942b27a8b0cc2ca2f804127ffcc5df2a259308ab31843cfcbd986af6e913c1"
+    },
+    {
+      "path": "sql/eshop/productcategory.csv",
+      "sha256": "07dd6ec6a72a9a424c51c90b525c9df07cf02a7168426547e328a00addae6146"
+    },
+    {
+      "path": "sql/eshop/orderdetails.csv",
+      "sha256": "48745e46fd26c058131f85db32a031986d43d878bc26b8e8733f122795e408a5"
+    },
+    {
+      "path": "sql/eshop/procedures.sql",
+      "sha256": "f121d1fe3573c712c96b95cec153ef20482670d23f483733b30f13dac68a55aa"
+    },
+    {
+      "path": "sql/eshop/functions.sql",
+      "sha256": "ec301671950032c0f16f84891a18208a3dfc721a8f3bc710b4e604984477c12f"
+    },
+    {
+      "path": "sql/eshop/insert.sql",
+      "sha256": "6b062eb56e5e75fc69036e5907e94ad58d106515dbc76ac2ebc3dff942a35958"
+    },
+    {
+      "path": "sql/eshop/pick_list.csv",
+      "sha256": "cc854b8582d07d6bf3c52c9d741da9bbf8d7eff73ac4642b4c7bb7a546953ef2"
+    },
+    {
+      "path": "sql/eshop/stock.csv",
+      "sha256": "707c7642d881f6305f3f2a9c15a2ece09db431b30564bcea84c9ac9d9335e83a"
+    },
+    {
+      "path": "sql/eshop/product.csv",
+      "sha256": "45c21cb6c4cabd24e78ca99559b612ba263abe1aab78480a26ac76c9de71b484"
+    },
+    {
+      "path": "sql/eshop/invoice.csv",
+      "sha256": "b9aff3c0b52cd26b64abc3486b149fa0f70ea6af0a56afe26aa2c1361c9daa54"
+    },
+    {
+      "path": "sql/eshop/category.csv",
+      "sha256": "db56dc066b63b57ee4916ee132ca4ba011df3fdce38569ec9e6aeeb88a67f3b6"
+    },
+    {
+      "path": "sql/eshop/triggers.sql",
+      "sha256": "362a2e3fde652d4348d86862265a22527bde9451a316f8d7e8914bf2eb1c51b6"
+    },
+    {
+      "path": "sql/eshop/customer.csv",
+      "sha256": "d56f73e53ec03b4bf6ed05ab279c0e269f08d8203c8b605c4c2cebf1790254bd"
+    },
+    {
+      "path": "sql/eshop/ddl.sql",
+      "sha256": "953a0be915005a533d2a32486fbc24e56822f1abb5eeebe3721a40e0acb27ee3"
+    },
+    {
+      "path": "sql/eshop/stockshelf.csv",
+      "sha256": "8200233d558cc6a97e9407a9bb0152f6c4d0a3288dc2892c1512ec50829be4bb"
+    },
+    {
+      "path": "sql/eshop/orders.csv",
+      "sha256": "e291b5510f1c24788e9524ba40fad51b23867fb3ddfd1d481c5eade05595bd65"
+    }
+  ]
+}

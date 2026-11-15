@@ -44,3 +44,17 @@ next-env.d.ts
 # Private career drafting notes
 /Karam_Matar_Master_Career_Project_Inventory*.md
 /referncesList.md
+
+# Generated from the pinned original ShowcaseSERL source
+/public/project-apps/showcase/
+
+# Generated from hash-verified original terminal projects
+/public/project-apps/terminal/
+
+# Local backend demo dependencies and disposable data
+/vendor/eshop/node_modules/
+/.local-demos/
+
+# Python runtime/check artifacts
+__pycache__/
+*.pyc

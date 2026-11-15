@@ -1,0 +1,38 @@
+[
+  {
+    "id": "arithmetic",
+    "title": "Arithmetic and precedence",
+    "source": "public class ArithmeticDemo {\n    public static void main(String[] args) {\n        System.out.println((2 + 3) * 4);\n    }\n}\n",
+    "expected": "20",
+    "note": "The addition becomes an input to multiplication, preserving the grouped expression.",
+    "ir": "Main:\n    METHOD Main IN Main\n    __t1 := 2 + 3\n    __t0 := __t1 * 4\n    PRINT __t0\n    EXIT\n\n",
+    "bytecode": "label Main\nmethod Main Main\niconst 2\niconst 3\niadd\nistore __t1\niload __t1\niconst 4\nimul\nistore __t0\niload __t0\nprint\nstop\n",
+    "stdout": "Output: 20\nProgram stopped.\n",
+    "tree": "/demos/compiler/arithmetic/tree.svg",
+    "cfg": "/demos/compiler/arithmetic/cfg.svg"
+  },
+  {
+    "id": "while-if",
+    "title": "Loops and branches",
+    "source": "public class C1 {\n  public static void main(String[] a) {\n    System.out.println(new Sum().calcSum(100));\n  }\n}\n\nclass Sum {\n  public int calcSum(int num) {\n    int sum;\n    sum = 0;\n    while (0 < num) {\n      if (sum < 100) {\n        sum = sum + num;\n      } else {\n      }\n      num = num - 1;\n    }\n    return sum;\n  }\n}\n",
+    "expected": "100",
+    "note": "The graph shows the loop condition, its back-edge and the true/false branches.",
+    "ir": "Main:\n    METHOD Main IN Main\n    __t0 := NEW Sum\n     @param: 100\n    __t1 := CALL calcSum: 1\n    PRINT __t1\n    EXIT\n\nSum_calcSum:\n    METHOD Sum IN calcSum\n    Unknown TAC: PARAM\n    sum := 0\n    goto whileCondition_1\n\nwhileCondition_1:\n    __t2 := 0 < num\n    if __t2 goto whileBody_2 else goto whileExit_3\n\nwhileBody_2:\n    __t3 := sum < 100\n    if __t3 goto block_4 else goto block_5\n\nwhileExit_3:\n    RETURN sum\n\nblock_4:\n    __t4 := sum + num\n    sum := __t4\n    goto block_6\n\nblock_5:\n    goto block_6\n\nblock_6:\n    __t5 := num - 1\n    num := __t5\n    goto whileCondition_1\n\n",
+    "bytecode": "label Main\nmethod Main Main\nnew Sum\nistore __t0\niconst 100\ninvokevirtual calcSum 1\nistore __t1\niload __t1\nprint\nstop\nlabel Sum_calcSum\nmethod Sum calcSum\nparam num\niconst 0\nistore sum\ngoto whileCondition_1\nlabel whileCondition_1\niconst 0\niload num\nilt\nistore __t2\niload __t2\niffalse_goto whileExit_3\ngoto whileBody_2\nlabel whileBody_2\niload sum\niconst 100\nilt\nistore __t3\niload __t3\niffalse_goto block_5\ngoto block_4\nlabel whileExit_3\niload sum\nireturn\nlabel block_4\niload sum\niload num\niadd\nistore __t4\niload __t4\nistore sum\ngoto block_6\nlabel block_5\ngoto block_6\nlabel block_6\niload num\niconst 1\nisub\nistore __t5\niload __t5\nistore num\ngoto whileCondition_1\n",
+    "stdout": "KarmaParamVal: num = 100\nOutput: 100\nProgram stopped.\n",
+    "tree": "/demos/compiler/while-if/tree.svg",
+    "cfg": "/demos/compiler/while-if/cfg.svg"
+  },
+  {
+    "id": "factorial",
+    "title": "Recursive factorial",
+    "source": "public class Factorial{\n    public static void main(String[] a){\n\tSystem.out.println(new Fac().ComputeFac(10));\n    }\n}\n\nclass Fac {\n\n    public int ComputeFac(int num){\n\tint num_aux ;\n\tif (num < 1)\n\t    num_aux = 1 ;\n\telse \n\t    num_aux = num * (this.ComputeFac(num-1)) ;\n\treturn num_aux ;\n    }\n\n}\n",
+    "expected": "3628800",
+    "note": "A recursive method computes 10 factorial; the interpreter trace follows its calls.",
+    "ir": "Main:\n    METHOD Main IN Main\n    __t0 := NEW Fac\n     @param: 10\n    __t1 := CALL ComputeFac: 1\n    PRINT __t1\n    EXIT\n\nFac_ComputeFac:\n    METHOD Fac IN ComputeFac\n    Unknown TAC: PARAM\n    __t2 := num < 1\n    if __t2 goto block_1 else goto block_2\n\nblock_1:\n    num_aux := 1\n    goto block_3\n\nblock_2:\n    __t5 := num - 1\n     @param: __t5\n    __t4 := CALL ComputeFac: 1\n    __t3 := num * __t4\n    num_aux := __t3\n    goto block_3\n\nblock_3:\n    RETURN num_aux\n\n",
+    "bytecode": "label Main\nmethod Main Main\nnew Fac\nistore __t0\niconst 10\ninvokevirtual ComputeFac 1\nistore __t1\niload __t1\nprint\nstop\nlabel Fac_ComputeFac\nmethod Fac ComputeFac\nparam num\niload num\niconst 1\nilt\nistore __t2\niload __t2\niffalse_goto block_2\ngoto block_1\nlabel block_1\niconst 1\nistore num_aux\ngoto block_3\nlabel block_2\niload num\niconst 1\nisub\nistore __t5\niload __t5\ninvokevirtual ComputeFac 1\nistore __t4\niload num\niload __t4\nimul\nistore __t3\niload __t3\nistore num_aux\ngoto block_3\nlabel block_3\niload num_aux\nireturn\n",
+    "stdout": "KarmaParamVal: num = 10\nKarmaParamVal: num = 9\nKarmaParamVal: num = 8\nKarmaParamVal: num = 7\nKarmaParamVal: num = 6\nKarmaParamVal: num = 5\nKarmaParamVal: num = 4\nKarmaParamVal: num = 3\nKarmaParamVal: num = 2\nKarmaParamVal: num = 1\nKarmaParamVal: num = 0\nOutput: 3628800\nProgram stopped.\n",
+    "tree": "/demos/compiler/factorial/tree.svg",
+    "cfg": "/demos/compiler/factorial/cfg.svg"
+  }
+]

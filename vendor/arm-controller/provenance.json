@@ -1,0 +1,7 @@
+{
+  "source": "https://github.com/KarmaSora/Assembly/blob/4c76ea4/ARMv7/assignment/currentCode.s",
+  "sourceSha256": "1c00348529bdef5ba3c545c26b66f324ec31f8fa3834215416f599a68eb6fa28",
+  "originalElfSha256": "95c1460263552c63042a0cf77a44a07ef3a51266ce38f4564a602bfecd8d354a",
+  "evidence": "Original ELF used for the actual CPUlator UART/key captures on 15 November 2026; associated source verified unchanged.",
+  "preloadPermission": "The author explicitly approved sending the compiled ARM program to CPUlator in its URL for automatic preloading."
+}

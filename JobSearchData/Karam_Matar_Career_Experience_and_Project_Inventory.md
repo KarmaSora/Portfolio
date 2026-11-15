@@ -2,8 +2,19 @@
 
 > **Purpose:** A reusable source-of-truth document for updating the public portfolio and creating targeted CVs, resumes, cover letters and interview stories. This is intentionally **more detailed than a CV**. Do not copy every entry into a single application.
 >
-> **Revised and audited:** 26 October 2026 (version 7, reconciling Kravi responsibilities, project details, skills, CV/interview material and status checks against the supplied Data Sorter contribution summary)  
+> **Revised:** 15 November 2026 (version 13, authorizing the portfolio release and documenting GitHub Pages hosting boundaries). **Previous repository audit:** 26 October 2026, reconciling Kravi contributions against the supplied Data Sorter contribution summary.  
+> **Current release authorization — PF-P1, 15 November 2026:** The author explicitly instructed proceeding with a push of the new code and documentation of GitHub Pages limitations. This supersedes the earlier no-push/deployment deferral for the Portfolio update. The release includes 15 catalogue cards, 34 gallery images and seven original-code/recorded-output demo routes, including the PF-I4 FAT/MARVIN repairs. Eshop's Express/MariaDB backend requires a separate host; browser FAT/session storage and the recorded Compiler walkthrough remain intentional demo choices. Original source repositories retain their visibility and are not modified by the portfolio push. Publishing the browser demos delivers inspectable Python snapshots/compiled artifacts as discussed. Release build/deployment verification is recorded in the hosting document; earlier local-only notes below are historical. [Hosting scope and release status](../docs/GITHUB_PAGES_DEMOS.md).  
+> **Latest terminal repair — PF-I4, 15 November 2026:** Reproduced the author's fresh-session FAT sequence (ls → mkdir test → cd test) and MARVIN option 15 crash for lowercase sweden. Both demo snapshots match local files and the only advertised remote main branches: OperatingSystem `4e6d6d14fcd9329941de96ada97c7ad6e472a869`, python-course `56a2d08c21b90a9ee0a4e50849e82b3c30df7621`. FAT has an 8 MiB virtual disk; blank metadata allowed the new directory to alias root block 0. The browser now executes the original format command before accepting input, with original C++/exit behaviour unchanged. MARVIN delivers two separate hash-recorded Python corrections for case/whitespace name resolution and recoverable empty/unknown-country errors; original snapshots/repositories and valid-country calculations are preserved. Versioned asset requests keep refreshed demos consistent. Five Python regressions and focused live/production browser checks cover these failures. Earlier checks had formatted FAT manually and had not tested option 15 lowercase input. No commit/push/deployment or visibility change. [Diagnosis and evidence](../docs/TERMINAL_DEMO_FIXES_2026-11-15.md).  
+> **Current consistency audit — PF-A1, 15 November 2026:** Verified **20 numbered inventory records**, **15 public-catalogue cards**, **34 gallery images**, **24 captured images across ten source implementations/eight cards**, and **seven explicit demo routes**. Reconciled completed original-code demos against older plans and corrected the analyser image manifest to point to Typing Trainer. Eshop has a working local original-backend runner; public hosting is pending. The portfolio project record P10 and section 10 now distinguish the published earlier site, completed local work and proposed presentation improvements. Existing author attribution, source access, CV, media bytes and private reference records are preserved. The prior no-push instruction remains in force. [Audit and outstanding work](../docs/PORTFOLIO_STATUS_AUDIT_2026-11-15.md).  
 > **Current author update, 10 November 2026:** The Kravi internship ended on **31 October 2026** (**KR-C4**). The current portfolio CV is `public/CV_Karam-3-1.pdf`, supplied by the author, and Blender is currently being learned. The author explicitly permits this inventory to remain public and accepts the existing link to the private Compiler repository. These instructions supersede conflicting earlier status/publication notes.  
+> **Latest collaboration and role clarification, 15 November 2026 — JNT-C1 / SH-C3:** ACID Bot was joint work with a colleague throughout research, implementation and thesis writing. Compiler work was likewise carried out jointly across the project; do not invent exclusive personal ownership of its stages or assume the collaborator is the thesis co-author. TeamTemp divided feature work among team members: the author worked full stack throughout and was the permanent communication contact between the Head of Department, development team and customer. He separately rotated into Scrum Master and Team Lead roles once each. His personal engineering contributions included testing, security fixes, some code reviews, merge-conflict assistance and CI/CD support. These activities were work he personally performed, not rotating roles. This clarification supersedes ambiguous individual-ownership and rotating-communication wording.  
+> **Inventory expansion, 15 November 2026 — version 8:** The author supplied five extra-project repositories and requested their details be incorporated now. P12–P20 add nine source-reviewed project records; smaller labs are grouped as supporting coursework. OS Lab2 is the main operating-systems project. FAT exit overwriting and Marvin's fake AI interface are intentional scope; the separate Cryptography exercise is excluded from portfolio selection/repair priorities. **EP-R1–EP-R5 / EP-C1.**  
+> **Initial screenshots/publication scope — EP-C2, historical:** The author will provide screenshots later. New project media is marked pending; this does not block inventory preparation. Private repository locators are recorded without changing visibility. The public portfolio JSON, app, supplied CV and existing media are not changed by this inventory update. See `docs/PORTFOLIO_IMPLEMENTATION_PLAN.md` for later website work.  
+> **Initial local portfolio implementation — EP-C3, historical 15 November 2026:** At the author's subsequent request, P12–P20 have now been added to `public/data/portfolio.json`, bringing the local catalogue to **17 projects**. Cards/details include technology lists, correct categories and private repository labels. Existing TeamTemp, Compiler and ACID Bot descriptions now reflect the confirmed collaboration/role wording. Screenshots remain pending and use the existing fallback image. The production build and focused browser checks passed. These changes are uncommitted and unpushed; no deployment or repository-visibility change was performed. See [local handoff](../docs/LOCAL_PORTFOLIO_HANDOFF.md).  
+> **Source/media snapshot — CMP-R1 / EP-M1, historical 15 November 2026:** The newly cloned Compiler source uses Flex/Bison; earlier recursive-descent/no-parser-generator claims are superseded. Fresh runs generated syntax-tree/CFG, IR, bytecode and VM-output evidence. ARM code ran in CPUlator at the author's request. Ten source-project READMEs now contain **24 real screenshots and generated-artifact views**, copied unchanged into the portfolio. The two Flask applications share one portfolio entry with separate implementation sections, giving **16 catalogue entries**. See [media provenance](../docs/PROJECT_SCREENSHOT_ASSETS.md). The portfolio website/inventory remain local; source README/capture pushes are recorded in **EP-P1**.  
+> **Evidence/comparison snapshot — EP-P1 / EP-G1 / PF-R2, historical 15 November 2026:** Six project repositories now contain **40 pushed READMEs, 24 captured images and 11 compiler artifacts**; commit references are recorded below. The local portfolio has **16 entries** and **34 gallery images**, including the existing TeamTemp media. The two Flask implementations share one presentation entry while retaining separate inventory records. The current comparison rates the updated local portfolio **approximately 8/10** and Felix's published portfolio **8.5/10** for recruiter presentation; these are editorial judgments, not skill or hiring metrics. [Assessment and priorities](../docs/PORTFOLIO_COMPARISON_2026-11-15.md). No portfolio publication or source-visibility change was performed.  
+> **Original-project demo repair — PF-I2, 15 November 2026:** The author rejected the portfolio-styled ShowcaseSERL preview and reported a full-demo route error. ShowcaseSERL now runs its original React components, original stylesheet and nine-record bundled dataset in an isolated document. The earlier fictional six-record preview is removed. Source is pinned to `596e743` with 18 verified file hashes; browser adapters and narrow-screen sizing are separate from the original source. All three demo URLs now use explicit static pages. Compiler is a recorded original-output walkthrough; ARM was still a labelled simulation at this stage; PF-I3 below supersedes it with original-program execution. This supersedes PF-I1's Showcase implementation. Nothing is committed, pushed or deployed. [Current implementation](../docs/AUTHENTIC_PROJECT_DEMOS.md).  
+> **Current original-code demos — PF-I3, 15 November 2026:** The author requested native CPUlator UI, approved automatic compiled-program transfer to CPUlator, chose Text File Analyser as related work under Typing Trainer, and then instructed implementation to proceed. ARM now executes the original controller in CPUlator. MARVIN, Typing Trainer and the separate analyser execute original Python modules in the browser; FAT executes the original C++ compiled to WebAssembly. Eshop runs locally with its original Express/EJS UI and a disposable MariaDB database. The current catalogue has **15 presentation entries**, preserving all **20 inventory records** and existing media. Compiler remains an honest recorded-output walkthrough and Showcase retains its original UI/data. No portfolio commit, push, deployment or source-visibility change is included. [Implementation and run instructions](../docs/ORIGINAL_PROJECT_DEMO_ROADMAP.md).  
 > **Contribution clarifications:** Updated 25 October 2026 from the author's direct clarification of Softhouse security work, shared CI/CD setup, testing scope and Scrum Master task breakdown; Trafikverket responsibilities; Kravi adoption, new requirements and backend responsibilities; and BTH teaching-assistant sessions and individual support. These clarifications supersede conflicting contribution claims in older CVs and summaries.  
 > **Kravi report review:** Six author-written weekly reports for weeks 38–43 of 2026 were read directly on 25 October 2026. Source IDs `KR-W38`–`KR-W43` refer to the file/page register in section 14. Subsequent author clarification `KR-C1` confirms independent CI/test/branch-protection and Docker/firewall setup, successful manual AIS retrieval tests, untested cron schedules and an unmerged PR. These are primary, author-reported evidence, not independent public verification.  
 > **Kravi repository audit KR-R1, 26 October 2026:** Authenticated commit-history review corroborates implementation and merge status and adds technical detail. The [repository contribution summary](./Karam_Matar_Kravi_Repository_Contributions.md) retains commit links, author identities, branch coverage and limitations. Repository evidence does not replace author-confirmed adoption, deployment testing or host/firewall ownership, and does not verify AIS work in a separate repository.  
@@ -11,21 +22,22 @@
 > **Application use and file scope, updated 10 November 2026:** This inventory is ready to support separately drafted, targeted CVs and cover letters. Keep the detailed responsibilities, evidence and attribution notes here; the shorter published experience wording is recorded alongside them. Use the latest author clarifications over conflicting older CV wording. The current downloadable CV is the author-supplied `public/CV_Karam-3-1.pdf`, copied unchanged on 10 November 2026; this does not prevent drafting new application documents. Preserve original project screenshots and private reference records.  
 > **Factual correction KR-C2:** New Kravi functionality was added in response to evolving requirements and requests, not because of team size. The separate fact that another developer handled UI work must not be presented as the cause of feature additions.  
 > **MaskNet clarification KR-C3:** Reused and integrated MaskNet's existing annotation workflow. Replaced local TIFF inputs with images already classified as mask-related cases in the existing platform, and replaced local CSV output with PostgreSQL storage for new/corrected mask annotations. The integration is merged and used by colleagues. The original tool's annotations were intended for later ML work; no measured model improvement or personal model-training work was claimed. This status is separate from the unmerged AIS PR.  
-> **Evidence base:** Three LaTeX CV versions supplied in chat, uploaded PDF CVs, the `KarmaSora/Portfolio` project's content JSON, selected GitHub project READMEs, public confirmation of the Holly Tech CTF award, and user-reported work history. The published 2026 thesis was consulted to verify the autonomous agent workflow and mandatory human review gate, not to support general performance claims.  
-> **Reliability:** Public source = **PUBLICLY VERIFIED**. Authenticated repository evidence = **REPOSITORY-VERIFIED** for the specific code/history fact, not proof of public access, deployment or impact. First-hand CV or work description = **USER-REPORTED**. Evidence incomplete = **VERIFY**. Earlier implementation snapshot = **HISTORICAL**. Still developing = **ONGOING**. Unbuilt roadmap item = **PROPOSED**. No claim of team or company code ownership is implied by inclusion.  
-> **Coverage:** Four professional roles and 11 selected, portfolio-relevant project entries, plus education, credentials, awards, technology inventory and a job-targeting framework. This is a deliberately curated recruitment record, not a catalogue of every personal experiment or tool-assisted prototype.
+> **Evidence base:** Three LaTeX CV versions supplied in chat, uploaded PDF CVs, the `KarmaSora/Portfolio` project's content JSON, selected GitHub project READMEs, five supplied extra-project repositories and their source-reviewed READMEs, public confirmation of the Holly Tech CTF award, and user-reported work history. The published 2026 thesis was consulted to verify the autonomous agent workflow and mandatory human review gate, not to support general performance claims.  
+> **Reliability:** Public source = **PUBLICLY VERIFIED**. Authenticated repository evidence = **REPOSITORY-VERIFIED** for the specific code/history fact, not proof of public access, deployment or impact. Supplied local source inspected = **SOURCE-REVIEWED**; a specifically described execution check = **LOCALLY CHECKED**, neither equivalent to comprehensive testing or public deployment. First-hand CV or work description = **USER-REPORTED**. Evidence incomplete = **VERIFY**. Earlier implementation snapshot = **HISTORICAL**. Still developing = **ONGOING**. Unbuilt roadmap item = **PROPOSED**. No claim of team or company code ownership is implied by inclusion.  
+> **Coverage:** Four professional roles and 20 numbered project records, plus grouped supporting coursework, education, credentials, awards, technology inventory and a job-targeting framework. P12–P20 incorporate the extra-project source review. The numbered records are inventory choices, not a claim that all 20 are currently featured on the public website.
 > **Publication and ownership:** The author explicitly permits this inventory to remain public, confirmed 10 November 2026. Share only non-confidential employer-approved details. In particular, ACID Bot was completed as a B.Sc. thesis with Iquest AB, and the source code belongs to Iquest AB. Do not publish or offer code access, imply that the thesis enables reproduction, or imply open-source availability.
 
-## Application readiness — 26 October 2026
+## Application readiness — updated 15 November 2026
 
 **Ready to use as a private source for targeted CVs and cover letters.** All 13 published experience bullets, the latest contribution/status clarifications, education, the corrected Holly Tech CTF award and the private reference contacts are included. This file is the source material, not an application attachment: select relevant evidence and omit internal notes and referee contact details from ordinary application documents.
 
 | Item to refresh or clarify | Current record and safe drafting approach |
 | --- | --- |
 | Availability and Kravi dates | January 2027 is the earlier reported earliest full-time start. The Kravi internship ended on **31 October 2026**, confirmed by the author on 10 November 2026 (**KR-C4**). Confirm availability before an application depends on it. |
-| Compiler repository access | The repository is private, confirmed through authenticated GitHub metadata on 25 October 2026. Its URL returns 404 to public visitors. The project can still be described, but omit a public source-code link until visibility or an alternative shareable reference is confirmed. Do not make the repository public automatically. |
+| Compiler repository access | Private status was confirmed on 25 October 2026. The author subsequently accepted the existing URL on 10 November. Preserve that accepted locator with an accurate access label; it does not promise anonymous source access. Do not change visibility automatically. |
 | Softhouse unit/integration tests | Team testing at these levels is confirmed; individual authorship remains unconfirmed. Personal Cypress authorship and assistance with Bitbucket CI/CD are established and can be used now. |
 | AIS and other unfinished Kravi details | Historical/live retrieval was manually tested. Cron-triggered execution remains untested and the AIS PR is awaiting merge. MaskNet is separately confirmed merged and used by colleagues. Preserve these distinctions until the author supplies a status update. |
+| Extra projects and media | P12–P20 now record the supplied implementations and source review. Screenshots will be supplied later by the author. Private repository URLs identify source locations; no visibility change or new public project entry is made here. |
 | Additional detail and impact | Workload/hours, some project-specific individual responsibilities, less-evidenced skills and quantified outcomes remain optional follow-ups. Use already supported outcomes such as company-wide use, the deployed reliability fix and the team's accepted delivery; invented percentages or years of full-time experience are unnecessary. |
 
 Unchecked items in section 9 are claim-specific follow-ups, not a requirement to postpone every application. For a new vacancy, supply the job advertisement and the author's genuine reason for wanting that role/company; section 12 provides the workflow and a reusable drafting prompt.
@@ -56,7 +68,7 @@ Software engineer with experience across backend and full-stack development, sys
 - Independently built the initial Python-based satellite-detection review platform at Kravi Analytics, now used across the company; maintained it and added frontend/backend functionality in response to evolving requirements and requests. Continued working across the stack with increased focus on backend responsibilities.
 - Worked on full-stack features, application security, automated testing and customer communication in an 11-person team at Softhouse.
 - Contributed to the shared PowerShell-to-JavaScript refactor at Trafikverket, database work and a Windows-based process to remove entries older than 90 days.
-- Implemented a compiler pipeline in C++ from lexical analysis through execution on a custom virtual machine.
+- Jointly developed a compiler pipeline in C++ with a colleague, from lexical analysis through execution on a custom virtual machine; project work was shared throughout. **JNT-C1.**
 - Co-developed a bounded autonomous multi-agent AI workflow from bug-fix task intake to human-reviewed pull-request creation as a bachelor's thesis with Iquest AB.
 - Built academic and personal programming projects involving web development, C++ systems concepts and game logic.
 
@@ -204,6 +216,8 @@ Backend design, relational/geospatial data modeling, API integration, repeatable
 **Project:** TeamTemp, employee survey and engagement platform  
 **Team:** 11-person agile development team
 
+**Role arrangement — SH-C3, author-confirmed 15 November 2026:** Tasks/features were divided. The author remained a full-stack developer throughout, working on frontend, backend and testing. Communication was a fixed responsibility connecting the Head of Department, development team and customer. The author separately served as Scrum Master and Team Lead once each during role rotations. Testing, security fixes, some code reviews, merge-conflict assistance and CI/CD support were his personal engineering contributions, not rotating roles. Team Lead duration was not specified; do not turn a project-role rotation into an employment title.
+
 **Placement arrangement — UNI-C1:** University-arranged software development internship with Softhouse, working on a product requested by the company, which also acted as the customer. The author reports that no official internship agreement was signed; an NDA was signed, and Softhouse said it was acceptable to list the experience as an internship. Retain **Software Developer Intern** as the career label. This is the author's account of the arrangement and company approval, not independently verified employment paperwork. Working hours, full-time/part-time status and remuneration were not specified.
 
 #### Context and goal
@@ -212,17 +226,18 @@ Build a full-stack platform for creating, distributing and managing employee sur
 
 #### Contributions
 
-- Developed features spanning React/TypeScript frontend, Express/Bun backend, Prisma and MongoDB.
+- Worked as a full-stack developer throughout, implementing assigned features spanning React/TypeScript frontend, Express/Bun backend, Prisma and MongoDB within the divided team workload. **SH-C3.**
 - Contributed to technical-stack and implementation decisions within the development team.
 - Implemented configurable scale questions and participated in other survey administration and response flows.
 - Helped build or integrate functionality covering surveys, templates, branches and users, plus respondent engagement functionality.
 - Implemented initial application-security measures; Softhouse developers testing the platform subsequently identified and reported additional vulnerabilities. **USER-CONFIRMED, 25 October 2026.** Do not imply that the author discovered every issue.
 - Documented the vulnerability findings and personally implemented fixes, including backend validation with Zod and cross-survey input-handling checks.
 - Authored and maintained Cypress end-to-end tests for key survey flows. The team's testing also included unit and integration tests for features and changes; testing was not limited to Cypress E2E. The latest clarification describes these additional test levels collectively, so personal authorship of unit/integration tests remains to be confirmed. **SH-C1.**
-- Assisted with the team's Bitbucket CI/CD setup and test integration. The author explicitly states that this was collaborative assistance, not independent creation or ownership of the complete pipeline. **SH-C1.**
-- Participated in pull-request reviews, integration work and merge-conflict resolution.
-- Acted as the primary communication link between developers, customer and management, coordinating requirements, demos and sprint updates.
+- Assisted with the team's Bitbucket CI/CD setup and test integration and helped investigate CI/CD issues. The author describes collaborative assistance and troubleshooting attempts, not independent pipeline ownership or a claim that every issue was resolved. **SH-C1 / SH-C3.**
+- Contributed to some code reviews and assisted with merge-conflict fixes and integration work. **SH-C3.**
+- Served as the permanent communication contact between the Head of Department, development team and customer, coordinating requirements, feedback, demonstrations and progress updates. This responsibility remained fixed while other roles rotated. **SH-C3.**
 - Served as rotating Scrum Master for one sprint, breaking down supplied features and requirements into smaller tasks organized into categories for the team to use. No particular tracking tool, estimation method, prioritization responsibility or measured delivery improvement was stated. **SH-C1.**
+- Served as Team Lead once during the project's role rotations; the duration and additional authority of that rotation were not specified. Full-stack and communication responsibilities continued alongside rotating roles. **SH-C3.**
 - Led customer demonstrations and an office presentation.
 - The project conclusion report records formal customer acceptance on **18 May 2026** with the outcome **"Accepted and exceeding customer expectations."** This is a team delivery outcome. Evidence: `public/data/FInalFinalSOfthouseCOnclusion-1.pdf`, Appendix A.
 
@@ -243,7 +258,7 @@ Build a full-stack platform for creating, distributing and managing employee sur
 - Assisted with the team's Bitbucket CI/CD setup and test integration.
 
 **Collaboration-focused**
-- Coordinated requirements and customer demonstrations as the primary liaison between the development team, customer and management; served as Scrum Master for one sprint.
+- Served as the permanent communication contact between the Head of Department, development team and customer, coordinating requirements and demonstrations; rotated into Scrum Master and Team Lead roles once each while continuing full-stack work. **SH-C3.**
 - Broke down features and requirements into smaller, categorized tasks for the team during the sprint served as Scrum Master.
 
 #### Detailed portfolio wording retained for reuse — before shortening, 25 October 2026
@@ -377,6 +392,17 @@ The portfolio identifies a Teaching Assistant Certificate from BTH. The certific
 
 > **Selection and duplication rule:** TeamTemp, VulnerabilityChecker and Kravi's vessel-detection system appear in Professional Experience as well as here for portfolio reuse. A short CV should avoid repeating the same achievement twice. This section intentionally leaves out personal experiments whose authorship or development process would make them weaker evidence for targeted engineering applications.
 
+**Current portfolio presentation map — PF-A1:** The 20 numbered records below are an evidence inventory, not 20 separate website cards. The current 15-card catalogue is reconciled as follows:
+
+| Inventory records | Current presentation |
+| --- | --- |
+| P02–P09, P12–P16 and P19 | Individual project cards. P05/P06/P13/P14/P15/P16 also have browser demo/walkthrough routes. |
+| P17 + P18 | One Flask Web Security Projects card, with separate implementation sections/source links/captures. |
+| P20 | Related work within the P16 Typing Trainer card, retaining a separate analyser executable/source link and screenshot. |
+| P01 | Established Kravi professional experience/inventory record; a standalone Data Sorter card remains proposed. |
+| P10 | The portfolio itself; not a catalogue card. Its latest local changes are unpushed. |
+| P11 | Separate AIS research/engineering record; not a public project card, and existing merge/deployment/disclosure boundaries remain unchanged. |
+
 ### P01. Data Sorter — Satellite Vessel Detection Review & Classification Platform
 
 **Context:** Kravi Analytics, internship  
@@ -409,7 +435,7 @@ The portfolio identifies a Teaching Assistant Certificate from BTH. The certific
 
 **Capabilities described in the portfolio:** Configurable scale questions, localization in Swedish/English, dark/light modes, survey-management flows, respondent functions and role-oriented administrative interfaces.
 
-**My involvement:** Contributed full-stack functionality including scale questions, initial security measures, remediation of vulnerabilities reported by company developers testing the platform, Cypress end-to-end tests, assistance with Bitbucket CI/CD setup/test integration, code review and stakeholder communication. During one sprint as Scrum Master, broke down features and requirements into smaller, categorized tasks for the team. The team's testing also included unit and integration tests for features and changes; personal authorship at those levels remains to be confirmed. Do not claim sole authorship of all features, discovery of every vulnerability or independent creation of the pipeline. **SH-C1.**
+**My involvement:** Worked full stack throughout the project on assigned frontend/backend features and testing within the team's divided workload. Contributions included scale questions, role handling, initial security measures, fixes for company-tester-reported vulnerabilities and Cypress end-to-end tests. Served as the permanent communication contact between the Head of Department, development team and customer. Other roles rotated; served as Scrum Master and Team Lead once each, breaking features and requirements into smaller, categorized tasks during the Scrum Master sprint. Contributed to some code reviews, assisted with merge-conflict fixes, and helped with Bitbucket CI/CD setup, test integration and troubleshooting attempts. These activities, testing and security fixes were personal engineering contributions and were separate from the Scrum Master/Team Lead rotations. The team also used unit and integration tests; personal authorship at those levels remains unconfirmed. Do not imply sole platform authorship, discovery of every vulnerability, independent pipeline ownership or resolution of every CI/CD issue. **SH-C1 / SH-C3.**
 
 **Sample CV line:** Developed full-stack survey features and improved application security with server-side validation and Cypress E2E testing in an 11-person product team.
 
@@ -437,12 +463,13 @@ The portfolio identifies a Teaching Assistant Certificate from BTH. The certific
 ### P04. ACID Bot — Bachelor's Thesis with Iquest AB
 
 **Context:** B.Sc. thesis at Blekinge Institute of Technology, 2026, co-authored with Abduvohid Ilhomov in collaboration with **Iquest AB**.  
+**Joint work — JNT-C1, author-confirmed 15 November 2026:** Research, implementation and thesis writing were carried out together throughout. Describe the project phases and system as shared work; do not invent an exclusive allocation of research, implementation, agents or writing to either collaborator.  
 **Relevant technologies:** JavaScript, Git, CI/CD, multi-agent systems.  
 **Summary:** Co-developed a bounded, autonomous multi-agent AI workflow that retrieves bug-fix tasks from ClickUp, implements and tests code changes, and creates pull requests for mandatory human review. The system does not autonomously merge or deploy code.
 
 **Recommended CV/portfolio description:**
 
-> **ACID Bot (Bachelor's Thesis, Iquest AB):** Co-developed an autonomous multi-agent AI workflow that retrieves bug-fix tasks from ClickUp, implements and tests code changes, and creates pull requests for mandatory human review before merging.
+> **ACID Bot (Bachelor's Thesis, Iquest AB):** Jointly researched, implemented and documented an autonomous multi-agent AI workflow with a colleague, from ClickUp bug-fix task intake through implementation/testing to pull requests requiring mandatory human review.
 
 **Disclosure:** Human review and approval are mandatory before any generated changes are merged or deployed. The source code belongs to Iquest AB. Do not link, publish or imply rights to distribute it. The thesis is academic documentation, not a reproducible source release. Do not add evaluation figures, performance generalizations or benchmark claims to CV/portfolio copy.
 
@@ -450,27 +477,35 @@ The portfolio identifies a Teaching Assistant Certificate from BTH. The certific
 
 ---
 
-### P05. Compiler from Scratch
+### P05. C++ Compiler and Virtual Machine
 
-**Context:** Academic/personal systems-programming project  
+**Context:** Collaborative academic/personal systems-programming project  
+**Joint work — JNT-C1, author-confirmed 15 November 2026:** Work was carried out together with a colleague throughout the project, including investigation, implementation and written documentation. The compiler stages are shared system components, not individually assigned ownership claims. The collaborator's display name has not been established in this clarification.  
 **Status:** Completed project as described  
 **Primary domains:** C++, compilers, programming languages, low-level systems, algorithms  
-**Technologies:** C++, parsing, semantic analysis, control-flow graphs, intermediate representation, virtual machine.
+**Technologies:** C++14, Flex, Bison LALR(1), symbol tables, semantic analysis, control-flow graphs, three-address code, custom bytecode/virtual machine and Graphviz.
 
-**Project summary:** Implemented an end-to-end compiler without external parser generators, progressing from source text through intermediate code and execution.
+**Project summary:** Jointly implemented a C++ compiler for a Java-like language with a colleague, using a Flex scanner and Bison parser before C++ semantic, intermediate-code and bytecode passes and execution on a custom virtual machine. **JNT-C1 / CMP-R1.**
 
 **Implemented stages:**
 
-1. **Lexer:** Tokenizes source text into lexical units.
-2. **Parser:** Constructs the syntax representation using a recursive-descent approach.
-3. **Semantic analysis:** Checks program meaning and language constraints.
-4. **CFG-based intermediate representation:** Models executable flow through basic blocks and transitions.
+1. **Lexer:** Flex rules tokenize source text.
+2. **Parser:** A Bison LALR(1) C++ grammar constructs the syntax-tree nodes.
+3. **Semantic analysis:** C++ visitors build scopes/symbol information and check language constraints.
+4. **CFG-based intermediate representation:** Models executable flow through basic blocks and transitions; Graphviz renders the generated DOT graphs.
 5. **Three-address code (TAC):** Converts operations into an intermediate instruction form.
-6. **Custom virtual machine:** Executes generated instructions.
+6. **Bytecode generation:** Emits instructions for the project's custom execution model.
+7. **Custom virtual machine:** Executes the generated bytecode.
 
 **What it demonstrates:** Data structures, algorithms, structured system design, language semantics, memory-aware C++ work, parsing, debugging and understanding how programs execute.
 
-**Sample CV line:** Built an end-to-end compiler in C++ with lexical analysis, recursive-descent parsing, semantic checks, CFG-based IR, three-address code and a custom virtual machine.
+**Sample CV line:** Co-developed a C++ compiler and custom virtual machine with a colleague, connecting Flex/Bison parsing and semantic checks to CFG-based IR, three-address code and executable bytecode.
+
+**Runtime evidence, 15 November 2026 — EP-M1:** The compiler was rebuilt from source in a disposable Linux copy. ArithmeticDemo, C1, Factorial and CFG compiled and executed with VM outputs 20, 100, 3628800 and 5050. These are example results, not performance measurements. Fresh syntax-tree/CFG DOT, SVG, IR, bytecode and VM-output files accompany the README. The arithmetic input was created for the capture; the other examples were supplied fixtures. A filename-case alias was used only in the temporary build. The README retains the Bison warnings and the separately observed A.java failure, without treating the whole suite as certified.
+
+**Media and repository evidence — EP-M1 / EP-P1:** 4 real captures/artifact views in the [project README](https://github.com/KarmaSora/Compiler/blob/ef06c25fada533713d08e996b5fc31c216ef4428/README.md#screenshots), with identical local copies recorded in the [asset manifest](../public/images/extra-projects/manifest.json). The README and linked assets were pushed to `Compiler/main` in `ef06c25fad`. The repository remains a private source locator.
+
+**Recorded compiler walkthrough — PF-I1 / PF-I3:** `/demos/compiler/` presents three actual recorded programs across six selectable stages: source, syntax tree, control-flow graph, intermediate code, bytecode and VM execution. Eighteen original generated artifacts have a SHA-256 manifest and can be inspected/downloaded. This explores real compiler output; it does not compile arbitrary visitor input. The source uses Flex/Bison, and joint contribution attribution remains unchanged. [Implementation](../docs/AUTHENTIC_PROJECT_DEMOS.md).
 
 **Repository:** https://github.com/KarmaSora/Compiler
 
@@ -481,9 +516,7 @@ The portfolio identifies a Teaching Assistant Certificate from BTH. The certific
 ### P06. ShowcaseSERL — Research Project Showcase
 
 **Context:** Project for BTH's Software Engineering Research Lab (SERL)  
-**Status:** Public web project  
-**Primary domains:** Frontend web, responsive interfaces, content management, kiosk interfaces  
-**Technologies:** Next.js, React, TypeScript, Tailwind CSS, JSON data.
+**Status:** Public source project; the former published URL serves its README. The original application now runs locally in the portfolio, with original components, styling and bundled data. **PF-I2.**
 
 **Project summary:** A website for displaying student and researcher projects, with searchable project listings, individual detail pages and a self-running kiosk interface intended for displays in public spaces.
 
@@ -494,7 +527,7 @@ The portfolio identifies a Teaching Assistant Certificate from BTH. The certific
 - Project detail pages with descriptions and media links.
 - Kiosk mode that automatically cycles through project information.
 - Dedicated kiosk routes and a configurable time interval between displayed items.
-- Responsive web interface and a deployable public demo.
+- Responsive web interface and static-export configuration. The old GitHub Pages URL was verified to serve documentation rather than the application.
 
 **What it demonstrates:** Requirements-driven web design, component composition, Next.js routing, content modeling and display-specific UX.
 
@@ -503,7 +536,9 @@ The portfolio identifies a Teaching Assistant Certificate from BTH. The certific
 **Sample CV line:** Developed a Next.js/TypeScript platform showcasing research projects with searchable listings, detail views and an automated kiosk display mode.
 
 **Repository:** https://github.com/KarmaSora/showcaseSERL  
-**Demo:** https://karmasora.github.io/showcaseSERL/
+**Former demo URL / documentation:** https://karmasora.github.io/showcaseSERL/ — verified on 15 November 2026 to serve a Jekyll rendering of README.md. Earlier working-live-application claims for this URL are superseded.
+
+**Original application demo — PF-I2:** `/demos/showcase/` hosts the original ShowcaseSERL React components, stylesheet and nine-record bundled dataset, with its own cream/brown styling and Arial typography. Search, filters, sorting, card details/QR and kiosk mode use the original source; the kiosk retains its six-second interval. A pinned snapshot and 18 verified file hashes preserve provenance. Separate browser navigation/image/hash adapters and sizing-only phone CSS support static hosting. The fictional six-record recreation is retired. Explicit static pages replace the failing dynamic route; the original standalone repository/deployment is unchanged. [Implementation](../docs/AUTHENTIC_PROJECT_DEMOS.md).
 
 ---
 
@@ -591,9 +626,9 @@ The portfolio identifies a Teaching Assistant Certificate from BTH. The certific
 ### P10. Personal Developer Portfolio Website
 
 **Context:** Independent personal project  
-**Status:** Deployed to GitHub Pages  
+**Status:** Earlier portfolio release is deployed to GitHub Pages. The author has now authorized publishing the expanded catalogue, media and original-project demos to the existing main branch. PF-P1 records release verification; older local-only status notes describe preceding implementation stages.
 **Primary domains:** Frontend engineering, UX, static deployment, structured content  
-**Technologies:** Next.js 14, React, TypeScript, Tailwind CSS, Google Lighthouse, GitHub Actions and JSON. The current tooling uses Node 22.19+; Framer Motion was removed in the published UI refinement.
+**Technologies:** Next.js 14, React, TypeScript, Tailwind CSS, Google Lighthouse, GitHub Actions and JSON; the local demo integration adds xterm.js, Pyodide and an Emscripten-compiled WebAssembly artifact, plus an embedded CPUlator application. The current tooling uses Node 22.19+; Framer Motion was removed in the published UI refinement.
 
 **Project summary:** A responsive developer portfolio showing professional experience, projects, education, documents, skills and contact details.
 
@@ -602,14 +637,22 @@ The portfolio identifies a Teaching Assistant Certificate from BTH. The certific
 - Content-driven sections loaded from a JSON-based portfolio data file.
 - Light/dark modes and system-theme handling.
 - Responsive layouts, CSS interaction feedback and reduced-motion styling.
-- Featured project cards, screenshot support and supporting document links.
+- A filterable project catalogue with native expandable details, screenshot galleries/captions, source-access labels and supporting document links. Featured flags exist in data but do not yet create a separate selected-work layout.
 - Loading states, typed data structures and a client-side content provider.
 - Static site generation and GitHub Pages deployment via GitHub Actions.
-- Kiosk/auto-scroll option described by the repository README.
+- A portfolio auto-scroll kiosk option, separate from the original ShowcaseSERL application's kiosk mode.
 - Keyboard-operable compact navigation and desktop More disclosure, project details, screenshot galleries, certificate previews and focus restoration.
 - Production-preview and mobile/desktop Lighthouse inspection scripts. Local production-export audits scored 100 in performance, accessibility, best practices and SEO; these are local lab measurements, not measured hiring outcomes or a claim of complete accessibility coverage.
 
 **Current published implementation:** The root layout passes local portfolio JSON into the content provider as initial data, embedding primary identity, experience and project content in the generated HTML. Metadata uses the same JSON source. Remote data-source configurations retain their client-fetch path and default fallback behavior. The latest Manrope/teal/ink design with restrained warm accents, improved navigation and Lighthouse tooling was published in `dc7c490`; Pages workflow 40241275700 passed build/deploy, and the live UI, navigation, gallery and matching CV were verified. Publication is complete, as recorded in section 10.
+
+**Current local implementation — PF-I3 / PF-A1:** 15 presentation cards retain 20 inventory records. The two Flask implementations share one card; Text File Analyser is related work under Typing Trainer with its own source, screenshot and separate executable. There are 34 gallery images, including 24 source-application captures/artifact views. The introduction links directly to interactive projects. Seven explicit static routes host the recorded Compiler walkthrough, original ShowcaseSERL app, native CPUlator controller and original-code Python/FAT terminals. Eshop uses a separate original Express/EJS and socket-only MariaDB runner locally, with a healthy-service action and an optional configured hosted URL. Public Eshop hosting is not implemented.
+
+**Runtime implementation and verification — PF-I3 / PF-A1:** Original source snapshots and compiled artifacts are pinned and hash-verified. The terminal I/O adapter runs in a worker with a narrowly scoped service worker, supports nested/blank prompts and multiline paste, and keeps per-session files separate. The clean /Portfolio export, lint/type checks and focused Chromium desktop/mobile checks passed, including idle-input resume, FAT file/directory/permission commands, typing results/session scores, Eshop product CRUD and native ARM UART/buttons/wraps. These are focused observed checks, not comprehensive regression coverage or a renewed Lighthouse score. Existing 100-point Lighthouse figures above belong to the earlier UI audit.
+
+**Terminal startup/input repair — PF-I4:** The author's reported FAT/MARVIN failures were reproduced with the latest remote source snapshots. The host now formats its fresh FAT disk using the original formatter, while two explicit Python source corrections make MARVIN country lookup case/whitespace tolerant and recoverable. The root project generates content-versioned iframe/bundle/worker/payload URLs. Native and browser regressions confirm separate FAT root/child contents and original MARVIN values. Original source snapshots, C++ binary and private repositories remain unchanged. [Repair and validation](../docs/TERMINAL_DEMO_FIXES_2026-11-15.md).
+
+**Remaining presentation work — PF-A1:** A standalone Kravi Data Sorter card, a selected-work hierarchy, dedicated project case studies, ACID Bot/VulnerabilityChecker explanatory covers, specific captions for the ten existing TeamTemp screenshots and social-preview artwork remain proposed. The Compiler recorded walkthrough and current original-code demos are already complete and must not be listed as unimplemented. Further live ports and broader browser coverage are optional follow-up work. Publishing remains deferred by the author; bundled Python source becomes inspectable when these static assets are eventually published. [Current status and priorities](../docs/PORTFOLIO_STATUS_AUDIT_2026-11-15.md).
 
 **Development context (private):** The latest UI and inspection-tooling refinement was implemented with Codex assistance using Anthropic's Frontend Design skill. Keep that provenance in this private record; do not infer independent authorship or deep tool expertise from generated code alone. Select project details that the author can explain in an interview.
 
@@ -642,6 +685,347 @@ The portfolio identifies a Teaching Assistant Certificate from BTH. The certific
 **Public-disclosure caution:** Describe this broadly as 'AIS-based geospatial movement analysis for maritime infrastructure' unless approved to disclose the cable and monitoring specifics.
 
 **AIS contribution CV line:** Implemented and manually tested Python retrieval of historical and live AIS data around selected maritime infrastructure, prepared separate cron schedules, and submitted the changes for review. **KR-W43 and KR-C1;** cron execution is untested and the PR awaits merge.
+
+---
+
+### Extra-project evidence and scope — 15 November 2026
+
+The entries P12–P20 below come from the author's five repositories under `/home/karam/personal/extraPorjects`, their source-reviewed READMEs and the author's subsequent clarifications. **EP-R1–EP-R5** identify the repositories in section 13. Treat source findings as **SOURCE-REVIEWED**, and explicitly identified execution checks as **LOCALLY CHECKED**; neither establishes public availability, deployment or complete acceptance testing.
+
+**Author-confirmed scope — EP-C1:** OperatingSystem **Lab2** is the principal operating-systems project; Lab1 is supporting coursework. FAT storage overwriting on exit was intended, so unchanged storage across restarts is not an unmet requirement. Marvin is intentionally a **fake AI interface**, with scripted/menu-driven functionality; real AI integration was never a goal. Leave the separate Cryptography exercise out of portfolio selection and repair priorities.
+
+**Current task and media — EP-M1 / EP-P1:** P12–P20 and Compiler P05 now have real runtime captures/artifact views recorded in their individual entries. The 24 new images are embedded in ten source READMEs and used across nine local portfolio entries; existing TeamTemp media and the supplied CV are preserved. Forty source READMEs and their linked capture/artifact files have been pushed to six existing private repositories. The updated portfolio website remains local and unpushed.
+
+**Access, attribution and dates:** Repository URLs are private source locators according to the author, not promises of public code access. The author intends to consider public visibility later; no visibility change is performed here. Eshop's source explicitly credits Karam Matar and Abduvohid Ilhomov. Do not invent a per-person subsystem split for that project or infer sole ownership of supplied course scaffolding/tests in the other repositories. Exact project dates and any additional collaborator names are not established by this source review.
+
+### P12. Eshop — Web and CLI Shop/Warehouse Application
+
+**Context:** Collaborative database/web coursework; source credits Karam Matar and Abduvohid Ilhomov.  
+**Primary domains:** Full-stack web, relational data modelling, SQL business logic, warehouse/order workflows.  
+**Technologies:** JavaScript, Node.js, Express, EJS, MySQL/MariaDB SQL, `promise-mysql`, HTML/CSS and a terminal command interface.  
+**Status:** Implemented collaborative coursework; original Express/EJS and MariaDB run locally with a reproducible disposable-database runner. Catalogue/category/customer/order pages and product create/read/update/delete flows were exercised. Public backend hosting remains pending. **EP-R3 / EP-M1 / PF-I3.**
+
+**Project summary:** A small shop-administration and fulfilment application with browser and terminal interfaces sharing database helpers and stored procedures. It covers catalogue management, customers, warehouse stock, orders and pick lists.
+
+**Implemented functionality and technical detail:**
+
+- Product/category listings and product create/update/delete pages.
+- Customer browsing, customer-order creation, order listings and activation/shipment state changes.
+- Pick-list construction and inspection, with SQL operations updating stock and order quantities.
+- CLI commands for products, shelves, inventory filtering, stock additions/removals, orders, pick lists, shipping and logs.
+- Relational tables for customers/orders, products/categories, stock/shelves, order rows, pick lists and invoices; foreign-key relationships and selected indexes are represented in DDL.
+- Stored procedures implement application operations; product triggers populate logs; `order_status()` derives labels from order timestamps.
+- Express serves EJS pages at `/eShop` on port 1337; the CLI calls the same helper module. Values are passed to stored procedures using bound parameters.
+
+**What it demonstrates:** Connecting user workflows to relational data and database-side logic; sharing a data-access layer across two interfaces; collaborative application development. Payment processing, public customer accounts and production transactional guarantees are not part of the established description.
+
+**Source and verification notes for preparation:** `kmom06/eshop2/{index.js,cli.js,route/eshop.js,src/helpers.js}` and `sql/eshop/` are the main implementation paths. JavaScript syntax checks passed. The later screenshot run verified a clean demonstration SQL bootstrap; the complete order/stock lifecycle still needs focused verification; `getFilteredSearch` lacks the connection close used by surrounding helpers. These are preparation notes, not a determination of coursework acceptance. Do not claim measured query speedups or independently designed every schema/routine.
+
+**Sample CV line:** Co-developed a Node.js/Express shop and warehouse application with web and CLI interfaces, using MySQL stored procedures, relational schemas and triggers for catalogue, inventory and order workflows.
+
+**Repository:** https://github.com/KarmaSora/database — private per author.  
+**Project path:** `kmom06/eshop2/`.  
+**Runtime evidence, 15 November 2026 — EP-M1:** Bootstrapped the supplied reset.sql/schema/fixtures into a disposable MariaDB instance and ran the original Express/EJS interface. Captured the catalogue, category listing and product-creation form. This establishes a clean demonstration bootstrap and the displayed browser flows; the complete order, stock and fulfilment lifecycle was not exhaustively checked.
+
+**Original application demo — PF-I3:** The original Express/EJS app now has a reproducible local runner with a disposable MariaDB instance, original schema/procedures/triggers and supplied CSV fixtures. Original source is pinned and hash-verified; database credentials are generated per session and the original configuration is excluded. The runtime wrapper binds to loopback and adds a local discovery endpoint without altering product UI/logic. Catalogue, categories, customers, orders and product create/read/update/delete browser flows passed. `npm run demo:eshop` starts the backend; a healthy local instance exposes an Open Eshop action in the portfolio. Public hosting remains a separate step; static builds have no public localhost link. A configured `NEXT_PUBLIC_ESHOP_DEMO_URL` can connect an actual hosted backend later.
+
+**Media and repository evidence — EP-M1 / EP-P1:** 3 real captures/artifact views in the [project README](https://github.com/KarmaSora/database/blob/c3ef403ad491eab7b4c280df43435ee53215f640/kmom06/eshop2/README.md#screenshots), with identical local copies recorded in the [asset manifest](../public/images/extra-projects/manifest.json). The README and linked assets were pushed to `database/main` in `c3ef403ad4`. The repository remains a private source locator.
+
+---
+
+### P13. FAT File-System Simulator — OperatingSystem Lab2
+
+**Context:** Main project to feature from the OperatingSystem repository, as confirmed by the author. Lab1 remains supporting coursework.  
+**Primary domains:** C++ systems programming, storage allocation, file/directory metadata, paths and command parsing.  
+**Technologies:** C++11, GNU Make/G++, binary-file block I/O, FAT allocation chains and a command shell.  
+**Status:** Implemented coursework, source-reviewed and captured natively; the original C++ now also runs in a verified local browser WebAssembly demo. File/directory/permission flows and fresh-session restart were exercised. **EP-R2 / EP-C1 / EP-M1 / PF-I3.**
+
+**Project summary:** A user-space file-system simulator that manages files and directories within a binary disk image. A shell calls an `FS` implementation, which manages metadata/allocation and uses a `Disk` abstraction for block reads/writes.
+
+**Implemented functionality and technical detail:**
+
+- Shell commands: `format`, `create`, `cat`, `ls`, `cp`, `mv`, `rm`, `append`, `mkdir`, `cd`, `pwd`, `chmod`, `help` and `quit`.
+- An 8 MiB simulated disk containing 2048 blocks of 4096 bytes. Root-directory and FAT blocks are reserved at indices 0 and 1.
+- Signed 16-bit FAT entries track free blocks, allocation chains and end-of-chain markers.
+- Directory entries hold a name, byte size, first block, type and access flags; path processing supports directory navigation and file operations.
+- File creation reads text until a blank line; copy/move/append/removal exercise allocation and metadata updates.
+- The implementation uses symbolic three-character permissions such as `r--` and `rwx`.
+
+**Storage lifecycle:** The author confirms that storage overwriting when the filesystem exits was intended. The destructor writes FAT/directory state on exit; do not impose unchanged cross-session storage as an unfulfilled requirement or describe the project as missing persistence. This does not imply that every byte is formatted/cleared on exit. **EP-C1.**
+
+**What it demonstrates:** Building interacting storage abstractions, traversing allocation chains and directory paths, representing permissions and integrating a command interface. Describe it as a simulator rather than a mounted filesystem/kernel driver.
+
+**Verification notes for preparation:** The current compiler needs `<cstdint>` supplied for `disk.h`; the temporary-copy build succeeded with `make GCC="g++ -include cstdint" all`. A create/read/list session worked. All five supplied drivers returned normally after their required input fixtures were included. Earlier crash results came from omitted fixtures and are withdrawn. Driver 5 passes numeric permissions whereas the implementation expects symbolic strings, so exit status alone is not evidence that all expected outputs match. Storage overwrite behaviour is interpreted according to the author's stated intent. Original course-test authorship remains separate from implementation scope.
+
+**Sample CV line:** Developed a C++ FAT file-system simulator with block allocation, file and directory operations, path traversal, access flags and an interactive command shell over an 8 MiB disk image.
+
+**Repository:** https://github.com/KarmaSora/OperatingSystem — private per author.  
+**Project path:** `Lab2/lab2_code/`.  
+**Runtime evidence, 15 November 2026 — EP-M1:** Ran the original C++ shell in a disposable copy. Captures show creating, reading and listing a file, then directory creation and a copied file. This adds visible operation evidence to the earlier driver checks. The author-confirmed exit-overwrite design remains intentional; no cross-session durability requirement is inferred.
+
+**Original C++ browser demo — PF-I3 / PF-I4:** `/demos/fat/` runs the unchanged Lab2 main/Shell/FS/Disk code compiled with Emscripten 4.0.21. Source and binary hashes are retained; only the missing cstdint include is supplied at build time. Each session has an actual 8 MiB MEMFS disk, which the browser now initializes by executing the original shell's format command before the first user command. This reserves root/FAT blocks and fixes fresh mkdir/cd aliasing. The prompt remains filesystem>; cd is silent and pwd shows the current directory. The reported ls → mkdir test → cd test sequence, child-local files, parent/nested/absolute navigation and restart were checked without manual formatting. Original C++ algorithms, permission syntax and author-confirmed exit/storage behaviour remain unchanged.
+
+**Media and repository evidence — EP-M1 / EP-P1:** 2 real captures/artifact views in the [project README](https://github.com/KarmaSora/OperatingSystem/blob/4e6d6d14fcd9329941de96ada97c7ad6e472a869/Lab2/lab2_code/README.md#screenshots), with identical local copies recorded in the [asset manifest](../public/images/extra-projects/manifest.json). The README and linked assets were pushed to `OperatingSystem/main` in `4e6d6d14fc`. The repository remains a private source locator.
+
+---
+
+### P14. ARMv7 Display Controller — Hexadecimal Counter
+
+**Context:** Assembly coursework; the project previously referred to as the 8-Segment Display Controller.  
+**Primary domains:** Embedded-style programming, memory-mapped I/O, interrupt handling, processor state and bit operations.  
+**Technologies:** ARMv7 assembly, the DE1-SoC peripheral map, CPUlator, UART, push buttons, HEX display and the Generic Interrupt Controller.  
+**Status:** Original assembly executed in CPUlator, now embedded locally with approved automatic compiled-program preloading and native controls. UART/button/wraparound flows were checked; physical-board execution is unverified. **EP-R1 / EP-M1 / PF-I3.**
+
+**Project summary:** A four-bit counter that displays hexadecimal values from 0 through F and responds to two input paths: a polled UART console and interrupt-driven push buttons.
+
+**Implemented functionality and technical detail:**
+
+- UART `u` increments and `d` decrements; KEY0 decrements and KEY1 increments.
+- Counter arithmetic wraps modulo 16 using a `0xF` mask.
+- A 16-entry lookup table maps values to the display's segment bits.
+- Startup configures exception vectors, separate SVC/IRQ stacks, push-button interrupt ID 73 and the GIC.
+- The interrupt path saves/restores registers, reads/clears button edge capture, signals completion and returns to foreground execution.
+- UART and push-button paths share the counter/display routines. Polling and interrupts coexist; there is no established runtime switch changing the entire controller between those modes.
+
+**What it demonstrates:** Relating input events, bit-level representation, processor control flow and physical-style output. The source has seven segment-bit definitions; the existing eight-segment project name must not imply an extra implemented feature or a different display model.
+
+**Source and verification notes:** `ARMv7/assignment/currentCode.s` is the combined entry point; `modifiedLab2.s` is a related commented variant; `interrupt.s` is a separate UART interrupt/echo experiment. CPUlator UART/button behaviour was subsequently verified as described below. Physical-board behaviour and latency were not measured; do not borrow another portfolio's simulated timing figures.
+
+**Sample CV line:** Implemented an ARMv7 hexadecimal display controller combining UART polling and push-button interrupts, with GIC setup, processor-mode stacks and lookup-table-driven display updates.
+
+**Native CPUlator demo — PF-I3:** `/demos/arm/` embeds the official ARMv7 DE1-SoC interface with the original compiled controller automatically loaded. The author explicitly approved transfer of the compiled program in the CPUlator URL after automatic approval review flagged the private-code transfer. No source-sharing upload/share link is created. ELF repacking removes only file padding; loadable instruction/data bytes, addresses and entry point are verified unchanged. Original source/executable hashes and the original ELF are retained. UART increment/decrement, 0/F wraparound, native KEY0/KEY1 press/release, A/B display and ignored input were exercised. The earlier React simulation is removed. Physical-board execution and measured interrupt timing are not claimed. [Implementation](../docs/ORIGINAL_PROJECT_DEMO_ROADMAP.md).
+
+**Repository:** https://github.com/KarmaSora/Assembly — private per author.  
+**Project path:** `ARMv7/assignment/`.  
+**Runtime evidence, 15 November 2026 — EP-M1:** Assembled currentCode.s locally and loaded its ELF into CPUlator ARMv7 DE1-SoC at the author's explicit request. Ten UART u commands reached hexadecimal A; a complete KEY1 press/release advanced the display to B. Captured focused device panels, the running simulator and paused registers/disassembly. This verifies the observed UART/button interaction; physical-board execution and measured interrupt timing were not checked.
+
+**Media and repository evidence — EP-M1 / EP-P1:** 3 real captures/artifact views in the [project README](https://github.com/KarmaSora/Assembly/blob/15aa123e5b1998def45cda730d6e60e3d9157a7a/ARMv7/assignment/README.md#screenshots), with identical local copies recorded in the [asset manifest](../public/images/extra-projects/manifest.json). The README and linked assets were pushed to `Assembly/main` in `15aa123e5b`. The repository remains a private source locator.
+
+---
+
+### P15. Marvin / Shadow — Fake AI Interface
+
+**Context:** Python coursework developed across Marvin 1–4; the menu character is called Shadow.  
+**Primary domains:** Terminal UI, modular Python, string/numeric processing, mutable data and dataset queries.  
+**Technologies:** Python standard library, functions/modules, lists/dictionaries, command parsing and bundled data.  
+**Status:** Source-reviewed Marvin iterations; final original modules/data now run in a browser terminal, with conversion, backpack and nested-prompt/exit checks. The fake AI design remains intentional. **EP-R4 / EP-C1 / EP-M1 / PF-I3.**
+
+**Project summary:** A character-based fake AI interface that dispatches scripted utilities and commands. It is designed to imitate an assistant through presentation and interaction; integrating a real AI/model was never a requirement. Explain the design positively instead of treating absence of model inference as a gap.
+
+**Implemented functionality and progression:**
+
+- Marvin 1: greeting, temperature conversion, points-to-grade conversion, sums/averages, numeric/string operations, identification-number checksum exercises and rövarspråk.
+- Marvin 2: separates menu and utility modules; adds checksum-based number generation, acronyms, string randomisation and substring-index search.
+- Marvin 3: adds an in-memory backpack with pick, inspect, drop and swap commands.
+- Marvin 4: keeps those utilities and adds country-name search, selected-year emissions lookup, percentage-change calculation and country/population summaries from bundled data for 1990, 2005 and 2017.
+- The final version separates menu dispatch, earlier utilities, inventory operations, data and query/formatting functions.
+
+**What it demonstrates:** Incrementally extending a program while extracting reusable functions; parsing commands, transforming strings, manipulating collections and producing data summaries. Present the four iterations as development progression of one project rather than four unrelated AI products.
+
+**Verification notes for preparation:** All source parsed and startup/exit checks completed for versions 1–4. Complete menu/data regression testing was not performed. Concrete input/formatting edge cases are recorded in the READMEs, including a percent sign on the single-year absolute-emissions output. Those are separate from the fake AI presentation, which is intentional. Do not claim current climate data or a live emissions service.
+
+**Sample CV line:** Developed a Python fake AI terminal interface with modular numeric/string utilities, command-driven inventory and bundled country-data queries, evolving the application across four coursework iterations.
+
+**Repository:** https://github.com/KarmaSora/python-course — private per author.  
+**Primary path:** `me/kmom05/marvin4/`; earlier versions in `me/kmom02/marvin1/`, `me/kmom03/marvin2/` and `me/kmom04/marvin3/`.  
+**Runtime evidence, 15 November 2026 — EP-M1:** Ran the original Marvin 4 / Shadow terminal application and captured its actual menu and backpack interaction. The scripted fake AI character, utilities and inventory/data-query scope are intentional. No live model integration or current external climate-data service is claimed.
+
+**Python browser demo — PF-I3 / PF-I4:** `/demos/marvin/` runs the original final-version menu, ASCII art, utility modules and bundled country data with two documented Python input corrections: country names accept case/whitespace variants and empty/unknown names return to the menu. Option 15 previously raised KeyError for sweden; the same failure was reproduced natively. Original snapshots and source repositories are unchanged, with corrected main.py/emission_functions.py files recorded separately under vendor/terminal-projects/fixes. Valid Sweden data and comparison calculations match the original implementation. Option 15 variants, option 14 lookup, recovery and existing temperature/backpack behaviour were checked. No real AI is added.
+
+**Media and repository evidence — EP-M1 / EP-P1:** 2 real captures/artifact views in the [project README](https://github.com/KarmaSora/python-course/blob/56a2d08c21b90a9ee0a4e50849e82b3c30df7621/me/kmom05/marvin4/README.md#screenshots), with identical local copies recorded in the [asset manifest](../public/images/extra-projects/manifest.json). The README and linked assets were pushed to `python-course/main` in `56a2d08c21`. The repository remains a private source locator.
+
+---
+
+### P16. Terminal Typing Trainer and Accuracy Analysis
+
+**Context:** Python coursework final-application folder, with a Death Note-themed menu.  
+**Primary domains:** Terminal interaction, file I/O, text comparison, timing and result reporting.  
+**Technologies:** Python standard library (`time`, `random`, `os`), text fixtures, dictionaries/lists and local score files.  
+**Status:** Original Python implementation now runs in a browser terminal. A complete sample transcription/results/score session was checked. Primary public card for the trainer and related analyser; no calibrated typing benchmark is claimed. **EP-R4 / EP-M1 / PF-I3.**
+
+**Project summary:** A typing application presenting reference text line by line, collecting transcription and reporting precision, incorrect characters/word pairs, elapsed time and speed-related values. It includes random-character practice and local scores.
+
+**Implemented functionality:** Easy/medium/hard and sample texts; timed transcription; word and positional character comparison; error counts; gross/net WPM helpers; themed speed labels; score storage with participant name, precision and difficulty; timed practice using random letters, digits and punctuation.
+
+**Implementation detail:** `main.py` selects modes; `typing_analysis.py` reads the reference, writes `compare.txt`, calculates comparisons and updates `score.txt`; `extra_analysis_fun.py` supplies WPM/time helpers and labels. Random practice writes its matching reference into `randomTest.txt`.
+
+**Relationship to P20:** The trainer has its own typing-comparison and timing modules. P20 is a separate application for counts and word/letter frequencies in bundled files; the trainer does not import or include its `analyzer.py` program. These are distinct coursework deliverables with some shared text-processing concepts.
+
+**What it demonstrates:** Coordinating interactive state, files and analysis across modules; deriving feedback from original/user text and maintaining local results.
+
+**Verification notes for preparation:** A timed reference-text demonstration was subsequently completed for capture; its automated input is not a calibrated typing benchmark. Scores are sorted as text rather than verified numerical ranking; WPM uses rounded whole minutes with a one-minute minimum; the missing-file fallback opens for writing then attempts a read. Character comparison is positional rather than edit distance, and the random-practice deadline is checked between blocking inputs. Keep these private preparation details separate from concise CV copy; do not call the metrics calibrated or imply fixes are already implemented.
+
+**Sample CV line:** Built a Python terminal typing trainer with difficulty levels, transcription/error analysis, timed character practice and file-backed score reporting.
+
+**Repository:** https://github.com/KarmaSora/python-course — private per author.  
+**Project path:** `me/kmom10/typing/`.  
+**Runtime evidence, 15 November 2026 — EP-M1:** Ran a real practice session with an automated demonstration transcription of the bundled easy text, then captured the menu and result screen. Temporary result files were isolated from the source checkout. Displayed timing/speed values describe the automated demonstration and are not a personal typing-speed or calibrated-accuracy claim.
+
+**Original Python browser demo — PF-I3:** `/demos/typing/` executes the original main/typing_analysis/extra_analysis_fun modules and reference texts in a browser terminal. A full sample transcription produced the original word/character precision, timing, WPM and session score; scores/comparison/practice files start empty and are isolated per run. No metric-calculation fixes are implied. The author chose this as the primary public card, with P20 retained as related work, its own source link, screenshot and separate `/demos/analyser/` launcher.
+
+**Media and repository evidence — EP-M1 / EP-P1:** 2 real captures/artifact views in the [project README](https://github.com/KarmaSora/python-course/blob/56a2d08c21b90a9ee0a4e50849e82b3c30df7621/me/kmom10/typing/README.md#screenshots), with identical local copies recorded in the [asset manifest](../public/images/extra-projects/manifest.json). The README and linked assets were pushed to `python-course/main` in `56a2d08c21`. The repository remains a private source locator.
+
+---
+
+### P17. Integrated Flask Security Coursework Application
+
+**Context:** Academic security-programming application, distinct from the smaller focused labs.  
+**Primary domains:** Full-stack Python web, authentication, authorisation, validation, session lifecycle, data protection and event logging.  
+**Technologies:** Flask/Jinja, SQLAlchemy/SQLite configuration, Flask-WTF/CSRF, Flask-Login, Flask-Session, Bcrypt, Fernet, Bleach, Flask-Talisman/CSP, python-dotenv and JSON rotating logs.  
+**Status:** Integrated coursework implementation source-reviewed; registration, login and protected-dashboard flows exercised with disposable data on 15 November 2026. **EP-R5 / EP-M1.**
+
+**Project summary:** A server-rendered application combining registration, login, role-specific pages and password changes with multiple security mechanisms. It provides a concrete academic example alongside the professional Softhouse security work, without upgrading coursework into production AppSec experience.
+
+**Implemented functionality and architecture:**
+
+- Flask-WTF registration/login/change-password forms with field/password validation and CSRF support.
+- Bcrypt password hashing with a configured pepper and Fernet-encrypted biography storage.
+- Flask-Login identity and exact-role checks for admin, moderator and user views.
+- Reauthentication before password change, session clearing on logout and idle/absolute timeout hooks.
+- Bleach cleaning, Talisman/CSP configuration, custom error templates and structured rotating security-event logs.
+- An app factory initializes extensions; routes orchestrate requests; models handle password/encrypted profile data; forms and decorators separate validation/access checks.
+
+**What it demonstrates:** Combining request validation, account/session state, access checks, protected profile fields and event logging across a modular Flask application.
+
+**Scope and verification notes:** The configured local database file is deleted on app creation and demonstration tables/users are recreated. Record this resettable lab behaviour accurately. Only `role_required` is used by active restricted routes; other permission/resource helpers are not evidence of deployed functionality. MFA and request throttling belong to the separate Task2 project, not this application. No penetration-test result or production-security guarantee is established. The existing `ReadMe.txt` records the author's AI assistance for learning regex behaviour and CSP styling; retain this provenance.
+
+**Sample CV line:** Developed a Flask coursework application combining authentication, role-based pages, validated forms, encrypted profile data, session controls and structured security logging.
+
+**Repository:** https://github.com/KarmaSora/securityPrograming — private per author.  
+**Project path:** `COMPUTER_PROGRAM/`.  
+**Portfolio grouping — EP-G1:** P17 and P18 remain separate source applications and inventory records. They are presented together as **Flask Web Security Projects** (`flask-web-security-projects`): Application security links to `COMPUTER_PROGRAM`, and MFA authentication links to `Task2`. The card keeps two implementation sections, direct private source-folder links and six screenshots labelled by application. The grouping does not attribute MFA/rate limiting to P17 or encrypted profiles/role pages to P18.
+
+**Runtime evidence, 15 November 2026 — EP-M1:** Ran the original application against a fresh disposable SQLite setup with demonstration keys/accounts. Registration, password login and a protected dashboard were exercised and captured. Other security mechanisms remain source-reviewed capabilities rather than a comprehensive security-test result. The temporary data and keys were discarded after capture.
+
+**Media and repository evidence — EP-M1 / EP-P1:** 3 real captures/artifact views in the [project README](https://github.com/KarmaSora/securityPrograming/blob/b2232292efdcbc11e2e1583440f2cb952c9f1f27/COMPUTER_PROGRAM/README.md#screenshots), with identical local copies recorded in the [asset manifest](../public/images/extra-projects/manifest.json). The README and linked assets were pushed to `securityPrograming/main` in `b2232292ef`. The repository remains a private source locator.
+
+---
+
+### P18. Password Authentication and TOTP Enrollment — Task2
+
+**Context:** Focused academic authentication application.  
+**Primary domains:** Authentication workflows, stateful account controls and MFA enrollment.  
+**Technologies:** Flask, SQLAlchemy/SQLite, Flask-Login, Flask-WTF/CSRF, Bcrypt, Flask-Session, PyOTP, Flask-QRcode and Flask-Limiter.  
+**Status:** Source-reviewed; password login, QR setup, TOTP enrollment and protected-dashboard access exercised with disposable data on 15 November 2026. **EP-R5 / EP-M1.**
+
+**Project summary:** A database-backed login exercise that first verifies a password, supports TOTP enrollment through a provisioning URI/QR code, and checks authenticator codes on later login attempts.
+
+**Implemented functionality:** Bcrypt password checking; temporary session state during first-time enrollment; persistent MFA secret after successful setup; failed-attempt counters and temporary account lock state; five-minute unlock logic; conditional CAPTCHA; a declared seven-per-minute POST login limit; protected dashboard and POST logout.
+
+**Implementation detail:** Routes orchestrate password verification, enrollment and subsequent TOTP checks. Models hold password hashes, attempt/lock fields and the MFA secret; forms represent login/setup/logout; the app factory initializes database, session, QR, CSRF, login and limiter extensions. Seeded accounts are local demonstration fixtures.
+
+**What it demonstrates:** Coordinating a multi-step authentication flow and maintaining account/session state. It is separate evidence from the integrated Flask app; do not conflate their feature sets.
+
+**Preparation notes:** Unknown-user failure formatting can access a missing user, one missing-TOTP branch lacks the surrounding branches' commit, and CAPTCHA handling modifies application-wide testing configuration. Attempt-threshold comments and adjusted counter values need browser verification. Record the implementation without claiming production readiness, encrypted MFA-secret storage or exhaustive successful security testing.
+
+**Sample CV line:** Implemented a Flask authentication exercise with password hashing, TOTP enrollment/verification, account-attempt tracking, temporary lockout and login rate-limit configuration.
+
+**Repository:** https://github.com/KarmaSora/securityPrograming — private per author.  
+**Project path:** `Task2/`.  
+**Portfolio grouping — EP-G1:** P17 and P18 remain separate source applications and inventory records. They are presented together as **Flask Web Security Projects** (`flask-web-security-projects`): Application security links to `COMPUTER_PROGRAM`, and MFA authentication links to `Task2`. The card keeps two implementation sections, direct private source-folder links and six screenshots labelled by application. The grouping does not attribute MFA/rate limiting to P17 or encrypted profiles/role pages to P18.
+
+**Runtime evidence, 15 November 2026 — EP-M1:** Ran the separate Task2 application with disposable local data. Exercised password login, QR-based setup, successful TOTP enrollment and access to the protected dashboard. The captured QR belongs to a discarded demonstration account/database; it is not a live account secret. Lockout, CAPTCHA and every subsequent-login branch were not exhaustively checked.
+
+**Media and repository evidence — EP-M1 / EP-P1:** 3 real captures/artifact views in the [project README](https://github.com/KarmaSora/securityPrograming/blob/b2232292efdcbc11e2e1583440f2cb952c9f1f27/Task2/README.md#screenshots), with identical local copies recorded in the [asset manifest](../public/images/extra-projects/manifest.json). The README and linked assets were pushed to `securityPrograming/main` in `b2232292ef`. The repository remains a private source locator.
+
+---
+
+### P19. Buffered I/O Library in x86-64 Assembly
+
+**Context:** Assembly Lab3, with C and assembly drivers and retained original course instructions.  
+**Primary domains:** Native assembly, C interoperability, buffering, integer/text conversion and calling conventions.  
+**Technologies:** GNU/AT&T x86-64 assembly, C, GCC, Make, C-library terminal I/O and Linux-compatible native execution.  
+**Status:** Implementation source reviewed, rebuilt and exercised with its supplied C driver; numeric I/O captured on 15 November 2026. **EP-R1 / EP-M1.**
+
+**Project summary:** A small assembly library exposing buffered input/output routines to callers in C and assembly. Clients fill an input buffer, consume integers/text/characters, build output and flush it.
+
+**Implemented interface:** `inImage`/`outImage`; `getInt`/`putInt`; `getText`/`putText`; assembly character operations; input/output cursor accessors. The implementation declares 1024-byte buffers, maintains cursor/input-length state and calls C-library routines such as `fgets` and `puts`.
+
+**What it demonstrates:** Mapping a C-facing function API to assembly, handling arguments/results, stack/register use, byte-level access and ASCII conversion. Original drivers/header/scaffolding remain distinct from the library implementation. Retained top-level variants are not all the active Lab3 implementation.
+
+**Verification notes:** `gcc -g -no-pie lab3_lib.s test_prog.c` compiled; a short session printed `1+2+3+4+5=15`. This is a numeric smoke check, not exhaustive EOF/buffer-boundary/text/extreme-integer validation.
+
+**Sample CV line:** Implemented a buffered I/O library in x86-64 assembly with integer, text and character routines callable from C and assembly test programs.
+
+**Repository:** https://github.com/KarmaSora/Assembly — private per author.  
+**Project path:** `x86_64Assembly/Lab3/`.  
+**Runtime evidence, 15 November 2026 — EP-M1:** Rebuilt and ran the active Lab3 library through the supplied C driver, capturing integer input and sum output in an actual terminal session. The earlier checked 1+2+3+4+5=15 example remains a numeric smoke check; the image does not certify every buffer, text, EOF or integer-boundary case.
+
+**Media and repository evidence — EP-M1 / EP-P1:** 1 real captures/artifact views in the [project README](https://github.com/KarmaSora/Assembly/blob/15aa123e5b1998def45cda730d6e60e3d9157a7a/x86_64Assembly/Lab3/README.md#screenshots), with identical local copies recorded in the [asset manifest](../public/images/extra-projects/manifest.json). The README and linked assets were pushed to `Assembly/main` in `15aa123e5b`. The repository remains a private source locator.
+
+---
+
+### P20. Terminal Text Analyser
+
+**Context:** Python coursework application.  
+**Primary domains:** File processing, string handling, frequency analysis and terminal reporting.  
+**Technologies:** Python standard library, lists/dictionaries, sorting and bundled text files.  
+**Status:** Separate original Python app now runs at /demos/analyser/ with counts, file switching and frequencies checked. Publicly grouped under Typing Trainer as related work; independent source and inventory record retained. **EP-R4 / EP-M1 / PF-I3.**
+
+**Project summary:** A terminal tool for selecting a bundled text and reporting word, character and line counts, frequent words/letters and a combined report.
+
+**Public display name and relationship to P16:** Publicly titled **Text File Analyser** to distinguish file statistics from typing assessment. Its own `main.py` imports `analyzer.py`; P16 imports `typing_analysis.py` and `extra_analysis_fun.py`. P20 is independently runnable and is not embedded in the trainer.
+
+**Implemented functionality:** Commands for words, letters, lines, changing the selected file, word/letter frequency and combined output. The initial text is `phil.txt`; `lorum.txt` is another supported selection. `main.py` handles interaction while `analyzer.py` implements counting, cleanup, dictionaries, top-seven frequency reports and formatted percentages.
+
+**What it demonstrates:** Separating interface/analysis functions, loading files and building reports from collections. It is basic text processing rather than an NLP/model-based analysis system.
+
+**Preparation notes:** Counting/filtering definitions differ across metrics; denominators and punctuation/letter rules should be described explicitly. Missing/empty files and Unicode/token edge cases were not comprehensively tested. Do not claim measured scalability or statistical accuracy beyond the implementation.
+
+**Sample CV line:** Built a Python terminal text analyser with file selection, word/character/line counts and sorted frequency reports using reusable analysis functions.
+
+**Repository:** https://github.com/KarmaSora/python-course — private per author.  
+**Project path:** `me/kmom06/analyzer/`.  
+**Runtime evidence, 15 November 2026 — EP-M1:** Ran the standalone analyser and captured its word-frequency output for a bundled text. Its entry point and analyzer.py module are independent of the typing trainer. This is direct reporting evidence for the application, with counting/tokenisation edge cases retained in preparation notes.
+
+**Public grouping and browser demo — PF-I3:** By the author's choice, this is related work under the Typing Trainer card, with its own source link and correctly captioned screenshot, rather than a duplicate catalogue card. It remains independently runnable at `/demos/analyser/`, executing its original main.py/analyzer.py and bundled files in Pyodide. Counts, file switching and frequency output passed browser checks. Grouping is a presentation decision; it does not claim this program is built into the trainer.
+
+**Media and repository evidence — EP-M1 / EP-P1:** 1 real captures/artifact views in the [project README](https://github.com/KarmaSora/python-course/blob/56a2d08c21b90a9ee0a4e50849e82b3c30df7621/me/kmom06/analyzer/README.md#screenshots), with identical local copies recorded in the [asset manifest](../public/images/extra-projects/manifest.json). The README and linked assets were pushed to `python-course/main` in `56a2d08c21`. The repository remains a private source locator.
+
+---
+
+### Source README and captured-evidence register — EP-P1
+
+Pushed and remote-head verified on 15 November 2026. All six repositories retain their existing private access. Commit links below are private source locators. Application code was not changed by the documentation commits. The standalone `extraPorjects/README.md` remains local because its parent directory is not a Git repository.
+
+| Repository | Inventory records / supporting material | READMEs | Captures | Compiler artifacts | Verified documentation commit |
+| --- | --- | --- | --- | --- | --- |
+| Assembly | P14/P19 and supporting assembly | 5 | 4 | 0 | [15aa123e5b](https://github.com/KarmaSora/Assembly/commit/15aa123e5b1998def45cda730d6e60e3d9157a7a) |
+| Compiler | P05 | 1 | 4 | 11 | [ef06c25fad](https://github.com/KarmaSora/Compiler/commit/ef06c25fada533713d08e996b5fc31c216ef4428) |
+| OperatingSystem | P13 and Lab1 support | 5 | 2 | 0 | [4e6d6d14fc](https://github.com/KarmaSora/OperatingSystem/commit/4e6d6d14fcd9329941de96ada97c7ad6e472a869) |
+| database | P12 and SQL/CRUD/backup support | 5 | 3 | 0 | [c3ef403ad4](https://github.com/KarmaSora/database/commit/c3ef403ad491eab7b4c280df43435ee53215f640) |
+| python-course | P15/P16/P20 and earlier exercises | 9 | 5 | 0 | [56a2d08c21](https://github.com/KarmaSora/python-course/commit/56a2d08c21b90a9ee0a4e50849e82b3c30df7621) |
+| securityPrograming | P17/P18 and focused security labs | 15 | 6 | 0 | [b2232292ef](https://github.com/KarmaSora/securityPrograming/commit/b2232292efdcbc11e2e1583440f2cb952c9f1f27) |
+
+Media provenance is recorded in the [SHA-256 manifest](../public/images/extra-projects/manifest.json). Raw compiler artifacts are retained under `Compiler/artifacts/capture-2026-11-15/`; its README links the inputs, DOT/SVG, IR, bytecode and VM output.
+
+### Supporting coursework and focused exercises — EP-R1–EP-R5
+
+Keep these details available for tailored applications/interviews without automatically turning every lab or version into a featured project. The main OperatingSystem selection is **P13 / Lab2**. Selected application captures are recorded in P05/P12–P20; these smaller exercises are supporting evidence and do not each need a gallery. The separate Cryptography exercise remains excluded from portfolio selection.
+
+| Group / local repository path | Implemented work and technologies | Use and scope |
+| --- | --- | --- |
+| OperatingSystem `Lab1/Part1_code/` | C/POSIX `fork`, pthread creation/arguments, mutex-protected shared-account updates, dining-professor lock ordering, semaphores, shared memory and System V message queues. | Supporting concurrency/IPC exercises. The matrix experiment processes unequal row counts in its sequential/parallel branches, so its printed speedup is not a valid benchmark. |
+| OperatingSystem `Lab1/Part2_code/` | FIFO, LRU and optimal page-replacement simulations in C, with configurable frame count/page size and memory-trace input. | All three compiled and read ten references with one page fault on the chosen small trace. That is a smoke check; do not generalise performance or correctness to every trace. |
+| database `skolan/` | Teacher/course/course-instance schemas, salary revisions, CSV imports, joins, aggregates, subqueries and views in MySQL/MariaDB SQL. | SQL coursework; not a full school-management web product. Reset stages need clean-server verification. |
+| database `kmom06/crud/` | Express/EJS account create/read/update/delete flows using stored procedures over a `bank.account` table. | Supporting web/database application. The checked-in SQL defines procedures but omits the table bootstrap. |
+| database `kmom06/backup/` | Bash wrappers around `mysqldump --routines` and MariaDB restore/inspection. | Supporting data-operations exercise. The verification script references an absent helper; no live restore was run. |
+| python-course `me/kmom01/plane/` | Python input, float arithmetic and metre/feet, km/h/mph and Celsius/Fahrenheit conversions. | Small introductory script; a sample conversion was checked. |
+| python-course Marvin 1–3 and generated labs | Early versions of P15 plus foundational functions, strings, lists, dictionaries and file exercises with a supplied course checker. | Development progression/supporting exercises, not separate real-AI projects. Original grader/fixture provenance is retained. |
+| securityPrograming `Task1/` | Flask-WTF validation, password confirmation/custom checks, Bleach allowlists, CSRF and submission/failure logs. | Input-validation exercise; successful submission is not account creation or login. |
+| securityPrograming `Authorization_in_Flask/` | Role/permission decorators and an ownership-restricted profile example with Flask-Login/SQLAlchemy. | Focused authorisation example. Seed credentials are plaintext and not every helper is active or complete. |
+| securityPrograming `authenticationMechanisms/` | Bcrypt login, Flask-Login dashboard/logout, CAPTCHA field and a declared four-per-minute POST login limit. | Academic authentication evidence; displayed dashboard name comes from a query parameter. No Task2 MFA/lockout claim. |
+| securityPrograming `insecure_auth_lab/` | Current source uses Bcrypt, SQLAlchemy and Flask-Login for a small login/dashboard baseline. | Historical folder naming does not imply plaintext hashing behaviour; no logout route is supplied. |
+| securityPrograming `sessionManagement/` | Filesystem sessions, login/logout, exposed demonstration state, one-minute idle and 90-second absolute timeout hooks. | Session-lifecycle exercise; settings/password-change remains a simulation rather than a persisted update. |
+| securityPrograming `SQLInjection/` | Bound SQLite query parameters and ORM SQL/parameter inspection in a demonstration login. | Parameterisation exercise; plaintext fixture passwords/debug logging are not a complete authentication design. |
+| securityPrograming `CrossSiteScriptingXSS/` | Reflected/stored/DOM output contexts, Jinja escaping, Bleach cleaning, `tojson`/`textContent`, CSRF and CSP. | Current protection code matters more than historic unsafe-example comments. Inline-script/CSP compatibility needs a browser check. |
+| securityPrograming `secureLoggingAndMonitoring/` | Structured JSON rotating logs, feedback validation, control-character cleaning, Bearer-like redaction and a simulated denied-access event. | Logging exercise with a hardcoded user dictionary; no external monitoring service or production identity integration established. |
+| securityPrograming `errorHandlingAndConfig/` | App factory, development/production config classes and custom error handlers, including a deliberate exception route. | Small scaffold; the 403 template and dependency declarations are missing in this checkout. |
+| securityPrograming `insecure_input_lab/` | Current source validates/sanitises a name form with Flask-WTF, regex rules, Bleach and CSRF. | Supporting input-handling exercise; the historical directory name is not a complete description of current behaviour. |
+| securityPrograming `secure_flask_lab/` | Minimal Flask app factory, blueprint, template/form and global CSRF protection. | Baseline scaffold; no semantic field validators and no requirements file. |
+| Assembly remaining ARMv7/x86 examples | Arrays, factorials, subroutines, recursion, UART, LED/HEX devices, timers, C/assembly calling and maximum-value exercises. | Supporting low-level study alongside P14/P19; examples and retained variants must not be counted as separate independently authored systems. |
+
+**Media follow-up:** The selected projects now have captures from their actual applications, CPUlator execution or compiler-generated artifacts. Additional images for smaller exercises are optional. Preserve the original images, clear provenance/captions and the distinction between captured execution and source-only feature review.
 
 ---
 
@@ -697,18 +1081,19 @@ The portfolio identifies a Teaching Assistant Certificate from BTH. The certific
 
 | Category | Technologies and concepts | Strongest recruitment evidence |
 | --- | --- | --- |
-| Programming | Python, JavaScript, TypeScript, C++, C#, Java, SQL | Kravi, Softhouse, Trafikverket, BTH C++ teaching, compiler and game projects |
-| Backend | FastAPI, Uvicorn, SQLAlchemy, Express.js, Node.js, Bun, REST APIs, Prisma | Kravi, Softhouse, academic thesis at high level |
+| Programming | Python, JavaScript, TypeScript, C++, C#, Java, SQL; academic C, ARMv7 and x86-64 assembly | Professional assignments, joint Compiler/game projects, OS Lab2/C exercises and assembly projects P13/P14/P19 |
+| Backend | FastAPI, Uvicorn, SQLAlchemy, Express.js, Node.js, Bun, REST APIs, Prisma; academic Flask and EJS | Kravi/Softhouse professional work; Eshop P12 and Flask applications P17/P18 as separate academic evidence |
 | Frontend | React, Next.js, TypeScript, Jinja2, HTML, CSS, Tailwind CSS | Softhouse, Kravi, ShowcaseSERL, Portfolio |
-| Databases and data | PostgreSQL, PostGIS, MongoDB, SQL, SQLAlchemy, Alembic, Prisma, S3/TIFF, Rasterio | Kravi, Softhouse; MySQL appears in CV without clear linked project |
+| Databases and data | PostgreSQL, PostGIS, MongoDB, SQL, SQLAlchemy, Alembic, Prisma, S3/TIFF, Rasterio; academic MySQL/MariaDB and SQLite | Kravi/Softhouse professional work; Eshop P12 and supporting school/CRUD SQL now substantiate MySQL/MariaDB coursework; P17/P18 substantiate SQLite-backed Flask work |
 | DevOps and delivery | Git, Docker, Docker Compose, Linux, GitHub Actions, SSH, Nginx, UFW, Azure DevOps, Bitbucket Pipelines, CI/CD, cron, Windows-based retention automation | Independent CI/deployment ownership at Kravi; assistance with Bitbucket CI/CD setup/test integration at Softhouse; delivery work in Portfolio and thesis. Trafikverket: refactoring, Windows cleanup and limited assistance with task packaging/CI/CD in group sessions |
 | Testing and quality | Unit/integration testing, pytest, Cypress E2E, ruff, automated CI checks, input validation, debugging | Kravi: independently authored unit/integration tests, including API/storage, geometry, batch lifecycle, annotation persistence and image-connection regressions, with PostGIS-backed CI (**KR-C1; KR-R1**). Softhouse: personal Cypress plus team unit/integration/E2E scope; individual unit/integration authorship pending. Jest and Bun Test remain CV-listed familiarity |
-| Security | Server-side validation, Zod, dependency-security tooling; SBOM as documented project context | Softhouse: security measures and tester-reported vulnerability fixes. Zod use is report-documented and author-confirmed; implementation recall is limited, with no proficiency level assigned. Trafikverket: shared tooling refactor |
-| Systems and compilers | C++, memory management, pointers, lexer/parser, CFG, IR, TAC, custom virtual machine | C++ compiler, BTH teaching, coursework |
+| Security | Server-side validation, Zod, dependency-security tooling; SBOM as documented project context | Softhouse: personal security measures and tester-reported vulnerability fixes; Trafikverket: shared tooling refactor. Preserve Zod implementation-recall limits. |
+| Academic web security | Flask-WTF/CSRF, Bcrypt/pepper, Fernet profile encryption, role checks, session controls, CSP/output handling, TOTP and structured logs | P17/P18 and supporting Flask labs, **EP-R5**. These are source-reviewed academic implementations, not independent production-security, penetration-testing or cryptographic-design expertise. The separate Cryptography exercise remains excluded. |
+| Systems and compilers | C/C++, memory/pointers, lexer/parser, CFG/IR/TAC/VM, FAT allocation, block I/O, paths/access flags, ARMv7 interrupts/UART/GIC, x86-64 C interoperability | Joint Compiler P05, BTH teaching, main OS Lab2 project P13 and assembly P14/P19; Lab1 remains supporting coursework |
 | Game development | Unity, C#, SFML, Java, entity modeling, collision detection, AI behavior, real-time loops, UI | Death Marching Souls, Space Invaders, GyaGame |
 | Autonomous agentic AI workflows | Bounded multi-agent task-to-code/PR orchestration, Git/CI/CD integration and human approval gates | ACID Bot bachelor's thesis with Iquest AB, described at high level only |
 | Computer vision/geospatial | TIFF/Rasterio decoding, image-mask polygons/overlays, annotation persistence, PostGIS points, WKT and coordinate systems; computer vision coursework | Kravi implementation evidence (**KR-R1**) and Newcastle University coursework; annotation tooling supports later ML use, without demonstrating model-training ownership |
-| Collaboration | Agile/Scrum, requirement decomposition into categorized tasks, demos, stakeholder communication, code review, mentoring | Softhouse Scrum Master sprint and communication work; Trafikverket and BTH collaboration |
+| Collaboration | Agile/Scrum, requirement decomposition, demos, permanent communication contact, code review/merge assistance, mentoring and joint project work | Softhouse: continuous full-stack work and fixed Head of Department/team/customer communication, with separate Scrum Master/Team Lead rotations (**SH-C3**); joint ACID Bot/Compiler, credited Eshop collaboration and BTH mentoring |
 
 ### Evidence-based skill tiers (not self-rated proficiency)
 
@@ -723,7 +1108,11 @@ The portfolio identifies a Teaching Assistant Certificate from BTH. The certific
 
 **B. Demonstrated in completed academic or personal projects**
 
-- **Systems:** C++, recursive-descent parsing, CFG/IR, TAC and a custom virtual machine (Compiler from Scratch).
+- **Systems:** Joint C++ Compiler work with Flex/Bison parsing, semantic checks, CFG/IR, TAC and a bytecode VM; main OS Lab2 FAT simulator with block allocation, metadata, path operations and access flags (P13). Exit overwriting is intended under **EP-C1**.
+- **Assembly/C interoperability:** ARMv7 memory-mapped display/UART/button interrupts and GIC/processor-stack setup (P14); x86-64 buffered I/O callable from C/assembly drivers (P19). C/POSIX and paging exercises remain supporting Lab1 evidence.
+- **Relational application development:** Collaborative Eshop web/CLI interfaces, MySQL stored procedures, triggers, relational schemas and order/warehouse workflows (P12); supporting account/school/backup coursework.
+- **Python applications:** Intentionally fake AI interface with scripted utilities/inventory/data queries (P15), file-backed typing/error reporting (P16) and terminal text analysis (P20). Real AI integration is outside Marvin's intended scope.
+- **Flask security coursework:** Integrated registration/login/roles/session/data-protection/logging app (P17), separate TOTP enrollment/login exercise (P18), and focused validation/authentication/authorisation/output labs. Keep verified implementation scope separate from end-to-end testing or production security.
 - **Web:** Next.js, TypeScript, React, Tailwind CSS, JSON content modeling, GitHub Pages and deployment automation (ShowcaseSERL and Portfolio).
 - **Games:** Unity/C#, C++/SFML and Java; movement, combat, collision, enemy behavior, UI and game-state systems (Death Marching Souls, Space Invaders and GyaGame).
 - **Thesis collaboration:** Bounded autonomous multi-agent task-to-code workflow and Git/CI/CD integration with a mandatory human review gate (ACID Bot). This is an academic project conducted with Iquest AB and is **not** an open-source or independently reproducible product.
@@ -736,9 +1125,9 @@ The portfolio identifies a Teaching Assistant Certificate from BTH. The certific
 
 **D. CV-listed familiarity or coursework requiring stronger examples before emphasis**
 
-- SvelteKit, SCSS, MySQL, Jest, Bun Test and React Native/Expo appear in supplied CV skills, but this curated record does not contain an independently attributable project that substantiates each to the same standard as the primary technologies above.
-- PHP, basic Assembly, Blender and Flask are mentioned in learning history without clear completed deliverables in the selected evidence.
-- Security programming, computer vision/machine learning and game design have documented course exposure. Do not present courses as professional specialization.
+- SvelteKit, SCSS, Jest, Bun Test and React Native/Expo remain CV-listed familiarity without equivalent selected evidence here. MySQL is now supported by Eshop and database coursework under **EP-R3**, so it is no longer in this unlinked category.
+- PHP remains learning-history familiarity without a selected deliverable here. Blender is current learning. ARMv7/x86-64 assembly and Flask now have concrete academic project records under **EP-R1 / EP-R5**, without implying professional use or advanced proficiency.
+- Security programming now has source-reviewed academic implementations as well as course exposure. Computer vision/machine learning and game design retain their existing course/project context. Do not turn coursework alone into a professional specialisation claim.
 
 ### Transferable engineering competencies
 
@@ -766,12 +1155,14 @@ Professional assignments appearing in both the experience and project columns ar
 
 | Job target | Lead with experience | Select projects | Put early in skills | Strongest evidence |
 | --- | --- | --- | --- | --- |
-| Backend / Python | Kravi, Softhouse | Kravi platform, Compiler | Python, FastAPI, SQLAlchemy, PostgreSQL/PostGIS, Alembic, Docker | API ingestion, spatial schema/batch design, controlled quality review and connection-lifetime debugging |
-| Full-stack / React | Softhouse, Kravi | TeamTemp, ShowcaseSERL, Portfolio | TypeScript, React, Next.js, Express, FastAPI | UI-to-database delivery and professional collaboration |
+| Backend / Python | Kravi, Softhouse | Kravi platform, Compiler; Flask P17/P18 when relevant | Python, FastAPI, SQLAlchemy, PostgreSQL/PostGIS, Alembic, Docker; Flask as academic use | Professional API/data/reliability work first; concrete Flask authentication/session coursework as supporting evidence |
+| Full-stack / React | Softhouse, Kravi | TeamTemp, ShowcaseSERL, Portfolio; Eshop P12 for SQL-heavy work | TypeScript, React, Next.js, Express, FastAPI; academic MySQL/EJS | Professional UI-to-database delivery, fixed communication responsibility and collaborative web/CLI/database coursework |
 | DevOps / CI/CD | Kravi, Softhouse | Portfolio, ACID Bot (briefly), VulnerabilityChecker (shared tooling refactor) | Linux, Docker, GitHub Actions, Bitbucket Pipelines, CI/CD | Independent PostGIS-backed CI and deployment configuration at Kravi; assisted Bitbucket setup at Softhouse; Windows retention automation at Trafikverket |
-| Security / AppSec | Softhouse, Trafikverket | VulnerabilityChecker, TeamTemp | Server-side validation, dependency-security tooling | Implemented security measures, fixed tester-reported vulnerabilities and contributed to tooling refactoring |
+| Security / AppSec | Softhouse, Trafikverket | VulnerabilityChecker, TeamTemp; P17/P18 as academic examples | Server-side validation, dependency-security tooling; academic Flask/Bcrypt/CSRF/TOTP | Professional fixes/tooling first, with source-reviewed authentication/session/access-control coursework as support; no production certification claim |
 | AI developer tooling | Kravi, Softhouse | ACID Bot (thesis-only summary) | JavaScript, Git, CI/CD, multi-agent concepts | Academic/industrial thesis collaboration with Iquest AB |
-| C++ / systems | BTH Teaching Assistant, Kravi | Compiler, Space Invaders | C++, algorithms, memory, debugging | Built compiler pipeline and taught C++ concepts |
+| C++ / systems | BTH Teaching Assistant, Kravi | Joint Compiler P05, main OS Lab2 FAT P13, Space Invaders; x86-64 P19 when relevant | C++, memory, algorithms, block allocation, paths, debugging and C/assembly interoperability | Joint compiler, file-system implementation and C++ teaching; Lab1 exercises provide supporting context |
+| Embedded / low-level | BTH Teaching Assistant; professional debugging as transferable experience | ARMv7 controller P14, x86-64 I/O P19, FAT P13 | ARMv7/x86-64 assembly, memory-mapped I/O, interrupts, registers and C/C++ | Concrete academic low-level implementations; no professional firmware deployment or measured hardware-timing claim |
+| SQL / database-backed web | Kravi, Softhouse | Eshop P12, relevant professional data work; school/CRUD scripts as support | SQL, MySQL/MariaDB, PostgreSQL, Express/EJS and stored procedures | Shared web/CLI data layer, schema/routine/trigger workflows and professional database experience kept distinct |
 | Game programming | BTH Teaching Assistant, Softhouse | Death Marching Souls, Space Invaders, GyaGame, Compiler | C#, Unity, C++, SFML, Java | Playable game projects and debugging/engineering practice |
 | Customer-facing technical | Softhouse, BTH Teaching Assistant | TeamTemp, ShowcaseSERL | Communication, React, project delivery | Demos, requirements clarification, mentoring and sprint coordination |
 
@@ -797,7 +1188,7 @@ Professional assignments appearing in both the experience and project columns ar
 
 **AI / automation:** Software Engineer who co-developed a bounded autonomous multi-agent AI workflow for bug-fix tasks through human-reviewed pull requests as a bachelor's thesis with Iquest AB.
 
-**C++ / systems:** Software Engineer with a C++ compiler/virtual-machine project, university teaching-assistant experience and C++/SFML game development.
+**C++ / systems:** Software Engineer with joint C++ compiler/virtual-machine work, a FAT file-system simulator, university teaching-assistant experience and C++/SFML game development.
 
 **Game developer:** Software Engineer with Unity/C# action-platformer programming, C++/SFML and Java game projects involving real-time game logic, collision handling, enemy behavior and UI systems.
 
@@ -817,10 +1208,13 @@ Professional assignments appearing in both the experience and project columns ar
 | Practical data extraction | A colleague needed a structured dataset from an annex table | Used the HTML representation, identified the table by columns and exported subsection/full-table CSVs | Two completed deliverables; **KR-W40, p.1** |
 | Secure application development | Company testers found additional gaps in TeamTemp's security measures | Implemented initial controls, then fixed reported input-validation and cross-survey vulnerabilities | Personally implemented fixes, **USER-CONFIRMED** |
 | Testing and CI | Survey workflows required repeatable checks | Wrote Cypress E2E tests and assisted with the team's Bitbucket CI/CD setup and test integration | Team testing included unit, integration and E2E tests; no independent pipeline ownership or personal unit/integration authorship is implied |
-| Stakeholder alignment | Eleven-person Softhouse team had customer requirements | Coordinated demos, requirements and sprint updates | Team delivery formally accepted as exceeding customer expectations, recorded in conclusion report Appendix A |
+| Stakeholder alignment | Eleven-person Softhouse team had customer requirements | Served as permanent Head of Department/team/customer communication contact while working full stack; Scrum Master/Team Lead were separate rotations | Team delivery formally accepted as exceeding customer expectations; engineering/testing/security/review/merge/CI work are personal contributions, not rotating roles (**SH-C3**) |
 | Legacy tool modernization and retention | Dependency checker used PowerShell and required data maintenance | Shared JavaScript refactor, database work and Windows-based cleanup development | Collaborative contribution; cleanup scope was entries older than 90 days |
-| Systems implementation | Compiler required multiple language-processing stages | Implemented lexer, parser, semantic checks, IR and VM | Completed end-to-end compiler |
-| Academic/industry collaboration | Bachelor's thesis explored bounded autonomous multi-agent bug-fix workflows | Co-developed task-to-code/PR workflow with mandatory human review, in collaboration with Iquest AB | Completed thesis; avoid metric/generalization and source-access claims |
+| Systems implementation | Compiler required multiple language-processing stages | Worked jointly with a colleague across investigation, implementation and documentation | Shared end-to-end compiler; no invented individual stage ownership (**JNT-C1**) |
+| Storage abstractions | Coursework required file/directory behaviour over a simulated disk | Implemented FAT chains, directory metadata, path/permission operations and shell commands | Main OS Lab2 project P13, source-reviewed with focused local checks; exit overwriting was intended |
+| Shared application/data layer | Shop operations were needed through browser and terminal interfaces | Co-developed Eshop around shared database helpers, stored routines and relational workflows | P12; source credits both collaborators, without a personal feature split |
+| Low-level event handling | Display counter accepted UART and button inputs | Combined UART polling and button interrupts through shared counter/display routines | P14 source review; 0–F wraparound and processor/GIC setup, without measured latency claims |
+| Academic/industry collaboration | Bachelor's thesis explored bounded autonomous multi-agent bug-fix workflows | Jointly researched, implemented and wrote the thesis with the colleague, in collaboration with Iquest AB | Shared thesis/workflow with mandatory human review; avoid metrics/generalisation and source-access claims (**JNT-C1**) |
 | Technical mentoring | First-year C++ students needed individual help and explanations of shared difficulties | Coordinated sessions with other TAs around class schedules, personally delivered mini-lectures and individual guidance, and independently offered additional one-to-one help outside sessions | Teaching experience, user-confirmed session details and BTH certificate; no measured grade impact claimed |
 | Game-programming depth | Unity 3D action game needed interacting systems | Worked on combat, enemies, health, XP and UI | Game project and gameplay footage |
 
@@ -832,6 +1226,14 @@ This ledger distinguishes evidence that can be used in recruitment materials fro
 
 | Item | Finding | Evidence strength | Accurate interpretation / caution |
 | --- | --- | --- | --- |
+| FAT Lab2 storage model | 2048 blocks × 4096 bytes = 8 MiB disk image | **EP-R2**, source constants | Capacity/design configuration, not a throughput or scalability benchmark; exit overwriting is intended (**EP-C1**) |
+| ARM controller | Four-bit value and 16 hexadecimal display states | **EP-R1**, counter mask/lookup table | Implemented representation and wraparound, not a measured interrupt/display performance result |
+| Extra-project media | 24 real screenshots/artifact views across ten source implementations | **EP-M1**, README references and SHA-256 asset manifest | Used in nine local portfolio entries; two source implementations share the Flask entry. Capture counts are documentation coverage, not quality/performance metrics |
+| Compiler examples | VM outputs 20, 100, 3628800 and 5050 for the four recorded examples | **CMP-R1 / EP-M1**, fresh local build and generated files | Illustrative arithmetic/control-flow/recursive execution, not a full-suite or performance claim |
+| ARM simulation | Ten UART increments reached A; KEY1 press/release advanced the display to B | **EP-M1**, actual CPUlator run and three captures | Observed simulator behaviour; physical-board timing and all input boundaries were not certified |
+| Source documentation | 40 READMEs, 24 images and 11 compiler artifacts pushed across six repositories | **EP-P1**, verified remote commit heads | Documentation publication to existing private repositories; no visibility change or portfolio deployment |
+| Local portfolio catalogue | 15 cards and 34 gallery images | **PF-I3 / PF-A1**, current JSON, media manifest and focused integration checks | Ten existing TeamTemp images retained. P17/P18 share a Flask card; P20 is related work under P16. All 20 numbered inventory records remain separate |
+| Local project demos | Seven explicit static demo routes plus a separate local Eshop runner | **PF-I1–PF-I3 / PF-A1**, source/artifact hashes and scoped build/browser/runtime checks | Compiler is recorded original output; Showcase/ARM/Python/FAT execute original projects. Public Eshop backend hosting remains pending; no new performance or comprehensive regression claim |
 | Holly Tech | First-place team in CTF competition | Event-organizer post | Team achievement, not a prototype-building hackathon |
 | Softhouse | 11-person agile project team | CV and portfolio | Team size, not direct reports |
 | Trafikverket | 6-person development team | CV and portfolio | Collaborative work, not sole ownership |
@@ -881,9 +1283,15 @@ Checked items reflect the latest recorded clarifications. Unchecked items are **
 - [ ] **Reference follow-up before use:** Respect the explicit advance-contact condition for references 1–5; brief the selected referees about the role. No date of direct confirmation with any referee was supplied. Missing formal titles, unspecified sharing permissions/contact preferences and phone formatting remain marked rather than inferred.
 - [x] **Public project repository access check, 25 October 2026:** ShowcaseSERL, GameDesign, Space Invaders and GyaGame returned HTTP 200 to unauthenticated requests. Compiler returned 404 publicly and authenticated GitHub metadata confirms it is private; access guidance is recorded in P05.
 - [ ] **Game-specific individual contributions:** Public source availability does not establish personal ownership of every game component. Space Invaders collaboration with Abduvohid Ilhomov is recorded; confirm exact individual features if an application needs that detail.
-- [ ] **Skills needing evidence:** SvelteKit, SCSS, MySQL, Jest, Bun Test, React Native/Expo and other CV-listed tools without a selected demonstrable project.
+- [ ] **Skills needing evidence:** SvelteKit, SCSS, Jest, Bun Test, React Native/Expo and other still-unlinked CV tools. MySQL, Flask and assembly now have concrete academic source evidence under **EP-R1 / EP-R3 / EP-R5**.
+- [x] **Extra-project source reconciliation:** Added P12–P20 and grouped supporting labs from five supplied repositories. Recorded OS Lab2 priority, intended FAT exit overwrite, Marvin's fake AI scope and exclusion of the separate Cryptography exercise.
+- [x] **Selected project screenshots:** 24 real captures/artifact views from ten implementations are recorded in READMEs and integrated into nine local portfolio entries. Original TeamTemp media is retained. **EP-M1.**
+- [x] **Source README publication:** 40 READMEs, 24 screenshots and 11 compiler artifacts pushed to the six source repositories and remote heads verified. **EP-P1.**
+- [x] **Flask presentation distinction:** P17/P18 are separate implementations shown under one card with two source links/sections and labelled media. **EP-G1.**
+- [ ] **Optional extra-project detail:** Exact dates and any unestablished collaborator names/feature allocations can be added when provided. Preserve the established Eshop joint credit; do not infer sole ownership from repository presence.
+- [ ] **Portfolio publication and source visibility:** Source documentation pushes are complete (**EP-P1**). The 16-entry website update remains local/unpushed; private repository URLs are still private locators. A website release or repository-visibility change requires its own instruction.
 - [ ] **Impact metrics:** Gather credible outcomes from professional work rather than inventing percentages or speedups.
-- [x] **Published portfolio data and inventory alignment:** Current location/geographic preferences, confirmed role dates and professional bio are recorded. All 13 published experience bullets across four roles are present verbatim in this inventory. The 11 private project entries intentionally include work beyond the eight public project cards. The published UI release and live verification are recorded in section 10.
+- [x] **Published portfolio data and inventory alignment:** Current location/geographic preferences, confirmed role dates and professional bio are recorded. All 13 published experience bullets across four roles are present verbatim in this inventory. The 20 master project records and supporting coursework intentionally include work beyond the eight public project cards; P12–P20 are inventory additions, not already published cards. The published UI release and live verification are recorded in section 10.
 - [ ] **Practical details:** Verify phone, availability, location and driving-licence details when generating a specific CV.
 - [ ] **Other career-relevant work:** Add missing projects only when personal role, technical contribution and disclosure status are sufficiently clear.
 
@@ -891,7 +1299,28 @@ Checked items reflect the latest recorded clarifications. Unchecked items are **
 
 ## 10. Suggested Portfolio Update Plan
 
-**Current instructions and publication status (25 October 2026):**
+**Current local implementation status — PF-A1, 15 November 2026:** The local portfolio has **15 catalogue cards**, with the two Flask implementations grouped together and the analyser grouped under Typing Trainer. All **20 numbered project records**, **34 gallery images** and **24 captured source images across ten implementations** are retained. Seven explicit demo routes now cover real recorded Compiler output, the original ShowcaseSERL UI, the original ARM program in native CPUlator and original Python/FAT browser programs. Eshop has its original backend/database running through a reproducible local runner; public backend hosting is still pending. PF-I3 records the focused build/browser/runtime checks; PF-A1 additionally verifies 87 original vendored source/data files, artifact hashes, image dimensions/hashes, source-to-card mappings, locked dependencies and local route/assets. These additions were prepared locally under PF-I1–PF-I4; PF-P1 now authorizes their Portfolio release. No original source-repository visibility change is included. The historical 8/10 versus 8.5/10 assessment in PF-R2 was not recalculated for the demos. [Current audit and remaining priorities](../docs/PORTFOLIO_STATUS_AUDIT_2026-11-15.md).
+
+
+**Completed preparation — PF-A1:**
+
+- [x] Extra-project records and recruiter-focused descriptions, with confirmed ACID/Compiler collaboration and accurate TeamTemp roles/contributions.
+- [x] 24 genuine captures/artifact views; all 34 gallery images retained. The analyser manifest now maps to its actual parent card.
+- [x] Seven explicit demo routes, original product interfaces/code, honest recorded-output labels and direct launchers.
+- [x] Pinned runtime sources/build artifacts and normal-build generation; public Eshop builds have no default localhost action.
+- [x] Current source/inventory/demo/media status reconciled with the implementation plan and handoff.
+- [x] PF-I4 reported-demo regressions: fresh FAT startup formats itself and preserves separate directory contents; MARVIN country lookup accepts casing/whitespace and recovers from invalid names. Explicit source-fix hashes and content-versioned requests are retained.
+
+**Remaining work and choices — PF-A1:**
+
+- [ ] Public Eshop backend/database hosting and connection through NEXT_PUBLIC_ESHOP_DEMO_URL, if a public live Eshop demo is desired.
+- [ ] Proposed recruiter-presentation pass: Kravi Data Sorter card, selected-work hierarchy and dedicated case studies. Adding Kravi would take the current catalogue from 15 to 16 cards. These are recommendations, not changes implemented by this audit.
+- [ ] Proposed evidence polish: explanatory ACID Bot/VulnerabilityChecker covers, precise TeamTemp screenshot captions and Open Graph/Twitter preview artwork. No new screenshot is required to use the completed demos.
+- [ ] Optional broader browser/runtime checks and further live ports. Current interactive validation was focused on Chromium; source-project regression suites were not comprehensively certified.
+- [x] PF-P1: The author subsequently authorized committing/pushing the Portfolio update and documenting GitHub Pages boundaries. The earlier publication deferral is superseded; original source-repository visibility remains unchanged.
+- [ ] Confirm the authorized release's Pages workflow and live demo routes; record the observed result in the hosting/release document.
+
+**Earlier instructions and publication history (25 October 2026; newer author clarifications and PF-I3/PF-A1 take precedence):**
 
 - The author's latest instruction explicitly requests shorter public experience cards. The current summaries contain **four Kravi bullets, four Softhouse bullets, three Trafikverket bullets and two TA bullets**. Keep the detailed private contributions, evidence and longer reusable wording; do not prune the master inventory to match the public summaries. Project descriptions remain outside this pass.
 - Subsequent validation-wording clarification **SH-C2** keeps Zod in public technology/skills lists after the author confirmed using it. Public contribution descriptions use server-side validation rather than "Zod fixes." Keep the report evidence and limited implementation recall in the private record; do not infer strong expertise. The underlying project contributions and PDFs are unchanged.
@@ -1052,7 +1481,7 @@ Use this template for additional people or to extend the eight imported records 
 
 1. Kravi vessel-detection review system (only if employer approves public description/screenshots)
 2. TeamTemp (Softhouse, team contribution)
-3. Compiler from Scratch (C++)
+3. C++ Compiler and Virtual Machine (C++, Flex, Bison)
 4. ShowcaseSERL
 5. VulnerabilityChecker 2.0 (Trafikverket, team contribution)
 6. ACID Bot (one brief thesis summary, collaboration with Iquest AB, no performance figures)
@@ -1167,6 +1596,25 @@ Current availability/location constraints: [confirm if relevant]
 
 ## 13. Source Register
 
+### Extra-project sources and author clarifications — 15 November 2026
+
+The code was inspected in five local repositories under `/home/karam/personal/extraPorjects`. HEAD values below identify the checked-out code baseline; locally prepared READMEs are separate documentation changes and are not claimed to be present on those remote commits. Repository paths came from local Git origin configuration. Private status is author-reported; anonymous availability was not tested and visibility was not changed.
+
+| ID | Repository and local baseline | Main evidence |
+| --- | --- | --- |
+| **EP-R1** | [Assembly](https://github.com/KarmaSora/Assembly), `main` at `4c76ea4` | ARMv7 `ARMv7/assignment/currentCode.s`/related variants, x86-64 `Lab3/lab3_lib.s`, header/drivers, source-reviewed READMEs and the C-linked numeric smoke check. Supports P14/P19 and supporting examples. |
+| **EP-R2** | [OperatingSystem](https://github.com/KarmaSora/OperatingSystem), `main` at `88e6954` | Main `Lab2/lab2_code` disk/FS/shell implementation and supplied drivers/fixtures; Lab1 C/POSIX/paging sources. Build/include workaround and corrected fixture-present runs are distinguished from full expected-output acceptance. Supports P13. |
+| **EP-R3** | [database](https://github.com/KarmaSora/database), `main` at `f73c354` | Eshop web/CLI/shared helpers, SQL schema/routines/triggers, explicit Karam/Abduvohid CLI credit, school/CRUD/backup scripts and JavaScript syntax checks. Database workflows were not executed. Supports P12 and database coursework. |
+| **EP-R4** | [python-course](https://github.com/KarmaSora/python-course), `main` at `00dc333` | Marvin 1–4, typing, analyser and foundational sources; Python syntax checks and identified short execution sessions. Supports P15/P16/P20. Real AI was not a project goal. |
+| **EP-R5** | [securityPrograming](https://github.com/KarmaSora/securityPrograming), `main` at `4915473` | Integrated `COMPUTER_PROGRAM`, Task2 and focused Flask exercises; factories/routes/forms/models/templates and retained author/course provenance notes. Python syntax/source review only; no complete login/MFA/browser security audit. Supports P17/P18. |
+
+- **EP-C1 — direct author scope clarification:** FAT storage overwriting on filesystem exit was intended. OperatingSystem Lab2 is more important for portfolio selection than Lab1. Marvin is an intentionally fake AI interface and was never intended to integrate real AI. Do not prioritise or select the separate Cryptography exercise.
+- **EP-C2 — direct inventory/media instruction:** Proceed with adding these projects' details to the inventory now; screenshots will be supplied later. This authorises inventory preparation, not a repository-visibility change, public site release or CV replacement.
+- **EP-C3 — subsequent local portfolio instruction:** Add the inventoried projects to the portfolio now, leave them unpushed and continue later. This pass added nine entries to the existing local catalogue and applied the earlier attribution clarifications. Screenshots are still pending; publishing and repository visibility remain unchanged. Production static export (including lint/types) and focused browser checks passed.
+- **EP-C4 — recruiter-facing presentation preference:** The author wants attractive project descriptions that emphasise the work rather than review limitations. The nine new public entries now lead with purpose, functionality and engineering details, with accurate collaboration credit. FAT exit behaviour, the Flask database reset, smoke-test notes and concrete bugs remain in the technical inventory/READMEs rather than the public pitch. Preserve the intentionally fake AI scope and factual source-access labels; do not invent deployment, performance or feature claims. The richer Felix-inspired visual presentation remains planned.
+- **EP-C5 — project distinction and details-control report:** The author asked whether the text analyser duplicates the typing trainer and reported unresponsive Project details controls. Direct import/entry-point inspection confirms separate applications: P20 file counts/frequencies and P16 transcription comparison/timing/scores. Public copy now distinguishes them. The original modal opened for all 17 cards with mouse/touch in fresh production and running port-3000 browser sessions; the reported failure was not reproduced. Project details were changed to native inline disclosures to remove the dependency on JavaScript/modal handling. Gallery dialogs remain. No specific cause for the author's browser failure is claimed.
+- **Review correction:** The first temporary FAT driver run omitted required text fixtures; its crash findings are invalid and withdrawn. With fixtures present, all five drivers returned normally. Numeric/symbolic permission expectations still differ. The exit-storage observation is documented using **EP-C1**, not framed as failed durability or incomplete coursework.
+
 ### Materials supplied or previously provided
 
 - Three LaTeX/ModernCV variants for full-stack/backend and game-development applications.
@@ -1180,6 +1628,19 @@ Current availability/location constraints: [confirm if relevant]
 - Experience-copy refinement approval on 25 October 2026: after a comparison with the previously committed portfolio, the author requested the proposed fixes to Softhouse, Trafikverket and BTH TA wording. The revision changes emphasis, restores team-project context and improves sentence flow using established facts; it does not supply new responsibilities, metrics or outcomes. Kravi was explicitly excluded from this review.
 - Subsequent public-experience shortening instruction, 25 October 2026: after reviewing the local section against GitHub Pages, the author said the experience section was too much and requested a shorter version. This supersedes the earlier restriction against shortening public experience copy. The four role summaries are now condensed, while detailed private records, contribution boundaries and reusable longer wording are retained. No new responsibilities, metrics or outcomes are established by this editorial change.
 - **SH-C1 — subsequent Softhouse clarification, 25 October 2026:** During the sprint as Scrum Master, personally split supplied features and requirements into smaller tasks organized into categories for team members to use. CI/CD setup was collaborative: the author assisted and did not create it alone. Team testing covered unit, integration and end-to-end tests for features and changes, not Cypress E2E alone. Personal unit/integration test authorship and additional frameworks were not specified and have been asked about; public copy retains team attribution until clarified. This supersedes earlier wording that could imply independent Bitbucket pipeline creation or Cypress-only testing.
+- **SH-C3 — TeamTemp responsibility clarification, 15 November 2026:** Author confirms divided tasks/features in the team, continuous frontend/backend/testing work, a permanent communication role between the Head of Department, development team and customer, and one rotation each as Scrum Master and Team Lead. Confirms testing, security fixes, some code reviews, merge-conflict assistance and CI/CD support as work the author personally performed, separate from rotating project roles. Does not establish independent pipeline ownership, resolution of every CI/CD issue, personal unit/integration test authorship or a Team Lead employment title.
+- **EP-M1 — actual project runs/media, 15 November 2026:** Ran the selected terminal/web projects in disposable local environments, assembled and ran ARM in CPUlator at the author's request, and rebuilt Compiler to generate fresh outputs. Twenty-four captured images/artifact views are embedded in ten project READMEs and copied unchanged into the portfolio with dimensions, captions and SHA-256 provenance. The 34 gallery-image total includes existing TeamTemp media. Verification scope and temporary build adjustments remain in each project record/README.
+- **EP-G1 — Flask presentation grouping, author-approved 15 November 2026:** The two apps share a stack and some account foundations but are distinct implementations. Present them as Flask Web Security Projects with Application security and MFA authentication sections. Preserve P17/P18 as separate source records, feature boundaries, individual source-folder links and all six labelled captures. The local catalogue contained 16 entries at that grouping stage; subsequent analyser grouping under PF-I3 produces the current 15 cards.
+- **EP-P1 — README push instruction and execution, 15 November 2026:** The author explicitly requested pushing updated READMEs. Forty READMEs, 24 linked screenshots and 11 compiler artifacts were committed/pushed to main in Assembly, Compiler, OperatingSystem, database, python-course and securityPrograming; remote heads were verified and working trees were clean at completion. The commit register above retains exact references. No application-code edit, portfolio push/deployment or repository-visibility change was performed. The directory-level extraPorjects index has no Git repository and remains local.
+- **PF-P1 — portfolio release authorization and hosting documentation, 15 November 2026:** The author explicitly requested pushing the new code and documenting GitHub Pages limitations, superseding the earlier no-push instruction. Prepared the expanded catalogue/media, native disclosures, original product demos, input/startup repairs, source provenance and inventory for the existing Portfolio/main Pages workflow. Added hosting support/configuration documentation, an optional Eshop backend URL Actions variable and the five Python input regressions to CI. GitHub Pages serves the static browser apps; Eshop's Express/MariaDB backend remains separately hosted/pending. FAT's session-local disk and the Compiler's recorded-output scope are not misrepresented as broken projects or blanket Pages restrictions. Original project repositories, supplied CV, original captures and private reference records are preserved. Push/deployment results are recorded after verification in docs/GITHUB_PAGES_DEMOS.md.
+- **PF-I4 — FAT startup and MARVIN country-input repair, 15 November 2026:** The author reported directory navigation appearing ineffective and an option 15 crash with sweden. Their exact FAT sequence omitted format; native reproduction showed child/root aliasing because an empty FAT marks root block 0 free. Verified local source equality and both current remote main heads via read-only Git branch checks after the connector lacked private access. The browser now sends the original format command once for each new 8 MiB session disk; no FAT source/binary/exit-lifecycle change. Reproduced MARVIN KeyError natively and overlaid two explicit, separately hashed Python input corrections while preserving originals, data, valid-country calculations and scripted fake AI scope. Added five persistent Python regressions and live/production browser checks of the exact failures, path/content separation, restart, country variants/recovery and remaining utility interaction. The existing four-program browser pass also retained typing/scoring, analyser counts/file switching/frequencies and FAT/Marvin operation checks after the shared changes. Content revisioning covers iframe/bundle/worker/payload consistency. The earlier formatted-disk checks and menu/backpack checks did not cover these user inputs. Private repository code, supplied CV, captures and contact records are unchanged; no commit/push/deployment/visibility change.
+- **PF-A1 — portfolio/inventory consistency audit, 15 November 2026:** At the author's request, reconciled completed local demos, public-catalogue grouping, captured media and remaining presentation work. Verified 20 inventory records, 15 cards, 34 gallery images, 24 capture hashes/dimensions, seven exported demo routes, 87 original vendored source/data hashes, original ARM ELF/FAT build hashes and both dependency lockfiles. Corrected the analyser media manifest's removed-card target to Typing Trainer without changing source identity or image bytes. Fresh HTTP checks returned 200 for the homepage and all seven demo pages; a focused production-browser pass verified grouped-gallery captions, mobile fit, top-level return and project switching without JavaScript errors. Updated P10, current runtime status in P12–P16/P20, section 10 and companion planning/media documents. Preserved private reference records byte-for-byte and retained all confirmed attribution/scope rules. Eshop public hosting and optional presentation/case-study/visual work remain open. Earlier runtime verification is retained with its actual scope rather than represented as a new comprehensive test or performance audit. No portfolio commit/push/deployment or source-visibility change.
+- **PF-I3 — native/original-code runtime demos and public grouping, 15 November 2026:** The author rejected the inaccurate ARM recreation and requested CPUlator's own interface, asked for Python/FAT/Eshop demos, selected analyser grouping under Typing Trainer, explicitly approved automatic compiled-program preloading after the private-binary transfer was flagged, and said proceed. Replaced ARM with the official native emulator executing the original verified ELF. Added four static terminal routes using unchanged original Python modules or original C++ WebAssembly, worker stdin/stdout, terminal-clear adaptation and disposable session files. Prepared and exercised the original Express/EJS Eshop with MariaDB in a local-only runner. Added direct launchers and retained independent analyser provenance under related work. Kept original algorithm/fixture boundaries and truthful evidence types; no performance/typing benchmark or comprehensive regression claim is made. Source hashes, FAT build hashes and runtime versions are pinned. Public Eshop backend hosting is pending and no public localhost button is emitted. All work remains local and unpushed.
+- **PF-I2 — actual-product demo requirement and repair, 15 November 2026:** The author reported that the ShowcaseSERL preview did not match the original product and that its full-demo URL failed with a static-export `generateStaticParams` error. The interrupted work had copied source and dependencies without connecting that source to the UI. Replaced the adapted Showcase component/data with the original pinned React components, CSS and original dataset, built separately with host adapters. Added explicit static demo pages, one-click app launch and an explicit `index.html` iframe URL for Next development compatibility. Preserved source hashes/licence, actual collaboration and existing screenshots. The earlier recorded-output Compiler walkthrough and explicitly labelled ARM simulation retain their distinct evidence types. See the current repair document for validation and remaining boundaries. No source-repository visibility change or portfolio publication is included.
+- **PF-I1 — interactive-project authorisation and implementation, 15 November 2026:** After discussing GitHub Pages support for browser interactions, the author approved the compiler walkthrough and ARM simulation and requested a better ShowcaseSERL demo. Implemented three lazy-loaded browser demos and shareable static routes in the existing Portfolio checkout, preserving its design and gallery media. Compiler uses three verified recordings and 18 original generated files; ARM follows the supplied assembly masks/input logic; Showcase is an adapted JSON-backed browsing/detail/kiosk preview with fictional records. Inspection of the public Showcase URL established that its old Live demo label actually led to a rendered README. The original standalone deployment is unchanged. Production build/lint/types, desktop/mobile browser interactions, artifact hashes, direct routes, narrow/reduced-motion behaviour and gallery regression checks passed. No dependency, hosting, repository-visibility or portfolio-publication change occurred.
+- **PF-R2 — current portfolio comparison, 15 November 2026:** Reviewed current local content/media and the unchanged previously checked application snapshot against Felix's current published HTML/CSS/JavaScript and prior visual captures. Approximate editorial ratings are 8/10 for the updated local portfolio and 8.5/10 for Felix. Karam presents professional contributions/attribution more clearly; Felix has the stronger visual identity and interactive project exploration. This is a presentation judgment, not a code-quality, ability or hiring benchmark. Detailed rubric, priorities and review limits are in docs/PORTFOLIO_COMPARISON_2026-11-15.md.
+- **CMP-R1 — local Compiler source/run review, 15 November 2026:** Reviewed `/home/karam/personal/extraPorjects/Compiler` at commit `7b6aa57`. `lexer.flex`, `parser.yy`, C++ visitors, IR/bytecode generation and interpreter sources establish the actual Flex/Bison pipeline. A fresh disposable Linux build compiled the arithmetic, C1 while/if, Factorial and CFG examples; interpreter outputs were 20, 100, 3628800 and 5050 respectively. Graphviz rendered fresh tree/CFG files. The build used a temporary `ByteCode.h` alias for checked-in `BYTECODE.h`; original application code was preserved. This illustrative check does not certify the full test suite: Bison emitted 14 shift/reduce warnings and the supplied `assignment3_valid/A.java` aborted in the Linux build. Source README retains technical reproduction notes and raw artifacts. Joint attribution remains **JNT-C1**.
+- **JNT-C1 — joint-project clarification, 15 November 2026:** Author confirms that ACID Bot research, implementation and thesis writing were all done together with the colleague. Compiler work was likewise carried out jointly throughout. Preserve joint attribution across phases; do not invent a personal subsystem split. The existing thesis co-author record remains valid; the Compiler collaborator's name was not specified.
 - **SH-C2 — validation wording preference, clarified use and source check, 25 October 2026:** The author initially said they do not recall much about Zod, then explicitly confirmed using it and asked not to remove it. They prefer the newer contribution description that does not say "Zod fixes." Direct review of the author's Softhouse report, `public/data/FInalFinalSOfthouseCOnclusion-1.pdf`, **PDF page 12**, confirms it describes Zod schemas for backend type/range validation. Final presentation: retain Zod in public technology/skills lists as a tool used; describe the contribution as server-side validation. Preserve limited implementation recall privately without inferring deep expertise. This final clarification supersedes the interim decision to omit its public tags. No PDF is edited.
 - **UNI-C1 — university internship arrangement clarification, 25 October 2026:** The author confirms Softhouse and Trafikverket were internships arranged through the university, developing products requested by the organizations, which also acted as customers. No official internship agreements were signed; only NDAs. Both organizations said it was acceptable to list the experiences as internships, according to the author. This resolves the earlier role-classification question and supports retaining the current titles; hours, remuneration and full-time/part-time status remain unspecified.
 - **Portfolio presentation preferences, 25 October 2026:** The author explains that placeholder images are intentional where screenshots were not captured, cannot be published or the project has no visual interface, with the compiler as an example. They prefer discussing project-specific design decisions with recruiters in interviews instead of adding more public case-study content. Preserve real screenshots, placeholders and the current concise presentation.
