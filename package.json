@@ -10,6 +10,7 @@
     "preview": "node scripts/preview.mjs",
     "lighthouse": "node scripts/lighthouse.mjs",
     "build:project-demos": "node scripts/build-project-demos.mjs",
+    "sources:refresh": "node scripts/refresh-project-sources.mjs",
     "predev": "npm run build:project-demos",
     "prebuild": "npm run build:project-demos",
     "build:fat-demo": "node scripts/compile-fat-demo.mjs",

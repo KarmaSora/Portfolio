@@ -21,7 +21,8 @@ A modern, responsive portfolio website built with Next.js 14, TypeScript, and Ta
 
 ### Prerequisites
 
-- Node.js 18+
+- Node.js 22.19+
+- Git with access to the private project submodules
 - npm, yarn, or pnpm
 
 ### Installation
@@ -29,8 +30,8 @@ A modern, responsive portfolio website built with Next.js 14, TypeScript, and Ta
 1. Clone the repository:
 
 ```bash
-git clone https://github.com/KarmaSora/portfolio.git
-cd portfolio
+git clone --recurse-submodules https://github.com/KarmaSora/Portfolio.git
+cd Portfolio
 ```
 
 2. Install dependencies:
@@ -144,6 +145,12 @@ The portfolio uses CSS custom properties for theming. Customize colors in `globa
 ```
 
 ## 🚀 Deployment
+
+Project demos now read their original repositories through pinned submodules.
+For local setup, initialize them with `git submodule update --init`. GitHub
+Actions needs the `PORTFOLIO_FINE_GRAINED_PERSONAL_ACCESS_TOKEN` repository
+secret with read access to the four source repositories. See
+[token setup and project updates](docs/PROJECT_SUBMODULES.md).
 
 ### GitHub Pages (Automated with GitHub Actions)
 

@@ -1,0 +1,12 @@
+[submodule "showcase-serl"]
+	path = projects/showcase-serl
+	url = https://github.com/KarmaSora/showcaseSERL.git
+[submodule "python-course"]
+	path = projects/python-course
+	url = https://github.com/KarmaSora/python-course.git
+[submodule "operating-system"]
+	path = projects/operating-system
+	url = https://github.com/KarmaSora/OperatingSystem.git
+[submodule "database"]
+	path = projects/database
+	url = https://github.com/KarmaSora/database.git

@@ -1,5 +1,11 @@
 # Original-code project demos — 15 November 2026
 
+**Current source integration:** The four project source repositories are now
+pinned Git submodules. Builders read their selected files directly; the earlier
+copied originals have been removed, and MARVIN uses a small patch applied in a
+temporary directory. See [token setup, updates and verification](./PROJECT_SUBMODULES.md).
+The implementation history below predates that source-layout migration.
+
 **Current release authorization — PF-P1:** The author has now authorized publishing this portfolio update. Earlier local-only statements describe the original implementation passes. Current hosting support, Eshop backend requirements and deployment verification are in [GitHub Pages demos](./GITHUB_PAGES_DEMOS.md).
 
 The author requested original product interfaces/code, approved automatic compiled ARM preloading in CPUlator, chose analyser grouping under Typing Trainer, then instructed the remaining demos to proceed. These demos are implemented locally. **PF-I4 update:** fresh FAT disks now format automatically using the original C++ shell, and MARVIN has two documented country-input corrections. See [the runtime repair](./TERMINAL_DEMO_FIXES_2026-11-15.md). Nothing is committed, pushed, deployed or made public in this pass.

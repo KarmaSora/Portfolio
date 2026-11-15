@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from 'react'
 import { createRoot } from 'react-dom/client'
 import { sha256 } from 'js-sha256'
-import Home from '../original/src/app/page'
-import Header from '../original/src/app/components/Header'
-import Footer from '../original/src/app/components/Footer'
-import SingleProject from '../original/src/app/components/singleProject'
-import KioskPage from '../original/src/app/components/KioskPage'
-import KioskSingleProject from '../original/src/app/components/KioskSingleProject'
+import Home from '../../../projects/showcase-serl/src/app/page'
+import Header from '../../../projects/showcase-serl/src/app/components/Header'
+import Footer from '../../../projects/showcase-serl/src/app/components/Footer'
+import SingleProject from '../../../projects/showcase-serl/src/app/components/singleProject'
+import KioskPage from '../../../projects/showcase-serl/src/app/components/KioskPage'
+import KioskSingleProject from '../../../projects/showcase-serl/src/app/components/KioskSingleProject'
 import { routeHref } from './navigation'
 
 interface ResearchRecord {

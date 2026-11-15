@@ -1,8 +1,9 @@
 # Original Eshop local demo
 
-`original/` holds 37 unchanged source/template/style/SQL/fixture files from `KarmaSora/database/kmom06/eshop2`; `provenance.json` pins their commit and hashes. Original database configuration/credentials are excluded.
+Source comes from the `projects/database` Git submodule at `kmom06/eshop2`. There is no copied `original/` tree here. `provenance.json` pins the commit and 37 selected source/template/style/SQL/fixture files' hashes. The runner copies only those listed files to its disposable application directory; original database configuration/credentials are excluded. See [submodule/token setup](../../docs/PROJECT_SUBMODULES.md).
 
 ```bash
+git submodule update --init projects/database
 npm ci --prefix vendor/eshop --ignore-scripts
 npm run demo:eshop
 # Or with a portable MariaDB installation:

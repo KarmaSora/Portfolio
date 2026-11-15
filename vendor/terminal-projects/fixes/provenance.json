@@ -15,7 +15,9 @@
           "originalSha256": "4b229aaa9683c1d3795f02a164310ce7d6f78e7ea9b039c179178c2aadc1ea39",
           "sha256": "55a42f77720ec6247d2e4383ebbb57f6f388f4374eaf0735cf60c110769c3036"
         }
-      ]
+      ],
+      "patch": "marvin-country-input.patch",
+      "patchSha256": "19c2a798fcd76c16a639e856365f2cbc5a4545aaf562aeb96f83b1478c749d01"
     }
   }
 }

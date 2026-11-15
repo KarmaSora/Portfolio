@@ -4,13 +4,14 @@ import { spawnSync } from 'node:child_process';
 import { mkdir, readFile, writeFile } from 'node:fs/promises';
 import { dirname, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { projectSource } from './project-source.mjs';
 
 const root = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const vendor = resolve(root, 'vendor/terminal-projects');
-const original = resolve(vendor, 'original/fat');
 const output = resolve(vendor, 'fat-build');
 const compiler = process.env.EMXX || 'em++';
 const manifest = JSON.parse(await readFile(resolve(vendor, 'provenance.json'), 'utf8'));
+const original = projectSource(manifest.projects.fat);
 for (const file of manifest.projects.fat.files) {
   const bytes = await readFile(resolve(original, file.path));
   if (createHash('sha256').update(bytes).digest('hex') !== file.sha256) throw new Error(`Original FAT source changed: ${file.path}`);

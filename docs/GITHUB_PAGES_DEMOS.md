@@ -1,5 +1,10 @@
 # Project demos on GitHub Pages
 
+**Current source integration:** Original project source is now read from four
+pinned submodules; copied source trees have been removed. GitHub builds require
+the `PORTFOLIO_FINE_GRAINED_PERSONAL_ACCESS_TOKEN` repository secret. See [the setup guide](./PROJECT_SUBMODULES.md).
+The release evidence below describes the previously published snapshot build.
+
 Release authorized by Karam on 15 November 2026. This supersedes the earlier
 instruction to leave the portfolio changes unpushed. The release contains 15
 project cards, 34 gallery images and seven explicit demo pages. Original source
@@ -65,7 +70,8 @@ npm run preview
 
 The prebuild hook verifies pinned sources and prepares ShowcaseSERL, the original
 ARM executable and the Python/FAT runtime assets. Normal builds do not need the
-Emscripten toolchain or credentials for the private source repositories. Content
+Emscripten toolchain. Source submodules must be initialized; private source
+checkout uses local Git authentication or the Actions secret described above. Content
 revisions keep the terminal iframe, bundle, worker and program payloads together.
 
 The existing Pages workflow builds `out/`, adds `.nojekyll`, and deploys on pushes

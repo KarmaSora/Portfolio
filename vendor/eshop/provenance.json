@@ -151,5 +151,6 @@
       "path": "sql/eshop/orders.csv",
       "sha256": "e291b5510f1c24788e9524ba40fad51b23867fb3ddfd1d481c5eade05595bd65"
     }
-  ]
+  ],
+  "submodule": "projects/database"
 }

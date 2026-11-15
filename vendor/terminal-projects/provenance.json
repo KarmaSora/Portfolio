@@ -33,7 +33,8 @@
           "path": "emission_data_small.py",
           "sha256": "0efe9918bc9e496c28e3d8938b9fb88068c55ec9fb38735c1cc4a11813d74963"
         }
-      ]
+      ],
+      "submodule": "projects/python-course"
     },
     "typing": {
       "repository": "https://github.com/KarmaSora/python-course",
@@ -92,7 +93,8 @@
           "path": "randomTest.txt",
           "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
         }
-      ]
+      ],
+      "submodule": "projects/python-course"
     },
     "analyser": {
       "repository": "https://github.com/KarmaSora/python-course",
@@ -115,7 +117,8 @@
           "path": "lorum.txt",
           "sha256": "2a8848dc2be01a97844041df927063d0b197f9379e693b046e1182a48ff7aa60"
         }
-      ]
+      ],
+      "submodule": "projects/python-course"
     },
     "fat": {
       "repository": "https://github.com/KarmaSora/OperatingSystem",
@@ -154,7 +157,8 @@
           "path": "direntry.h",
           "sha256": "878ba1f0b70cce4a06c860c41779a107c597d0505725e82482c7d6f57e7f8ac3"
         }
-      ]
+      ],
+      "submodule": "projects/operating-system"
     }
   }
 }

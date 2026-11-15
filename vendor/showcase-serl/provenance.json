@@ -92,5 +92,6 @@
       "gitBlob": "9baf2666aef081f9a6b41e62c22f0d4e947d5d66",
       "sha256": "e7d75a29bc12e6c4f3f0db7f52549b72ec52b3d93635e2b077daa34a772fff1d"
     }
-  ]
+  ],
+  "submodule": "projects/showcase-serl"
 }

@@ -1,6 +1,6 @@
 # ShowcaseSERL original-source demo
 
-`original/` contains a pinned, unmodified selection of the original project's React components, stylesheet, configuration and dataset. Repository: [KarmaSora/showcaseSERL](https://github.com/KarmaSora/showcaseSERL), commit `596e7430782f0cacd6b2043dcd2fdcd032a565c1`. `provenance.json` records the Git blob IDs and SHA-256 hashes. The original MIT licence is retained in `original/LICENSE`.
+The source is the `projects/showcase-serl` Git submodule, pinned to [KarmaSora/showcaseSERL](https://github.com/KarmaSora/showcaseSERL) commit `596e7430782f0cacd6b2043dcd2fdcd032a565c1`. There is no copied `original/` source tree here. `provenance.json` identifies the submodule and the 18 selected files' Git blob IDs/SHA-256 hashes. The build retains the original MIT licence from the submodule.
 
 `runtime/` contains the hosting adapters, not a replacement product UI:
 
@@ -14,4 +14,4 @@ Run `npm run build:project-demos` at the portfolio root. The build checks every 
 
 Open `/project-apps/showcase/index.html`, or use `/demos/showcase/` for a return link to the portfolio. The iframe keeps the application's own styling isolated from the portfolio. No standalone project repository or deployment is changed.
 
-See [the repair and validation record](../../docs/AUTHENTIC_PROJECT_DEMOS.md). To update the snapshot later, replace the original files and provenance together from a deliberate source revision; keep any host-specific changes in `runtime/`.
+Initialize the source with `git submodule update --init projects/showcase-serl`. See [source/token setup and updates](../../docs/PROJECT_SUBMODULES.md) and [the earlier repair record](../../docs/AUTHENTIC_PROJECT_DEMOS.md). Keep host-specific changes in `runtime/`; update the submodule reference and refresh provenance to select a newer original revision.

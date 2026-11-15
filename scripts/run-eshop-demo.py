@@ -32,8 +32,15 @@ client, daemon, installer = (binary(name) for name in ['mariadb', 'mariadbd', 'm
 if not (VENDOR / 'node_modules/express').exists():
     raise SystemExit('Run npm ci --prefix vendor/eshop --ignore-scripts first.')
 manifest = json.loads((VENDOR / 'provenance.json').read_text())
+checkout = ROOT / manifest['submodule']
+if not (checkout / '.git').exists():
+    raise SystemExit('Run git submodule update --init projects/database first. See docs/PROJECT_SUBMODULES.md.')
+commit = subprocess.check_output(['git', '-C', str(checkout), 'rev-parse', 'HEAD'], text=True).strip()
+if commit != manifest['commit']:
+    raise SystemExit('Database submodule revision differs from its provenance. Review the update and run npm run sources:refresh.')
+original = checkout / manifest['path']
 for file in manifest['files']:
-    data = (VENDOR / 'original' / file['path']).read_bytes()
+    data = (original / file['path']).read_bytes()
     if hashlib.sha256(data).hexdigest() != file['sha256']:
         raise SystemExit('Original Eshop source changed: ' + file['path'])
 
@@ -45,7 +52,11 @@ signal.signal(signal.SIGINT, stop)
 with tempfile.TemporaryDirectory(prefix='portfolio-eshop-') as directory:
     work = Path(directory)
     data_dir, socket = work / 'db', work / 'db.sock'
-    shutil.copytree(VENDOR / 'original', work / 'app')
+    # Copy only the reviewed application/fixture files, excluding repository config.
+    for file in manifest['files']:
+        target = work / 'app' / file['path']
+        target.parent.mkdir(parents=True, exist_ok=True)
+        shutil.copy2(original / file['path'], target)
     (work / 'app/node_modules').symlink_to(VENDOR / 'node_modules', target_is_directory=True)
     db_log = (work / 'database.log').open('w+')
     app_log = (work / 'application.log').open('w+')

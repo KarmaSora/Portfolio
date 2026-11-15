@@ -1,10 +1,11 @@
 # Local MARVIN country-input fixes
 
-The immutable originals remain under `../original/marvin/`. These two files are
-reviewable corrections applied to the portfolio demo copy at build time; the
-private source repository is unchanged. `provenance.json` records the original
-commit, input hashes and corrected output hashes. Builds verify both sides before
-overlaying a corrected file into the delivered Python payload.
+The originals live in the `projects/python-course/me/kmom05/marvin4` submodule
+directory. `marvin-country-input.patch` contains only the country-input changes;
+full replacement Python files are no longer copied here. It is applied to
+temporary build files, leaving the source repository unchanged. `provenance.json`
+records the original commit, patch hash, input hashes and corrected output hashes.
+Builds verify both sides before including corrected Python in the delivered payload.
 
 - `emission_functions.py`: resolve complete country names without case or
   surrounding whitespace; raise a recoverable `ValueError` for empty/unknown

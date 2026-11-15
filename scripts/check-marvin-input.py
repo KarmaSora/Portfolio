@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """Regressions for the reported country-input crash in the portfolio demo."""
 import importlib.util
+import hashlib
 import json
 import os
 from pathlib import Path
@@ -13,8 +14,24 @@ import unittest
 sys.dont_write_bytecode = True
 ROOT = Path(__file__).resolve().parents[1]
 VENDOR = ROOT / 'vendor/terminal-projects'
-ORIGINAL = VENDOR / 'original/marvin'
-FIXED = VENDOR / 'fixes/marvin'
+PROJECT = json.loads((VENDOR / 'provenance.json').read_text())['projects']['marvin']
+ORIGINAL = ROOT / PROJECT['submodule'] / PROJECT['path']
+FIX = json.loads((VENDOR / 'fixes/provenance.json').read_text())['projects']['marvin']
+temporary = tempfile.TemporaryDirectory(prefix='portfolio-marvin-test-')
+FIXED = Path(temporary.name)
+for file in PROJECT['files']:
+    source = ORIGINAL / file['path']
+    if hashlib.sha256(source.read_bytes()).hexdigest() != file['sha256']:
+        raise RuntimeError('MARVIN source changed: ' + file['path'])
+    shutil.copy2(source, FIXED / file['path'])
+patch = VENDOR / 'fixes' / FIX['patch']
+if hashlib.sha256(patch.read_bytes()).hexdigest() != FIX['patchSha256']:
+    raise RuntimeError('MARVIN patch provenance does not match')
+subprocess.run(['git', 'apply', '--check', str(patch)], cwd=FIXED, check=True, capture_output=True)
+subprocess.run(['git', 'apply', str(patch)], cwd=FIXED, check=True, capture_output=True)
+for file in FIX['files']:
+    if hashlib.sha256((FIXED / file['path']).read_bytes()).hexdigest() != file['sha256']:
+        raise RuntimeError('MARVIN patched output changed: ' + file['path'])
 sys.path.insert(0, str(ORIGINAL))
 
 def load_module(name, path):
@@ -29,12 +46,8 @@ fixed = load_module('fixed_emission_functions', FIXED / 'emission_functions.py')
 class CountryInputTests(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
-        cls.temporary = tempfile.TemporaryDirectory(prefix='portfolio-marvin-test-')
-        cls.app = Path(cls.temporary.name)
-        for source in ORIGINAL.glob('*.py'):
-            shutil.copy2(source, cls.app / source.name)
-        for source in FIXED.glob('*.py'):
-            shutil.copy2(source, cls.app / source.name)
+        cls.temporary = temporary
+        cls.app = FIXED
 
     @classmethod
     def tearDownClass(cls):
@@ -80,7 +93,8 @@ class CountryInputTests(unittest.TestCase):
         if not path.exists():
             self.skipTest('Run npm run build:project-demos before checking generated payloads')
         files = json.loads(path.read_text())
-        for source in FIXED.glob('*.py'):
+        for file in PROJECT['files']:
+            source = FIXED / file['path']
             self.assertEqual(files[source.name], source.read_text())
 
 if __name__ == '__main__':

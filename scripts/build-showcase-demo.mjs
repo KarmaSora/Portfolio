@@ -7,13 +7,14 @@ import postcss from 'postcss';
 import tailwindcss from 'tailwindcss';
 import loadConfig from 'tailwindcss/loadConfig.js';
 import autoprefixer from 'autoprefixer';
+import { projectSource } from './project-source.mjs';
 
 const root = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const vendor = resolve(root, 'vendor/showcase-serl');
-const original = resolve(vendor, 'original');
 const runtime = resolve(vendor, 'runtime');
 const output = resolve(root, 'public/project-apps/showcase');
 const provenance = JSON.parse(await readFile(resolve(vendor, 'provenance.json'), 'utf8'));
+const original = projectSource(provenance);
 
 for (const file of provenance.files) {
   const bytes = await readFile(resolve(original, file.path));
@@ -22,7 +23,7 @@ for (const file of provenance.files) {
 
 await mkdir(output, { recursive: true });
 const config = loadConfig(resolve(original, 'tailwind.config.ts'));
-config.content = [resolve(original, 'src/**/*.{ts,tsx}'), resolve(runtime, '*.{ts,tsx}')];
+config.content = [...provenance.files.filter(file => /\.(ts|tsx)$/.test(file.path)).map(file => resolve(original, file.path)), resolve(runtime, '*.{ts,tsx}')];
 const css = await readFile(resolve(original, 'src/app/globals.css'), 'utf8');
 const compiled = await postcss([tailwindcss(config), autoprefixer]).process(css, { from: resolve(original, 'src/app/globals.css') });
 await writeFile(resolve(output, 'app.css'), `${compiled.css}\n${await readFile(resolve(runtime, 'responsive.css'), 'utf8')}`);
