@@ -17,8 +17,10 @@ listed demo files. ARM's compiled executable and the Compiler's recorded
 artifacts remain separate assets; they do not require more source repositories.
 FAT's pinned WASM remains an asset so ordinary builds need no Emscripten SDK.
 
-The deployment target remains the existing GitHub Pages testing site. This
-migration does not set up a Pi, Eshop hosting or a new custom-domain deployment.
+The submodule migration was deployed to the existing GitHub Pages testing site.
+A separate [Cloudflare portfolio workflow](./CUSTOM_DOMAIN_HOSTING.md) can reuse
+the same GitHub source token; its deployment credentials are configured
+separately. This does not set up a Pi or Eshop backend.
 
 ## 1. Create your read-only token
 

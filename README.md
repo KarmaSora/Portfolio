@@ -101,8 +101,9 @@ portfolioOne/
 | --------------------------------- | ------------------------------------------- | ----------------------- |
 | `NEXT_PUBLIC_DATA_SOURCE`         | Data source: `local`, `github`, or `custom` | `local`                 |
 | `NEXT_PUBLIC_GITHUB_DATA_URL`     | URL to remote portfolio.json                | -                       |
-| `NEXT_PUBLIC_SITE_URL`            | Your site URL for SEO                       | `http://localhost:3000` |
-| `NEXT_PUBLIC_BASE_PATH`           | Base path for subdirectory hosting          | -                       |
+| `NEXT_PUBLIC_SITE_URL`            | Absolute site URL for exported SEO metadata | `seo.url` in portfolio.json |
+| `NEXT_PUBLIC_BASE_PATH`           | Hosting prefix; empty for a dedicated domain | `/Portfolio` in production, empty in dev |
+| `NEXT_PUBLIC_ESHOP_DEMO_URL`      | Healthy external Eshop application's HTTPS URL | Disabled publicly |
 | `NEXT_PUBLIC_ENABLE_KIOSK_MODE`   | Enable kiosk mode feature                   | `true`                  |
 | `NEXT_PUBLIC_ENABLE_THEME_TOGGLE` | Enable theme toggle                         | `true`                  |
 
@@ -148,9 +149,8 @@ The portfolio uses CSS custom properties for theming. Customize colors in `globa
 
 Project demos now read their original repositories through pinned submodules.
 For local setup, initialize them with `git submodule update --init`. GitHub
-Actions needs the `PORTFOLIO_FINE_GRAINED_PERSONAL_ACCESS_TOKEN` repository
-secret with read access to the four source repositories. See
-[token setup and project updates](docs/PROJECT_SUBMODULES.md).
+Actions needs the `PORTFOLIO_FINE_GRAINED_PERSONAL_ACCESS_TOKEN` repository secret with read access to the
+four source repositories. See [token setup and project updates](docs/PROJECT_SUBMODULES.md).
 
 ### GitHub Pages (Automated with GitHub Actions)
 
@@ -162,20 +162,21 @@ This project includes a GitHub Actions workflow for automatic deployment:
 
 The workflow file is located at `.github/workflows/deploy.yml`.
 
-**Note:** The `next.config.js` is pre-configured for GitHub Pages subpath deployment:
+Production builds default to `/Portfolio`. Set `NEXT_PUBLIC_BASE_PATH` to change
+the prefix; Next routing and asset URLs use the same value.
 
-```javascript
-const isProd = process.env.NODE_ENV === 'production';
+### Separate portfolio subdomain on Cloudflare
 
-const nextConfig = {
-  output: "export",
-  basePath: isProd ? '/Portfolio' : '',
-  assetPrefix: isProd ? '/Portfolio/' : '',
-  // ...
-};
-```
+The separate **Deploy portfolio to Cloudflare** workflow builds for `/` and
+deploys static assets to `portfolio.karammatar.com` using `wrangler.jsonc`.
+It reuses the private-source GitHub token and needs a `CLOUDFLARE_API_TOKEN`
+repository secret plus a `CLOUDFLARE_ACCOUNT_ID` repository variable. The job
+stays skipped until that variable is set. GitHub Pages keeps its existing URL.
 
-Update `basePath` and `assetPrefix` to match your repository name.
+Follow [the Cloudflare dashboard setup guide](docs/CUSTOM_DOMAIN_HOSTING.md).
+`npm run build:cloudflare` also builds locally; preview it with
+`npm run preview -- --base-path ''`. The custom domain needs its first deployment
+after the Cloudflare settings are saved. No Pi or Eshop backend is provisioned.
 
 ### Project demos and hosting boundaries
 

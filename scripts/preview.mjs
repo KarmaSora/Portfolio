@@ -15,10 +15,15 @@ const types = {
   '.wasm': 'application/wasm', '.zip': 'application/zip',
 };
 
-export async function startPreview(directory = 'out', port = 0) {
+export async function startPreview(directory = 'out', port = 0, basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? '/Portfolio') {
+  basePath = basePath.replace(/\/+$/, '');
+  if (basePath && (!basePath.startsWith('/') || basePath.startsWith('//'))) {
+    throw new Error('The preview base path must be empty or start with a single /.');
+  }
+  const mount = `${basePath}/`;
   const root = resolve(directory);
   if (!(await stat(resolve(root, 'index.html')).catch(() => null))?.isFile()) {
-    throw new Error(`No production export in ${root}. Run NEXT_PUBLIC_BASE_PATH=/Portfolio npm run build first.`);
+    throw new Error(`No production export in ${root}. Run npm run build first.`);
   }
 
   const server = createServer(async (request, response) => {
@@ -28,15 +33,15 @@ export async function startPreview(directory = 'out', port = 0) {
     }
     try {
       const pathname = decodeURIComponent(new URL(request.url, 'http://localhost').pathname);
-      if (pathname === '/' || pathname === '/Portfolio') {
-        response.writeHead(302, { Location: '/Portfolio/' }).end();
+      if (basePath && (pathname === '/' || pathname === basePath)) {
+        response.writeHead(302, { Location: mount }).end();
         return;
       }
-      if (!pathname.startsWith('/Portfolio/')) {
+      if (!pathname.startsWith(mount)) {
         response.writeHead(404).end('Not found');
         return;
       }
-      let file = resolve(root, pathname.slice('/Portfolio/'.length) || '.');
+      let file = resolve(root, pathname.slice(mount.length) || '.');
       if (file !== root && !file.startsWith(root + sep)) {
         response.writeHead(403).end('Forbidden');
         return;
@@ -74,12 +79,16 @@ export async function startPreview(directory = 'out', port = 0) {
     server.listen(port, '127.0.0.1', resolve);
   });
   const address = server.address();
-  return { server, url: `http://127.0.0.1:${address.port}/Portfolio/` };
+  return { server, url: `http://127.0.0.1:${address.port}${mount}` };
 }
 
 if (process.argv[1] && resolve(process.argv[1]) === fileURLToPath(import.meta.url)) {
-  const { values } = parseArgs({ options: { dir: { type: 'string', default: 'out' }, port: { type: 'string', default: '8001' } } });
-  const { server, url } = await startPreview(values.dir, Number(values.port));
+  const { values } = parseArgs({ options: {
+    dir: { type: 'string', default: 'out' },
+    port: { type: 'string', default: '8001' },
+    'base-path': { type: 'string', default: process.env.NEXT_PUBLIC_BASE_PATH ?? '/Portfolio' },
+  } });
+  const { server, url } = await startPreview(values.dir, Number(values.port), values['base-path']);
   console.log(`Production preview: ${url}`);
   for (const signal of ['SIGINT', 'SIGTERM']) process.on(signal, () => server.close());
 }

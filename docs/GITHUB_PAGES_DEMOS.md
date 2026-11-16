@@ -48,6 +48,10 @@ Python code inspectable; private source-repository access is a separate setting.
 
 ## Eshop configuration
 
+The separate portfolio-domain workflow and Cloudflare setup steps are in
+[custom-domain hosting](./CUSTOM_DOMAIN_HOSTING.md). GitHub Pages keeps its
+`/Portfolio` prefix and remains independently hosted. This does not host Eshop.
+
 Run locally with the original backend/database using
 [the Eshop runner instructions](../vendor/eshop/README.md). Local discovery is
 restricted to localhost/127.0.0.1 and only exposes a healthy running service.

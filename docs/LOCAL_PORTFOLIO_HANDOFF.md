@@ -8,12 +8,21 @@ is published; the [Pages workflow](https://github.com/KarmaSora/Portfolio/action
 the configured `PORTFOLIO_FINE_GRAINED_PERSONAL_ACCESS_TOKEN` repository secret.
 See [setup, update instructions and deployment evidence](./PROJECT_SUBMODULES.md).
 
-The inventory is now version 14. Fresh submodule checkout, production
+The submodule migration was recorded in inventory version 14; the Cloudflare setup is recorded in version 15. Fresh submodule checkout, production
 build/lint/types, five Python regressions, original Showcase/FAT/MARVIN browser
 checks and optional local Eshop CRUD passed. The source checkouts are clean;
 runtime revision remains `8dc899fd4db20436`. Live HTTPS checks passed the
 homepage/seven routes, matching submodule manifests and selected assets,
 Showcase interactions and FAT/MARVIN input cases with no observed browser errors.
+
+**Custom-domain setup — CF-H1:** A separate GitHub Actions workflow builds the
+portfolio for `/` and deploys the static export to a Worker named
+`karam-portfolio`, with `portfolio.karammatar.com` declared as its custom domain.
+The source submodule token is reused only for checkout. Cloudflare deployment
+needs a `CLOUDFLARE_API_TOKEN` repository secret and `CLOUDFLARE_ACCOUNT_ID`
+repository variable; the job skips before that variable is set. No actual
+Cloudflare deployment has been verified yet. GitHub Pages, Anime Watcher and
+source projects retain their existing setup. See [the exact dashboard steps](./CUSTOM_DOMAIN_HOSTING.md).
 
 **Published release — PF-P1:** Implementation `fa9a5f3` is live at [GitHub Pages](https://karmasora.github.io/Portfolio/). The [build/regression/deploy workflow](https://github.com/KarmaSora/Portfolio/actions/runs/43757298104) succeeded, and live routes/assets plus FAT/MARVIN/CPUlator/Showcase interactions passed focused checks. Eshop still needs a separate public backend. The inventory is version 13; [hosting limits and deployment evidence](./GITHUB_PAGES_DEMOS.md) are current. The local-only statements below describe implementation history.
 

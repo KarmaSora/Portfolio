@@ -19,9 +19,10 @@ const manrope = Manrope({
 const useLocalData =
   !process.env.NEXT_PUBLIC_DATA_SOURCE ||
   process.env.NEXT_PUBLIC_DATA_SOURCE === "local";
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || portfolioData.seo.url;
 
 export const metadata: Metadata = {
-  metadataBase: new URL(portfolioData.seo.url),
+  metadataBase: new URL(siteUrl),
   title: portfolioData.seo.title,
   description: portfolioData.seo.description,
   keywords: portfolioData.seo.keywords,
@@ -33,7 +34,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: portfolioData.seo.locale,
-    url: portfolioData.seo.url,
+    url: siteUrl,
     title: portfolioData.seo.title,
     description: portfolioData.seo.description,
     siteName: "Karam Matar Portfolio",
